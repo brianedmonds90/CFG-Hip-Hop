@@ -11,34 +11,16 @@ public class Main {
 	
 	public static void main(String [] args){
 		System.out.println("Files in test_files");
-		listFilesForFolder(new File("/Users/brianedmonds/Documents/orso_research/test_files"));
-		
-		File file = new File("/Users/brianedmonds/Documents/orso_research/test_files/foo.php.bc");
-		Scanner scan = null;
-		try {
-			scan = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+		ArrayList<File> codeFiles = new ArrayList<File>();
+		System.out.println("Please enter the path of the directory that you want to parse:");
+		Scanner scan = new Scanner(System.in);
+		String path = scan.nextLine();
+		File_operator f_operator = new File_operator();
+		//Get all the files from a directory specified by the user
+		f_operator.listFilesForFolder(new File(path),codeFiles);
+		//parse the given bytecode files from the directory
+		for(File f: codeFiles){
+			f_operator.parse_byte_code(f,false);
 		}
-		System.out.println("Reading "+ file.getName());
-		while(scan.hasNextLine()){
-			String str = scan.nextLine();
-			if(str.contains("//")){
-				System.out.println("Comments: "+str);
-			}
-			else{
-				System.out.println(str);	
-			}
-		}
-	}
-	
-	public static void listFilesForFolder(final File folder) {
-	    for (final File fileEntry : folder.listFiles()) {
-	        if (fileEntry.isDirectory()) {
-	            listFilesForFolder(fileEntry);
-	        } else {
-	            System.out.println(fileEntry.getName());
-	        }
-	    }
 	}
 }
