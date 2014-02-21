@@ -1,4 +1,4 @@
-package main;
+package CFG;
 
 import java.util.ArrayList;
 

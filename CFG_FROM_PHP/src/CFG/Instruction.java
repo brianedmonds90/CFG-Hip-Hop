@@ -1,4 +1,4 @@
-package main;
+package CFG;
 
 public class Instruction {
 	int type;

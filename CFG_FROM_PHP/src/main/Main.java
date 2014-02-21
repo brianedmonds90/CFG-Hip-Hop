@@ -10,6 +10,8 @@ public class Main {
 	public Main(){}
 	
 	public static void main(String [] args){
+		System.out.println("Files in test_files");
+		listFilesForFolder(new File("/Users/brianedmonds/Documents/orso_research/test_files"));
 		
 		File file = new File("/Users/brianedmonds/Documents/orso_research/test_files/foo.php.bc");
 		Scanner scan = null;
@@ -28,5 +30,15 @@ public class Main {
 				System.out.println(str);	
 			}
 		}
+	}
+	
+	public static void listFilesForFolder(final File folder) {
+	    for (final File fileEntry : folder.listFiles()) {
+	        if (fileEntry.isDirectory()) {
+	            listFilesForFolder(fileEntry);
+	        } else {
+	            System.out.println(fileEntry.getName());
+	        }
+	    }
 	}
 }
