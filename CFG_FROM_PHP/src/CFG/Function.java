@@ -30,5 +30,10 @@ public class Function {
 		this.name = name;
 	}
 	
-	
+	public String toString() {
+		String str = "Function: " + name + "\n";
+		for (int i=0; i<lines.size(); i++)
+			lines.toString();
+		return str;
+	}
 }

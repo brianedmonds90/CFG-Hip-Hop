@@ -14,4 +14,11 @@ public class Line {
 		this();
 		line_no = l;
 	}
+	
+	public String toString() {
+		String str = line_no + ": ";
+		for (int i=0; i<instructions.size(); i++)
+			str += instructions.get(i).toString();
+		return str;
+	}
 }

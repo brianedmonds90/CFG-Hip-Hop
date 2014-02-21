@@ -10,7 +10,6 @@ public class Main {
 	public Main(){}
 	
 	public static void main(String [] args){
-		System.out.println("Files in test_files");
 		ArrayList<File> codeFiles = new ArrayList<File>();
 		System.out.println("Please enter the path of the directory that you want to parse:");
 		Scanner scan = new Scanner(System.in);
@@ -21,6 +20,7 @@ public class Main {
 		//parse the given bytecode files from the directory
 		for(File f: codeFiles){
 			f_operator.parse_byte_code(f,false);
+
 		}
 	}
 }
