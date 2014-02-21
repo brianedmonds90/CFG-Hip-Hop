@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Line {
 	int line_no;
 	ArrayList<Instruction> instructions;
+	String code;
 	
 	public Line(){
 		instructions= new ArrayList<Instruction>();

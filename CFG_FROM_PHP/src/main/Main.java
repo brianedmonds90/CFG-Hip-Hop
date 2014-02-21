@@ -19,8 +19,16 @@ public class Main {
 		f_operator.listFilesForFolder(new File(path),codeFiles);
 		//parse the given bytecode files from the directory
 		for(File f: codeFiles){
-			f_operator.parse_byte_code(f,false);
-
+			String fileName = f.getName();
+			String extension = fileName.substring(fileName.length()-3);
+			//if the file is a php file
+			if(extension.equals("php")){
+				System.out.println("parsing php code...");
+				f_operator.parse_php_code(f);
+			}
+			else if(extension.equals(".bc")){
+				f_operator.parse_byte_code(f);
+			}
 		}
 	}
 }

@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import CFG.Function;
 /**
  * Class is used to parse given hip hop bytecode files
  * @author brianedmonds
@@ -25,34 +27,34 @@ public class File_operator {
 	/**
 	 * Parses and prints the lines of file
 	 * @param file
-	 * @param parse_php true if you want to parse all files, false if you 
-	 * only want to parse .bc files
 	 */
-	void parse_byte_code(File file, boolean parse_php){
+	ArrayList<Function> parse_byte_code(File file){
 		Scanner scan = null;
+		ArrayList<Function> ret= new ArrayList<Function>();
+		//try and create a scanner object from the file
 		try {
 			scan = new Scanner(file);
-			String fileName = file.getName();
-			System.out.println("Reading "+ fileName);
-			if(!parse_php){
-				String extentsion = fileName.substring(fileName.length()-2);
-				if(!extentsion.equals("bc")){
-					return;
-				}
-			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+		//while the file has another line in it
 		while(scan.hasNextLine()){
 			String str = scan.nextLine();
 			if(str.contains("//")){
 				System.out.println("Comments: "+str);
 			}
+			//If the line is a function in the bytecode
+//			else if(str.contains("Function")){
+//				Function function = new Function(str);
+//				//function.getLines(file, scan);
+//				//ret.add(fun);
+//				
+//			}
 			else{
 				System.out.println(str);	
 			}
 		}
+		return ret;
 	}
 	
 	/**
@@ -72,5 +74,35 @@ public class File_operator {
 	    }
 		return l;
 	}
+
+	public ArrayList<Function> parse_php_code(File file) {
+		Scanner scan = null;
+		ArrayList<Function> ret= new ArrayList<Function>();
+		//try and create a scanner object from the file
+		try {
+			scan = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		//while the file has another line in it
+		while(scan.hasNextLine()){
+			String str = scan.nextLine();
+			if(str.contains("//")){
+				System.out.println("Comments: "+str);
+			}
+			//If the line is a function in the bytecode
+//			else if(str.contains("Function")){
+//				Function function = new Function(str);
+//				//function.getLines(file, scan);
+//				//ret.add(fun);
+//				
+//			}
+			else{
+				System.out.println(str);	
+			}
+		}
+		return ret;
+	}
+	
 	
 }
