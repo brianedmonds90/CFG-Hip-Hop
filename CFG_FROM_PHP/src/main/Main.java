@@ -11,9 +11,9 @@ public class Main {
 	
 	public static void main(String [] args){
 		System.out.println("Files in test_files");
-		listFilesForFolder(new File("/Users/brianedmonds/Documents/orso_research/test_files"));
+		listFilesForFolder(new File("/Users/Monkey/Georgia Tech/Research/CFG-Hip-Hop/test_files"));
 		
-		File file = new File("/Users/brianedmonds/Documents/orso_research/test_files/foo.php.bc");
+		File file = new File("/Users/Monkey/Georgia Tech/Research/CFG-Hip-Hop/test_files/foo.php.bc");
 		Scanner scan = null;
 		try {
 			scan = new Scanner(file);
