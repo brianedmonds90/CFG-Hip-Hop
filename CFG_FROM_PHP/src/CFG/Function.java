@@ -5,8 +5,10 @@ import java.util.ArrayList;
 public class Function {
 	ArrayList<Line> lines; 
 	String name;
+	ArrayList<String> fpis;
 	public Function(){
 		lines = new ArrayList<Line>();
+		fpis = new ArrayList<String>();
 	}
 	
 	public Function(String n){
@@ -31,9 +33,21 @@ public class Function {
 	}
 	
 	public String toString() {
-		String str = "Function: " + name + "\n";
-		for (int i=0; i<lines.size(); i++)
-			lines.toString();
-		return str;
+		StringBuilder sb = new StringBuilder("Function: " + name +"\n");
+		for(String s: fpis){
+			sb.append("FPIS: "+s+"\n");
+		}
+		for (Line l: lines)
+			sb.append(l);
+		return sb.toString();
+	}
+
+	public void addLine(int str) {
+		lines.add(new Line(str));
+		
+	}
+
+	public void addFPI(String next) {
+		fpis.add(next);
 	}
 }

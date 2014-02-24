@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import CFG.Function;
+import CFG.Line;
 /**
  * Class is used to parse given hip hop bytecode files
  * @author brianedmonds
@@ -14,13 +15,17 @@ import CFG.Function;
 public class File_operator {
 	String path;
 	Scanner scan;
+
+	
 	public File_operator(String p){
 		path = p;
 		scan= new Scanner(path);
+		
+	
 	}
 	
 	public File_operator(){
-		
+	
 	}
 	
 	
@@ -31,6 +36,8 @@ public class File_operator {
 	ArrayList<Function> parse_byte_code(File file){
 		Scanner scan = null;
 		ArrayList<Function> ret= new ArrayList<Function>();
+		Function func = null;
+		StateMachine state_machine= new StateMachine();
 		//try and create a scanner object from the file
 		try {
 			scan = new Scanner(file);
@@ -40,23 +47,60 @@ public class File_operator {
 		//while the file has another line in it
 		while(scan.hasNextLine()){
 			String str = scan.nextLine();
-			if(str.contains("//")){
-				System.out.println("Comments: "+str);
+			//Determine what type of input the parsed string is
+			state_machine.handleInput(str);
+			int state = state_machine.getCurrentState();
+			//System.out.println(str + " "+state);		
+			if(state == state_machine.function){
+					func = new Function(str);
+					ret.add(func);	
 			}
-			//If the line is a function in the bytecode
-//			else if(str.contains("Function")){
-//				Function function = new Function(str);
-//				//function.getLines(file, scan);
-//				//ret.add(fun);
-//				
-//			}
-			else{
-				System.out.println(str);	
+			else if(state == state_machine.fpi){
+				func = ret.get(ret.size()-1);
+				func.addFPI(str);
+			}
+			else if(state == state_machine.line){
+					func = ret.get(ret.size()-1);
+					String number = str.substring(10);
+					func.addLine(Integer.parseInt(number));
+				
+			}
+			else if(state == state_machine.instruction){
+				//System.out.println("--"+str);
+				func = ret.get(ret.size()-1);
+				Line l = func.getLines().get(func.getLines().size()-1);
+				int firstChar = str.indexOf(":")+2; 
+//				System.out.println("firstChar: "+firstChar);
+				if(firstChar<str.length()){
+					//System.out.println("Instruction:"+str.substring(firstChar));
+					l.addInstruction(str.substring(firstChar));
+				}
 			}
 		}
+		for(Function f: ret){
+			System.out.println(f);
+		}
+		
 		return ret;
 	}
 	
+	/**
+	 * adds the fp informatio to a given function object
+	 * @param scan2
+	 * @param func
+	 */
+	private void getFPI(Scanner scan2, Function func) {
+		while(scan2.hasNext()){
+			String str = scan2.nextLine();
+			if(str.contains("FPI")){
+				func.addFPI(str);
+			}
+			else {
+				return;
+			}
+		}	
+	}
+
 	/**
 	 * Returns a list of files in a directory
 	 * @param folder: the folder to explore
@@ -72,6 +116,7 @@ public class File_operator {
 	            l.add(fileEntry);
 	        }
 	    }
+		
 		return l;
 	}
 
@@ -88,17 +133,46 @@ public class File_operator {
 		while(scan.hasNextLine()){
 			String str = scan.nextLine();
 			if(str.contains("//")){
-				System.out.println("Comments: "+str);
+			//	System.out.println("Comments: "+str);
 			}
-			//If the line is a function in the bytecode
-//			else if(str.contains("Function")){
-//				Function function = new Function(str);
-//				//function.getLines(file, scan);
-//				//ret.add(fun);
-//				
-//			}
+			//If the line is a function in the php
+			else if(str.contains("function")){
+				Function function = new Function(str);
+				ret.add(function);
+			//	System.out.println(function);
+				//function.getLines(file, scan);
+						
+			}
 			else{
-				System.out.println(str);	
+				//System.out.println(str);	
+			}
+		}
+		return ret;
+	}
+
+	public ArrayList<Function> getFunctions_php(File file) {
+		Scanner scan = null;
+		ArrayList<Function> ret= new ArrayList<Function>();
+		//try and create a scanner object from the file
+		try {
+			scan = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		//while the file has another line in it
+		while(scan.hasNextLine()){
+			String str = scan.nextLine();
+			if(str.contains("//")){
+			//	System.out.println("Comments: "+str);
+			}
+			//If the line is a function in the php
+			else if(str.contains("function")){
+				Function function = new Function(str);
+				ret.add(function);
+						
+			}
+			else{
+				//System.out.println(str);	
 			}
 		}
 		return ret;

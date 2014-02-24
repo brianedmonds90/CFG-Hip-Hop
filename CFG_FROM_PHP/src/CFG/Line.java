@@ -17,9 +17,15 @@ public class Line {
 	}
 	
 	public String toString() {
-		String str = line_no + ": ";
+		StringBuilder sb = new StringBuilder("line_no: "+line_no+"\n");
+		//String str = line_no + ": ";
 		for (int i=0; i<instructions.size(); i++)
-			str += instructions.get(i).toString();
-		return str;
+			sb.append(instructions.get(i));
+		return sb.toString();
+	}
+
+	public void addInstruction(String str) {
+		instructions.add(new Instruction(str));
+		
 	}
 }
