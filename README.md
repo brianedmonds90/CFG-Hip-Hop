@@ -1,4 +1,9 @@
-php_project
+PHP Analysis Project
 ===========
 
-PHP Analysis Project Fall 2014
+#Spring 2014 Members
+* Brian Edmonds
+* Crystal Lo
+
+# Details
+TBD
