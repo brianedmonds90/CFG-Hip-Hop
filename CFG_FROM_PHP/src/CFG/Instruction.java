@@ -1,12 +1,15 @@
 package CFG;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class Instruction {
 	public int type;
 	String [] args;
 	int line;
 	String instruction_text;
+	String instr_text;
+
 	/************************
 	 * TYPES OF INSTRUCTIONS
 	 *************************/
@@ -61,6 +64,21 @@ public class Instruction {
 		}
 		else{
 			type = unidentified;
+		}
+		
+		/* Parse the instruction */
+		boolean instr = true;
+		int numArgs = 0;
+		StringTokenizer st = new StringTokenizer(text, " ");
+		while (st.hasMoreTokens()) {
+			if (instr) {
+				instr_text = st.nextToken();
+				instr = false;
+			}
+			else {
+				args[numArgs] = st.nextToken();
+				numArgs++;
+			}
 		}
 	}
 	
