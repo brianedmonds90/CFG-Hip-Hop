@@ -69,16 +69,20 @@ public class File_operator {
 				
 			}
 			else if(state == state_machine.instruction){
+				//Get the most current function
 				func = functions.get(functions.size()-1);
 				Line l = func.getLines().get(func.getLines().size()-1);
+				//Remove spaces from front of instruction bytecode
+				while(str.length()>0&&str.charAt(0)==' '){
+					str= str.substring(1);
+				}
 				int firstChar = str.indexOf(":")+2; 
+				String bc_line_no; 
+				
 				if(firstChar<str.length()){
+					bc_line_no = str.substring(0,firstChar-2);
 					Instruction inst = l.addInstruction(str.substring(firstChar));
-					//If the current instruction being parsed is a control flow instruction
-					if(inst.type == inst.control_flow){
-						//add it to the cfg to be returned
-						//cfg_ret.addBasicBlock(inst);
-					}
+					inst.setBC_Line_No(bc_line_no);
 				}
 			}
 		}
@@ -110,19 +114,23 @@ public class File_operator {
 					leaders.add(inst);
 					b = new BasicBlock();
 					b.addInstruction(inst);
+					basicBlocks.add(b);
 					i++;
 				}
-				//If the current instruction being parsed is a control flow instruction
-				else if(inst.type == inst.control_flow){
-					leaders.add(inst);
-					basicBlocks.add(b);
-					b = new BasicBlock(inst);
+				
+				//If the current instruction being parsed is the target of a conditional goto
+				if(inst.type == inst.control_flow){
+					//Find the destination of the current branching instruction
+					int offset = Integer.parseInt(inst.getArgs()[0]);
+					int destination = Integer.parseInt(inst.getBCLineNO())+offset;
+					Instruction dest_instruction = getDestinationInstruction(destination,f);
+					leaders.add(dest_instruction);
 					followingConditional = true;
 				}
-				//No new basic block leader found
-				else{
-					b.addInstruction(inst);
-				}
+//				//No new basic block leader found
+//				else{
+//					b.addInstruction(inst);
+//				}
 //				//If the instruction is following a conditional branch instruction
 //				else if(followingConditional){
 //					leaders.add(inst);
@@ -132,14 +140,29 @@ public class File_operator {
 			}
 		}
 		
-		for(BasicBlock bb : basicBlocks){
-			System.out.println("basic block: "+bb);
+		for(Instruction in: leaders){
+			System.out.println("leader: "+in);
 		}
+		
+//		for(BasicBlock bb : basicBlocks){
+//			System.out.println("basic block: "+bb);
+//		}
 		return basicBlocks;
 	}
 	
 	
 	
+	private Instruction getDestinationInstruction(int destination,Function func) {
+		for(Line l : func.getLines()){
+			for(Instruction in: l.getInstructions()){
+				if(in.getBCLineNO().equals(destination+"")){
+					return in;
+				}
+			}
+		}
+		return null;
+	}
+
 	/**
 	 * adds the fp informatio to a given function object
 	 * @param scan2

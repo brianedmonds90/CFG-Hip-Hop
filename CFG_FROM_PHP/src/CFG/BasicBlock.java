@@ -14,12 +14,16 @@ public class BasicBlock {
 	}
 
 	public String toString(){
-		StringBuilder ret = new StringBuilder("head: "+instructions.remove(0));
-		for(Instruction i: instructions){
-			ret.append(i.toString()+ "\n");
-		}
+		if(instructions.size()>0){
+			StringBuilder ret = new StringBuilder("head: "+instructions.remove(0));
+		
+			for(Instruction i: instructions){
+				ret.append(i.toString()+ "\n");
+			}
 	
-		return ret.toString();
+			return ret.toString();
+		}
+		return "empty";
 	}
 	
 	public Instruction getLeader(){

@@ -9,7 +9,7 @@ public class Instruction {
 	int line;
 	String instruction_text;
 	String instr_text;
-
+	String bc_line_no;
 	/************************
 	 * TYPES OF INSTRUCTIONS
 	 *************************/
@@ -83,7 +83,7 @@ public class Instruction {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder("		"+instruction_text+ " " +type + " ");
+		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " +type + " ");
 		for (int i=0; i<args.length; i++){
 			if(args[i]!=null)
 				sb.append(args[i]+" ");
@@ -91,5 +91,19 @@ public class Instruction {
 			
 		sb.append("\n");
 		return sb.toString();
+	}
+
+	public void setBC_Line_No(String bc_line) {
+		bc_line_no = bc_line;
+	}
+
+	public String[] getArgs() {
+		
+		return args;
+	}
+
+	public String getBCLineNO() {
+		
+		return bc_line_no;
 	}
 }
