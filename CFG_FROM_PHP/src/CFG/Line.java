@@ -17,15 +17,24 @@ public class Line {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder("line_no: "+line_no+"\n");
+		StringBuilder sb = new StringBuilder("	line_no: "+line_no+"\n");
 		//String str = line_no + ": ";
 		for (int i=0; i<instructions.size(); i++)
 			sb.append(instructions.get(i));
 		return sb.toString();
 	}
 
-	public void addInstruction(String str) {
-		instructions.add(new Instruction(str));
+	public Instruction addInstruction(String str) {
+		Instruction ret = new Instruction(str);
+		instructions.add(ret);
+		return ret;
 		
 	}
+
+	public ArrayList<Instruction> getInstructions() {
+		// TODO Auto-generated method stub
+		return instructions;
+	}
+
+
 }

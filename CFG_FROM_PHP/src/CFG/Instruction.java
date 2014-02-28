@@ -3,7 +3,7 @@ package CFG;
 import java.util.ArrayList;
 
 public class Instruction {
-	int type;
+	public int type;
 	String [] args;
 	int line;
 	String instruction_text;
@@ -36,8 +36,8 @@ public class Instruction {
 		cfgInstructions.add("JmpNZ");
 		cfgInstructions.add("Switch");
 		cfgInstructions.add("SSwitch");
-		cfgInstructions.add("RetC");
-		cfgInstructions.add("RetV");
+		//cfgInstructions.add("RetC");
+		//cfgInstructions.add("RetV");
 		cfgInstructions.add("Unwind");
 		cfgInstructions.add("Throw");
 	}
@@ -65,7 +65,7 @@ public class Instruction {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder(instruction_text+ " " +type + " ");
+		StringBuilder sb = new StringBuilder("		"+instruction_text+ " " +type + " ");
 		for (int i=0; i<args.length; i++){
 			if(args[i]!=null)
 				sb.append(args[i]+" ");
