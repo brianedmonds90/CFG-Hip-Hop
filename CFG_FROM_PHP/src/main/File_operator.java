@@ -117,8 +117,7 @@ public class File_operator {
 					basicBlocks.add(b);
 					i++;
 				}
-				
-				//If the current instruction being parsed is the target of a conditional goto
+				//If the current instruction is a conditional jmp
 				if(inst.type == inst.control_flow){
 					//Find the destination of the current branching instruction
 					int offset = Integer.parseInt(inst.getArgs()[0]);
@@ -127,16 +126,15 @@ public class File_operator {
 					leaders.add(dest_instruction);
 					followingConditional = true;
 				}
-//				//No new basic block leader found
-//				else{
-//					b.addInstruction(inst);
-//				}
-//				//If the instruction is following a conditional branch instruction
-//				else if(followingConditional){
-//					leaders.add(inst);
-//					followingConditional = false;
-//				}
-				
+				//If the instruction is following a conditional branch instruction
+				else if(followingConditional){
+					leaders.add(inst);
+					followingConditional = false;
+				}
+				//No new basic block leader found
+				else{
+					b.addInstruction(inst);
+				}
 			}
 		}
 		
