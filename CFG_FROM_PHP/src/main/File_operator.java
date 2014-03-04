@@ -86,11 +86,15 @@ public class File_operator {
 				}
 			}
 		}
+		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
 		for(Function f: functions){
-			//System.out.println(f);
-			getBasicBlocks(f);
+			leaders.addAll(getLeaders(f));
 		}
-		 
+		System.out.println("leaders for file: "+file.getName()+"\n");
+		for(Instruction in: leaders){
+			System.out.println(in);
+		}
+		System.out.println("end of leaders--------------------------------");
 		return cfg_ret;
 	}
 	
@@ -105,31 +109,38 @@ public class File_operator {
 		int i;
 		boolean followingConditional;
 		BasicBlock b = null;
+		followingConditional = false;
 		for(Line l: f.getLines()){
 			i= 0 ;
-			followingConditional = false;
 			for(Instruction inst: l.getInstructions()){
-				//first program statement in the function
-				if(i == 0){
-					leaders.add(inst);
-					b = new BasicBlock();
-					b.addInstruction(inst);
-					basicBlocks.add(b);
-					i++;
-				}
-				//If the current instruction is a conditional jmp
-				if(inst.type == inst.control_flow){
-					//Find the destination of the current branching instruction
-					int offset = Integer.parseInt(inst.getArgs()[0]);
-					int destination = Integer.parseInt(inst.getBCLineNO())+offset;
-					Instruction dest_instruction = getDestinationInstruction(destination,f);
-					leaders.add(dest_instruction);
-					followingConditional = true;
-				}
-				//If the instruction is following a conditional branch instruction
-				else if(followingConditional){
-					leaders.add(inst);
-					followingConditional = false;
+					//first program statement in the function
+					if(i == 0){
+						//Check if the current instruction is already in the leaders list
+						if(!leaders.contains(inst)){
+							leaders.add(inst);
+							b = new BasicBlock();
+							b.addInstruction(inst);
+							basicBlocks.add(b);
+						}
+						i++;
+					}
+					//If the current instruction is a conditional jmp
+					if(inst.type == inst.control_flow){
+						//Find the destination of the current branching instruction
+						int offset = Integer.parseInt(inst.getArgs()[0]);
+						int destination = Integer.parseInt(inst.getBCLineNO())+offset;
+						Instruction dest_instruction = getDestinationInstruction(destination,f);
+						//Check if the leader to be added is already contained in the leaders list
+						if(!leaders.contains(dest_instruction))
+							leaders.add(dest_instruction);
+						followingConditional = true;
+					}
+					//If the instruction is following a conditional branch instruction
+					else if(followingConditional){
+						//Check if the leader to be added is already contained in the leaders list
+						if(!leaders.contains(inst))
+							leaders.add(inst);
+						followingConditional = false;
 				}
 				//No new basic block leader found
 				else{
@@ -137,15 +148,57 @@ public class File_operator {
 				}
 			}
 		}
-		
+		System.out.println("Leaders found and they are: \n");
 		for(Instruction in: leaders){
-			System.out.println("leader: "+in);
+			System.out.println(in);
 		}
+		System.out.println("END of leaders\n-------------------------------------------------");
 		
-//		for(BasicBlock bb : basicBlocks){
-//			System.out.println("basic block: "+bb);
-//		}
 		return basicBlocks;
+	}
+	
+	/**
+	 * Takes in a function f and returns the leaders of the function
+	 * @param function
+	 */
+	ArrayList<Instruction> getLeaders(Function f){
+		//List of leaders of the program 
+		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
+		int i;
+		boolean followingConditional;
+		followingConditional = false;
+		for(Line l: f.getLines()){
+			i= 0 ;
+			for(Instruction inst: l.getInstructions()){
+					//first program statement in the function
+					if(i == 0){
+						//Check if the current instruction is already in the leaders list
+						if(!leaders.contains(inst)){
+							leaders.add(inst);
+						}
+						i++;
+					}
+					//If the current instruction is a conditional jmp
+					if(inst.type == inst.control_flow){
+						//Find the destination of the current branching instruction
+						int offset = Integer.parseInt(inst.getArgs()[0]);
+						int destination = Integer.parseInt(inst.getBCLineNO())+offset;
+						Instruction dest_instruction = getDestinationInstruction(destination,f);
+						//Check if the leader to be added is already contained in the leaders list
+						if(!leaders.contains(dest_instruction))
+							leaders.add(dest_instruction);
+						followingConditional = true;
+					}
+					//If the instruction is following a conditional branch instruction
+					else if(followingConditional){
+						//Check if the leader to be added is already contained in the leaders list
+						if(!leaders.contains(inst))
+							leaders.add(inst);
+						followingConditional = false;
+				}
+			}
+		}
+		return leaders;
 	}
 	
 	
@@ -162,7 +215,7 @@ public class File_operator {
 	}
 
 	/**
-	 * adds the fp informatio to a given function object
+	 * adds the fp information to a given function object
 	 * @param scan2
 	 * @param func
 	 */

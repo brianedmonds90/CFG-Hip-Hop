@@ -83,7 +83,7 @@ public class Instruction {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " +type + " ");
+		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " );
 		for (int i=0; i<args.length; i++){
 			if(args[i]!=null)
 				sb.append(args[i]+" ");
@@ -105,5 +105,16 @@ public class Instruction {
 	public String getBCLineNO() {
 		
 		return bc_line_no;
+	}
+	
+	@Override
+	public boolean equals(Object other){
+		if (other == null) return false;
+		if (other == this) return true;
+		if (!(other instanceof Instruction))return false;
+		Instruction e = (Instruction) other;
+		if(e.getBCLineNO().equals(this.getBCLineNO())) return true;
+		return false;
+	
 	}
 }

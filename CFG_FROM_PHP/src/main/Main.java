@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import CFG.CFG;
+import CFG.Instruction;
 
 public class Main {
 	
@@ -28,7 +29,6 @@ public class Main {
 				System.out.println("parsing bytecode code... "+f.getName());
 				f_operator.parse_byte_code(f);
 			}
-		}
-		
+		}		
 	}
 }

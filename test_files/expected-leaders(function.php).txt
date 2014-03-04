@@ -1,0 +1,27 @@
+		0: FPushFuncD 2 "foo" 
+
+		31: FPushFuncD 2 "foo" 
+
+		72: Int 6 
+
+		84: Int 1 
+
+		96: Int 5 
+
+		195: Null 
+
+		113: Int 1 
+
+		128: Int 2 
+
+		143: String "The number is: " 
+
+		159: CGetL 1 
+
+		174: Int 1 
+
+		166: CGetL 3 
+
+		186: IncDecL 0 PreInc 
+
+		190: Jmp -94 
