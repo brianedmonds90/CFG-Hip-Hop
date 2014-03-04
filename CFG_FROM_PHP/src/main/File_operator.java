@@ -87,73 +87,61 @@ public class File_operator {
 			}
 		}
 		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
+		ArrayList<Instruction> allInstructions = new ArrayList<Instruction>();
 		for(Function f: functions){
 			leaders.addAll(getLeaders(f));
+			for(Line l: f.getLines())
+				allInstructions.addAll(l.getInstructions());
 		}
+		
 		System.out.println("leaders for file: "+file.getName()+"\n");
+		
+		
+		
 		for(Instruction in: leaders){
 			System.out.println(in);
 		}
+		
 		System.out.println("end of leaders--------------------------------");
+		ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
+		System.out.println("basic Blocks for file: "+file.getName()+"\n");
+		for(BasicBlock b: basicBlocks){
+			System.out.println(b);
+		}
+		System.out.println("end of basic blocks-----------------------------");
 		return cfg_ret;
 	}
 	
 	/**
-	 * Takes in a function f and returns the basic blocks of the function
-	 * @param file
-	 */
-	ArrayList<BasicBlock> getBasicBlocks(Function f){
+	* Takes in a function f and returns the basic blocks of the function
+	* @param file
+	*/
+	ArrayList<BasicBlock> getBasicBlocks(ArrayList<Instruction> instructions,ArrayList<Instruction> leaders){
 		ArrayList<BasicBlock> basicBlocks= new ArrayList<BasicBlock>();
 		//List of leaders of the program 
-		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
-		int i;
-		boolean followingConditional;
-		BasicBlock b = null;
-		followingConditional = false;
-		for(Line l: f.getLines()){
-			i= 0 ;
-			for(Instruction inst: l.getInstructions()){
-					//first program statement in the function
-					if(i == 0){
-						//Check if the current instruction is already in the leaders list
-						if(!leaders.contains(inst)){
-							leaders.add(inst);
-							b = new BasicBlock();
-							b.addInstruction(inst);
-							basicBlocks.add(b);
-						}
-						i++;
-					}
-					//If the current instruction is a conditional jmp
-					if(inst.type == inst.control_flow){
-						//Find the destination of the current branching instruction
-						int offset = Integer.parseInt(inst.getArgs()[0]);
-						int destination = Integer.parseInt(inst.getBCLineNO())+offset;
-						Instruction dest_instruction = getDestinationInstruction(destination,f);
-						//Check if the leader to be added is already contained in the leaders list
-						if(!leaders.contains(dest_instruction))
-							leaders.add(dest_instruction);
-						followingConditional = true;
-					}
-					//If the instruction is following a conditional branch instruction
-					else if(followingConditional){
-						//Check if the leader to be added is already contained in the leaders list
-						if(!leaders.contains(inst))
-							leaders.add(inst);
-						followingConditional = false;
-				}
-				//No new basic block leader found
-				else{
-					b.addInstruction(inst);
-				}
+		int i = 1;
+		BasicBlock b = new BasicBlock();
+		Instruction currentLeader = null;
+		for(Instruction inst: instructions){
+			
+			if(i<leaders.size()){
+				currentLeader = leaders.get(i);
+			}
+			
+			//if the current instruction is a leader
+			if(currentLeader.equals(inst)){
+					basicBlocks.add(b);
+					b= new BasicBlock(inst);
+					i++;
+			}
+
+			
+			//add the current instruction to the current basic block
+			else{
+				b.addInstruction(inst);
 			}
 		}
-		System.out.println("Leaders found and they are: \n");
-		for(Instruction in: leaders){
-			System.out.println(in);
-		}
-		System.out.println("END of leaders\n-------------------------------------------------");
-		
+		basicBlocks.add(b);
 		return basicBlocks;
 	}
 	
