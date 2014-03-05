@@ -40,10 +40,11 @@ public class File_operator {
 	 * Parses and prints the lines of file
 	 * @param file
 	 */
-	CFG parse_byte_code(File file){
+	ArrayList<CFG> parse_byte_code(File file){
 		Scanner scan = null;
 		ArrayList<Function> functions= new ArrayList<Function>();
 		CFG cfg_ret = new CFG();
+		ArrayList<CFG> ret = new ArrayList<CFG>();
 		Function func = null;
 		StateMachine state_machine= new StateMachine();
 		//try and create a scanner object from the file
@@ -95,10 +96,10 @@ public class File_operator {
 		for(Function f: functions){
 			//Gets the leaders for each function
 			leaders=getLeaders(f);
-			//sorts the leaders in order of line number
 			if(leaders==null||leaders.size()==0){
 				break;
 			}
+			//sorts the leaders in order of line number
 			Collections.sort(leaders, new Comparator<Instruction> () {
 				@Override
 				public int compare(Instruction a, Instruction b) {
@@ -112,6 +113,7 @@ public class File_operator {
 				System.out.println(in);
 			}
 			System.out.println("end of leaders--------------------------------");
+			
 			for(Line l: f.getLines()){
 				allInstructions.addAll(l.getInstructions());
 			}
@@ -122,10 +124,10 @@ public class File_operator {
 				System.out.println(b);
 			}
 			System.out.println("end of basic blocks-----------------------------");
-			
-			//construct cfg//
 			System.out.println("Constructing CFG for file: "+f.getName()+"\n");
-			cfg_ret = getCFG(basicBlocks);
+			//construct cfg and add it to the return list
+			cfg_ret =getCFG(basicBlocks);
+			ret.add(cfg_ret);
 			ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
 			System.out.println("Printing edges");
 			for(Edge e : cfg_edges)
@@ -133,7 +135,7 @@ public class File_operator {
 		}
 		
 		
-		return cfg_ret;
+		return ret;
 	}
 	
 	/**
@@ -240,7 +242,7 @@ public class File_operator {
 						continue;
 					else
 						bj_first_instr = bj.getInstructions().get(0);
-					System.out.println("Destination: "+last_instr.getDestination()+j+": "+bj_first_instr);
+					//System.out.println("Destination: "+last_instr.getDestination()+j+": "+bj_first_instr);
 					if(last_instr.getDestination().equals(bj_first_instr)) {
 						cfg.addEdge(bi, bj, null);
 						continue;
