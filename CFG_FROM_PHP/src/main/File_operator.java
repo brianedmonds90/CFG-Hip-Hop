@@ -215,7 +215,7 @@ public class File_operator {
 	
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
-		for(int i=1; i<cfg.getNodes().size()-1; i++) {
+		for(int i=0; i<cfg.getNodes().size(); i++) {
 			BasicBlock bi = cfg.getNodes().get(i);
 			Instruction last_instr;
 			if(bi.getInstructions().size()==1)
@@ -224,10 +224,10 @@ public class File_operator {
 				last_instr = bi.getInstructions().get(bi.getInstructions().size()-1);
 			else
 				continue;
-			for(int j=1; j<cfg.getNodes().size()-1; j++) {
+			for(int j=0; j<cfg.getNodes().size(); j++) {
 				if(i==j)
 					j++;
-				if(j>=cfg.getNodes().size()-1)
+				if(j>=cfg.getNodes().size())
 					continue;
 				BasicBlock bj = cfg.getNodes().get(j);
 				
