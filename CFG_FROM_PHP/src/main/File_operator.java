@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import CFG.BasicBlock;
 import CFG.CFG;
+import CFG.Edge;
 import CFG.Function;
 import CFG.Instruction;
 import CFG.Line;
@@ -123,6 +124,13 @@ public class File_operator {
 			System.out.println(b);
 		}
 		System.out.println("end of basic blocks-----------------------------");
+		
+		/*construct cfg*/
+		System.out.println("Constructing CFG for file: "+file.getName()+"\n");
+		cfg_ret = getCFG(basicBlocks);
+		ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
+		for(Edge e : cfg_edges)
+			System.out.println(e);
 		return cfg_ret;
 	}
 	
@@ -146,6 +154,7 @@ public class File_operator {
 			if(currentLeader.equals(inst)){
 					basicBlocks.add(b);
 					b= new BasicBlock(inst);
+					b.setBlockNo(i);
 					i++;
 			}
 
@@ -186,6 +195,7 @@ public class File_operator {
 						int offset = Integer.parseInt(inst.getArgs()[0]);
 						int destination = Integer.parseInt(inst.getBCLineNO())+offset;
 						Instruction dest_instruction = getDestinationInstruction(destination,f);
+						inst.setDestination(dest_instruction);
 						//Check if the leader to be added is already contained in the leaders list
 						if(!leaders.contains(dest_instruction))
 							leaders.add(dest_instruction);
@@ -203,7 +213,44 @@ public class File_operator {
 		return leaders;
 	}
 	
-	
+	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
+		CFG cfg = new CFG(basicBlocks);
+		for(int i=1; i<cfg.getNodes().size()-1; i++) {
+			BasicBlock bi = cfg.getNodes().get(i);
+			Instruction last_instr;
+			if(bi.getInstructions().size()==1)
+				last_instr = bi.getInstructions().get(0);
+			else if(bi.getInstructions().size()>1)
+				last_instr = bi.getInstructions().get(bi.getInstructions().size()-1);
+			else
+				continue;
+			for(int j=1; j<cfg.getNodes().size()-1; j++) {
+				if(i==j)
+					j++;
+				if(j>=cfg.getNodes().size()-1)
+					continue;
+				BasicBlock bj = cfg.getNodes().get(j);
+				
+				// Check if Bi goto statement goes to Bj
+				if(last_instr.getDestination()!=null) {
+					Instruction bj_first_instr;
+					if(bj.getInstructions().size()<=0)
+						continue;
+					else
+						bj_first_instr = bj.getInstructions().get(0);
+					System.out.println("Destination: "+last_instr.getDestination()+j+": "+bj_first_instr);
+					if(last_instr.getDestination().equals(bj_first_instr)) {
+						cfg.addEdge(bi, bj, null);
+						continue;
+					}
+				}
+				// Check if Bj follows Bi and Bi does not have an unconditional goto statement
+				if(i+1==j && !last_instr.getUnconditional())
+					cfg.addEdge(bi, bj, null);
+			}
+		}
+		return cfg;
+	}
 	
 	private Instruction getDestinationInstruction(int destination,Function func) {
 		for(Line l : func.getLines()){

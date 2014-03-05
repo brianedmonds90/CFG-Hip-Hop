@@ -10,6 +10,8 @@ public class Instruction{
 	String instruction_text;
 	String instr_text;
 	String bc_line_no;
+	private Instruction destination;
+	private boolean unconditional;
 	/************************
 	 * TYPES OF INSTRUCTIONS
 	 *************************/
@@ -43,6 +45,8 @@ public class Instruction{
 		//cfgInstructions.add("RetV");
 		cfgInstructions.add("Unwind");
 		cfgInstructions.add("Throw");
+		destination = null;
+		unconditional = false;
 	}
 	
 	public Instruction(int t){
@@ -80,6 +84,9 @@ public class Instruction{
 				numArgs++;
 			}
 		}
+		
+		if(instruction_text.equals("Jmp") || instruction_text.equals("JmpNS"))
+			unconditional = true;
 	}
 	
 	public String toString() {
@@ -125,6 +132,18 @@ public class Instruction{
 		int bb = Integer.parseInt(b.getBCLineNO());
 		if(a<bb) return -1;
 		return 1;
+	}
+	
+	public void setDestination(Instruction destination) {
+		this.destination = destination;
+	}
+
+	public Instruction getDestination() {
+		return destination;
+	}
+
+	public boolean getUnconditional() {
+		return unconditional;
 	}
 
 
