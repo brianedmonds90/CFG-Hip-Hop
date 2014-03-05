@@ -3,6 +3,9 @@ package main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 import CFG.BasicBlock;
@@ -94,15 +97,26 @@ public class File_operator {
 				allInstructions.addAll(l.getInstructions());
 		}
 		
+		
+		Collections.sort(leaders, new Comparator<Instruction> () {
+
+
+			@Override
+			public int compare(Instruction a, Instruction b) {
+				
+				return a.compareTo(b);
+			}
+		});
+		
 		System.out.println("leaders for file: "+file.getName()+"\n");
-		
-		
-		
 		for(Instruction in: leaders){
 			System.out.println(in);
 		}
 		
 		System.out.println("end of leaders--------------------------------");
+		
+
+		
 		ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
 		System.out.println("basic Blocks for file: "+file.getName()+"\n");
 		for(BasicBlock b: basicBlocks){
@@ -144,7 +158,7 @@ public class File_operator {
 		basicBlocks.add(b);
 		return basicBlocks;
 	}
-	
+		
 	/**
 	 * Takes in a function f and returns the leaders of the function
 	 * @param function

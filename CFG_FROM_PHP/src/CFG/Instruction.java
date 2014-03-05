@@ -3,7 +3,7 @@ package CFG;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class Instruction {
+public class Instruction{
 	public int type;
 	String [] args;
 	int line;
@@ -117,4 +117,15 @@ public class Instruction {
 		return false;
 	
 	}
+	
+	public int compareTo(Instruction b) {
+		if(this.equals(b))
+			return 0;
+		int a = Integer.parseInt(getBCLineNO());
+		int bb = Integer.parseInt(b.getBCLineNO());
+		if(a<bb) return -1;
+		return 1;
+	}
+
+
 }
