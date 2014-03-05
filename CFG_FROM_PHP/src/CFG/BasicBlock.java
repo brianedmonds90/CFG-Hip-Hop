@@ -17,7 +17,7 @@ public class BasicBlock {
 
 	public String toString(){
 		if(instructions.size()>0){
-			StringBuilder ret = new StringBuilder("B"+block_no+"  head: "+instructions.remove(0));
+			StringBuilder ret = new StringBuilder("B"+block_no+"  head: ");
 		
 			for(Instruction i: instructions){
 				ret.append(i.toString()+ "\n");
