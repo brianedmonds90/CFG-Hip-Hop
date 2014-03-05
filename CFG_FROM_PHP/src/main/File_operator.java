@@ -93,44 +93,46 @@ public class File_operator {
 		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
 		ArrayList<Instruction> allInstructions = new ArrayList<Instruction>();
 		for(Function f: functions){
-			leaders.addAll(getLeaders(f));
-			for(Line l: f.getLines())
-				allInstructions.addAll(l.getInstructions());
-		}
-		
-		
-		Collections.sort(leaders, new Comparator<Instruction> () {
-
-
-			@Override
-			public int compare(Instruction a, Instruction b) {
-				
-				return a.compareTo(b);
+			//Gets the leaders for each function
+			leaders=getLeaders(f);
+			//sorts the leaders in order of line number
+			if(leaders==null||leaders.size()==0){
+				break;
 			}
-		});
-		
-		System.out.println("leaders for file: "+file.getName()+"\n");
-		for(Instruction in: leaders){
-			System.out.println(in);
+			Collections.sort(leaders, new Comparator<Instruction> () {
+				@Override
+				public int compare(Instruction a, Instruction b) {
+					
+					return a.compareTo(b);
+				}
+			});
+			//Print the leaders of the current function
+			System.out.println("leaders for function: "+f.getName()+"\n");
+			for(Instruction in: leaders){
+				System.out.println(in);
+			}
+			System.out.println("end of leaders--------------------------------");
+			for(Line l: f.getLines()){
+				allInstructions.addAll(l.getInstructions());
+			}
+			//Get the basic blocks for the current function
+			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
+			System.out.println("basic Blocks for file: "+f.getName()+"\n");
+			for(BasicBlock b: basicBlocks){
+				System.out.println(b);
+			}
+			System.out.println("end of basic blocks-----------------------------");
+			
+			//construct cfg//
+			System.out.println("Constructing CFG for file: "+f.getName()+"\n");
+			cfg_ret = getCFG(basicBlocks);
+			ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
+			System.out.println("Printing edges");
+			for(Edge e : cfg_edges)
+				System.out.println(e);
 		}
 		
-		System.out.println("end of leaders--------------------------------");
 		
-
-		
-		ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
-		System.out.println("basic Blocks for file: "+file.getName()+"\n");
-		for(BasicBlock b: basicBlocks){
-			System.out.println(b);
-		}
-		System.out.println("end of basic blocks-----------------------------");
-		
-		/*construct cfg*/
-		System.out.println("Constructing CFG for file: "+file.getName()+"\n");
-		cfg_ret = getCFG(basicBlocks);
-		ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
-		for(Edge e : cfg_edges)
-			System.out.println(e);
 		return cfg_ret;
 	}
 	
