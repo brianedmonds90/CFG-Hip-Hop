@@ -2,7 +2,7 @@ package CFG;
 
 public class Edge {
 	BasicBlock u,v;
-	String label;
+	public String label;
 	
 	public Edge(BasicBlock a,BasicBlock b, String label){
 		u=a;
@@ -12,6 +12,8 @@ public class Edge {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder("Edge: "+u.getBlockNo()+" --> "+v.getBlockNo());
+		if(label!=null)
+			sb.append(" "+label);
 		return sb.toString();
 	}
 }

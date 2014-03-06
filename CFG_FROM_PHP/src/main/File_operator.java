@@ -244,13 +244,18 @@ public class File_operator {
 						bj_first_instr = bj.getInstructions().get(0);
 					//System.out.println("Destination: "+last_instr.getDestination()+j+": "+bj_first_instr);
 					if(last_instr.getDestination().equals(bj_first_instr)) {
-						cfg.addEdge(bi, bj, null);
-						continue;
+						if(!last_instr.getUnconditional())
+							cfg.addEdge(bi, bj, "True");
+						else
+							cfg.addEdge(bi, bj, null);
 					}
 				}
 				// Check if Bj follows Bi and Bi does not have an unconditional goto statement
 				if(i+1==j && !last_instr.getUnconditional())
-					cfg.addEdge(bi, bj, null);
+					if(last_instr.type==last_instr.control_flow)
+						cfg.addEdge(bi, bj, "False");
+					else
+						cfg.addEdge(bi, bj, null);
 			}
 		}
 		return cfg;
