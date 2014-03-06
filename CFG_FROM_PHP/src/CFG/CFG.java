@@ -35,7 +35,7 @@ public class CFG {
 	}
 	
 	public void addEdge(BasicBlock bi, BasicBlock bj, String label) {
-		edges.add(new Edge(bi, bj, null));
+		edges.add(new Edge(bi, bj, label));
 	}
 
 	public String toString(){
