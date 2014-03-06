@@ -127,6 +127,9 @@ public class File_operator {
 			System.out.println("Constructing CFG for file: "+f.getName()+"\n");
 			//construct cfg and add it to the return list
 			cfg_ret =getCFG(basicBlocks);
+			//Sets the entry node to be the first node in the nodes list
+			cfg_ret.setEntryNode();
+			cfg_ret.setExitNode();
 			ret.add(cfg_ret);
 			ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
 			System.out.println("Printing edges");

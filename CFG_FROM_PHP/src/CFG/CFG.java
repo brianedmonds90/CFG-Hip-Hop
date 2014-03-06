@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class CFG {
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
 	ArrayList<Edge> edges;
+	BasicBlock entry,exit;
 	
 	public CFG(){
 		nodes = new ArrayList<BasicBlock>();
@@ -46,5 +47,13 @@ public class CFG {
 			sb.append(e+"\n");
 		}
 		return sb.toString();
-	}	
+	}
+	
+	public void setEntryNode(){
+		entry = nodes.get(0);
+	}
+	
+	public void setExitNode(){
+		exit = nodes.get(nodes.size()-1);
+	}
 }
