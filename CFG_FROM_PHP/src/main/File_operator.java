@@ -117,6 +117,10 @@ public class File_operator {
 			for(Line l: f.getLines()){
 				allInstructions.addAll(l.getInstructions());
 			}
+			//Get the number of parameters of the function
+			int numParams = f.calcNumParams();
+			f.setNumParams(numParams);
+			//System.out.println(f.toString());
 			//Get the basic blocks for the current function
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
 			System.out.println("basic Blocks for file: "+f.getName()+"\n");
@@ -129,15 +133,19 @@ public class File_operator {
 			cfg_ret =getCFG(basicBlocks);
 			//Sets the entry node to be the first node in the nodes list
 			cfg_ret.setEntryNode();
-			cfg_ret.setExitNode();
+			cfg_ret.setExitNodes();
 			ret.add(cfg_ret);
 			ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
 			System.out.println("Printing edges");
 			for(Edge e : cfg_edges)
 				System.out.println(e);
+			ArrayList<BasicBlock> exitNodes = cfg_ret.getExitNodes();
+			System.out.println("exit nodes: ");
+			for(BasicBlock b: exitNodes){
+				System.out.println(b.getBlockNo());
+			}
+			//System.out.println("exit nodes: "+cfg_ret.getExitNodes());
 		}
-		
-		
 		return ret;
 	}
 	
@@ -208,6 +216,11 @@ public class File_operator {
 							leaders.add(dest_instruction);
 						followingConditional = true;
 					}
+					
+					else if(inst.type == inst.get){
+						//check for the number of variables
+						
+					}
 					//If the instruction is following a conditional branch instruction
 					else if(followingConditional){
 						//Check if the leader to be added is already contained in the leaders list
@@ -255,7 +268,7 @@ public class File_operator {
 				}
 				// Check if Bj follows Bi and Bi does not have an unconditional goto statement
 				if(i+1==j && !last_instr.getUnconditional())
-					if(last_instr.type==last_instr.control_flow)
+					if(last_instr.type == last_instr.control_flow)
 						cfg.addEdge(bi, bj, "False");
 					else
 						cfg.addEdge(bi, bj, null);
@@ -307,7 +320,6 @@ public class File_operator {
 	            l.add(fileEntry);
 	        }
 	    }
-		
 		return l;
 	}
 

@@ -3,15 +3,13 @@ package CFG;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import main.Main;
+
+
+
+
 public class Instruction{
-	public int type;
-	String [] args;
-	int line;
-	String instruction_text;
-	String instr_text;
-	String bc_line_no;
-	private Instruction destination;
-	private boolean unconditional;
+	
 	/************************
 	 * TYPES OF INSTRUCTIONS
 	 *************************/
@@ -30,21 +28,19 @@ public class Instruction{
 	public final int  include_eval_define = 11;
 	public final int  miscellaneous = 12;
 	public final int  continuation_creation_execution = 13;
-	ArrayList<String> cfgInstructions;
+	public final int set = 14;
+	public int type;
+	String [] args;
+	int line;
+	String instruction_text;
+	String instr_text;
+	String bc_line_no;
+	private Instruction destination;
+	private boolean unconditional;
 	
 	public Instruction(){
 		args= new String [10];
-		cfgInstructions = new ArrayList<String>();
-		cfgInstructions.add("Jmp");
-		cfgInstructions.add("JmpNS");
-		cfgInstructions.add("JmpZ");
-		cfgInstructions.add("JmpNZ");
-		cfgInstructions.add("Switch");
-		cfgInstructions.add("SSwitch");
-		//cfgInstructions.add("RetC");
-		//cfgInstructions.add("RetV");
-		cfgInstructions.add("Unwind");
-		cfgInstructions.add("Throw");
+
 		destination = null;
 		unconditional = false;
 	}
@@ -63,9 +59,18 @@ public class Instruction{
 			instruction_text = instruction_text.substring(0,index);
 		}
 		
-		if(cfgInstructions.contains(instruction_text)){
+		if(Main.cfgInstructions.contains(instruction_text)){
 			type = control_flow;
 		}
+		else if(Main.getInstructions.contains(instruction_text)){
+			type = get;
+		}
+		else if(Main.setL.contains(instruction_text)){
+			//Mutator instructions
+			type = set;
+		
+		}
+		
 		else{
 			type = unidentified;
 		}

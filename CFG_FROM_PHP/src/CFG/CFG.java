@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class CFG {
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
 	ArrayList<Edge> edges;
-	BasicBlock entry,exit;
+	BasicBlock entry;
+	private ArrayList<BasicBlock> exitNodes;
 	
 	public CFG(){
 		nodes = new ArrayList<BasicBlock>();
 		edges = new ArrayList<Edge>();
+		exitNodes = new ArrayList<BasicBlock>();
 	}
 	public CFG(ArrayList<BasicBlock> blocks) {
 		this();
@@ -53,7 +55,25 @@ public class CFG {
 		entry = nodes.get(0);
 	}
 	
-	public void setExitNode(){
-		exit = nodes.get(nodes.size()-1);
+	public void setExitNodes(){
+		BasicBlock a,b;
+		for(int i =0;i<nodes.size();i++){
+			a = nodes.get(i);
+			for(int j = 0;j<edges.size();j++){
+				b = edges.get(j).u;
+				if(a.getBlockNo()==b.getBlockNo()){
+					continue;
+				}
+				else if(j == edges.size()-1){
+					exitNodes.add(a);
+				}
+			}
+		}
+	}
+	public ArrayList<BasicBlock> getExitNodes() {
+		return exitNodes;
+	}
+	public void setExitNodes(ArrayList<BasicBlock> exitNodes) {
+		this.exitNodes = exitNodes;
 	}
 }

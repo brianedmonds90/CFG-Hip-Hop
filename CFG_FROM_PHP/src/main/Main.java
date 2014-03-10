@@ -14,6 +14,7 @@ public class Main {
 	public static void main(String [] args){
 		
 		ArrayList<File> byteCodeFiles = new ArrayList<File>();
+		init();
 		System.out.println("Please enter the path of the directory that you want to parse:");
 		Scanner scan = new Scanner(System.in);
 		String path = scan.nextLine();
@@ -30,5 +31,42 @@ public class Main {
 				f_operator.parse_byte_code(f);
 			}
 		}		
+	}
+	
+
+	
+	public static ArrayList<String> cfgInstructions;
+	public static ArrayList<String> getInstructions;
+	public static String setL = "SetL";
+	
+	public static void init(){
+		
+		getInstructions = new ArrayList<String>();
+		cfgInstructions = new ArrayList<String>();
+		
+		//Add the CFG instructions
+		cfgInstructions.add("Jmp");
+		cfgInstructions.add("JmpNS");
+		cfgInstructions.add("JmpZ");
+		cfgInstructions.add("JmpNZ");
+		cfgInstructions.add("Switch");
+		cfgInstructions.add("SSwitch");
+		cfgInstructions.add("Unwind");
+		cfgInstructions.add("Throw");
+		
+		//Add the getInstructions
+		getInstructions.add("CGetL");
+		getInstructions.add("CGetL2");
+		getInstructions.add("CGetL3");
+		getInstructions.add("PushL");
+		getInstructions.add("CGetN");
+		getInstructions.add("CGetG");
+		getInstructions.add("CGetS");
+		getInstructions.add("VGetL");
+		getInstructions.add("VGetN");
+		getInstructions.add("VGetG");
+		getInstructions.add("VGetS");
+		getInstructions.add("AGetC");
+		getInstructions.add("AGetL");
 	}
 }
