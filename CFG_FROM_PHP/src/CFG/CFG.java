@@ -3,6 +3,7 @@ package CFG;
 import java.util.ArrayList;
 
 public class CFG {
+	private String name; // Function name
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
 	ArrayList<Edge> edges;
 	BasicBlock entry;
@@ -12,11 +13,18 @@ public class CFG {
 		nodes = new ArrayList<BasicBlock>();
 		edges = new ArrayList<Edge>();
 		exitNodes = new ArrayList<BasicBlock>();
+		name = null;
 	}
+	
 	public CFG(ArrayList<BasicBlock> blocks) {
 		this();
 		nodes = blocks;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	/*
 	 * Returns the basic block that was just created
 	 * adds it to this CFG
@@ -62,7 +70,7 @@ public class CFG {
 			for(int j = 0;j<edges.size();j++){
 				b = edges.get(j).u;
 				if(a.getBlockNo()==b.getBlockNo()){
-					continue;
+					break;
 				}
 				else if(j == edges.size()-1){
 					exitNodes.add(a);
@@ -70,6 +78,7 @@ public class CFG {
 			}
 		}
 	}
+	
 	public ArrayList<BasicBlock> getExitNodes() {
 		return exitNodes;
 	}
