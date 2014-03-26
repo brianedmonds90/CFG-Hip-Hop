@@ -16,4 +16,9 @@ public class Edge {
 			sb.append(" "+label);
 		return sb.toString();
 	}
+	
+	public String toDot(){
+		String ret = u.getBlockNo()+" -> "+v.getBlockNo();
+		return ret;
+	}
 }

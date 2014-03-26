@@ -1,11 +1,13 @@
 package main;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import CFG.CFG;
-import CFG.Instruction;
 
 public class Main {
 	
@@ -22,13 +24,34 @@ public class Main {
 		//Get all the files from a directory specified by the user
 		f_operator.listFilesForFolder(new File(path),byteCodeFiles);
 		//parse the given bytecode files from the directory
+		PrintWriter writer;
+		ArrayList<CFG> cfgs = new ArrayList<CFG>();
+		String filePath ="/Users/brianedmonds/Documents/orso_research/test_files/";
+		String graphName = "testName";
 		for(File f: byteCodeFiles){
 			String fileName = f.getName();
 			String extension = fileName.substring(fileName.length()-3);
 			//if the file is a bytecode file
 			if(extension.equals(".bc")){
-				System.out.println("parsing bytecode code... "+f.getName());
-				f_operator.parse_byte_code(f);
+				cfgs = f_operator.parse_byte_code(f);
+				for(CFG cfg: cfgs ){
+					
+					try {
+						writer = new PrintWriter(filePath+cfg.getFileName()+":"+
+								cfg.getFunctionName()+".dot", "UTF-8");
+						writer.println("digraph "+graphName+" {");
+						writer.println(cfg.toDot());
+						writer.println("}");
+						writer.close();
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (UnsupportedEncodingException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					System.out.println("CHECK your "+filePath+"for the graphviz file");
+				}
 			}
 		}		
 	}

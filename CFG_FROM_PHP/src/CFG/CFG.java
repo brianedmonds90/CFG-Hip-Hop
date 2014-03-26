@@ -6,6 +6,8 @@ public class CFG {
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
 	ArrayList<Edge> edges;
 	BasicBlock entry;
+	String fileName;
+	Function function;
 	private ArrayList<BasicBlock> exitNodes;
 	
 	public CFG(){
@@ -75,5 +77,29 @@ public class CFG {
 	}
 	public void setExitNodes(ArrayList<BasicBlock> exitNodes) {
 		this.exitNodes = exitNodes;
+	}
+	
+	public String toDot(){
+		String ret = "";
+		for(Edge e: edges){
+			ret+=e.toDot()+"\n";
+		}
+		return ret;
+	}
+	
+	public String getFileName(){
+		
+		
+		return fileName;
+	}
+	public void setFileName(String str){
+		fileName = str;
+	}
+	public void setFunction(Function f) {
+		function = f;
+		
+	}
+	public String getFunctionName() {
+		return function.getName();
 	}
 }

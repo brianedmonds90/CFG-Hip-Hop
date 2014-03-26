@@ -108,12 +108,12 @@ public class File_operator {
 				}
 			});
 			//Print the leaders of the current function
-			System.out.println("leaders for function: "+f.getName()+"\n");
-			for(Instruction in: leaders){
-				System.out.println(in);
-			}
-			System.out.println("end of leaders--------------------------------");
-			
+			//System.out.println("leaders for function: "+f.getName()+"\n");
+//			for(Instruction in: leaders){
+//				System.out.println(in);
+//			}
+//			System.out.println("end of leaders--------------------------------");
+//			
 			for(Line l: f.getLines()){
 				allInstructions.addAll(l.getInstructions());
 			}
@@ -123,27 +123,29 @@ public class File_operator {
 			//System.out.println(f.toString());
 			//Get the basic blocks for the current function
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
-			System.out.println("basic Blocks for file: "+f.getName()+"\n");
-			for(BasicBlock b: basicBlocks){
-				System.out.println(b);
-			}
-			System.out.println("end of basic blocks-----------------------------");
-			System.out.println("Constructing CFG for file: "+f.getName()+"\n");
+//			System.out.println("basic Blocks for file: "+f.getName()+"\n");
+//			for(BasicBlock b: basicBlocks){
+//				System.out.println(b);
+//			}
+//			System.out.println("end of basic blocks-----------------------------");
+//			System.out.println("Constructing CFG for file: "+f.getName()+"\n");
 			//construct cfg and add it to the return list
-			cfg_ret =getCFG(basicBlocks);
+			cfg_ret = getCFG(basicBlocks);
+			cfg_ret.setFileName(file.getName());
+			cfg_ret.setFunction(f);
 			//Sets the entry node to be the first node in the nodes list
 			cfg_ret.setEntryNode();
 			cfg_ret.setExitNodes();
 			ret.add(cfg_ret);
 			ArrayList<Edge> cfg_edges = cfg_ret.getEdges();
-			System.out.println("Printing edges");
-			for(Edge e : cfg_edges)
-				System.out.println(e);
+//			System.out.println("Printing edges");
+//			for(Edge e : cfg_edges)
+//				System.out.println(e);
 			ArrayList<BasicBlock> exitNodes = cfg_ret.getExitNodes();
-			System.out.println("exit nodes: ");
-			for(BasicBlock b: exitNodes){
-				System.out.println(b.getBlockNo());
-			}
+//			System.out.println("exit nodes: ");
+//			for(BasicBlock b: exitNodes){
+//				System.out.println(b.getBlockNo());
+//			}
 			//System.out.println("exit nodes: "+cfg_ret.getExitNodes());
 		}
 		return ret;
@@ -316,7 +318,7 @@ public class File_operator {
 	        if (fileEntry.isDirectory()) {
 	            listFilesForFolder(fileEntry,l);
 	        } else {
-	            System.out.println("Adding "+fileEntry.getName()+" to return list");
+	            //System.out.println("Adding "+fileEntry.getName()+" to return list");
 	            l.add(fileEntry);
 	        }
 	    }

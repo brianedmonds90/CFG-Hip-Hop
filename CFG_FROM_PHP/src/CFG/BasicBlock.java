@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class BasicBlock {
 	ArrayList<Instruction> instructions;
 	int block_no;
-	
 	public BasicBlock(){
 		instructions = new ArrayList<Instruction>();
+		
 	}
 	
 	public BasicBlock(Instruction inst) {

@@ -1,0 +1,4 @@
+digraph testName {
+0 -> 1
+
+}

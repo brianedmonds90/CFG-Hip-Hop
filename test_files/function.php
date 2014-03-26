@@ -6,8 +6,7 @@ function foo($c,$d){
 	while($c<=5)
   {
 
-  		$x = $y+1;
-  		$y = 2*$z;
+  		$x = $y+1;  		$y = 2*$z;
   		echo "The number is: $c <br>";
   		if($d){
   		 $x = $y+$z;
