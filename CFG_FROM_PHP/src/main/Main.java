@@ -26,7 +26,7 @@ public class Main {
 		//parse the given bytecode files from the directory
 		PrintWriter writer;
 		ArrayList<CFG> cfgs = new ArrayList<CFG>();
-		String filePath ="/Users/brianedmonds/Documents/orso_research/test_files/";
+		String filePath ="/Users/brianedmonds/Documents/orso_research/test_files/test_files/";
 		String graphName = "testName";
 		for(File f: byteCodeFiles){
 			String fileName = f.getName();
@@ -37,7 +37,7 @@ public class Main {
 				for(CFG cfg: cfgs ){
 					
 					try {
-						writer = new PrintWriter(filePath+cfg.getFileName()+":"+
+						writer = new PrintWriter(filePath+cfg.getFileName()+"_"+
 								cfg.getFunctionName()+".dot", "UTF-8");
 						writer.println("digraph "+graphName+" {");
 						writer.println(cfg.toDot());
@@ -51,6 +51,7 @@ public class Main {
 						e.printStackTrace();
 					}
 					System.out.println("CHECK your "+filePath+"for the graphviz file");
+				//	System.out.println("CFG: "+cfg.toString());
 				}
 			}
 		}		

@@ -151,5 +151,9 @@ public class Instruction{
 		return unconditional;
 	}
 
+	public void setLine(Line l) {
+		line = l.line_no;
+	}
+
 
 }

@@ -81,20 +81,27 @@ public class CFG {
 	
 	public String toDot(){
 		String ret = "";
+		
+		for(BasicBlock bb: nodes){
+			ret+=bb.toDot()+"\n";
+		}
+		
 		for(Edge e: edges){
 			ret+=e.toDot()+"\n";
 		}
+		
 		return ret;
 	}
 	
 	public String getFileName(){
-		
-		
-		return fileName;
+		int index = fileName.indexOf(".");
+		return fileName.substring(0,index);
 	}
+	
 	public void setFileName(String str){
 		fileName = str;
 	}
+	
 	public void setFunction(Function f) {
 		function = f;
 		

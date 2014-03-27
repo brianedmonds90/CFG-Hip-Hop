@@ -88,14 +88,18 @@ public class File_operator {
 					bc_line_no = str.substring(0,firstChar-2);
 					Instruction inst = l.addInstruction(str.substring(firstChar));
 					inst.setBC_Line_No(bc_line_no);
+					inst.setLine(l);
 				}
 			}
 		}
+		
 		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
+		
 		ArrayList<Instruction> allInstructions = new ArrayList<Instruction>();
 		for(Function f: functions){
 			//Gets the leaders for each function
 			leaders=getLeaders(f);
+			allInstructions.clear();
 			if(leaders==null||leaders.size()==0){
 				break;
 			}
@@ -108,12 +112,12 @@ public class File_operator {
 				}
 			});
 			//Print the leaders of the current function
-			//System.out.println("leaders for function: "+f.getName()+"\n");
+//			System.out.println("leaders for function: "+f.getName()+"\n");
 //			for(Instruction in: leaders){
 //				System.out.println(in);
 //			}
 //			System.out.println("end of leaders--------------------------------");
-//			
+			
 			for(Line l: f.getLines()){
 				allInstructions.addAll(l.getInstructions());
 			}
@@ -146,7 +150,7 @@ public class File_operator {
 //			for(BasicBlock b: exitNodes){
 //				System.out.println(b.getBlockNo());
 //			}
-			//System.out.println("exit nodes: "+cfg_ret.getExitNodes());
+//			System.out.println("exit nodes: "+cfg_ret.getExitNodes());
 		}
 		return ret;
 	}

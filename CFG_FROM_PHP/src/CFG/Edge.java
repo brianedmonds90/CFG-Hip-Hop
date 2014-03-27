@@ -18,7 +18,7 @@ public class Edge {
 	}
 	
 	public String toDot(){
-		String ret = u.getBlockNo()+" -> "+v.getBlockNo();
+		String ret = u.getBlockNo()+" -> "+v.getBlockNo()+";";
 		return ret;
 	}
 }

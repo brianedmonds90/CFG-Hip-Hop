@@ -2,6 +2,8 @@ package CFG;
 
 import java.util.ArrayList;
 
+import sun.reflect.generics.tree.IntSignature;
+
 public class BasicBlock {
 	ArrayList<Instruction> instructions;
 	int block_no;
@@ -47,4 +49,16 @@ public class BasicBlock {
 	public int getBlockNo() {
 		return block_no;
 	}
+
+	public String toDot() {
+		String ret ="";
+		ret = getBlockNo()+ " [label=\""+instructions.get(0).line+"\"];";
+//		for(Instruction in: instructions){
+//			ret+=in.toString()+"\n";
+//		}
+//		ret+="\"];";
+		return ret;
+	}
+	
+	
 }

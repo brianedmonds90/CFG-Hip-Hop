@@ -66,14 +66,12 @@ public class Function {
 					temp1 = Integer.parseInt(i.args[0]);
 					if(temp1 > numVars){
 						numVars= temp1;
-						//System.out.println("numVars: "+numVars);
 					}
 				}
 				else if(i.type == i.set){
 					temp2 = Integer.parseInt(i.args[0]);
 					if(temp2 < minSetL){
 						minSetL = temp2;
-						//System.out.println("minSetL: "+minSetL);
 					}
 				}
 			}
