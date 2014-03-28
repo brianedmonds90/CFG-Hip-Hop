@@ -10,11 +10,15 @@ public class CFG {
 	String fileName;
 	Function function;
 	private ArrayList<BasicBlock> exitNodes;
+	private ArrayList<Defs_Uses> definitions;
+	private ArrayList<Defs_Uses> uses;
 	
 	public CFG(){
 		nodes = new ArrayList<BasicBlock>();
 		edges = new ArrayList<Edge>();
 		exitNodes = new ArrayList<BasicBlock>();
+		definitions = new ArrayList<Defs_Uses>();
+		uses = new ArrayList<Defs_Uses>();
 		name = null;
 	}
 	
@@ -119,5 +123,48 @@ public class CFG {
 	}
 	public String getFunctionName() {
 		return function.getName();
+	}
+
+	public void getUses(ArrayList<BasicBlock> basicBlocks){
+		for(BasicBlock bb: basicBlocks){
+			for(Instruction inst : bb.getInstructions()){
+				if(inst.use){
+					uses.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
+				}
+				
+				}
+			}
+		return;
+	}
+	
+	public void getDefinitions(ArrayList<BasicBlock> basicBlocks) {
+		boolean bbHasDef;
+		int instrucionIndex;
+		int basicBlockIndex=0;
+		for(BasicBlock bb: basicBlocks){
+			bbHasDef = false;
+			instrucionIndex = 0;
+			basicBlockIndex++;
+			for(Instruction inst : bb.getInstructions()){
+				instrucionIndex++;
+				if(inst.definition){
+					if(!bbHasDef){
+						bbHasDef = true;
+						definitions.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
+					}
+					else{//Basic Block already has a definition in it
+						//split the basic block and add it to the basicBlocks list
+						BasicBlock b = bb.split(instrucionIndex);
+						if(basicBlockIndex==basicBlocks.size()){
+							basicBlocks.add(b);
+						}
+						else{
+							basicBlocks.add(basicBlockIndex, b);
+						}
+					}
+				}
+			}
+		}
+		return;
 	}
 }

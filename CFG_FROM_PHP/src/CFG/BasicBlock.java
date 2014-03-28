@@ -67,6 +67,14 @@ public class BasicBlock {
 		exitNode = true;
 		
 	}
+
+	public BasicBlock split(int index) {
+		BasicBlock b = new BasicBlock();
+		for(int i = index;i<instructions.size();i++){
+			b.addInstruction(instructions.remove(i));
+		}
+		return b;
+	}
 	
 	
 }

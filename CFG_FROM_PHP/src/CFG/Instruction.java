@@ -37,6 +37,8 @@ public class Instruction{
 	String bc_line_no;
 	private Instruction destination;
 	private boolean unconditional;
+	public boolean definition;
+	public boolean use;
 	
 	public Instruction(){
 		args= new String [10];
@@ -64,11 +66,13 @@ public class Instruction{
 		}
 		else if(Main.getInstructions.contains(instruction_text)){
 			type = get;
+			use = true;
 		}
 		else if(Main.setL.contains(instruction_text)){
 			//Mutator instructions
 			type = set;
-		
+			definition  = true;
+			
 		}
 		
 		else{

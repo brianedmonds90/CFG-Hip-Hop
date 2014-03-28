@@ -1,15 +1,15 @@
 digraph testName {
-0 [label="4" fillcolor= yellow];
-1 [label="5" fillcolor= yellow];
-2 [label="6" fillcolor= yellow];
-3 [label="9" fillcolor= yellow];
-4 [label="10" fillcolor= yellow];
-5 [label="11" fillcolor= yellow];
-6 [label="12" fillcolor= yellow];
-7 [label="13" fillcolor= yellow];
-8 [label="13" fillcolor= yellow];
-9 [label="15" fillcolor= yellow];
-10 [label="16" fillcolor= yellow];
+0 [label="4"];
+1 [label="5"];
+2 [label="6"];
+3 [label="9"];
+4 [label="10"];
+5 [label="11"];
+6 [label="12"];
+7 [label="13"];
+8 [label="13"];
+9 [label="15"];
+10 [label="16"];
 11 [label="17"];
 12 [label="18" fillcolor= yellow];
 0 -> 1;

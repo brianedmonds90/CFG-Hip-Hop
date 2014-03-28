@@ -64,13 +64,13 @@ public class Main {
 	
 	public static ArrayList<String> cfgInstructions;
 	public static ArrayList<String> getInstructions;
-	public static String setL = "SetL";
+	public static ArrayList<String> setL;
 	
 	public static void init(){
 		
 		getInstructions = new ArrayList<String>();
 		cfgInstructions = new ArrayList<String>();
-		
+		setL = new ArrayList<String>();
 		//Add the CFG instructions
 		cfgInstructions.add("Jmp");
 		cfgInstructions.add("JmpNS");
@@ -95,5 +95,9 @@ public class Main {
 		getInstructions.add("VGetS");
 		getInstructions.add("AGetC");
 		getInstructions.add("AGetL");
+		
+		//Add the setter instructions
+		setL.add("SetL");
+		
 	}
 }
