@@ -18,7 +18,11 @@ public class Edge {
 	}
 	
 	public String toDot(){
-		String ret = u.getBlockNo()+" -> "+v.getBlockNo()+";";
+		String ret = u.getBlockNo()+" -> "+v.getBlockNo();
+		if(label!=null){
+			ret+="[xlabel=\""+label+"\"];";
+		}
+		else ret+=";";
 		return ret;
 	}
 }

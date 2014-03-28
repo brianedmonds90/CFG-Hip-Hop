@@ -27,8 +27,6 @@ public class File_operator {
 	public File_operator(String p){
 		path = p;
 		scan= new Scanner(path);
-		
-	
 	}
 	
 	public File_operator(){

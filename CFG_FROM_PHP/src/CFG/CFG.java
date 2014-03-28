@@ -68,9 +68,11 @@ public class CFG {
 				}
 				else if(j == edges.size()-1){
 					exitNodes.add(a);
+					a.setAsExitNode();
 				}
 			}
 		}
+		return;
 	}
 	public ArrayList<BasicBlock> getExitNodes() {
 		return exitNodes;

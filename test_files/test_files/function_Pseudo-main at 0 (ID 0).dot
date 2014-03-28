@@ -1,0 +1,6 @@
+digraph testName {
+0 [label="20"];
+1 [label="21" fillcolor= yellow];
+0 -> 1;
+
+}

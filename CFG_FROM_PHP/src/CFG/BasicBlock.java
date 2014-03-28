@@ -2,14 +2,13 @@ package CFG;
 
 import java.util.ArrayList;
 
-import sun.reflect.generics.tree.IntSignature;
-
 public class BasicBlock {
 	ArrayList<Instruction> instructions;
 	int block_no;
+	private boolean exitNode;
 	public BasicBlock(){
 		instructions = new ArrayList<Instruction>();
-		
+		exitNode = false;
 	}
 	
 	public BasicBlock(Instruction inst) {
@@ -52,12 +51,21 @@ public class BasicBlock {
 
 	public String toDot() {
 		String ret ="";
-		ret = getBlockNo()+ " [label=\""+instructions.get(0).line+"\"];";
+		ret = getBlockNo()+ " [label=\""+instructions.get(0).line+"\"";
 //		for(Instruction in: instructions){
 //			ret+=in.toString()+"\n";
 //		}
 //		ret+="\"];";
+		if(exitNode){
+			ret+=" fillcolor= yellow";
+		}
+		ret+="];";
 		return ret;
+	}
+
+	public void setAsExitNode() {
+		exitNode = true;
+		
 	}
 	
 	

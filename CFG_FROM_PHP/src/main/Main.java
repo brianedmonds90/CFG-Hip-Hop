@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import CFG.BasicBlock;
 import CFG.CFG;
 
 public class Main {
@@ -35,7 +36,6 @@ public class Main {
 			if(extension.equals(".bc")){
 				cfgs = f_operator.parse_byte_code(f);
 				for(CFG cfg: cfgs ){
-					
 					try {
 						writer = new PrintWriter(filePath+cfg.getFileName()+"_"+
 								cfg.getFunctionName()+".dot", "UTF-8");
@@ -51,7 +51,10 @@ public class Main {
 						e.printStackTrace();
 					}
 					System.out.println("CHECK your "+filePath+"for the graphviz file");
-				//	System.out.println("CFG: "+cfg.toString());
+					System.out.println("EXIT NODES: ");
+					for(BasicBlock b: cfg.getExitNodes()){
+						System.out.println("\n Block: "+b.getBlockNo());
+					}
 				}
 			}
 		}		

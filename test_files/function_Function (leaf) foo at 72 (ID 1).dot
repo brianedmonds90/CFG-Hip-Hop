@@ -1,0 +1,114 @@
+digraph testName {
+0 [label="		72: Int 6 
+
+		81: SetL 2 
+
+		83: PopC 
+
+"];
+1 [label="		84: Int 1 
+
+		93: SetL 3 
+
+		95: PopC 
+
+"];
+2 [label="		96: Int 5 
+
+		105: CGetL2 0 
+
+		107: Lte 
+
+		108: JmpZ 87 (195) 
+
+"];
+3 [label="		113: Int 1 
+
+		122: CGetL2 2 
+
+		124: Add 
+
+		125: SetL 4 
+
+		127: PopC 
+
+"];
+4 [label="		128: Int 2 
+
+		137: CGetL 3 
+
+		139: Mul 
+
+		140: SetL 2 
+
+		142: PopC 
+
+"];
+5 [label="		143: String "The number is: " 
+
+		148: CGetL 0 
+
+		150: Concat 
+
+		151: String " <br>" 
+
+		156: Concat 
+
+		157: Print 
+
+		158: PopC 
+
+"];
+6 [label="		159: CGetL 1 
+
+		161: JmpZ 13 (174) 
+
+"];
+7 [label="		166: CGetL 3 
+
+		168: CGetL2 2 
+
+"];
+8 [label="		170: Add 
+
+		171: SetL 4 
+
+		173: PopC 
+
+"];
+9 [label="		174: Int 1 
+
+		183: SetL 3 
+
+		185: PopC 
+
+"];
+10 [label="		186: IncDecL 0 PreInc 
+
+		189: PopC 
+
+"];
+11 [label="		190: Jmp -94 
+
+"];
+12 [label="		195: Null 
+
+		196: RetC 
+
+"];
+0 -> 1
+1 -> 2
+2 -> 3
+2 -> 12
+3 -> 4
+4 -> 5
+5 -> 6
+6 -> 7
+6 -> 9
+7 -> 8
+8 -> 9
+9 -> 10
+10 -> 11
+11 -> 2
+
+}

@@ -1,0 +1,32 @@
+digraph testName {
+0 [label="		0: Array array(0=>"Volvo",1=>"BMW",2=>"Toyota") 
+
+		5: SetL 0 
+
+		7: PopC 
+
+"];
+1 [label="		8: FPushFuncD 1 "sort" 
+
+		14: FPassL 0 0 
+
+		17: FCall 1 
+
+		19: PopR 
+
+"];
+2 [label="		20: String "\n" 
+
+		25: Print 
+
+		26: PopC 
+
+		27: Int 1 
+
+		36: RetC 
+
+"];
+0 -> 1
+1 -> 2
+
+}
