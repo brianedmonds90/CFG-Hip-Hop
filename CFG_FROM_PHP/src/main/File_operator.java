@@ -132,9 +132,13 @@ public class File_operator {
 //			System.out.println("end of basic blocks-----------------------------");
 //			System.out.println("Constructing CFG for file: "+f.getName()+"\n");
 			//construct cfg and add it to the return list
+
 			cfg_ret = getCFG(basicBlocks);
 			cfg_ret.setFileName(file.getName());
 			cfg_ret.setFunction(f);
+//=======
+//			cfg_ret = getCFG(basicBlocks, f.getName());
+//>>>>>>> 9e52fa7fd86ff95416760382b42035849e84729a
 			//Sets the entry node to be the first node in the nodes list
 			cfg_ret.setEntryNode();
 			cfg_ret.setExitNodes();
@@ -239,6 +243,7 @@ public class File_operator {
 	
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
+		//cfg.setName(name);
 		for(int i=0; i<cfg.getNodes().size(); i++) {
 			BasicBlock bi = cfg.getNodes().get(i);
 			Instruction last_instr;
