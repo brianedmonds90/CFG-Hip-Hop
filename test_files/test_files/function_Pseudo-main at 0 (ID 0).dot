@@ -1,6 +1,6 @@
 digraph testName {
 0 [label="20"];
-1 [label="21" fillcolor= yellow];
+1 [label="21" fillcolor= yellow, style = filled];
 0 -> 1;
-
+0 [fillcolor = green, style = filled]
 }

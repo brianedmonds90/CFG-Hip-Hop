@@ -6,6 +6,7 @@ public class BasicBlock {
 	ArrayList<Instruction> instructions;
 	int block_no;
 	private boolean exitNode;
+	
 	public BasicBlock(){
 		instructions = new ArrayList<Instruction>();
 		exitNode = false;
@@ -57,8 +58,9 @@ public class BasicBlock {
 //		}
 //		ret+="\"];";
 		if(exitNode){
-			ret+=" fillcolor= yellow";
+			ret+=" fillcolor= yellow, style = filled";
 		}
+	
 		ret+="];";
 		return ret;
 	}

@@ -2,6 +2,8 @@ package CFG;
 
 import java.util.ArrayList;
 
+import com.sun.swing.internal.plaf.basic.resources.basic;
+
 public class CFG {
 	private String name; // Function name
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
@@ -10,16 +12,22 @@ public class CFG {
 	String fileName;
 	Function function;
 	private ArrayList<BasicBlock> exitNodes;
-	private ArrayList<Defs_Uses> definitions;
+	public ArrayList<Defs_Uses> definitions;
 	private ArrayList<Defs_Uses> uses;
+	private ArrayList<Defs_Uses> gen_set;
+	private ArrayList<KillSet> killSet;
 	
 	public CFG(){
+	
 		nodes = new ArrayList<BasicBlock>();
 		edges = new ArrayList<Edge>();
 		exitNodes = new ArrayList<BasicBlock>();
 		definitions = new ArrayList<Defs_Uses>();
 		uses = new ArrayList<Defs_Uses>();
+		killSet = new ArrayList<KillSet>();
+		gen_set = new ArrayList<Defs_Uses>();
 		name = null;
+	
 	}
 	
 	public CFG(ArrayList<BasicBlock> blocks) {
@@ -90,13 +98,13 @@ public class CFG {
 	public ArrayList<BasicBlock> getExitNodes() {
 		return exitNodes;
 	}
+	
 	public void setExitNodes(ArrayList<BasicBlock> exitNodes) {
 		this.exitNodes = exitNodes;
 	}
 	
 	public String toDot(){
 		String ret = "";
-		
 		for(BasicBlock bb: nodes){
 			ret+=bb.toDot()+"\n";
 		}
@@ -104,9 +112,16 @@ public class CFG {
 		for(Edge e: edges){
 			ret+=e.toDot()+"\n";
 		}
+		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
+		
+		for(Defs_Uses dd: definitions){
+			ret+= dd.toDot()+"\n";
+		}
 		
 		return ret;
 	}
+	
+	
 	
 	public String getFileName(){
 		int index = fileName.indexOf(".");
@@ -121,6 +136,7 @@ public class CFG {
 		function = f;
 		
 	}
+	
 	public String getFunctionName() {
 		return function.getName();
 	}
@@ -130,40 +146,29 @@ public class CFG {
 			for(Instruction inst : bb.getInstructions()){
 				if(inst.use){
 					uses.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
-				}
-				
-				}
+				}	
 			}
+		}
 		return;
 	}
 	
-	public void getDefinitions(ArrayList<BasicBlock> basicBlocks) {
-		boolean bbHasDef;
-		int instrucionIndex;
-		int basicBlockIndex=0;
-		for(BasicBlock bb: basicBlocks){
-			bbHasDef = false;
-			instrucionIndex = 0;
-			basicBlockIndex++;
-			for(Instruction inst : bb.getInstructions()){
-				instrucionIndex++;
-				if(inst.definition){
-					if(!bbHasDef){
-						bbHasDef = true;
-						definitions.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
+
+	public void killSet(ArrayList<BasicBlock> basicBlocks, ArrayList<Defs_Uses> def){
+		ArrayList<KillSet> killSets = new ArrayList<KillSet>();
+		for(BasicBlock bb : basicBlocks ){
+			KillSet kill = new KillSet(bb);
+			for (int i = 1; i < def.size(); i++) {
+				Defs_Uses d = def.get(i);
+				for(int j = 0; j<i;j++){
+					Defs_Uses e = def.get(j);
+					if(d.variable_location == e.variable_location){
+						BasicBlock bab = e.basicBlock;
+						int var_num = e.variable_location;
+						kill.addKill(bab, var_num);	
 					}
-					else{//Basic Block already has a definition in it
-						//split the basic block and add it to the basicBlocks list
-						BasicBlock b = bb.split(instrucionIndex);
-						if(basicBlockIndex==basicBlocks.size()){
-							basicBlocks.add(b);
-						}
-						else{
-							basicBlocks.add(basicBlockIndex, b);
-						}
-					}
-				}
+				}	
 			}
+			killSets.add(kill);
 		}
 		return;
 	}

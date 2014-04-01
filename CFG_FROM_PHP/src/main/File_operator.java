@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import CFG.BasicBlock;
 import CFG.CFG;
+import CFG.Defs_Uses;
 import CFG.Edge;
 import CFG.Function;
 import CFG.Instruction;
@@ -118,9 +119,11 @@ public class File_operator {
 			f.setNumParams(numParams);
 			//Get the basic blocks for the current function
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
-			cfg_ret.getDefinitions(basicBlocks);
-			cfg_ret.getUses(basicBlocks);
+			//Get the cfg
 			cfg_ret = getCFG(basicBlocks);
+			cfg_ret.definitions = getDefinitions(basicBlocks);
+			//cfg_ret.getUses(basicBlocks);
+			//cfg_ret.killSet(basicBlocks, cfg_ret.definitions);
 			cfg_ret.setFileName(file.getName());
 			cfg_ret.setFunction(f);
 			//Sets the entry node to be the first node in the nodes list
@@ -308,34 +311,36 @@ public class File_operator {
 		return l;
 	}
 
-	/**Depreciated
-	public ArrayList<Function> parse_php_code(File file) {
-		Scanner scan = null;
-		ArrayList<Function> ret= new ArrayList<Function>();
-		//try and create a scanner object from the file
-		try {
-			scan = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		//while the file has another line in it
-		while(scan.hasNextLine()){
-			String str = scan.nextLine();
-			if(str.contains("//")){
-			//	System.out.println("Comments: "+str);
-			}
-			//If the line is a function in the php
-			else if(str.contains("function")){
-				Function function = new Function(str);
-				ret.add(function);
-			//	System.out.println(function);
-				//function.getLines(file, scan);
-						
-			}
-			else{
-				//System.out.println(str);	
+	public ArrayList<Defs_Uses> getDefinitions(ArrayList<BasicBlock> basicBlocks) {
+		boolean bbHasDef;
+		int instrucionIndex;
+		int basicBlockIndex=0;
+		ArrayList<Defs_Uses> ret = new ArrayList<Defs_Uses>();
+		for(BasicBlock bb: basicBlocks){
+			bbHasDef = false;
+			instrucionIndex = 0;
+			basicBlockIndex++;
+			for(Instruction inst : bb.getInstructions()){
+				instrucionIndex++;
+				if(inst.definition){
+					if(!bbHasDef){
+						bbHasDef = true;
+						ret.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.getArgs()[0]))));
+					}
+					else{//Basic Block already has a definition in it
+						//split the basic block and add it to the basicBlocks list
+						BasicBlock b = bb.split(instrucionIndex);
+						if(basicBlockIndex==basicBlocks.size()){
+							basicBlocks.add(b);
+						}
+						else{
+							basicBlocks.add(basicBlockIndex, b);
+						}
+					}
+				}
 			}
 		}
 		return ret;
-	}**/
+	}
+		
 }

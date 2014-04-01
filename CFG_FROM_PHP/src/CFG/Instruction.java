@@ -31,7 +31,7 @@ public class Instruction{
 	public final int set = 14;
 	public int type;
 	String [] args;
-	int line;
+	public int line;
 	String instruction_text;
 	String instr_text;
 	String bc_line_no;
