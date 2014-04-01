@@ -57,7 +57,7 @@ public class BasicBlock {
 //		}
 //		ret+="\"];";
 		if(exitNode){
-			ret+=" fillcolor= yellow";
+			ret+=" style=filled fillcolor=yellow";
 		}
 		ret+="];";
 		return ret;

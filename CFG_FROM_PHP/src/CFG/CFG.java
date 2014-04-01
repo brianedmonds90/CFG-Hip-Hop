@@ -160,6 +160,8 @@ public class CFG {
 						}
 						else{
 							basicBlocks.add(basicBlockIndex, b);
+							for(int i=basicBlockIndex+1; i<basicBlocks.size(); i++)
+								basicBlocks.get(i).setBlockNo(basicBlocks.get(i).getBlockNo()+1);
 						}
 					}
 				}
