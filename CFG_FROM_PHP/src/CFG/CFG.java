@@ -12,6 +12,7 @@ public class CFG {
 	private ArrayList<BasicBlock> exitNodes;
 	private ArrayList<Defs_Uses> definitions;
 	private ArrayList<Defs_Uses> uses;
+	private ArrayList<Defs_Uses> kills;
 	
 	public CFG(){
 		nodes = new ArrayList<BasicBlock>();
@@ -19,6 +20,7 @@ public class CFG {
 		exitNodes = new ArrayList<BasicBlock>();
 		definitions = new ArrayList<Defs_Uses>();
 		uses = new ArrayList<Defs_Uses>();
+		kills = new ArrayList<Defs_Uses>();
 		name = null;
 	}
 	
@@ -167,6 +169,52 @@ public class CFG {
 				}
 			}
 		}
+		System.out.print(name+":::Definitions::: There are "+definitions.size()+" number of definitions.\n");
 		return;
+	}
+	
+	public void getKills() {
+		// For each definition, check the next place that it gets kill
+		if(definitions==null)
+			return;
+		for (Defs_Uses di : definitions) {
+			for (Defs_Uses dj : definitions) {
+				if (di.variable_location==dj.variable_location) {
+					/*System.out.println("Same variable");
+					System.out.println(di.toString());
+					System.out.println(dj.toString());
+					System.out.println("Is there a path? "+isAPath(di.basicBlock, dj.basicBlock)+"\n");
+					System.out.println("--------------");*/
+					if (isAPath(di.basicBlock, dj.basicBlock))
+						kills.add(new Defs_Uses(dj.basicBlock, dj.php_line_no, dj.variable_location));
+				}
+			}
+		}
+		System.out.print(":::KILLS::: There are "+kills.size()+" number of kills.\n");
+		for (Defs_Uses k : kills)
+			System.out.print(k.toString());
+	}
+	
+	public boolean isAPath(BasicBlock a, BasicBlock b) {
+		ArrayList<BasicBlock> neighbors = new ArrayList<BasicBlock>();
+		neighbors = findNeighbors(a, neighbors);
+		if(neighbors.size()==0) // If it is an exit node, return false
+			return false;
+		ArrayList<BasicBlock> visitedNode = new ArrayList<BasicBlock>();
+		BasicBlock temp = neighbors.remove(0);
+		if(visitedNode.contains(temp)) // If visited already, return false
+			return false;
+		if(temp.equals(b)) // If the neighbor is b, return true
+			return true;
+		neighbors = findNeighbors(temp, neighbors);
+		visitedNode.add(temp);
+		return false;
+	}
+	
+	public ArrayList<BasicBlock> findNeighbors(BasicBlock b, ArrayList<BasicBlock> neighbors) {
+		for(Edge e : edges) 			
+			if(e.u.equals(b))
+				neighbors.add(e.v);
+		return neighbors;
 	}
 }
