@@ -1,17 +1,59 @@
 digraph testName {
-0 [label="4"];
-1 [label="5"];
-2 [label="6"];
-3 [label="9"];
-4 [label="10"];
-5 [label="11"];
-6 [label="12"];
-7 [label="13"];
-8 [label="13"];
-9 [label="15"];
-10 [label="16"];
-11 [label="17"];
-12 [label="18" fillcolor= yellow, style = filled];
+0 [label="4" tooltip="Int
+SetL
+PopC
+"];
+1 [label="5" tooltip="Int
+SetL
+PopC
+"];
+2 [label="6" tooltip="Int
+CGetL2
+Lte
+JmpZ
+"];
+3 [label="9" tooltip="Int
+CGetL2
+Add
+SetL
+PopC
+"];
+4 [label="10" tooltip="Int
+CGetL
+Mul
+SetL
+PopC
+"];
+5 [label="11" tooltip="String
+CGetL
+Concat
+String
+Concat
+Print
+PopC
+"];
+6 [label="12" tooltip="CGetL
+JmpZ
+"];
+7 [label="13" tooltip="CGetL
+CGetL2
+"];
+8 [label="13" tooltip="Add
+SetL
+PopC
+"];
+9 [label="15" tooltip="Int
+SetL
+PopC
+"];
+10 [label="16" tooltip="IncDecL
+PopC
+"];
+11 [label="17" tooltip="Jmp
+"];
+12 [label="18" fillcolor= yellow, style = filled,  tooltip="Null
+RetC
+"];
 0 -> 1;
 1 -> 2;
 2 -> 3[xlabel="False"];

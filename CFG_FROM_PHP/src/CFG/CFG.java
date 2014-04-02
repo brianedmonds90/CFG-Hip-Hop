@@ -16,6 +16,8 @@ public class CFG {
 	private ArrayList<Defs_Uses> uses;
 	private ArrayList<Defs_Uses> gen_set;
 	private ArrayList<KillSet> killSet;
+	private ArrayList<Defs_Uses> kills;
+
 	
 	public CFG(){
 	
@@ -24,8 +26,10 @@ public class CFG {
 		exitNodes = new ArrayList<BasicBlock>();
 		definitions = new ArrayList<Defs_Uses>();
 		uses = new ArrayList<Defs_Uses>();
-		killSet = new ArrayList<KillSet>();
+
+//		killSet = new ArrayList<KillSet>();
 		gen_set = new ArrayList<Defs_Uses>();
+		kills = new ArrayList<Defs_Uses>();
 		name = null;
 	
 	}
@@ -153,23 +157,82 @@ public class CFG {
 	}
 	
 
-	public void killSet(ArrayList<BasicBlock> basicBlocks, ArrayList<Defs_Uses> def){
-		ArrayList<KillSet> killSets = new ArrayList<KillSet>();
-		for(BasicBlock bb : basicBlocks ){
-			KillSet kill = new KillSet(bb);
-			for (int i = 1; i < def.size(); i++) {
-				Defs_Uses d = def.get(i);
-				for(int j = 0; j<i;j++){
-					Defs_Uses e = def.get(j);
-					if(d.variable_location == e.variable_location){
-						BasicBlock bab = e.basicBlock;
-						int var_num = e.variable_location;
-						kill.addKill(bab, var_num);	
+	public void getDefinitions(ArrayList<BasicBlock> basicBlocks) {
+		boolean bbHasDef;
+		int instrucionIndex;
+		int basicBlockIndex=0;
+		for(BasicBlock bb: basicBlocks){
+			bbHasDef = false;
+			instrucionIndex = 0;
+			basicBlockIndex++;
+			for(Instruction inst : bb.getInstructions()){
+				instrucionIndex++;
+				if(inst.definition){
+					if(!bbHasDef){
+						bbHasDef = true;
+						definitions.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
 					}
-				}	
+					else{//Basic Block already has a definition in it
+						//split the basic block and add it to the basicBlocks list
+						BasicBlock b = bb.split(instrucionIndex);
+						if(basicBlockIndex==basicBlocks.size()){
+							basicBlocks.add(b);
+						}
+						else{
+							basicBlocks.add(basicBlockIndex, b);
+							for(int i=basicBlockIndex+1; i<basicBlocks.size(); i++)
+								basicBlocks.get(i).setBlockNo(basicBlocks.get(i).getBlockNo()+1);
+						}
+					}
+				}
 			}
-			killSets.add(kill);
 		}
+		System.out.print(name+":::Definitions::: There are "+definitions.size()+" number of definitions.\n");
 		return;
+	}
+	
+	public void getKills() {
+		// For each definition, check the next place that it gets kill
+		if(definitions==null)
+			return;
+		for (Defs_Uses di : definitions) {
+			for (Defs_Uses dj : definitions) {
+				if (di.variable_location==dj.variable_location) {
+					/*System.out.println("Same variable");
+					System.out.println(di.toString());
+					System.out.println(dj.toString());
+					System.out.println("Is there a path? "+isAPath(di.basicBlock, dj.basicBlock)+"\n");
+					System.out.println("--------------");*/
+					if (isAPath(di.basicBlock, dj.basicBlock))
+						kills.add(new Defs_Uses(dj.basicBlock, dj.php_line_no, dj.variable_location));
+				}
+			}
+		}
+		System.out.print(":::KILLS::: There are "+kills.size()+" number of kills.\n");
+		for (Defs_Uses k : kills)
+			System.out.print(k.toString());
+	}
+	
+	public boolean isAPath(BasicBlock a, BasicBlock b) {
+		ArrayList<BasicBlock> neighbors = new ArrayList<BasicBlock>();
+		neighbors = findNeighbors(a, neighbors);
+		if(neighbors.size()==0) // If it is an exit node, return false
+			return false;
+		ArrayList<BasicBlock> visitedNode = new ArrayList<BasicBlock>();
+		BasicBlock temp = neighbors.remove(0);
+		if(visitedNode.contains(temp)) // If visited already, return false
+			return false;
+		if(temp.equals(b)) // If the neighbor is b, return true
+			return true;
+		neighbors = findNeighbors(temp, neighbors);
+		visitedNode.add(temp);
+		return false;
+	}
+	
+	public ArrayList<BasicBlock> findNeighbors(BasicBlock b, ArrayList<BasicBlock> neighbors) {
+		for(Edge e : edges) 			
+			if(e.u.equals(b))
+				neighbors.add(e.v);
+		return neighbors;
 	}
 }

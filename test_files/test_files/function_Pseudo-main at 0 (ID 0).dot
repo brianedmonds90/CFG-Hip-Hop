@@ -1,6 +1,22 @@
 digraph testName {
-0 [label="20"];
-1 [label="21" fillcolor= yellow, style = filled];
+0 [label="20" tooltip="FPushFuncD
+Int
+FPassCE
+Int
+FPassCE
+FCall
+PopR
+"];
+1 [label="21" fillcolor= yellow, style = filled,  tooltip="FPushFuncD
+Int
+FPassCE
+Int
+FPassCE
+FCall
+PopR
+Int
+RetC
+"];
 0 -> 1;
 0 [fillcolor = green, style = filled]
 }

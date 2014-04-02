@@ -121,7 +121,7 @@ public class File_operator {
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
 			//Get the cfg
 			cfg_ret = getCFG(basicBlocks);
-			cfg_ret.definitions = getDefinitions(basicBlocks);
+			//cfg_ret.definitions = getDefinitions(basicBlocks);
 			//cfg_ret.getUses(basicBlocks);
 			//cfg_ret.killSet(basicBlocks, cfg_ret.definitions);
 			cfg_ret.setFileName(file.getName());
@@ -222,6 +222,8 @@ public class File_operator {
 	
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
+		cfg.getDefinitions(basicBlocks);
+		cfg.getUses(basicBlocks);
 		//cfg.setName(name);
 		for(int i=0; i<cfg.getNodes().size(); i++) {
 			BasicBlock bi = cfg.getNodes().get(i);
@@ -262,6 +264,7 @@ public class File_operator {
 						cfg.addEdge(bi, bj, null);
 			}
 		}
+		cfg.getKills();
 		return cfg;
 	}
 	

@@ -58,10 +58,14 @@ public class BasicBlock {
 //		}
 //		ret+="\"];";
 		if(exitNode){
-			ret+=" fillcolor= yellow, style = filled";
+			ret+=" fillcolor= yellow, style = filled, ";
+
 		}
-	
-		ret+="];";
+		ret+=" tooltip=\"";
+		for(Instruction in:instructions){
+			ret+=in.instruction_text+"\n";
+		}
+		ret+="\"];";
 		return ret;
 	}
 
