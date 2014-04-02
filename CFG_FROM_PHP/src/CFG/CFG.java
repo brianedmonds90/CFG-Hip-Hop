@@ -180,11 +180,6 @@ public class CFG {
 		for (Defs_Uses di : definitions) {
 			for (Defs_Uses dj : definitions) {
 				if (di.variable_location==dj.variable_location) {
-					/*System.out.println("Same variable");
-					System.out.println(di.toString());
-					System.out.println(dj.toString());
-					System.out.println("Is there a path? "+isAPath(di.basicBlock, dj.basicBlock)+"\n");
-					System.out.println("--------------");*/
 					if (isAPath(di.basicBlock, dj.basicBlock))
 						kills.add(new Defs_Uses(dj.basicBlock, dj.php_line_no, dj.variable_location));
 				}
@@ -192,22 +187,23 @@ public class CFG {
 		}
 		System.out.print(":::KILLS::: There are "+kills.size()+" number of kills.\n");
 		for (Defs_Uses k : kills)
-			System.out.print(k.toString());
+			System.out.print(k.toString()+"\n");
 	}
 	
 	public boolean isAPath(BasicBlock a, BasicBlock b) {
 		ArrayList<BasicBlock> neighbors = new ArrayList<BasicBlock>();
 		neighbors = findNeighbors(a, neighbors);
-		if(neighbors.size()==0) // If it is an exit node, return false
+		if(neighbors.size()==0)
 			return false;
 		ArrayList<BasicBlock> visitedNode = new ArrayList<BasicBlock>();
-		BasicBlock temp = neighbors.remove(0);
-		if(visitedNode.contains(temp)) // If visited already, return false
-			return false;
-		if(temp.equals(b)) // If the neighbor is b, return true
-			return true;
-		neighbors = findNeighbors(temp, neighbors);
-		visitedNode.add(temp);
+		while(neighbors.size()>0) {
+			BasicBlock temp = neighbors.remove(0);
+			if(!visitedNode.contains(temp))	
+				neighbors = findNeighbors(temp, neighbors);
+			if(temp.equals(b)) // If the neighbor is b, return true
+				return true;
+			visitedNode.add(temp);
+		}
 		return false;
 	}
 	
