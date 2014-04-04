@@ -264,7 +264,7 @@ public class File_operator {
 						cfg.addEdge(bi, bj, null);
 			}
 		}
-		cfg.getKills();
+		cfg.getKills_Brian();
 		return cfg;
 	}
 	

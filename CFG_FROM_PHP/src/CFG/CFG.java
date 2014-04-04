@@ -27,7 +27,7 @@ public class CFG {
 		definitions = new ArrayList<Defs_Uses>();
 		uses = new ArrayList<Defs_Uses>();
 
-//		killSet = new ArrayList<KillSet>();
+		killSet = new ArrayList<KillSet>();
 		gen_set = new ArrayList<Defs_Uses>();
 		kills = new ArrayList<Defs_Uses>();
 		name = null;
@@ -119,9 +119,17 @@ public class CFG {
 		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
 		
 		for(Defs_Uses dd: definitions){
-			ret+= dd.toDot()+"\n";
+			ret+= dd.toDotDefs()+"\n";
 		}
 		
+		for(Defs_Uses use: uses){
+			ret+= use.toDotUses()+"\n";
+		}
+		
+//		for(KillSet kk : killSet){
+//			ret+= kk.toDot()+ "\n";
+//		}
+//		
 		return ret;
 	}
 	
@@ -206,6 +214,40 @@ public class CFG {
 		System.out.print(":::KILLS::: There are "+kills.size()+" number of kills.\n");
 		for (Defs_Uses k : kills)
 			System.out.print(k.toString()+"\n");
+	}
+	
+	public void getKills_Brian() {
+		if(definitions==null)
+			return;
+		
+		
+//		for(BasicBlock b: nodes){
+//			KillSet k = new KillSet(b);
+//			for (Defs_Uses di: definitions) {
+//				if(di.basicBlock.getBlockNo()==b.getBlockNo()){
+//					
+//				}
+//			}
+//		}
+		
+		for (int i = definitions.size()-1; i >= 0; i--) {
+			Defs_Uses di = definitions.get(i);
+			KillSet k = new KillSet(di.basicBlock);
+			for (int j = definitions.size()-2; j >0; j--) {
+				Defs_Uses dj = definitions.get(j);
+				if (dj.variable_location==di.variable_location) {
+					boolean path = isAPath(dj.basicBlock,di.basicBlock);
+					if (path)
+						k.addKill(dj.basicBlock, dj.variable_location,dj.php_line_no);
+				}
+			}
+			killSet.add(k);
+		}
+		System.out.print(":::KILLS::: There are "+killSet.size()+" number of kills.\n");
+		for (KillSet k : killSet)
+			if(k.basicBlocks.size()>0){
+				System.out.println(k);
+			}
 	}
 	
 	public boolean isAPath(BasicBlock a, BasicBlock b) {
