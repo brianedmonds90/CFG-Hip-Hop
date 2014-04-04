@@ -204,10 +204,10 @@ public class File_operator {
 						followingConditional = true;
 					}
 					
-					else if(inst.type == inst.get){
-						//check for the number of variables
-						
-					}
+//					else if(inst.type == inst.get){
+//						//check for the number of variables
+//						
+//					}
 					//If the instruction is following a conditional branch instruction
 					else if(followingConditional){
 						//Check if the leader to be added is already contained in the leaders list
@@ -251,7 +251,7 @@ public class File_operator {
 					//System.out.println("Destination: "+last_instr.getDestination()+j+": "+bj_first_instr);
 					if(last_instr.getDestination().equals(bj_first_instr)) {
 						if(!last_instr.getUnconditional())
-							cfg.addEdge(bi, bj, "True");
+							cfg.addEdge(bi, bj, "False");
 						else
 							cfg.addEdge(bi, bj, null);
 					}
@@ -259,7 +259,7 @@ public class File_operator {
 				// Check if Bj follows Bi and Bi does not have an unconditional goto statement
 				if(i+1==j && !last_instr.getUnconditional())
 					if(last_instr.type == last_instr.control_flow)
-						cfg.addEdge(bi, bj, "False");
+						cfg.addEdge(bi, bj, "True");
 					else
 						cfg.addEdge(bi, bj, null);
 			}

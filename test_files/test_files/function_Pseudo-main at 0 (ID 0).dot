@@ -1,5 +1,5 @@
 digraph testName {
-0 [label="20" tooltip="FPushFuncD
+0 [label="26" tooltip="FPushFuncD
 Int
 FPassCE
 Int
@@ -7,7 +7,7 @@ FPassCE
 FCall
 PopR
 "];
-1 [label="21" fillcolor= yellow, style = filled,  tooltip="FPushFuncD
+1 [label="27" fillcolor= yellow, style = filled,  tooltip="FPushFuncD
 Int
 FPassCE
 Int

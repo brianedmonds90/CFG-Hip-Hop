@@ -2,7 +2,7 @@
 Pseudo-main at 0 (ID 0)
  FPI 0-28; fpOff = 3
  FPI 31-59; fpOff = 3
-  // line 20
+  // line 26
     0: FPushFuncD 2 "foo"
     6: Int 0
    15: FPassCE 0
@@ -10,7 +10,7 @@ Pseudo-main at 0 (ID 0)
    26: FPassCE 1
    28: FCall 2
    30: PopR
-  // line 21
+  // line 27
    31: FPushFuncD 2 "foo"
    37: Int 1
    46: FPassCE 0
@@ -34,20 +34,20 @@ Function (leaf) foo at 72 (ID 1)
    96: Int 5
   105: CGetL2 0
   107: Lte
-  108: JmpZ 87 (195)
-  // line 9
+  108: JmpZ 123 (231)
+  // line 8
   113: Int 1
   122: CGetL2 2
   124: Add
   125: SetL 4
   127: PopC
-  // line 10
+  // line 9
   128: Int 2
   137: CGetL 3
   139: Mul
   140: SetL 2
   142: PopC
-  // line 11
+  // line 10
   143: String "The number is: "
   148: CGetL 0
   150: Concat
@@ -55,27 +55,42 @@ Function (leaf) foo at 72 (ID 1)
   156: Concat
   157: Print
   158: PopC
-  // line 12
+  // line 11
   159: CGetL 1
   161: JmpZ 13 (174)
-  // line 13
+  // line 12
   166: CGetL 3
   168: CGetL2 2
   170: Add
   171: SetL 4
   173: PopC
-  // line 15
+  // line 14
   174: Int 1
   183: SetL 3
   185: PopC
+  // line 15
+  186: Int 5
+  195: CGetL2 3
+  197: Gt
+  198: JmpZ 17 (215)
   // line 16
-  186: IncDecL 0 PreInc
-  189: PopC
-  // line 17
-  190: Jmp -94
-  // line 18
-  195: Null
-  196: RetC
+  203: String "True"
+  208: Print
+  209: PopC
+  // line 20
+  210: Jmp 12 (222)
+  // line 19
+  215: String "False"
+  220: Print
+  221: PopC
+  // line 22
+  222: IncDecL 0 PreInc
+  225: PopC
+  // line 23
+  226: Jmp -130
+  // line 24
+  231: Null
+  232: RetC
 Pseudo-main at 0 (ID 0)
  FPI 0-28; fpOff = 3
  FPI 31-59; fpOff = 3

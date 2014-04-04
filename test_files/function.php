@@ -5,7 +5,6 @@ function foo($c,$d){
 	$z = 1;
 	while($c<=5)
   {
-
   		$x = $y+1;  		
       $y = 2*$z;
   		echo "The number is: $c <br>";
@@ -13,6 +12,13 @@ function foo($c,$d){
   		 $x = $y+$z;
   		}
   		$z = 1;
+      if($z>5){
+        echo "True";
+      }
+      else{
+        echo"False";
+      }
+
   		$c++;
   } 	
 }

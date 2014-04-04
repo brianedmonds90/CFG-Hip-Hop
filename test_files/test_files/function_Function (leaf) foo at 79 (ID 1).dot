@@ -45,33 +45,18 @@ PopC
 SetL
 PopC
 "];
-9 [label="15" tooltip="Int
-CGetL2
-Gt
-JmpZ
-"];
-10 [label="16" tooltip="String
-Print
+9 [label="15" tooltip="IncDecL
 PopC
 "];
-11 [label="20" tooltip="Jmp
+10 [label="16" tooltip="Jmp
 "];
-12 [label="19" tooltip="String
-Print
-PopC
-"];
-13 [label="22" tooltip="IncDecL
-PopC
-"];
-14 [label="23" tooltip="Jmp
-"];
-15 [label="24" fillcolor= yellow, style = filled,  tooltip="Null
+11 [label="17" fillcolor= yellow, style = filled,  tooltip="Null
 RetC
 "];
 0 -> 1;
 1 -> 2;
 2 -> 3[xlabel="True"];
-2 -> 15[xlabel="False"];
+2 -> 11[xlabel="False"];
 3 -> 4;
 4 -> 5;
 5 -> 6;
@@ -79,13 +64,8 @@ RetC
 6 -> 8[xlabel="False"];
 7 -> 8;
 8 -> 9;
-9 -> 10[xlabel="True"];
-9 -> 12[xlabel="False"];
-10 -> 11;
-11 -> 13;
-12 -> 13;
-13 -> 14;
-14 -> 2;
+9 -> 10;
+10 -> 2;
 0 [fillcolor = green, style = filled]subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #4 : 2"];label = "DEFS";}
 0 -> g_0 [style="dashed"];
 subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #5 : 3"];label = "DEFS";}
@@ -112,7 +92,5 @@ subgraph cluster_use_7 { style=filled; color=lightgrey; node [style=filled,color
 7 -> use_7_3 [style="dashed"];
 subgraph cluster_use_7 { style=filled; color=lightgrey; node [style=filled,color=white]; use_7_2[label= "PHP Line #12 : 2"];label = "Uses";}
 7 -> use_7_2 [style="dashed"];
-subgraph cluster_use_9 { style=filled; color=lightgrey; node [style=filled,color=white]; use_9_3[label= "PHP Line #15 : 3"];label = "Uses";}
-9 -> use_9_3 [style="dashed"];
 
 }
