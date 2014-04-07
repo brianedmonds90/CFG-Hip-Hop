@@ -17,7 +17,7 @@ public class CFG {
 	private ArrayList<Defs_Uses> gen_set;
 	private ArrayList<KillSet> killSet;
 	private ArrayList<Defs_Uses> kills;
-
+	BasicBlock exitNode;
 	
 	public CFG(){
 	
@@ -78,7 +78,13 @@ public class CFG {
 	}
 	
 	public void setEntryNode(){
-		entry = nodes.get(0);
+		//entry = nodes.get(0);
+		entry = new BasicBlock();
+		entry.setBlockNo(-2);
+		Edge e = new Edge(entry, nodes.get(0), "ENTRY");
+		edges.add(e);
+		
+		
 	}
 	
 	public void setExitNodes(){
@@ -96,6 +102,13 @@ public class CFG {
 				}
 			}
 		}
+		exitNode = new BasicBlock();
+		int block_no = -1;
+		exitNode.setBlockNo(block_no);
+		for(BasicBlock e: exitNodes){
+			edges.add(new Edge(e,exitNode, "EXIT"));
+		}
+		
 		return;
 	}
 	
@@ -118,6 +131,11 @@ public class CFG {
 		}
 		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
 		
+		
+		ret+= exitNode.getBlockNo()+" [fillcolor= yellow, style = filled] ";
+
+		
+		
 		for(Defs_Uses dd: definitions){
 			ret+= dd.toDotDefs()+"\n";
 		}
@@ -125,6 +143,8 @@ public class CFG {
 		for(Defs_Uses use: uses){
 			ret+= use.toDotUses()+"\n";
 		}
+		
+		ret+=function.toDot();
 		
 //		for(KillSet kk : killSet){
 //			ret+= kk.toDot()+ "\n";

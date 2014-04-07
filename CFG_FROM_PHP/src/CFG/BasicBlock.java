@@ -52,21 +52,17 @@ public class BasicBlock {
 
 	public String toDot() {
 		String ret ="";
+		
 		ret = getBlockNo()+ " [label=\""+instructions.get(0).line+"\"";
-//		for(Instruction in: instructions){
-//			ret+=in.toString()+"\n";
-//		}
-//		ret+="\"];";
-		if(exitNode){
-			ret+=" fillcolor= yellow, style = filled, ";
 
-		}
+
 		ret+=" tooltip=\"";
 		for(Instruction in:instructions){
 			ret+=in.instruction_text+"\n";
 		}
 		ret+="\"];";
 		return ret;
+
 	}
 
 	public void setAsExitNode() {

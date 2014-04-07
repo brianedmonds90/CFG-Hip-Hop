@@ -87,4 +87,12 @@ public class Function {
 	public void setNumParams(int numParams2) {
 		numParams = numParams2;
 	}
+	
+	
+	public String toDot(){
+		String ret = "";
+		ret+= "-2 [label=\""+numParams+" params\"];";
+		return ret;
+	}
+	
 }
