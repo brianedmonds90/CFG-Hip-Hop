@@ -1,5 +1,11 @@
 package CFG;
 
+/**
+ * This class represents a definition or a use in a basic block and
+ * contains which basic block it belongs it, which line number it represents, 
+ * and which variable it is.
+ * 
+ */
 public class Defs_Uses {
 	public BasicBlock basicBlock;
 	public int php_line_no;
@@ -11,17 +17,6 @@ public class Defs_Uses {
 		php_line_no = p;
 		variable_location = var_loc;
 	}
-
-	public String toDotDefs() {
-		
-		String ret ="subgraph cluster_g_"+basicBlock.getBlockNo()+" { style=filled; color=lightgrey; node [style=filled,color=white]; " +
-				"g_"+basicBlock.getBlockNo()+"[label= \"PHP Line #"+php_line_no+" : "+variable_location+"\"];" +
-				"label = \"DEFS\";}";
-		ret+="\n"+basicBlock.getBlockNo() +" -> "+"g_"+basicBlock.getBlockNo()+" [style=\"dashed\"];";
-		return ret;
-	}
-	
-	
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -30,6 +25,15 @@ public class Defs_Uses {
 		sb.append("Var location: "+variable_location+"\n");
 		return sb.toString();
 	}
+
+	public String toDotDefs() {
+		
+		String ret ="subgraph cluster_g_"+basicBlock.getBlockNo()+" { style=filled; color=lightgrey; node [style=filled,color=white]; " +
+				"g_"+basicBlock.getBlockNo()+"[label= \"PHP Line #"+php_line_no+" : "+variable_location+"\"];" +
+				"label = \"DEFS\";}";
+		ret+="\n"+basicBlock.getBlockNo() +" -> "+"g_"+basicBlock.getBlockNo()+" [style=\"dashed\"];";
+		return ret;
+	}	
 
 	public String toDotKillSet() {
 		String ret ="subgraph cluster_k_"+basicBlock.getBlockNo()+ //cluster name-> kill set

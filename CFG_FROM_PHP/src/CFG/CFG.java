@@ -3,7 +3,10 @@ package CFG;
 import java.util.ArrayList;
 
 import com.sun.swing.internal.plaf.basic.resources.basic;
-
+/**
+ * This class contains all the information of a CFG: function name, nodes, edges, entry, exit,
+ * definition, uses, and kills.
+ */
 public class CFG {
 	private String name; // Function name
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
@@ -20,7 +23,6 @@ public class CFG {
 	BasicBlock exitNode;
 	
 	public CFG(){
-	
 		nodes = new ArrayList<BasicBlock>();
 		edges = new ArrayList<Edge>();
 		exitNodes = new ArrayList<BasicBlock>();
@@ -31,7 +33,6 @@ public class CFG {
 		gen_set = new ArrayList<Defs_Uses>();
 		kills = new ArrayList<Defs_Uses>();
 		name = null;
-	
 	}
 	
 	public CFG(ArrayList<BasicBlock> blocks) {
@@ -54,37 +55,25 @@ public class CFG {
 		return ret;
 	}
 	
-	public ArrayList<BasicBlock> getNodes() {
-		return nodes;
-	}
-	
-	public ArrayList<Edge> getEdges() {
-		return edges;
-	}
-	
 	public void addEdge(BasicBlock bi, BasicBlock bj, String label) {
 		edges.add(new Edge(bi, bj, label));
 	}
-
-	public String toString(){
-		StringBuilder sb = new StringBuilder("CFG: \n");
-		for(BasicBlock b: nodes){
-			sb.append(b+"\n");
-		}
-		for( Edge e: edges){
-			sb.append(e+"\n");
-		}
-		return sb.toString();
+	
+	public void setFileName(String str){
+		fileName = str;
 	}
 	
+	public void setFunction(Function f) {
+		function = f;
+	}
+
+
 	public void setEntryNode(){
 		//entry = nodes.get(0);
 		entry = new BasicBlock();
 		entry.setBlockNo(-2);
 		Edge e = new Edge(entry, nodes.get(0), "ENTRY");
 		edges.add(e);
-		
-		
 	}
 	
 	public void setExitNodes(){
@@ -92,7 +81,7 @@ public class CFG {
 		for(int i =0;i<nodes.size();i++){
 			a = nodes.get(i);
 			for(int j = 0;j<edges.size();j++){
-				b = edges.get(j).u;
+				b = edges.get(j).getU();
 				if(a.getBlockNo()==b.getBlockNo()){
 					break;
 				}
@@ -112,61 +101,25 @@ public class CFG {
 		return;
 	}
 	
-	public ArrayList<BasicBlock> getExitNodes() {
-		return exitNodes;
-	}
-	
 	public void setExitNodes(ArrayList<BasicBlock> exitNodes) {
 		this.exitNodes = exitNodes;
 	}
 	
-	public String toDot(){
-		String ret = "";
-		for(BasicBlock bb: nodes){
-			ret+=bb.toDot()+"\n";
-		}
-		
-		for(Edge e: edges){
-			ret+=e.toDot()+"\n";
-		}
-		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
-		
-		
-		ret+= exitNode.getBlockNo()+" [fillcolor= yellow, style = filled] ";
-
-		
-		
-		for(Defs_Uses dd: definitions){
-			ret+= dd.toDotDefs()+"\n";
-		}
-		
-		for(Defs_Uses use: uses){
-			ret+= use.toDotUses()+"\n";
-		}
-		
-		ret+=function.toDot();
-		
-//		for(KillSet kk : killSet){
-//			ret+= kk.toDot()+ "\n";
-//		}
-//		
-		return ret;
+	public ArrayList<BasicBlock> getExitNodes() {
+		return exitNodes;
 	}
 	
+	public ArrayList<BasicBlock> getNodes() {
+		return nodes;
+	}
 	
+	public ArrayList<Edge> getEdges() {
+		return edges;
+	}
 	
 	public String getFileName(){
 		int index = fileName.indexOf(".");
 		return fileName.substring(0,index);
-	}
-	
-	public void setFileName(String str){
-		fileName = str;
-	}
-	
-	public void setFunction(Function f) {
-		function = f;
-		
 	}
 	
 	public String getFunctionName() {
@@ -177,14 +130,13 @@ public class CFG {
 		for(BasicBlock bb: basicBlocks){
 			for(Instruction inst : bb.getInstructions()){
 				if(inst.use){
-					uses.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
+					uses.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.getArgs()[0]))));
 				}	
 			}
 		}
 		return;
 	}
 	
-
 	public void getDefinitions(ArrayList<BasicBlock> basicBlocks) {
 		boolean bbHasDef;
 		int instrucionIndex;
@@ -198,7 +150,7 @@ public class CFG {
 				if(inst.definition){
 					if(!bbHasDef){
 						bbHasDef = true;
-						definitions.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.args[0]))));
+						definitions.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.getArgs()[0]))));
 					}
 					else{//Basic Block already has a definition in it
 						//split the basic block and add it to the basicBlocks list
@@ -289,8 +241,52 @@ public class CFG {
 	
 	public ArrayList<BasicBlock> findNeighbors(BasicBlock b, ArrayList<BasicBlock> neighbors) {
 		for(Edge e : edges) 			
-			if(e.u.equals(b))
-				neighbors.add(e.v);
+			if(e.getU().equals(b))
+				neighbors.add(e.getV());
 		return neighbors;
+	}
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder("CFG: \n");
+		for(BasicBlock b: nodes){
+			sb.append(b+"\n");
+		}
+		for( Edge e: edges){
+			sb.append(e+"\n");
+		}
+		return sb.toString();
+	}
+	
+	public String toDot(){
+		String ret = "";
+		for(BasicBlock bb: nodes){
+			ret+=bb.toDot()+"\n";
+		}
+		
+		for(Edge e: edges){
+			ret+=e.toDot()+"\n";
+		}
+		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
+		
+		
+		ret+= exitNode.getBlockNo()+" [fillcolor= yellow, style = filled] ";
+
+		
+		
+		for(Defs_Uses dd: definitions){
+			ret+= dd.toDotDefs()+"\n";
+		}
+		
+		for(Defs_Uses use: uses){
+			ret+= use.toDotUses()+"\n";
+		}
+		
+		ret+=function.toDot();
+		
+//		for(KillSet kk : killSet){
+//			ret+= kk.toDot()+ "\n";
+//		}
+//		
+		return ret;
 	}
 }

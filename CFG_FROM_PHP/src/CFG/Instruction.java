@@ -5,9 +5,12 @@ import java.util.StringTokenizer;
 
 import main.Main;
 
-
-
-
+/**
+ * This class represents each instruction line in the bytecode.
+ * It contains the type of instruction, the operation code, paramenters, 
+ * line number in bytecode, and destination (if applicable).
+ *
+ */
 public class Instruction{
 	
 	/************************
@@ -30,11 +33,11 @@ public class Instruction{
 	public final int  continuation_creation_execution = 13;
 	public final int set = 14;
 	public int type;
-	String [] args;
+	private String [] args;
 	public int line;
-	String instruction_text;
-	String instr_text;
-	String bc_line_no;
+	private String instruction_text;
+	private String instr_text;
+	private String bc_line_no;
 	private Instruction destination;
 	private boolean unconditional;
 	public boolean definition;
@@ -72,7 +75,6 @@ public class Instruction{
 			//Mutator instructions
 			type = set;
 			definition  = true;
-			
 		}
 		
 		else{
@@ -98,31 +100,38 @@ public class Instruction{
 			unconditional = true;
 	}
 	
-	public String toString() {
-		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " );
-		for (int i=0; i<args.length; i++){
-			if(args[i]!=null)
-				sb.append(args[i]+" ");
-		}
-			
-		sb.append("\n");
-		return sb.toString();
+	public void setBCLineNo(String bc_line) {
+		bc_line_no = bc_line;
+	}
+	
+	public void setDestination(Instruction destination) {
+		this.destination = destination;
 	}
 
-	public void setBC_Line_No(String bc_line) {
-		bc_line_no = bc_line;
+	public void setLine(Line l) {
+		line = l.line_no;
 	}
 
 	public String[] getArgs() {
-		
 		return args;
 	}
 
+	public Instruction getDestination() {
+		return destination;
+	}
+
+	public boolean getUnconditional() {
+		return unconditional;
+	}
+	
 	public String getBCLineNO() {
-		
 		return bc_line_no;
 	}
 	
+	public String getInstrText() {
+		return instruction_text;
+	}
+
 	@Override
 	public boolean equals(Object other){
 		if (other == null) return false;
@@ -143,21 +152,14 @@ public class Instruction{
 		return 1;
 	}
 	
-	public void setDestination(Instruction destination) {
-		this.destination = destination;
+	public String toString() {
+		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " );
+		for (int i=0; i<args.length; i++){
+			if(args[i]!=null)
+				sb.append(args[i]+" ");
+		}
+			
+		sb.append("\n");
+		return sb.toString();
 	}
-
-	public Instruction getDestination() {
-		return destination;
-	}
-
-	public boolean getUnconditional() {
-		return unconditional;
-	}
-
-	public void setLine(Line l) {
-		line = l.line_no;
-	}
-
-
 }

@@ -86,7 +86,7 @@ public class File_operator {
 				if(firstChar<str.length()){
 					bc_line_no = str.substring(0,firstChar-2);
 					Instruction inst = l.addInstruction(str.substring(firstChar));
-					inst.setBC_Line_No(bc_line_no);
+					inst.setBCLineNo(bc_line_no);
 					inst.setLine(l);
 				}
 			}
