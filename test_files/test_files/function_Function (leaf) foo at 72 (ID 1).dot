@@ -88,7 +88,7 @@ RetC
 14 -> 2;
 -2 -> 0[xlabel="ENTRY"];
 15 -> -1[xlabel="EXIT"];
--2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #4 : 2"];label = "DEFS";}
+-2 [fillcolor = green, style = filled]-1 [label = exit, fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #4 : 2"];label = "DEFS";}
 0 -> g_0 [style="dashed"];
 subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #5 : 3"];label = "DEFS";}
 1 -> g_1 [style="dashed"];

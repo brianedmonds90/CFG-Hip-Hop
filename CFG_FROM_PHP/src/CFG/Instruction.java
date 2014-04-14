@@ -1,6 +1,5 @@
 package CFG;
 
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import main.Main;
@@ -29,6 +28,7 @@ public class Instruction{
 	public final int  miscellaneous = 12;
 	public final int  continuation_creation_execution = 13;
 	public final int set = 14;
+	
 	public int type;
 	String [] args;
 	public int line;
@@ -39,6 +39,7 @@ public class Instruction{
 	private boolean unconditional;
 	public boolean definition;
 	public boolean use;
+	public boolean global;
 	
 	public Instruction(){
 		args= new String [10];
@@ -78,6 +79,11 @@ public class Instruction{
 		else{
 			type = unidentified;
 		}
+		
+		if(Main.globalInstructions.contains(instruction_text)){
+			global = true;
+		}
+		
 		
 		/* Parse the instruction */
 		boolean instr = true;

@@ -20,5 +20,5 @@ RetC
 0 -> 1;
 -2 -> 0[xlabel="ENTRY"];
 1 -> -1[xlabel="EXIT"];
--2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] -2 [label="0 params"];
+-2 [fillcolor = green, style = filled]-1 [label = exit, fillcolor= yellow, style = filled] -2 [label="0 params"];
 }

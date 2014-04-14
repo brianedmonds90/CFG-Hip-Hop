@@ -65,11 +65,14 @@ public class Main {
 	public static ArrayList<String> cfgInstructions;
 	public static ArrayList<String> getInstructions;
 	public static ArrayList<String> setL;
+	public static ArrayList<String> globalInstructions;
+	
 	
 	public static void init(){
 		
 		getInstructions = new ArrayList<String>();
 		cfgInstructions = new ArrayList<String>();
+		globalInstructions = new ArrayList<String>();
 		setL = new ArrayList<String>();
 		//Add the CFG instructions
 		cfgInstructions.add("Jmp");
@@ -87,17 +90,40 @@ public class Main {
 		getInstructions.add("CGetL3");
 		getInstructions.add("PushL");
 		getInstructions.add("CGetN");
-		getInstructions.add("CGetG");
 		getInstructions.add("CGetS");
 		getInstructions.add("VGetL");
 		getInstructions.add("VGetN");
-		getInstructions.add("VGetG");
 		getInstructions.add("VGetS");
 		getInstructions.add("AGetC");
 		getInstructions.add("AGetL");
+		getInstructions.add("VGetG");
+		getInstructions.add("CGetG");
+		
 		
 		//Add the setter instructions
 		setL.add("SetL");
+		setL.add("SetN");
+		setL.add("SetS");
+		setL.add("SetOpL");
+		setL.add("SetOpN");
+		setL.add("SetOpS");
+		//setL.add("IncDecL");
+		//setL.add("IncDecN");
+		setL.add("IncDecS");
+		setL.add("BindL");
+		setL.add("BindN");
+		setL.add("BindS");
+		setL.add("UnsetL");
+		setL.add("UnsetN");
+		setL.add("CheckProp");
+		setL.add("InitProp");
 		
+		globalInstructions.add("UnsetG");
+		globalInstructions.add("SetG");
+		globalInstructions.add("SetOpG");
+		globalInstructions.add("BindG");
+		globalInstructions.add("IncDecG");
+		globalInstructions.add("VGetG");
+		globalInstructions.add("CGetG");
 	}
 }

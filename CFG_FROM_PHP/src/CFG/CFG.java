@@ -132,7 +132,7 @@ public class CFG {
 		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
 		
 		
-		ret+= exitNode.getBlockNo()+" [fillcolor= yellow, style = filled] ";
+		ret+= exitNode.getBlockNo()+" [label = exit, fillcolor= yellow, style = filled] ";
 
 		
 		
@@ -146,10 +146,6 @@ public class CFG {
 		
 		ret+=function.toDot();
 		
-//		for(KillSet kk : killSet){
-//			ret+= kk.toDot()+ "\n";
-//		}
-//		
 		return ret;
 	}
 	
