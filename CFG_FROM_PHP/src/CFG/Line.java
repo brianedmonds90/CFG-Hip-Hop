@@ -15,14 +15,6 @@ public class Line {
 		this();
 		line_no = l;
 	}
-	
-	public String toString() {
-		StringBuilder sb = new StringBuilder("	line_no: "+line_no+"\n");
-		//String str = line_no + ": ";
-		for (int i=0; i<instructions.size(); i++)
-			sb.append(instructions.get(i));
-		return sb.toString();
-	}
 
 	public Instruction addInstruction(String str) {
 		Instruction ret = new Instruction(str);
@@ -32,9 +24,14 @@ public class Line {
 	}
 
 	public ArrayList<Instruction> getInstructions() {
-		// TODO Auto-generated method stub
 		return instructions;
 	}
 
-
+	public String toString() {
+		StringBuilder sb = new StringBuilder("	line_no: "+line_no+"\n");
+		//String str = line_no + ": ";
+		for (int i=0; i<instructions.size(); i++)
+			sb.append(instructions.get(i));
+		return sb.toString();
+	}
 }

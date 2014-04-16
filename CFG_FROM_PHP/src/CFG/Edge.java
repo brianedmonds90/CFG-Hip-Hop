@@ -1,13 +1,33 @@
 package CFG;
 
+/**
+ * This class represents an edge in the CFG, flows from U to V.
+ *
+ */
 public class Edge {
-	BasicBlock u,v;
-	public String label;
+	private BasicBlock u,v;
+	private String label;
 	
-	public Edge(BasicBlock a,BasicBlock b, String label){
-		u=a;
-		v=b;
+	public Edge(BasicBlock a, BasicBlock b) {
+		u = a;
+		v = b;
+	}
+	
+	public Edge(BasicBlock a, BasicBlock b, String label){
+		this(a, b);
 		this.label = label;
+	}
+	
+	public BasicBlock getU() {
+		return u;
+	}
+	
+	public BasicBlock getV() {
+		return v;
+	}
+	
+	public String getLabel() {
+		return label;
 	}
 	
 	public String toString() {

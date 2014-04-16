@@ -2,9 +2,13 @@ package CFG;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents an individual function.
+ *
+ */
 public class Function {
-	ArrayList<Line> lines; 
-	String name;
+	private ArrayList<Line> lines; 
+	private String name;
 	ArrayList<String> fpis;
 	int numParams;
 	
@@ -18,42 +22,6 @@ public class Function {
 		this();
 		name = n;
 	}
-
-	public ArrayList<Line> getLines() {
-		return lines;
-	}
-
-	public void setLines(ArrayList<Line> lines) {
-		this.lines = lines;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String toString() {
-		StringBuilder sb = new StringBuilder("Function: " + name +" num params: "+numParams+"\n");
-		for(String s: fpis){
-			sb.append("FPIS: "+s+"\n");
-		}
-		for (Line l: lines)
-			sb.append(l);
-		return sb.toString();
-	}
-
-	public void addLine(int str) {
-		lines.add(new Line(str));
-		
-	}
-
-	public void addFPI(String next) {
-		fpis.add(next);
-	}
-
 	
 	public int calcNumParams() {
 		int numVars = 0;
@@ -63,13 +31,13 @@ public class Function {
 			for(Instruction i: l.getInstructions()){
 				
 				if(i.type == i.get){
-					temp1 = Integer.parseInt(i.args[0]);
+					temp1 = Integer.parseInt(i.getArgs()[0]);
 					if(temp1 > numVars){
 						numVars= temp1;
 					}
 				}
 				else if(i.type == i.set){
-					temp2 = Integer.parseInt(i.args[0]);
+					temp2 = Integer.parseInt(i.getArgs()[0]);
 					if(temp2 < minSetL){
 						minSetL = temp2;
 					}
@@ -83,11 +51,44 @@ public class Function {
 			return 0;
 		
 	}
+	
+	public void addLine(int str) {
+		lines.add(new Line(str));		
+	}
+
+	public void addFPI(String next) {
+		fpis.add(next);
+	}
 
 	public void setNumParams(int numParams2) {
 		numParams = numParams2;
 	}
+
+	public void setLines(ArrayList<Line> lines) {
+		this.lines = lines;
+	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public ArrayList<Line> getLines() {
+		return lines;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder("Function: " + name +" num params: "+numParams+"\n");
+		for(String s: fpis){
+			sb.append("FPIS: "+s+"\n");
+		}
+		for (Line l: lines)
+			sb.append(l);
+		return sb.toString();
+	}
 	
 	public String toDot(){
 		String ret = "";
