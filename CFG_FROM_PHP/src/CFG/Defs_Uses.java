@@ -11,13 +11,23 @@ public class Defs_Uses {
 	public int php_line_no;
 	public int variable_location;
 	
-	
+	/**
+	 * @param b Basic block that the definition/use belongs to
+	 * @param p The line number that the definition/use appears in
+	 * @param var_loc The variable location number represented in the bytecode
+	 */
 	public Defs_Uses(BasicBlock b, int p, int var_loc){
 		basicBlock = b;
 		php_line_no = p;
 		variable_location = var_loc;
 	}
 	
+	/**
+	 * Returns a string representation:
+	 * Basic Block : [Basic block number]
+	 * PHP line no.: [PHP line number]
+	 * Var location: [Variable location number]
+	 */
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Basic Block : "+basicBlock.getBlockNo()+"\n");
@@ -25,7 +35,10 @@ public class Defs_Uses {
 		sb.append("Var location: "+variable_location+"\n");
 		return sb.toString();
 	}
-
+	
+	/**
+	 * @return The appropriate graphviz syntax that represents a definition
+	 */
 	public String toDotDefs() {
 		
 		String ret ="subgraph cluster_g_"+basicBlock.getBlockNo()+" { style=filled; color=lightgrey; node [style=filled,color=white]; " +
@@ -35,6 +48,9 @@ public class Defs_Uses {
 		return ret;
 	}	
 
+	/**
+	 * @return The appropriate graphviz syntax that represents a kill
+	 */
 	public String toDotKillSet() {
 		String ret ="subgraph cluster_k_"+basicBlock.getBlockNo()+ //cluster name-> kill set
 				" { style=filled; " +
@@ -46,6 +62,9 @@ public class Defs_Uses {
 		return ret;
 	}
 	
+	/**
+	 * @return The appropriate graphviz syntax that represents an use
+	 */
 	public String toDotUses(){
 		String ret = "subgraph cluster_use_"+basicBlock.getBlockNo()+ //cluster name-> defs
 				" { style=filled; " +

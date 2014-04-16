@@ -32,17 +32,20 @@ public class Instruction{
 	public final int  miscellaneous = 12;
 	public final int  continuation_creation_execution = 13;
 	public final int set = 14;
+	
 	public int type;
 	private String [] args;
 	public int line;
 	private String instruction_text;
-	private String instr_text;
 	private String bc_line_no;
 	private Instruction destination;
 	private boolean unconditional;
 	public boolean definition;
 	public boolean use;
 	
+	/**
+	 * Initializes variables.
+	 */
 	public Instruction(){
 		args= new String [10];
 
@@ -50,11 +53,19 @@ public class Instruction{
 		unconditional = false;
 	}
 	
+	/**
+	 * @param t Type of instruction
+	 */
 	public Instruction(int t){
 		this();
 		type = t;
 	}
 	
+	/**
+	 * This constructor takes in an instruction from the bytecode and parses and stores
+	 * the operation code and the arguments.
+	 * @param text The actual instruction from bytecode
+	 */
 	public Instruction(String text){
 		this();
 		instruction_text = text;
@@ -87,7 +98,7 @@ public class Instruction{
 		StringTokenizer st = new StringTokenizer(text, " ");
 		while (st.hasMoreTokens()) {
 			if (instr) {
-				instr_text = st.nextToken();
+				//instr_text = st.nextToken();
 				instr = false;
 			}
 			else {
@@ -100,38 +111,66 @@ public class Instruction{
 			unconditional = true;
 	}
 	
+	/**
+	 * @param bc_line Line number in the bytecode
+	 */
 	public void setBCLineNo(String bc_line) {
 		bc_line_no = bc_line;
 	}
 	
+	/**
+	 * @param destination The next instruction that executes after this instruction
+	 */
 	public void setDestination(Instruction destination) {
 		this.destination = destination;
 	}
-
+	
+	/**
+	 * @param l
+	 */
 	public void setLine(Line l) {
 		line = l.line_no;
 	}
 
+	/**
+	 * @return A list of arguments
+	 */
 	public String[] getArgs() {
 		return args;
 	}
 
+	/**
+	 * @return The next instruction that will be executed after this instruction.
+	 */
 	public Instruction getDestination() {
 		return destination;
 	}
 
+	/**
+	 * Used for constructing the edges of a CFG
+	 * @return True if this instruction is unconditional; false otherwise
+	 */
 	public boolean getUnconditional() {
 		return unconditional;
 	}
 	
+	/**
+	 * @return the line number in bytecode
+	 */
 	public String getBCLineNO() {
 		return bc_line_no;
 	}
 	
+	/**
+	 * @return the operation code
+	 */
 	public String getInstrText() {
 		return instruction_text;
 	}
 
+	/**
+	 * Compares the line number in bytecode
+	 */
 	@Override
 	public boolean equals(Object other){
 		if (other == null) return false;
@@ -152,8 +191,12 @@ public class Instruction{
 		return 1;
 	}
 	
+	/**
+	 * Returns a string representation:
+	 * 		[line number in bytecode]: [operation code] [args]
+	 */
 	public String toString() {
-		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " );
+		StringBuilder sb = new StringBuilder("\t"+bc_line_no+": "+instruction_text+ " " );
 		for (int i=0; i<args.length; i++){
 			if(args[i]!=null)
 				sb.append(args[i]+" ");
