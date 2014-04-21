@@ -1,0 +1,65 @@
+digraph testName {
+0 [label="20" tooltip="String
+VGetG
+BindL
+PopV
+"];
+1 [label="21" tooltip="String
+FPushFuncD
+String
+FPassCE
+FCall
+UnboxR
+String
+Concat
+FPushFuncD
+String
+FPassCE
+FCall
+UnboxR
+Concat
+Concat
+SetL
+PopC
+"];
+2 [label="22" tooltip="CGetL
+FPushObjMethodD
+FPassL
+FCall
+UnboxR
+SetL
+PopC
+"];
+3 [label="36" tooltip="FPushFuncD
+String
+FPassCE
+FCall
+PopR
+"];
+4 [label="37" tooltip="FPushFuncD
+FPassL
+FCall
+UnboxR
+Print
+PopC
+"];
+5 [label="38" tooltip="Null
+RetC
+"];
+0 -> 1;
+1 -> 2;
+2 -> 3;
+3 -> 4;
+4 -> 5;
+-2 -> 0[xlabel="ENTRY"];
+5 -> -1[xlabel="EXIT"];
+-2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #20 : 0"];label = "DEFS";}
+0 -> g_0 [style="dashed"];
+subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #21 : 1"];label = "DEFS";}
+1 -> g_1 [style="dashed"];
+subgraph cluster_g_2 { style=filled; color=lightgrey; node [style=filled,color=white]; g_2[label= "PHP Line #22 : 2"];label = "DEFS";}
+2 -> g_2 [style="dashed"];
+subgraph cluster_use_2 { style=filled; color=lightgrey; node [style=filled,color=white]; use_2_0[label= "PHP Line #22 : 0"];label = "Uses";}
+2 -> use_2_0 [style="dashed"];
+-2 [label="0 params"];
+}

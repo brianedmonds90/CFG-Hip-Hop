@@ -31,48 +31,57 @@ public class Instruction{
 	public final int  miscellaneous = 12;
 	public final int  continuation_creation_execution = 13;
 	public final int set = 14;
-	
 	public int type;
 	private String [] args;
 	public int line;
 	private String instruction_text;
-	private String instr_text;
 	private String bc_line_no;
 	private Instruction destination;
 	private boolean unconditional;
 	public boolean definition;
 	public boolean use;
 	public boolean global;
-	
+	String instr_text;
+	/**
+	 * Initializes variables.
+	 */
 	public Instruction(){
-		args= new String [10];
+		args= new String [100];
 
 		destination = null;
 		unconditional = false;
 	}
 	
+	/**
+	 * @param t Type of instruction
+	 */
 	public Instruction(int t){
 		this();
 		type = t;
 	}
 	
+	/**
+	 * This constructor takes in an instruction from the bytecode and parses and stores
+	 * the operation code and the arguments.
+	 * @param text The actual instruction from bytecode
+	 */
 	public Instruction(String text){
 		this();
-		instruction_text = text;
-		int index = instruction_text.indexOf(" ");
+		setInstruction_text(text);
+		int index = getInstruction_text().indexOf(" ");
 		
 		if(index!=-1){
-			instruction_text = instruction_text.substring(0,index);
+			setInstruction_text(getInstruction_text().substring(0,index));
 		}
 		
-		if(Main.cfgInstructions.contains(instruction_text)){
+		if(Main.cfgInstructions.contains(getInstruction_text())){
 			type = control_flow;
 		}
-		else if(Main.getInstructions.contains(instruction_text)){
+		else if(Main.getInstructions.contains(getInstruction_text())){
 			type = get;
 			use = true;
 		}
-		else if(Main.setL.contains(instruction_text)){
+		else if(Main.setL.contains(getInstruction_text())){
 			//Mutator instructions
 			type = set;
 			definition  = true;
@@ -82,7 +91,7 @@ public class Instruction{
 			type = unidentified;
 		}
 		
-		if(Main.globalInstructions.contains(instruction_text)){
+		if(Main.globalInstructions.contains(getInstruction_text())){
 			global = true;
 		}
 		
@@ -102,42 +111,70 @@ public class Instruction{
 			}
 		}
 		
-		if(instruction_text.equals("Jmp") || instruction_text.equals("JmpNS"))
+		if(getInstruction_text().equals("Jmp") || getInstruction_text().equals("JmpNS"))
 			unconditional = true;
 	}
 	
+	/**
+	 * @param bc_line Line number in the bytecode
+	 */
 	public void setBCLineNo(String bc_line) {
 		bc_line_no = bc_line;
 	}
 	
+	/**
+	 * @param destination The next instruction that executes after this instruction
+	 */
 	public void setDestination(Instruction destination) {
 		this.destination = destination;
 	}
-
+	
+	/**
+	 * @param l
+	 */
 	public void setLine(Line l) {
 		line = l.line_no;
 	}
 
+	/**
+	 * @return A list of arguments
+	 */
 	public String[] getArgs() {
 		return args;
 	}
 
+	/**
+	 * @return The next instruction that will be executed after this instruction.
+	 */
 	public Instruction getDestination() {
 		return destination;
 	}
 
+	/**
+	 * Used for constructing the edges of a CFG
+	 * @return True if this instruction is unconditional; false otherwise
+	 */
 	public boolean getUnconditional() {
 		return unconditional;
 	}
 	
+	/**
+	 * @return the line number in bytecode
+	 */
 	public String getBCLineNO() {
 		return bc_line_no;
 	}
 	
+	/**
+	 * @return the operation code
+	 */
 	public String getInstrText() {
-		return instruction_text;
+		return getInstruction_text();
 	}
 
+	/**
+	 * Compares the line number in bytecode
+	 */
 	@Override
 	public boolean equals(Object other){
 		if (other == null) return false;
@@ -158,8 +195,12 @@ public class Instruction{
 		return 1;
 	}
 	
+	/**
+	 * Returns a string representation:
+	 * 		[line number in bytecode]: [operation code] [args]
+	 */
 	public String toString() {
-		StringBuilder sb = new StringBuilder("		"+bc_line_no+": "+instruction_text+ " " );
+		StringBuilder sb = new StringBuilder("\t"+bc_line_no+": "+getInstruction_text()+ " " );
 		for (int i=0; i<args.length; i++){
 			if(args[i]!=null)
 				sb.append(args[i]+" ");
@@ -167,5 +208,13 @@ public class Instruction{
 			
 		sb.append("\n");
 		return sb.toString();
+	}
+
+	public String getInstruction_text() {
+		return instruction_text;
+	}
+
+	public void setInstruction_text(String instruction_text) {
+		this.instruction_text = instruction_text;
 	}
 }

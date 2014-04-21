@@ -2,6 +2,7 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class Main {
 	
 	public Main(){}
 	
-	public static void main(String [] args){
+	public static void main(String [] args) throws IOException{
 		
 		ArrayList<File> byteCodeFiles = new ArrayList<File>();
 		init();
@@ -27,7 +28,16 @@ public class Main {
 		//parse the given bytecode files from the directory
 		PrintWriter writer;
 		ArrayList<CFG> cfgs = new ArrayList<CFG>();
-		String filePath ="/Users/brianedmonds/Documents/orso_research/test_files/test_files/";
+		File directory = new File (".");
+		String currentDirectory = directory.getCanonicalPath();
+		String outputPath = currentDirectory+"/graphViz/";
+		boolean success = new File(outputPath).mkdirs();
+		if(success){
+			System.out.println("output directory created successfully");
+		}
+		else{
+			System.out.println("error in creating outpute directory");
+		}
 		String graphName = "testName";
 		for(File f: byteCodeFiles){
 			String fileName = f.getName();
@@ -37,7 +47,7 @@ public class Main {
 				cfgs = f_operator.parse_byte_code(f);
 				for(CFG cfg: cfgs ){
 					try {
-						writer = new PrintWriter(filePath+cfg.getFileName()+"_"+
+						writer = new PrintWriter(outputPath+cfg.getFileName()+"_"+
 								cfg.getFunctionName()+".dot", "UTF-8");
 						writer.println("digraph "+graphName+" {");
 						writer.println(cfg.toDot());
@@ -50,11 +60,8 @@ public class Main {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					System.out.println("CHECK your "+filePath+"for the graphviz file");
-					System.out.println("EXIT NODES: ");
-					for(BasicBlock b: cfg.getExitNodes()){
-						System.out.println("\n Block: "+b.getBlockNo());
-					}
+					System.out.println("CHECK your "+outputPath+"for the graphviz file");
+
 				}
 			}
 		}		
@@ -96,7 +103,7 @@ public class Main {
 		getInstructions.add("VGetS");
 		getInstructions.add("AGetC");
 		getInstructions.add("AGetL");
-		getInstructions.add("VGetG");
+		//getInstructions.add("VGetG");
 		getInstructions.add("CGetG");
 		
 		

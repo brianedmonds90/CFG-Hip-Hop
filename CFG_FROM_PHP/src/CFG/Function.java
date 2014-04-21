@@ -11,11 +11,13 @@ public class Function {
 	private String name;
 	ArrayList<String> fpis;
 	int numParams;
+	ArrayList<String> ehTable;
 	
 	public Function(){
 		lines = new ArrayList<Line>();
 		fpis = new ArrayList<String>();
 		numParams = 0;
+		ehTable = new ArrayList<String>();
 	}
 	
 	public Function(String n){
@@ -29,7 +31,6 @@ public class Function {
 		int temp1,temp2;
 		for(Line l: lines){
 			for(Instruction i: l.getInstructions()){
-				
 				if(i.type == i.get){
 					temp1 = Integer.parseInt(i.getArgs()[0]);
 					if(temp1 > numVars){
@@ -94,6 +95,11 @@ public class Function {
 		String ret = "";
 		ret+= "-2 [label=\""+numParams+" params\"];";
 		return ret;
+	}
+
+	public void addEHTable(String str) {
+		ehTable.add(str);
+		
 	}
 	
 }

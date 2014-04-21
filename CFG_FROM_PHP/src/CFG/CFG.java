@@ -22,6 +22,9 @@ public class CFG {
 	private ArrayList<Defs_Uses> kills;
 	BasicBlock exitNode;
 	
+	/**
+	 * Initializes variables.
+	 */
 	public CFG(){
 		nodes = new ArrayList<BasicBlock>();
 		edges = new ArrayList<Edge>();
@@ -35,18 +38,27 @@ public class CFG {
 		name = null;
 	}
 	
+	/**
+	 * @param blocks List of Basic blocks
+	 */
 	public CFG(ArrayList<BasicBlock> blocks) {
 		this();
 		nodes = blocks;
 	}
 	
+	/**
+	 * Sets the name of this CFG correspond to the function name.
+	 * @param name Name of the CFG
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	
-	/*
+	/**
 	 * Returns the basic block that was just created
 	 * adds it to this CFG
+	 * @param b Basic block to be added to this CFG
+	 * @return The object BasicBlock created
 	 */
 	public BasicBlock addBasicBlock(BasicBlock b) {
 		BasicBlock ret = new BasicBlock();
@@ -55,6 +67,12 @@ public class CFG {
 		return ret;
 	}
 	
+	/**
+	 * Adds an edge to the edge list.
+	 * @param bi Source basic block
+	 * @param bj Destination basic block
+	 * @param label True / False / Exit / Entry
+	 */
 	public void addEdge(BasicBlock bi, BasicBlock bj, String label) {
 		edges.add(new Edge(bi, bj, label));
 	}
@@ -67,7 +85,10 @@ public class CFG {
 		function = f;
 	}
 
-
+	/**
+	 * Initializes the entry node and adds an edge between entry node
+	 * to the first actual node of the CFG.
+	 */
 	public void setEntryNode(){
 		//entry = nodes.get(0);
 		entry = new BasicBlock();
@@ -76,6 +97,9 @@ public class CFG {
 		edges.add(e);
 	}
 	
+	/**
+	 * 
+	 */
 	public void setExitNodes(){
 		BasicBlock a,b;
 		for(int i =0;i<nodes.size();i++){
@@ -104,7 +128,7 @@ public class CFG {
 	public void setExitNodes(ArrayList<BasicBlock> exitNodes) {
 		this.exitNodes = exitNodes;
 	}
-	
+
 
 	public ArrayList<BasicBlock> getExitNodes() {
 		return exitNodes;
@@ -127,7 +151,12 @@ public class CFG {
 	public String getFunctionName() {
 		return function.getName();
 	}
-
+	
+	/**
+	 * Go through each nodes and check for uses.
+	 * If this node contains an use, add to the list uses.
+	 * @param basicBlocks List of nodes
+	 */
 	public void getUses(ArrayList<BasicBlock> basicBlocks){
 		for(BasicBlock bb: basicBlocks){
 			for(Instruction inst : bb.getInstructions()){
@@ -139,6 +168,12 @@ public class CFG {
 		return;
 	}
 	
+	/**
+	 * Go through each nodes and check for definition.
+	 * Each node should only contain ONE definition.
+	 * If multiple definitions are found, that node will be split into two.
+	 * @param basicBlocks List of nodes
+	 */
 	public void getDefinitions(ArrayList<BasicBlock> basicBlocks) {
 		boolean bbHasDef;
 		int instrucionIndex;
@@ -169,7 +204,7 @@ public class CFG {
 				}
 			}
 		}
-		System.out.print(name+":::Definitions::: There are "+definitions.size()+" number of definitions.\n");
+	//System.out.print(name+":::Definitions::: There are "+definitions.size()+" number of definitions.\n");
 		return;
 	}
 	
@@ -185,9 +220,9 @@ public class CFG {
 				}
 			}
 		}
-		System.out.print(":::KILLS::: There are "+kills.size()+" number of kills.\n");
-		for (Defs_Uses k : kills)
-			System.out.print(k.toString()+"\n");
+//		System.out.print(":::KILLS::: There are "+kills.size()+" number of kills.\n");
+//		for (Defs_Uses k : kills)
+//			System.out.print(k.toString()+"\n");
 	}
 	
 	public void getKills_Brian() {
@@ -217,13 +252,19 @@ public class CFG {
 			}
 			killSet.add(k);
 		}
-		System.out.print(":::KILLS::: There are "+killSet.size()+" number of kills.\n");
+		//System.out.print(":::KILLS::: There are "+killSet.size()+" number of kills.\n");
 		for (KillSet k : killSet)
 			if(k.basicBlocks.size()>0){
-				System.out.println(k);
+		//		System.out.println(k);
 			}
 	}
 	
+	/**
+	 * Determines if there is a path between node a to node b
+	 * @param a Source basic block
+	 * @param b Destination basic block
+	 * @return True if there is a path or false if there is not a path
+	 */
 	public boolean isAPath(BasicBlock a, BasicBlock b) {
 		ArrayList<BasicBlock> neighbors = new ArrayList<BasicBlock>();
 		neighbors = findNeighbors(a, neighbors);
@@ -241,6 +282,12 @@ public class CFG {
 		return false;
 	}
 	
+	/**
+	 * Adds all neighbors of a basic block to the list and returns the list
+	 * @param b Basic block that you want to find the neighbor of
+	 * @param neighbors An existing arraylist of neighbors
+	 * @return neighbors
+	 */
 	public ArrayList<BasicBlock> findNeighbors(BasicBlock b, ArrayList<BasicBlock> neighbors) {
 		for(Edge e : edges) 			
 			if(e.getU().equals(b))
@@ -248,6 +295,12 @@ public class CFG {
 		return neighbors;
 	}
 	
+	/**
+	 * Returns a string representation:
+	 * CFG:
+	 * B0: xxxxx
+	 * 0 <-> 0
+	 */
 	public String toString(){
 		StringBuilder sb = new StringBuilder("CFG: \n");
 		for(BasicBlock b: nodes){
@@ -259,6 +312,9 @@ public class CFG {
 		return sb.toString();
 	}
 	
+	/**
+	 * @return The appropriate graphviz syntax that represents this CFG
+	 */
 	public String toDot(){
 		String ret = "";
 		for(BasicBlock bb: nodes){

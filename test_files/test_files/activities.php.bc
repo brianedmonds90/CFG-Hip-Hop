@@ -11,8 +11,8 @@ Pseudo-main at 0 (ID 0)
    23: RetC
 
 Function lastActivitiesForMuscle at 24 (ID 1)
- EH 0 Catch for 164:208
-  Handle exception at 208
+   EH 0 Catch for 164:208
+    Handle exception at 208
  FPI 24-50; fpOff = 10
  FPI 37-46; fpOff = 14 parentIndex = 0 (depth 2)
  FPI 56-65; fpOff = 10

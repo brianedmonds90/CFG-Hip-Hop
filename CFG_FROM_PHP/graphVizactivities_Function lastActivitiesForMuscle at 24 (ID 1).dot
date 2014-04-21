@@ -1,0 +1,141 @@
+digraph testName {
+0 [label="10" tooltip="FPushFuncD
+"];
+1 [label="9" tooltip="String
+"];
+2 [label="10" tooltip="FPassCE
+FPushFuncD
+FPassL
+FCall
+FPassR
+FCall
+UnboxR
+SetL
+PopC
+"];
+3 [label="11" tooltip="FPushFuncD
+FPassL
+FCall
+UnboxR
+SetL
+PopC
+"];
+4 [label="13" tooltip="Int
+SetL
+"];
+5 [label="26" tooltip="PopC
+"];
+6 [label="13" tooltip="FPushFuncD
+FPassL
+FCall
+UnboxR
+CGetL2
+Lt
+JmpZ
+"];
+7 [label="19" tooltip="FPushFuncD
+"];
+8 [label="17" tooltip="String
+"];
+9 [label="19" tooltip="FPassCE
+"];
+10 [label="18" tooltip="FPushFuncD
+FPassL
+FCall
+"];
+11 [label="19" tooltip="FPassR
+FPushFuncD
+FPassM
+FCall
+FPassR
+FCall
+UnboxR
+SetL
+PopC
+"];
+12 [label="21" tooltip="FPushFuncD
+FPassL
+False
+FPassCE
+FCall
+UnboxR
+SetL
+PopC
+"];
+13 [label="22" tooltip="CGetL
+SetM
+PopC
+"];
+14 [label="25" tooltip="Jmp
+"];
+15 [label="25" tooltip="Catch
+SetL
+PopC
+"];
+16 [label="24" tooltip="Array
+SetM
+PopC
+"];
+17 [label="13" tooltip="IncDecL
+"];
+18 [label="26" tooltip="PopC
+Jmp
+"];
+19 [label="28" tooltip="FPushFuncD
+String
+FPassCE
+FCall
+PopR
+"];
+20 [label="29" tooltip="FPushFuncD
+FPassL
+FCall
+UnboxR
+Print
+PopC
+"];
+21 [label="30" tooltip="Null
+RetC
+"];
+0 -> 1;
+1 -> 2;
+2 -> 3;
+3 -> 4;
+4 -> 5;
+5 -> 6;
+6 -> 7[xlabel="True"];
+6 -> 19[xlabel="False"];
+7 -> 8;
+8 -> 9;
+9 -> 10;
+10 -> 11;
+11 -> 12;
+12 -> 13;
+13 -> 14;
+14 -> 17;
+15 -> 16;
+16 -> 17;
+17 -> 18;
+18 -> 6;
+19 -> 20;
+20 -> 21;
+-2 -> 0[xlabel="ENTRY"];
+21 -> -1[xlabel="EXIT"];
+-2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_2 { style=filled; color=lightgrey; node [style=filled,color=white]; g_2[label= "PHP Line #10 : 2"];label = "DEFS";}
+2 -> g_2 [style="dashed"];
+subgraph cluster_g_3 { style=filled; color=lightgrey; node [style=filled,color=white]; g_3[label= "PHP Line #11 : 3"];label = "DEFS";}
+3 -> g_3 [style="dashed"];
+subgraph cluster_g_4 { style=filled; color=lightgrey; node [style=filled,color=white]; g_4[label= "PHP Line #13 : 4"];label = "DEFS";}
+4 -> g_4 [style="dashed"];
+subgraph cluster_g_11 { style=filled; color=lightgrey; node [style=filled,color=white]; g_11[label= "PHP Line #19 : 2"];label = "DEFS";}
+11 -> g_11 [style="dashed"];
+subgraph cluster_g_12 { style=filled; color=lightgrey; node [style=filled,color=white]; g_12[label= "PHP Line #21 : 5"];label = "DEFS";}
+12 -> g_12 [style="dashed"];
+subgraph cluster_g_15 { style=filled; color=lightgrey; node [style=filled,color=white]; g_15[label= "PHP Line #25 : 6"];label = "DEFS";}
+15 -> g_15 [style="dashed"];
+subgraph cluster_use_6 { style=filled; color=lightgrey; node [style=filled,color=white]; use_6_4[label= "PHP Line #13 : 4"];label = "Uses";}
+6 -> use_6_4 [style="dashed"];
+subgraph cluster_use_13 { style=filled; color=lightgrey; node [style=filled,color=white]; use_13_5[label= "PHP Line #22 : 5"];label = "Uses";}
+13 -> use_13_5 [style="dashed"];
+-2 [label="2 params"];
+}

@@ -1,0 +1,1069 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 2
+    0: String "db_helper.php"
+    5: Incl
+    6: PopC
+  // line 3
+    7: String "simple_html_dom.php"
+   12: Incl
+   13: PopC
+  // line 5
+   14: DefCls 0
+  // line 14
+   16: DefCls 1
+   18: Int 1
+   27: RetC
+
+Function siteJson at 28 (ID 1)
+ FPI 42-55; fpOff = 7
+ FPI 64-77; fpOff = 8
+ FPI 87-96; fpOff = 6
+ FPI 102-115; fpOff = 6
+ FPI 118-127; fpOff = 6
+  // line 20
+   28: String "_PLATFORM"
+   33: VGetG
+   34: BindL 0
+   36: PopV
+  // line 21
+   37: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+   42: FPushFuncD 1 "urlencode"
+   48: String "https://pinch1.lms.gatech.edu/sakai-login-tool/container"
+   53: FPassCE 0
+   55: FCall 1
+   57: UnboxR
+   58: String "+"
+   63: Concat
+   64: FPushFuncD 1 "urlencode"
+   70: String "https://pinch1.lms.gatech.edu/direct/site.json"
+   75: FPassCE 0
+   77: FCall 1
+   79: UnboxR
+   80: Concat
+   81: Concat
+   82: SetL 1
+   84: PopC
+  // line 22
+   85: CGetL 0
+   87: FPushObjMethodD 1 "secureWeb"
+   93: FPassL 0 1
+   96: FCall 1
+   98: UnboxR
+   99: SetL 2
+  101: PopC
+  // line 36
+  102: FPushFuncD 1 "header"
+  108: String "Content-Type: application/json"
+  113: FPassCE 0
+  115: FCall 1
+  117: PopR
+  // line 37
+  118: FPushFuncD 1 "json_encode"
+  124: FPassL 0 2
+  127: FCall 1
+  129: UnboxR
+  130: Print
+  131: PopC
+  // line 38
+  132: Null
+  133: RetC
+
+Function getAssignmentsByClass at 134 (ID 2)
+ FPI 156-169; fpOff = 22
+ FPI 178-194; fpOff = 23
+ FPI 204-213; fpOff = 21
+ FPI 219-242; fpOff = 21
+ FPI 250-274; fpOff = 21
+ FPI 294-303; fpOff = 21
+ FPI 319-343; fpOff = 21
+ FPI 368-377; fpOff = 22
+ FPI 386-395; fpOff = 21
+ FPI 401-424; fpOff = 21
+ FPI 432-456; fpOff = 21
+ FPI 481-490; fpOff = 22
+ FPI 499-508; fpOff = 21
+ FPI 514-537; fpOff = 21
+ FPI 543-568; fpOff = 21
+ FPI 551-564; fpOff = 24 parentIndex = 14 (depth 2)
+ FPI 614-620; fpOff = 22
+ FPI 647-660; fpOff = 21
+ FPI 680-696; fpOff = 21
+ FPI 716-725; fpOff = 21
+ FPI 731-761; fpOff = 21
+ FPI 767-801; fpOff = 21
+ FPI 811-845; fpOff = 21
+ FPI 964-977; fpOff = 22
+ FPI 986-1022; fpOff = 23
+ FPI 1032-1041; fpOff = 21
+ FPI 1047-1070; fpOff = 21
+ FPI 1080-1103; fpOff = 21
+ FPI 1142-1165; fpOff = 21
+ FPI 1199-1222; fpOff = 21
+ FPI 1256-1279; fpOff = 21
+ FPI 1318-1341; fpOff = 21
+ FPI 1405-1418; fpOff = 21
+ FPI 1421-1430; fpOff = 21
+  // line 43
+  134: Array array()
+  139: SetL 1
+  141: PopC
+  // line 45
+  142: String "_PLATFORM"
+  147: VGetG
+  148: BindL 2
+  150: PopV
+  // line 46
+  151: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+  156: FPushFuncD 1 "urlencode"
+  162: String "https://pinch1.lms.gatech.edu/sakai-login-tool/container"
+  167: FPassCE 0
+  169: FCall 1
+  171: UnboxR
+  172: String "+"
+  177: Concat
+  178: FPushFuncD 1 "urlencode"
+  184: String "https://pinch1.lms.gatech.edu/portal/site/"
+  189: CGetL 0
+  191: Concat
+  192: FPassCE 0
+  194: FCall 1
+  196: UnboxR
+  197: Concat
+  198: Concat
+  199: SetL 3
+  201: PopC
+  // line 47
+  202: CGetL 2
+  204: FPushObjMethodD 1 "secureWeb"
+  210: FPassL 0 3
+  213: FCall 1
+  215: UnboxR
+  216: SetL 4
+  218: PopC
+  // line 49
+  219: FPushFuncD 1 "str_get_html"
+  225: FPassM 0 <L:4 ET:"body">
+  242: FCall 1
+  244: UnboxR
+  245: SetL 5
+  247: PopC
+  // line 50
+  248: CGetL 5
+  250: FPushObjMethodD 2 "find"
+  256: String "li.selectedTool"
+  261: FPassCE 0
+  263: Int 0
+  272: FPassCE 1
+  274: FCall 2
+  276: CGetM <R PT:"plaintext">
+  291: SetL 6
+  293: PopC
+  // line 53
+  294: FPushFuncD 1 "trim"
+  300: FPassL 0 6
+  303: FCall 1
+  305: UnboxR
+  306: String "Assignments"
+  311: Neq
+  312: JmpZ 118 (430)
+  // line 54
+  317: CGetL 5
+  319: FPushObjMethodD 2 "find"
+  325: String ".icon-sakai-assignment-grades"
+  330: FPassCE 0
+  332: Int 0
+  341: FPassCE 1
+  343: FCall 2
+  345: CGetM <R PT:"href">
+  360: SetL 7
+  362: PopC
+  // line 56
+  363: String "https://shepherd.cip.gatech.edu/proxy/\?url="
+  368: FPushFuncD 1 "urlencode"
+  374: FPassL 0 7
+  377: FCall 1
+  379: UnboxR
+  380: Concat
+  381: SetL 3
+  383: PopC
+  // line 57
+  384: CGetL 2
+  386: FPushObjMethodD 1 "secureWeb"
+  392: FPassL 0 3
+  395: FCall 1
+  397: UnboxR
+  398: SetL 4
+  400: PopC
+  // line 58
+  401: FPushFuncD 1 "str_get_html"
+  407: FPassM 0 <L:4 ET:"body">
+  424: FCall 1
+  426: UnboxR
+  427: SetL 5
+  429: PopC
+  // line 61
+  430: CGetL 5
+  432: FPushObjMethodD 2 "find"
+  438: String "iframe"
+  443: FPassCE 0
+  445: Int 0
+  454: FPassCE 1
+  456: FCall 2
+  458: CGetM <R PT:"src">
+  473: SetL 8
+  475: PopC
+  // line 62
+  476: String "https://shepherd.cip.gatech.edu/proxy/\?url="
+  481: FPushFuncD 1 "urlencode"
+  487: FPassL 0 8
+  490: FCall 1
+  492: UnboxR
+  493: Concat
+  494: SetL 3
+  496: PopC
+  // line 63
+  497: CGetL 2
+  499: FPushObjMethodD 1 "secureWeb"
+  505: FPassL 0 3
+  508: FCall 1
+  510: UnboxR
+  511: SetL 9
+  513: PopC
+  // line 65
+  514: FPushFuncD 1 "str_get_html"
+  520: FPassM 0 <L:9 ET:"body">
+  537: FCall 1
+  539: UnboxR
+  540: SetL 5
+  542: PopC
+  // line 66
+  543: FPushFuncD 1 "count"
+  549: CGetL 5
+  551: FPushObjMethodD 1 "find"
+  557: String "tr"
+  562: FPassCE 0
+  564: FCall 1
+  566: FPassR 0
+  568: FCall 1
+  570: UnboxR
+  571: Int 1
+  580: Sub
+  581: SetL 10
+  583: PopC
+  // line 67
+  584: Array array()
+  589: SetL 11
+  591: PopC
+  // line 70
+  592: Int 0
+  601: SetL 12
+  // line 102
+  603: PopC
+  // line 70
+  604: CGetL 10
+  606: CGetL2 12
+  608: Lt
+  609: JmpZ 796 (1405)
+  // line 71
+  614: FPushCtorD 0 "Assignment"
+  620: FCall 0
+  622: PopR # i0:t=Null*
+  623: SetL 13
+  625: PopC
+  // line 73
+  626: CGetL 0
+  628: SetM <L:13 PT:"classId">
+  644: PopC
+  // line 75
+  645: CGetL 5
+  647: FPushObjMethodD 1 "find"
+  653: String "tr td[headers=title] h4 a"
+  658: FPassCE 0
+  660: FCall 1
+  662: UnboxR
+  663: Int 0
+  672: Gt
+  673: JmpZ 723 (1396)
+  // line 76
+  678: CGetL 5
+  680: FPushObjMethodD 2 "find"
+  686: String "tr td[headers=title] h4 a"
+  691: FPassCE 0
+  693: FPassL 1 12
+  696: FCall 2
+  698: CGetM <R PT:"href">
+  713: SetL 14
+  715: PopC
+  // line 78
+  716: FPushFuncD 1 "parse_url"
+  722: FPassL 0 14
+  725: FCall 1
+  727: UnboxR
+  728: SetL 15
+  730: PopC
+  // line 79
+  731: FPushFuncD 2 "explode"
+  737: String "/"
+  742: FPassCE 0
+  744: FPassM 1 <L:15 ET:"query">
+  761: FCall 2
+  763: UnboxR
+  764: SetL 16
+  766: PopC
+  // line 82
+  767: FPushFuncD 2 "strstr"
+  773: FPassM 0 <L:16 EI:4>
+  794: String "&"
+  799: FPassCE 1
+  801: FCall 2
+  803: UnboxR
+  804: False
+  805: Neq
+  806: JmpZ 82 (888)
+  // line 83
+  811: FPushFuncD 2 "explode"
+  817: String "&"
+  822: FPassCE 0
+  824: FPassM 1 <L:16 EI:4>
+  845: FCall 2
+  847: CGetM <R EI:0>
+  866: SetM <L:13 PT:"assignmentId">
+  882: PopC
+  // line 87
+  883: Jmp 42 (925)
+  // line 86
+  888: CGetM <L:16 EI:4>
+  908: SetM <L:13 PT:"assignmentId">
+  924: PopC
+  // line 88
+  925: CGetM <L:16 EI:4>
+  945: SetM <L:11 EL:12>
+  958: PopC
+  // line 90
+  959: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+  964: FPushFuncD 1 "urlencode"
+  970: String "https://pinch1.lms.gatech.edu/sakai-login-tool/container"
+  975: FPassCE 0
+  977: FCall 1
+  979: UnboxR
+  980: String "+"
+  985: Concat
+  986: FPushFuncD 1 "urlencode"
+  992: String "https://pinch1.lms.gatech.edu/direct/assignment/"
+  997: CGetM <L:13 PT:"assignmentId">
+ 1013: String ".json"
+ 1018: Concat
+ 1019: Concat
+ 1020: FPassCE 0
+ 1022: FCall 1
+ 1024: UnboxR
+ 1025: Concat
+ 1026: Concat
+ 1027: SetL 3
+ 1029: PopC
+  // line 91
+ 1030: CGetL 2
+ 1032: FPushObjMethodD 1 "secureWeb"
+ 1038: FPassL 0 3
+ 1041: FCall 1
+ 1043: UnboxR
+ 1044: SetL 17
+ 1046: PopC
+  // line 93
+ 1047: FPushFuncD 1 "json_decode"
+ 1053: FPassM 0 <L:17 ET:"body">
+ 1070: FCall 1
+ 1072: UnboxR
+ 1073: Null
+ 1074: Neq
+ 1075: JmpZ 305 (1380)
+  // line 94
+ 1080: FPushFuncD 1 "json_decode"
+ 1086: FPassM 0 <L:17 ET:"body">
+ 1103: FCall 1
+ 1105: CGetM <R PT:"content" PT:"title">
+ 1125: SetM <L:13 PT:"title">
+ 1141: PopC
+  // line 95
+ 1142: FPushFuncD 1 "json_decode"
+ 1148: FPassM 0 <L:17 ET:"body">
+ 1165: FCall 1
+ 1167: CGetM <R PT:"openTime">
+ 1182: SetM <L:13 PT:"openDate">
+ 1198: PopC
+  // line 96
+ 1199: FPushFuncD 1 "json_decode"
+ 1205: FPassM 0 <L:17 ET:"body">
+ 1222: FCall 1
+ 1224: CGetM <R PT:"closeTime">
+ 1239: SetM <L:13 PT:"dueDate">
+ 1255: PopC
+  // line 97
+ 1256: FPushFuncD 1 "json_decode"
+ 1262: FPassM 0 <L:17 ET:"body">
+ 1279: FCall 1
+ 1281: CGetM <R PT:"content" PT:"id">
+ 1301: SetM <L:13 PT:"assignmentId">
+ 1317: PopC
+  // line 98
+ 1318: FPushFuncD 1 "json_decode"
+ 1324: FPassM 0 <L:17 ET:"body">
+ 1341: FCall 1
+ 1343: CGetM <R PT:"content" PT:"instructions">
+ 1363: SetM <L:13 PT:"instructions">
+ 1379: PopC
+  // line 100
+ 1380: CGetL 13
+ 1382: SetM <L:11 EL:12>
+ 1395: PopC
+  // line 70
+ 1396: IncDecL 12 PreInc
+  // line 102
+ 1399: PopC
+ 1400: Jmp -796
+  // line 104
+ 1405: FPushFuncD 1 "header"
+ 1411: String "Content-Type: application/json"
+ 1416: FPassCE 0
+ 1418: FCall 1
+ 1420: PopR
+  // line 105
+ 1421: FPushFuncD 1 "json_encode"
+ 1427: FPassL 0 11
+ 1430: FCall 1
+ 1432: UnboxR
+ 1433: Print
+ 1434: PopC
+  // line 106
+ 1435: Null
+ 1436: RetC
+
+Function (leaf) getDummyData at 1437 (ID 3)
+  // line 136
+ 1437: String "This is some dummy data"
+ 1442: Print
+ 1443: PopC
+  // line 137
+ 1444: Null
+ 1445: RetC
+
+Function getUserInfo at 1446 (ID 4)
+ FPI 1460-1473; fpOff = 7
+ FPI 1482-1495; fpOff = 8
+ FPI 1505-1514; fpOff = 6
+ FPI 1520-1533; fpOff = 6
+ FPI 1536-1545; fpOff = 6
+  // line 140
+ 1446: String "_PLATFORM"
+ 1451: VGetG
+ 1452: BindL 0
+ 1454: PopV
+  // line 141
+ 1455: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+ 1460: FPushFuncD 1 "urlencode"
+ 1466: String "https://pinch1.lms.gatech.edu/sakai-login-tool/container"
+ 1471: FPassCE 0
+ 1473: FCall 1
+ 1475: UnboxR
+ 1476: String "+"
+ 1481: Concat
+ 1482: FPushFuncD 1 "urlencode"
+ 1488: String "https://pinch1.lms.gatech.edu/direct/user/current.json"
+ 1493: FPassCE 0
+ 1495: FCall 1
+ 1497: UnboxR
+ 1498: Concat
+ 1499: Concat
+ 1500: SetL 1
+ 1502: PopC
+  // line 142
+ 1503: CGetL 0
+ 1505: FPushObjMethodD 1 "secureWeb"
+ 1511: FPassL 0 1
+ 1514: FCall 1
+ 1516: UnboxR
+ 1517: SetL 2
+ 1519: PopC
+  // line 143
+ 1520: FPushFuncD 1 "header"
+ 1526: String "Content-Type: application/json"
+ 1531: FPassCE 0
+ 1533: FCall 1
+ 1535: PopR
+  // line 144
+ 1536: FPushFuncD 1 "json_encode"
+ 1542: FPassL 0 2
+ 1545: FCall 1
+ 1547: UnboxR
+ 1548: Print
+ 1549: PopC
+  // line 145
+ 1550: Null
+ 1551: RetC
+
+Function getDatabaseSites at 1552 (ID 5)
+ FPI 1552-1568; fpOff = 6
+ FPI 1574-1583; fpOff = 6
+  // line 148
+ 1552: FPushFuncD 1 "sprintf"
+ 1558: String "SELECT * FROM `SITES` WHERE user_id == "
+ 1563: CGetL 0
+ 1565: Concat
+ 1566: FPassCE 0
+ 1568: FCall 1
+ 1570: UnboxR
+ 1571: SetL 1
+ 1573: PopC
+  // line 149
+ 1574: FPushFuncD 1 "getDBResultsArray"
+ 1580: FPassL 0 1
+ 1583: FCall 1
+ 1585: UnboxR
+ 1586: SetL 2
+ 1588: PopC
+  // line 151
+ 1589: CGetM <L:2 ET:"body">
+ 1605: Print
+ 1606: PopC
+  // line 152
+ 1607: Null
+ 1608: RetC
+
+Function getDatabaseAnnouncements at 1609 (ID 6)
+ FPI 1609-1622; fpOff = 5
+ FPI 1628-1637; fpOff = 5
+ FPI 1643-1656; fpOff = 5
+ FPI 1659-1668; fpOff = 5
+  // line 155
+ 1609: FPushFuncD 1 "sprintf"
+ 1615: String "SELECT * FROM `ANNOUNCEMENTS`"
+ 1620: FPassCE 0
+ 1622: FCall 1
+ 1624: UnboxR
+ 1625: SetL 0
+ 1627: PopC
+  // line 156
+ 1628: FPushFuncD 1 "getDBResultsArray"
+ 1634: FPassL 0 0
+ 1637: FCall 1
+ 1639: UnboxR
+ 1640: SetL 1
+ 1642: PopC
+  // line 157
+ 1643: FPushFuncD 1 "header"
+ 1649: String "Content-type: application/json"
+ 1654: FPassCE 0
+ 1656: FCall 1
+ 1658: PopR
+  // line 158
+ 1659: FPushFuncD 1 "json_encode"
+ 1665: FPassL 0 1
+ 1668: FCall 1
+ 1670: UnboxR
+ 1671: Print
+ 1672: PopC
+  // line 159
+ 1673: Null
+ 1674: RetC
+
+Function getDatabaseAssignmentsByClass at 1675 (ID 7)
+ FPI 1675-1697; fpOff = 6
+ FPI 1703-1712; fpOff = 6
+ FPI 1718-1731; fpOff = 6
+ FPI 1734-1743; fpOff = 6
+  // line 169
+ 1675: FPushFuncD 1 "sprintf"
+ 1681: String "SELECT `raw_json` FROM `ASSIGNMENTS-TEST` WHERE `class_id`==\""
+ 1686: String "\""
+ 1691: CGetL2 0
+ 1693: Add
+ 1694: Add
+ 1695: FPassCE 0
+ 1697: FCall 1
+ 1699: UnboxR
+ 1700: SetL 1
+ 1702: PopC
+  // line 170
+ 1703: FPushFuncD 1 "getDBResultsArray"
+ 1709: FPassL 0 1
+ 1712: FCall 1
+ 1714: UnboxR
+ 1715: SetL 2
+ 1717: PopC
+  // line 171
+ 1718: FPushFuncD 1 "header"
+ 1724: String "Content-type: application/json"
+ 1729: FPassCE 0
+ 1731: FCall 1
+ 1733: PopR
+  // line 172
+ 1734: FPushFuncD 1 "json_encode"
+ 1740: FPassL 0 2
+ 1743: FCall 1
+ 1745: UnboxR
+ 1746: Print
+ 1747: PopC
+  // line 173
+ 1748: Null
+ 1749: RetC
+
+Function insertSites at 1750 (ID 8)
+ FPI 1750-1759; fpOff = 7
+ FPI 1787-1900; fpOff = 7
+ FPI 1906-1915; fpOff = 7
+  // line 177
+ 1750: FPushFuncD 1 "json_decode"
+ 1756: FPassL 0 0
+ 1759: FCall 1
+ 1761: UnboxR
+ 1762: SetL 0
+ 1764: PopC
+  // line 178
+ 1765: Int 0
+ 1774: SetL 1
+  // line 183
+ 1776: PopC
+  // line 178
+ 1777: CGetL 0
+ 1779: CGetL2 1
+ 1781: Lt
+ 1782: JmpZ 148 (1930)
+  // line 179
+ 1787: FPushFuncD 1 "sprintf"
+ 1793: String "INSERT INTO `SITES` (`site_id`, `user_id`, `site_title`, `active`) VALUES ('"
+ 1798: CGetM <L:0 EL:1 PT:"site_id">
+ 1816: String "', '"
+ 1821: Add
+ 1822: CGetM <L:0 EL:1 PT:"user_id">
+ 1840: String "', '"
+ 1845: Add
+ 1846: Add
+ 1847: CGetM <L:0 EL:1 PT:"site_title">
+ 1865: String "', '"
+ 1870: Add
+ 1871: Add
+ 1872: CGetM <L:0 EL:1 PT:"active">
+ 1890: String "')"
+ 1895: Add
+ 1896: Add
+ 1897: Add
+ 1898: FPassCE 0
+ 1900: FCall 1
+ 1902: UnboxR
+ 1903: SetL 2
+ 1905: PopC
+  // line 180
+ 1906: FPushFuncD 1 "getDBResultsArray"
+ 1912: FPassL 0 2
+ 1915: FCall 1
+ 1917: UnboxR
+ 1918: SetL 3
+ 1920: PopC
+  // line 178
+ 1921: IncDecL 1 PreInc
+  // line 183
+ 1924: PopC
+ 1925: Jmp -148
+  // line 184
+ 1930: Null
+ 1931: RetC
+
+Function getGradebookIframe at 1932 (ID 9)
+ FPI 1946-1959; fpOff = 11
+ FPI 1968-1984; fpOff = 12
+ FPI 1994-2003; fpOff = 10
+ FPI 2009-2032; fpOff = 10
+ FPI 2045-2069; fpOff = 11
+ FPI 2092-2101; fpOff = 10
+ FPI 2107-2130; fpOff = 10
+ FPI 2143-2167; fpOff = 11
+ FPI 2190-2199; fpOff = 10
+  // line 187
+ 1932: String "_PLATFORM"
+ 1937: VGetG
+ 1938: BindL 1
+ 1940: PopV
+  // line 188
+ 1941: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+ 1946: FPushFuncD 1 "urlencode"
+ 1952: String "https://pinch1.lms.gatech.edu/sakai-login-tool/container"
+ 1957: FPassCE 0
+ 1959: FCall 1
+ 1961: UnboxR
+ 1962: String "+"
+ 1967: Concat
+ 1968: FPushFuncD 1 "urlencode"
+ 1974: String "https://pinch1.lms.gatech.edu/portal/site/"
+ 1979: CGetL 0
+ 1981: Concat
+ 1982: FPassCE 0
+ 1984: FCall 1
+ 1986: UnboxR
+ 1987: Concat
+ 1988: Concat
+ 1989: SetL 2
+ 1991: PopC
+  // line 189
+ 1992: CGetL 1
+ 1994: FPushObjMethodD 1 "secureWeb"
+ 2000: FPassL 0 2
+ 2003: FCall 1
+ 2005: UnboxR
+ 2006: SetL 3
+ 2008: PopC
+  // line 191
+ 2009: FPushFuncD 1 "str_get_html"
+ 2015: FPassM 0 <L:3 ET:"body">
+ 2032: FCall 1
+ 2034: UnboxR
+ 2035: SetL 4
+ 2037: PopC
+  // line 193
+ 2038: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+ 2043: CGetL 4
+ 2045: FPushObjMethodD 2 "find"
+ 2051: String ".icon-sakai-gradebook-tool "
+ 2056: FPassCE 0
+ 2058: Int 0
+ 2067: FPassCE 1
+ 2069: FCall 2
+ 2071: CGetM <R PT:"href">
+ 2086: Concat
+ 2087: SetL 5
+ 2089: PopC
+  // line 194
+ 2090: CGetL 1
+ 2092: FPushObjMethodD 1 "secureWeb"
+ 2098: FPassL 0 5
+ 2101: FCall 1
+ 2103: UnboxR
+ 2104: SetL 3
+ 2106: PopC
+  // line 196
+ 2107: FPushFuncD 1 "str_get_html"
+ 2113: FPassM 0 <L:3 ET:"body">
+ 2130: FCall 1
+ 2132: UnboxR
+ 2133: SetL 4
+ 2135: PopC
+  // line 198
+ 2136: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+ 2141: CGetL 4
+ 2143: FPushObjMethodD 2 "find"
+ 2149: String "iframe"
+ 2154: FPassCE 0
+ 2156: Int 0
+ 2165: FPassCE 1
+ 2167: FCall 2
+ 2169: CGetM <R PT:"src">
+ 2184: Concat
+ 2185: SetL 6
+ 2187: PopC
+  // line 199
+ 2188: CGetL 1
+ 2190: FPushObjMethodD 1 "secureWeb"
+ 2196: FPassL 0 6
+ 2199: FCall 1
+ 2201: UnboxR
+ 2202: SetL 3
+ 2204: PopC
+  // line 201
+ 2205: CGetM <L:3 ET:"body">
+ 2221: Print
+ 2222: PopC
+  // line 202
+ 2223: Null
+ 2224: RetC
+
+Function getAnnouncements at 2225 (ID 10)
+ EH 0 Fault for 2315:2651 iterId 0 itRef false to 2673
+ EH 1 Fault for 2525:2610 outer EH 0 iterId 1 itRef false to 2670 parentIndex 0
+ FPI 2225-2241; fpOff = 19
+ FPI 2247-2273; fpOff = 19
+ FPI 2315-2350; fpOff = 19
+ FPI 2415-2451; fpOff = 19
+ FPI 2457-2483; fpOff = 19
+ FPI 2651-2664; fpOff = 19
+  // line 205
+ 2225: FPushFuncD 1 "t2Call"
+ 2231: String "site.json\?days="
+ 2236: CGetL 0
+ 2238: Concat
+ 2239: FPassCE 0
+ 2241: FCall 1
+ 2243: UnboxR
+ 2244: SetL 1
+ 2246: PopC
+  // line 206
+ 2247: FPushFuncD 2 "json_decode"
+ 2253: FPassM 0 <L:1 ET:"body">
+ 2270: True
+ 2271: FPassCE 1
+ 2273: FCall 2
+ 2275: UnboxR
+ 2276: SetL 2
+ 2278: PopC
+  // line 207
+ 2279: CGetM <L:2 ET:"site_collection">
+ 2295: SetL 3
+ 2297: PopC
+  // line 208
+ 2298: Array array()
+ 2303: SetL 4
+ 2305: PopC
+  // line 230
+ 2306: CGetL 3
+ 2308: IterInit 0 343 (2651) 5
+  // line 210
+ 2315: FPushFuncD 2 "strcmp"
+ 2321: FPassM 0 <L:5 ET:"props" ET:"term">
+ 2343: String "FALL 2013"
+ 2348: FPassCE 1
+ 2350: FCall 2
+ 2352: UnboxR
+ 2353: JmpNZ 291 (2644)
+  // line 212
+ 2358: CGetM <L:5 ET:"title">
+  // line 213
+ 2374: CGetM <L:5 ET:"id">
+  // line 214
+ 2390: Array array()
+  // line 215
+ 2395: NewStructArray < "title" "id" "announcements" >
+ 2412: SetL 6
+ 2414: PopC
+  // line 216
+ 2415: FPushFuncD 1 "t2Call"
+ 2421: String "announcement/site/"
+ 2426: CGetM <L:5 ET:"id">
+ 2442: String ".json"
+ 2447: Concat
+ 2448: Concat
+ 2449: FPassCE 0
+ 2451: FCall 1
+ 2453: UnboxR
+ 2454: SetL 7
+ 2456: PopC
+  // line 217
+ 2457: FPushFuncD 2 "json_decode"
+ 2463: FPassM 0 <L:7 ET:"body">
+ 2480: True
+ 2481: FPassCE 1
+ 2483: FCall 2
+ 2485: UnboxR
+ 2486: SetL 8
+ 2488: PopC
+  // line 218
+ 2489: CGetM <L:8 ET:"announcement_collection">
+ 2505: SetL 9
+ 2507: PopC
+  // line 219
+ 2508: Array array()
+ 2513: SetL 10
+ 2515: PopC
+  // line 226
+ 2516: CGetL 9
+ 2518: IterInit 1 92 (2610) 11
+  // line 222
+ 2525: CGetM <L:11 ET:"title">
+  // line 223
+ 2541: CGetM <L:11 ET:"createdOn">
+  // line 224
+ 2557: CGetM <L:11 ET:"body">
+  // line 225
+ 2573: NewStructArray < "title" "createdOn" "body" >
+ 2590: SetM <L:10 W>
+ 2602: PopC
+  // line 226
+ 2603: IterNext 1 -78 11
+  // line 227
+ 2610: CGetL 10
+ 2612: SetM <L:6 ET:"announcements">
+ 2628: PopC
+  // line 228
+ 2629: CGetL 6
+ 2631: SetM <L:4 W>
+ 2643: PopC
+  // line 230
+ 2644: IterNext 0 -329 5
+  // line 231
+ 2651: FPushFuncD 1 "header"
+ 2657: String "Content-Type: application/json"
+ 2662: FPassCE 0
+ 2664: FCall 1
+ 2666: PopR
+  // line 232
+ 2667: CGetL 4
+ 2669: RetC
+  // line 233
+ 2670: IterFree 1
+ 2672: Unwind
+ 2673: IterFree 0
+ 2675: Unwind
+
+Function getAnnouncementsByClass at 2676 (ID 11)
+ FPI 2690-2703; fpOff = 8
+ FPI 2712-2734; fpOff = 9
+ FPI 2744-2753; fpOff = 7
+ FPI 2759-2772; fpOff = 7
+  // line 236
+ 2676: String "_PLATFORM"
+ 2681: VGetG
+ 2682: BindL 1
+ 2684: PopV
+  // line 237
+ 2685: String "https://shepherd.cip.gatech.edu/proxy/\?separator=+&urls="
+ 2690: FPushFuncD 1 "urlencode"
+ 2696: String "https://pinch1.lms.gatech.edu/sakai-login-tool/container"
+ 2701: FPassCE 0
+ 2703: FCall 1
+ 2705: UnboxR
+ 2706: String "+"
+ 2711: Concat
+ 2712: FPushFuncD 1 "urlencode"
+ 2718: String "https://pinch1.lms.gatech.edu/direct/announcement/site/"
+ 2723: String "/site.json\?n=10&d=100"
+ 2728: CGetL2 0
+ 2730: Concat
+ 2731: Concat
+ 2732: FPassCE 0
+ 2734: FCall 1
+ 2736: UnboxR
+ 2737: Concat
+ 2738: Concat
+ 2739: SetL 2
+ 2741: PopC
+  // line 238
+ 2742: CGetL 1
+ 2744: FPushObjMethodD 1 "secureWeb"
+ 2750: FPassL 0 2
+ 2753: FCall 1
+ 2755: UnboxR
+ 2756: SetL 3
+ 2758: PopC
+  // line 239
+ 2759: FPushFuncD 1 "header"
+ 2765: String "Content-Type: application/json"
+ 2770: FPassCE 0
+ 2772: FCall 1
+ 2774: PopR
+  // line 240
+ 2775: CGetM <L:3 ET:"body">
+ 2791: Print
+ 2792: PopC
+  // line 241
+ 2793: Null
+ 2794: RetC
+
+Method public (leaf) Assignment::86ctor at 2795
+  // line 12
+ 2795: Null
+ 2796: RetC
+
+Method public (leaf) Site::86ctor at 2797
+  // line 17
+ 2797: Null
+ 2798: RetC
+Class Assignment at 14 (maybe-hoistable) (ID 0)
+ Method public (leaf) Assignment::86ctor at 2795
+ Property public Assignment::assignmentId = null
+ Property public Assignment::title = null
+ Property public Assignment::openDate = null
+ Property public Assignment::dueDate = null
+ Property public Assignment::instructions = null
+ Property public Assignment::classId = null
+Class Site at 16 (maybe-hoistable) (ID 1)
+ Method public (leaf) Site::86ctor at 2797
+ Property public Site::siteId = null
+ Property public Site::siteTitle = null
+Pseudo-main at 0 (ID 0)
+Function siteJson at 28 (ID 1)
+ FPI 42-55; fpOff = 7
+ FPI 64-77; fpOff = 8
+ FPI 87-96; fpOff = 6
+ FPI 102-115; fpOff = 6
+ FPI 118-127; fpOff = 6
+Function getAssignmentsByClass at 134 (ID 2)
+ FPI 156-169; fpOff = 22
+ FPI 178-194; fpOff = 23
+ FPI 204-213; fpOff = 21
+ FPI 219-242; fpOff = 21
+ FPI 250-274; fpOff = 21
+ FPI 294-303; fpOff = 21
+ FPI 319-343; fpOff = 21
+ FPI 368-377; fpOff = 22
+ FPI 386-395; fpOff = 21
+ FPI 401-424; fpOff = 21
+ FPI 432-456; fpOff = 21
+ FPI 481-490; fpOff = 22
+ FPI 499-508; fpOff = 21
+ FPI 514-537; fpOff = 21
+ FPI 543-568; fpOff = 21
+ FPI 551-564; fpOff = 24 parentIndex = 14 (depth 2)
+ FPI 614-620; fpOff = 22
+ FPI 647-660; fpOff = 21
+ FPI 680-696; fpOff = 21
+ FPI 716-725; fpOff = 21
+ FPI 731-761; fpOff = 21
+ FPI 767-801; fpOff = 21
+ FPI 811-845; fpOff = 21
+ FPI 964-977; fpOff = 22
+ FPI 986-1022; fpOff = 23
+ FPI 1032-1041; fpOff = 21
+ FPI 1047-1070; fpOff = 21
+ FPI 1080-1103; fpOff = 21
+ FPI 1142-1165; fpOff = 21
+ FPI 1199-1222; fpOff = 21
+ FPI 1256-1279; fpOff = 21
+ FPI 1318-1341; fpOff = 21
+ FPI 1405-1418; fpOff = 21
+ FPI 1421-1430; fpOff = 21
+Function (leaf) getDummyData at 1437 (ID 3)
+Function getUserInfo at 1446 (ID 4)
+ FPI 1460-1473; fpOff = 7
+ FPI 1482-1495; fpOff = 8
+ FPI 1505-1514; fpOff = 6
+ FPI 1520-1533; fpOff = 6
+ FPI 1536-1545; fpOff = 6
+Function getDatabaseSites at 1552 (ID 5)
+ FPI 1552-1568; fpOff = 6
+ FPI 1574-1583; fpOff = 6
+Function getDatabaseAnnouncements at 1609 (ID 6)
+ FPI 1609-1622; fpOff = 5
+ FPI 1628-1637; fpOff = 5
+ FPI 1643-1656; fpOff = 5
+ FPI 1659-1668; fpOff = 5
+Function getDatabaseAssignmentsByClass at 1675 (ID 7)
+ FPI 1675-1697; fpOff = 6
+ FPI 1703-1712; fpOff = 6
+ FPI 1718-1731; fpOff = 6
+ FPI 1734-1743; fpOff = 6
+Function insertSites at 1750 (ID 8)
+ FPI 1750-1759; fpOff = 7
+ FPI 1787-1900; fpOff = 7
+ FPI 1906-1915; fpOff = 7
+Function getGradebookIframe at 1932 (ID 9)
+ FPI 1946-1959; fpOff = 11
+ FPI 1968-1984; fpOff = 12
+ FPI 1994-2003; fpOff = 10
+ FPI 2009-2032; fpOff = 10
+ FPI 2045-2069; fpOff = 11
+ FPI 2092-2101; fpOff = 10
+ FPI 2107-2130; fpOff = 10
+ FPI 2143-2167; fpOff = 11
+ FPI 2190-2199; fpOff = 10
+Function getAnnouncements at 2225 (ID 10)
+ EH 0 Fault for 2315:2651 iterId 0 itRef false to 2673
+ EH 1 Fault for 2525:2610 outer EH 0 iterId 1 itRef false to 2670 parentIndex 0
+ FPI 2225-2241; fpOff = 19
+ FPI 2247-2273; fpOff = 19
+ FPI 2315-2350; fpOff = 19
+ FPI 2415-2451; fpOff = 19
+ FPI 2457-2483; fpOff = 19
+ FPI 2651-2664; fpOff = 19
+Function getAnnouncementsByClass at 2676 (ID 11)
+ FPI 2690-2703; fpOff = 8
+ FPI 2712-2734; fpOff = 9
+ FPI 2744-2753; fpOff = 7
+ FPI 2759-2772; fpOff = 7
