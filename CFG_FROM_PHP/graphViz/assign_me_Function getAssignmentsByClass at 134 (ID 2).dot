@@ -1,338 +1,49 @@
 digraph testName {
-0 [label="43" tooltip="Array
-SetL
-PopC
-"];
-1 [label="45" tooltip="String
-VGetG
-BindL
-PopV
-"];
-2 [label="46" tooltip="String
-FPushFuncD
-String
-FPassCE
-FCall
-UnboxR
-String
-Concat
-FPushFuncD
-String
-CGetL
-Concat
-FPassCE
-FCall
-UnboxR
-Concat
-Concat
-SetL
-PopC
-"];
-3 [label="47" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-4 [label="49" tooltip="FPushFuncD
-FPassM
-FCall
-UnboxR
-SetL
-PopC
-"];
-5 [label="50" tooltip="CGetL
-FPushObjMethodD
-String
-FPassCE
-Int
-FPassCE
-FCall
-CGetM
-SetL
-PopC
-"];
-6 [label="53" tooltip="FPushFuncD
-FPassL
-FCall
-UnboxR
-String
-Neq
-JmpZ
-"];
-7 [label="54" tooltip="CGetL
-FPushObjMethodD
-String
-FPassCE
-Int
-FPassCE
-FCall
-CGetM
-SetL
-PopC
-"];
-8 [label="56" tooltip="String
-FPushFuncD
-FPassL
-FCall
-UnboxR
-Concat
-SetL
-PopC
-"];
-9 [label="57" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-10 [label="58" tooltip="FPushFuncD
-FPassM
-FCall
-UnboxR
-SetL
-PopC
-"];
-11 [label="61" tooltip="CGetL
-FPushObjMethodD
-String
-FPassCE
-Int
-FPassCE
-FCall
-CGetM
-SetL
-PopC
-"];
-12 [label="62" tooltip="String
-FPushFuncD
-FPassL
-FCall
-UnboxR
-Concat
-SetL
-PopC
-"];
-13 [label="63" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-14 [label="65" tooltip="FPushFuncD
-FPassM
-FCall
-UnboxR
-SetL
-PopC
-"];
-15 [label="66" tooltip="FPushFuncD
-CGetL
-FPushObjMethodD
-String
-FPassCE
-FCall
-FPassR
-FCall
-UnboxR
-Int
-Sub
-SetL
-PopC
-"];
-16 [label="67" tooltip="Array
-SetL
-PopC
-"];
-17 [label="70" tooltip="Int
-SetL
-"];
-18 [label="102" tooltip="PopC
-"];
-19 [label="70" tooltip="CGetL
-CGetL2
-Lt
-JmpZ
-"];
-20 [label="71" tooltip="FPushCtorD
-FCall
-PopR
-SetL
-PopC
-"];
-21 [label="73" tooltip="CGetL
-SetM
-PopC
-"];
-22 [label="75" tooltip="CGetL
-FPushObjMethodD
-String
-FPassCE
-FCall
-UnboxR
-Int
-Gt
-JmpZ
-"];
-23 [label="76" tooltip="CGetL
-FPushObjMethodD
-String
-FPassCE
-FPassL
-FCall
-CGetM
-SetL
-PopC
-"];
-24 [label="78" tooltip="FPushFuncD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-25 [label="79" tooltip="FPushFuncD
-String
-FPassCE
-FPassM
-FCall
-UnboxR
-SetL
-PopC
-"];
-26 [label="82" tooltip="FPushFuncD
-FPassM
-String
-FPassCE
-FCall
-UnboxR
-False
-Neq
-JmpZ
-"];
-27 [label="83" tooltip="FPushFuncD
-String
-FPassCE
-FPassM
-FCall
-CGetM
-SetM
-PopC
-"];
-28 [label="87" tooltip="Jmp
-"];
-29 [label="86" tooltip="CGetM
-SetM
-PopC
-"];
-30 [label="88" tooltip="CGetM
-SetM
-PopC
-"];
-31 [label="90" tooltip="String
-FPushFuncD
-String
-FPassCE
-FCall
-UnboxR
-String
-Concat
-FPushFuncD
-String
-CGetM
-String
-Concat
-Concat
-FPassCE
-FCall
-UnboxR
-Concat
-Concat
-SetL
-PopC
-"];
-32 [label="91" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-33 [label="93" tooltip="FPushFuncD
-FPassM
-FCall
-UnboxR
-Null
-Neq
-JmpZ
-"];
-34 [label="94" tooltip="FPushFuncD
-FPassM
-FCall
-CGetM
-SetM
-PopC
-"];
-35 [label="95" tooltip="FPushFuncD
-FPassM
-FCall
-CGetM
-SetM
-PopC
-"];
-36 [label="96" tooltip="FPushFuncD
-FPassM
-FCall
-CGetM
-SetM
-PopC
-"];
-37 [label="97" tooltip="FPushFuncD
-FPassM
-FCall
-CGetM
-SetM
-PopC
-"];
-38 [label="98" tooltip="FPushFuncD
-FPassM
-FCall
-CGetM
-SetM
-PopC
-"];
-39 [label="100" tooltip="CGetL
-SetM
-PopC
-"];
-40 [label="70" tooltip="IncDecL
-"];
-41 [label="102" tooltip="PopC
-Jmp
-"];
-42 [label="104" tooltip="FPushFuncD
-String
-FPassCE
-FCall
-PopR
-"];
-43 [label="105" tooltip="FPushFuncD
-FPassL
-FCall
-UnboxR
-Print
-PopC
-"];
-44 [label="106" tooltip="Null
-RetC
-"];
+0 [label="43"];
+1 [label="45"];
+2 [label="46" , fillcolor = red, style = filled];
+3 [label="47" , fillcolor = red, style = filled];
+4 [label="49" , fillcolor = red, style = filled];
+5 [label="50" , fillcolor = red, style = filled];
+6 [label="53" , fillcolor = red, style = filled];
+7 [label="54" , fillcolor = red, style = filled];
+8 [label="56" , fillcolor = red, style = filled];
+9 [label="57" , fillcolor = red, style = filled];
+10 [label="58" , fillcolor = red, style = filled];
+11 [label="61" , fillcolor = red, style = filled];
+12 [label="62" , fillcolor = red, style = filled];
+13 [label="63" , fillcolor = red, style = filled];
+14 [label="65" , fillcolor = red, style = filled];
+15 [label="66" , fillcolor = red, style = filled];
+16 [label="67"];
+17 [label="70"];
+18 [label="102"];
+19 [label="70"];
+20 [label="71" , fillcolor = red, style = filled];
+21 [label="73"];
+22 [label="75" , fillcolor = red, style = filled];
+23 [label="76" , fillcolor = red, style = filled];
+24 [label="78" , fillcolor = red, style = filled];
+25 [label="79" , fillcolor = red, style = filled];
+26 [label="82" , fillcolor = red, style = filled];
+27 [label="83" , fillcolor = red, style = filled];
+28 [label="87"];
+29 [label="86"];
+30 [label="88"];
+31 [label="90" , fillcolor = red, style = filled];
+32 [label="91" , fillcolor = red, style = filled];
+33 [label="93" , fillcolor = red, style = filled];
+34 [label="94" , fillcolor = red, style = filled];
+35 [label="95" , fillcolor = red, style = filled];
+36 [label="96" , fillcolor = red, style = filled];
+37 [label="97" , fillcolor = red, style = filled];
+38 [label="98" , fillcolor = red, style = filled];
+39 [label="100"];
+40 [label="70"];
+41 [label="102"];
+42 [label="104" , fillcolor = red, style = filled];
+43 [label="105" , fillcolor = red, style = filled];
+44 [label="106"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

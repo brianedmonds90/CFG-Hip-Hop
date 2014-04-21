@@ -239,13 +239,11 @@ function getAnnouncementsByClass($classId) {
 	header('Content-Type: application/json');
 	echo $result['body'];
 	foo($result);
-
 }
 
 function foo($param){
-	echo "Brian is a boss";
-	echo $result;
-
+	echo "BRIAN IS A BOSS";
+	echo $param;
 }
 
 ?>

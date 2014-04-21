@@ -1,120 +1,30 @@
 digraph testName {
-0 [label="205" tooltip="FPushFuncD
-String
-CGetL
-Concat
-FPassCE
-FCall
-UnboxR
-SetL
-PopC
-"];
-1 [label="206" tooltip="FPushFuncD
-FPassM
-True
-FPassCE
-FCall
-UnboxR
-SetL
-PopC
-"];
-2 [label="207" tooltip="CGetM
-SetL
-PopC
-"];
-3 [label="208" tooltip="Array
-SetL
-PopC
-"];
-4 [label="230" tooltip="CGetL
-IterInit
-"];
-5 [label="210" tooltip="FPushFuncD
-FPassM
-String
-FPassCE
-FCall
-UnboxR
-JmpNZ
-"];
-6 [label="212" tooltip="CGetM
-"];
-7 [label="213" tooltip="CGetM
-"];
-8 [label="214" tooltip="Array
-"];
-9 [label="215" tooltip="NewStructArray
-SetL
-PopC
-"];
-10 [label="216" tooltip="FPushFuncD
-String
-CGetM
-String
-Concat
-Concat
-FPassCE
-FCall
-UnboxR
-SetL
-PopC
-"];
-11 [label="217" tooltip="FPushFuncD
-FPassM
-True
-FPassCE
-FCall
-UnboxR
-SetL
-PopC
-"];
-12 [label="218" tooltip="CGetM
-SetL
-PopC
-"];
-13 [label="219" tooltip="Array
-SetL
-PopC
-"];
-14 [label="226" tooltip="CGetL
-IterInit
-"];
-15 [label="222" tooltip="CGetM
-"];
-16 [label="223" tooltip="CGetM
-"];
-17 [label="224" tooltip="CGetM
-"];
-18 [label="225" tooltip="NewStructArray
-SetM
-PopC
-"];
-19 [label="226" tooltip="IterNext
-"];
-20 [label="227" tooltip="CGetL
-SetM
-PopC
-"];
-21 [label="228" tooltip="CGetL
-SetM
-PopC
-"];
-22 [label="230" tooltip="IterNext
-"];
-23 [label="231" tooltip="FPushFuncD
-String
-FPassCE
-FCall
-PopR
-"];
-24 [label="232" tooltip="CGetL
-RetC
-"];
-25 [label="233" tooltip="IterFree
-Unwind
-IterFree
-Unwind
-"];
+0 [label="205" , fillcolor = red, style = filled];
+1 [label="206" , fillcolor = red, style = filled];
+2 [label="207"];
+3 [label="208"];
+4 [label="230"];
+5 [label="210" , fillcolor = red, style = filled];
+6 [label="212"];
+7 [label="213"];
+8 [label="214"];
+9 [label="215"];
+10 [label="216" , fillcolor = red, style = filled];
+11 [label="217" , fillcolor = red, style = filled];
+12 [label="218"];
+13 [label="219"];
+14 [label="226"];
+15 [label="222"];
+16 [label="223"];
+17 [label="224"];
+18 [label="225"];
+19 [label="226"];
+20 [label="227"];
+21 [label="228"];
+22 [label="230"];
+23 [label="231" , fillcolor = red, style = filled];
+24 [label="232"];
+25 [label="233"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

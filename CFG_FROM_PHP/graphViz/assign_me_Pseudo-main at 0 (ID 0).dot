@@ -1,18 +1,8 @@
 digraph testName {
-0 [label="2" tooltip="String
-Incl
-PopC
-"];
-1 [label="3" tooltip="String
-Incl
-PopC
-"];
-2 [label="5" tooltip="DefCls
-"];
-3 [label="14" tooltip="DefCls
-Int
-RetC
-"];
+0 [label="2"];
+1 [label="3"];
+2 [label="5"];
+3 [label="14"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

@@ -1,51 +1,10 @@
 digraph testName {
-0 [label="20" tooltip="String
-VGetG
-BindL
-PopV
-"];
-1 [label="21" tooltip="String
-FPushFuncD
-String
-FPassCE
-FCall
-UnboxR
-String
-Concat
-FPushFuncD
-String
-FPassCE
-FCall
-UnboxR
-Concat
-Concat
-SetL
-PopC
-"];
-2 [label="22" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-3 [label="36" tooltip="FPushFuncD
-String
-FPassCE
-FCall
-PopR
-"];
-4 [label="37" tooltip="FPushFuncD
-FPassL
-FCall
-UnboxR
-Print
-PopC
-"];
-5 [label="38" tooltip="Null
-RetC
-"];
+0 [label="20"];
+1 [label="21" , fillcolor = red, style = filled];
+2 [label="22" , fillcolor = red, style = filled];
+3 [label="36" , fillcolor = red, style = filled];
+4 [label="37" , fillcolor = red, style = filled];
+5 [label="38"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

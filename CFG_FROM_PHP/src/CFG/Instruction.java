@@ -15,7 +15,7 @@ public class Instruction{
 	/************************
 	 * TYPES OF INSTRUCTIONS
 	 *************************/
-	public final int unidentified = -1;
+	public static final int unidentified = -1;
 	public final int basic = 0;
 	public final int literal_and_constant = 1;
 	public final int operator = 2;
@@ -23,7 +23,7 @@ public class Instruction{
 	public final int get = 4;
 	public final int isset_empty_type_querying = 5;
 	public final int mutator = 6;
-	public final int call = 7;
+	public static final int call = 7;
 	public final int member_operations = 8;
 	public final int  member = 9;
 	public final int  iterator = 10;
@@ -86,7 +86,9 @@ public class Instruction{
 			type = set;
 			definition  = true;
 		}
-		
+		else if(Main.callInstructions.contains(getInstruction_text())){
+			type = call;
+		}
 		else{
 			type = unidentified;
 		}
@@ -94,8 +96,6 @@ public class Instruction{
 		if(Main.globalInstructions.contains(getInstruction_text())){
 			global = true;
 		}
-		
-		
 		/* Parse the instruction */
 		boolean instr = true;
 		int numArgs = 0;
@@ -110,7 +110,6 @@ public class Instruction{
 				numArgs++;
 			}
 		}
-		
 		if(getInstruction_text().equals("Jmp") || getInstruction_text().equals("JmpNS"))
 			unconditional = true;
 	}
@@ -183,7 +182,6 @@ public class Instruction{
 		Instruction e = (Instruction) other;
 		if(e.getBCLineNO().equals(this.getBCLineNO())) return true;
 		return false;
-	
 	}
 	
 	public int compareTo(Instruction b) {

@@ -44,37 +44,31 @@ public class StateMachine {
 			}
 		}
 		else if(state == line){
+			
 			if(input!= space || input!=function||input!=line){
 				state = instruction;
 			}
 		}
+		
 		else if(state== instruction){
+			
 			if(input == instruction){
 				state = instruction;
 			}
+			
 			else if(input == function){
 				state = function;
 			}
+			
 			else if(input == line){
 				state = line;
 			}
+			
 			else{
 				state = space;
 			}
 		}
-//		else if(state== instruction){
-//			if(input==instruction){
-//				state = instruction;
-//			}
-//			else if(input == function){
-//				state = function;
-//			}
-//			else if(input == line){
-//				state = line;
-//			}
-//			
-//
-//		}
+		
 		else if(state == space){
 			if(input == function) state = function;
 			if(input == line) state = line;
@@ -87,12 +81,10 @@ public class StateMachine {
 			}
 			if(input==eh_state){
 				state = eh_state;
-			}
-			
+			}	
 		}
-		
 	}
-
+	
 	public void handleInput(String str) {
 		if(str.contains("Function")||str.contains("Pseudo-main")) whatState(function);
 		else if(str.contains("// line")) whatState(line);

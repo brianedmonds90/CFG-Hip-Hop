@@ -1,39 +1,9 @@
 digraph testName {
-0 [label="169" tooltip="FPushFuncD
-String
-String
-CGetL2
-Add
-Add
-FPassCE
-FCall
-UnboxR
-SetL
-PopC
-"];
-1 [label="170" tooltip="FPushFuncD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-2 [label="171" tooltip="FPushFuncD
-String
-FPassCE
-FCall
-PopR
-"];
-3 [label="172" tooltip="FPushFuncD
-FPassL
-FCall
-UnboxR
-Print
-PopC
-"];
-4 [label="173" tooltip="Null
-RetC
-"];
+0 [label="169" , fillcolor = red, style = filled];
+1 [label="170" , fillcolor = red, style = filled];
+2 [label="171" , fillcolor = red, style = filled];
+3 [label="172" , fillcolor = red, style = filled];
+4 [label="173"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

@@ -1,0 +1,82 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-28; fpOff = 3
+ FPI 31-59; fpOff = 3
+  // line 20
+    0: FPushFuncD 2 "foo"
+    6: Int 0
+   15: FPassCE 0
+   17: Int 3
+   26: FPassCE 1
+   28: FCall 2
+   30: PopR
+  // line 21
+   31: FPushFuncD 2 "foo"
+   37: Int 1
+   46: FPassCE 0
+   48: Int 1
+   57: FPassCE 1
+   59: FCall 2
+   61: PopR
+   62: Int 1
+   71: RetC
+
+Function (leaf) foo at 72 (ID 1)
+  // line 4
+   72: Int 6
+   81: SetL 2
+   83: PopC
+  // line 5
+   84: Int 1
+   93: SetL 3
+   95: PopC
+  // line 6
+   96: Int 5
+  105: CGetL2 0
+  107: Lte
+  108: JmpZ 87 (195)
+  // line 9
+  113: Int 1
+  122: CGetL2 2
+  124: Add
+  125: SetL 4
+  127: PopC
+  // line 10
+  128: Int 2
+  137: CGetL 3
+  139: Mul
+  140: SetL 2
+  142: PopC
+  // line 11
+  143: String "The number is: "
+  148: CGetL 0
+  150: Concat
+  151: String " <br>"
+  156: Concat
+  157: Print
+  158: PopC
+  // line 12
+  159: CGetL 1
+  161: JmpZ 13 (174)
+  // line 13
+  166: CGetL 3
+  168: CGetL2 2
+  170: Add
+  171: SetL 4
+  173: PopC
+  // line 15
+  174: Int 1
+  183: SetL 3
+  185: PopC
+  // line 16
+  186: IncDecL 0 PreInc
+  189: PopC
+  // line 17
+  190: Jmp -94
+  // line 18
+  195: Null
+  196: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-28; fpOff = 3
+ FPI 31-59; fpOff = 3
+Function (leaf) foo at 72 (ID 1)

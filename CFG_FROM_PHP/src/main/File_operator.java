@@ -62,15 +62,18 @@ public class File_operator {
 			if (state == state_machine.function) {
 				func = new Function(str);
 				functions.add(func);
-			} else if (state == state_machine.fpi) {
+			}
+			else if (state == state_machine.fpi) {
 				func = functions.get(functions.size() - 1);
 				func.addFPI(str);
-			} else if (state == state_machine.line) {
+			} 
+			else if (state == state_machine.line) {
 				func = functions.get(functions.size() - 1);
 				String number = str.substring(10);
 				func.addLine(Integer.parseInt(number));
 
-			} else if (state == state_machine.instruction) {
+			} 
+			else if (state == state_machine.instruction) {
 				// Get the most current function
 				func = functions.get(functions.size() - 1);
 				Line l = func.getLines().get(func.getLines().size() - 1);
@@ -89,14 +92,13 @@ public class File_operator {
 					inst.setBCLineNo(bc_line_no);
 					inst.setLine(l);
 				}
-			} else if (state == state_machine.eh_state) {
+			} 
+			else if (state == state_machine.eh_state) {
 				func = functions.get(functions.size() - 1);
 				func.addEHTable(str);
 			}
 		}
-
 		ArrayList<Instruction> leaders = new ArrayList<Instruction>();
-
 		ArrayList<Instruction> allInstructions = new ArrayList<Instruction>();
 		for (Function f : functions) {
 			// Gets the leaders for each function
@@ -112,17 +114,14 @@ public class File_operator {
 					return a.compareTo(b);
 				}
 			});
-
 			for (Line l : f.getLines()) {
 				allInstructions.addAll(l.getInstructions());
 			}
-
 			// Get the number of parameters of the function
 			int numParams = f.calcNumParams();
 			f.setNumParams(numParams);
 			// Get the basic blocks for the current function
-			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions,
-					leaders);
+			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
 			// Get the cfg
 			cfg_ret = getCFG(basicBlocks);
 			// cfg_ret.definitions = getDefinitions(basicBlocks);
@@ -135,9 +134,7 @@ public class File_operator {
 			cfg_ret.setExitNodes();
 			ret.add(cfg_ret);
 		}
-
 		return ret;
-
 	}
 
 	/**

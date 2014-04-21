@@ -1,58 +1,12 @@
 digraph testName {
-0 [label="236" tooltip="String
-VGetG
-BindL
-PopV
-"];
-1 [label="237" tooltip="String
-FPushFuncD
-String
-FPassCE
-FCall
-UnboxR
-String
-Concat
-FPushFuncD
-String
-String
-CGetL2
-Concat
-Concat
-FPassCE
-FCall
-UnboxR
-Concat
-Concat
-SetL
-PopC
-"];
-2 [label="238" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-3 [label="239" tooltip="FPushFuncD
-String
-FPassCE
-FCall
-PopR
-"];
-4 [label="240" tooltip="CGetM
-Print
-PopC
-"];
-5 [label="241" tooltip="Null
-RetC
-"];
-6 [label="12" tooltip="Null
-RetC
-"];
-7 [label="17" tooltip="Null
-RetC
-"];
+0 [label="236"];
+1 [label="237" , fillcolor = red, style = filled];
+2 [label="238" , fillcolor = red, style = filled];
+3 [label="239" , fillcolor = red, style = filled];
+4 [label="240"];
+5 [label="241"];
+6 [label="12"];
+7 [label="17"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

@@ -1,100 +1,15 @@
 digraph testName {
-0 [label="187" tooltip="String
-VGetG
-BindL
-PopV
-"];
-1 [label="188" tooltip="String
-FPushFuncD
-String
-FPassCE
-FCall
-UnboxR
-String
-Concat
-FPushFuncD
-String
-CGetL
-Concat
-FPassCE
-FCall
-UnboxR
-Concat
-Concat
-SetL
-PopC
-"];
-2 [label="189" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-3 [label="191" tooltip="FPushFuncD
-FPassM
-FCall
-UnboxR
-SetL
-PopC
-"];
-4 [label="193" tooltip="String
-CGetL
-FPushObjMethodD
-String
-FPassCE
-Int
-FPassCE
-FCall
-CGetM
-Concat
-SetL
-PopC
-"];
-5 [label="194" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-6 [label="196" tooltip="FPushFuncD
-FPassM
-FCall
-UnboxR
-SetL
-PopC
-"];
-7 [label="198" tooltip="String
-CGetL
-FPushObjMethodD
-String
-FPassCE
-Int
-FPassCE
-FCall
-CGetM
-Concat
-SetL
-PopC
-"];
-8 [label="199" tooltip="CGetL
-FPushObjMethodD
-FPassL
-FCall
-UnboxR
-SetL
-PopC
-"];
-9 [label="201" tooltip="CGetM
-Print
-PopC
-"];
-10 [label="202" tooltip="Null
-RetC
-"];
+0 [label="187"];
+1 [label="188" , fillcolor = red, style = filled];
+2 [label="189" , fillcolor = red, style = filled];
+3 [label="191" , fillcolor = red, style = filled];
+4 [label="193" , fillcolor = red, style = filled];
+5 [label="194" , fillcolor = red, style = filled];
+6 [label="196" , fillcolor = red, style = filled];
+7 [label="198" , fillcolor = red, style = filled];
+8 [label="199" , fillcolor = red, style = filled];
+9 [label="201"];
+10 [label="202"];
 0 -> 1;
 1 -> 2;
 2 -> 3;

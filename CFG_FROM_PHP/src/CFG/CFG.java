@@ -320,31 +320,18 @@ public class CFG {
 		for(BasicBlock bb: nodes){
 			ret+=bb.toDot()+"\n";
 		}
-		
 		for(Edge e: edges){
 			ret+=e.toDot()+"\n";
 		}
-		ret+= entry.getBlockNo()+" [fillcolor = green, style = filled]";
-		
-		
-		ret+= exitNode.getBlockNo()+" [fillcolor= yellow, style = filled] ";
-
-		
-		
+		ret+= entry.getBlockNo() +" [fillcolor = green, style = filled]";
+		ret+= exitNode.getBlockNo() +" [fillcolor= yellow, style = filled] ";
 		for(Defs_Uses dd: definitions){
 			ret+= dd.toDotDefs()+"\n";
 		}
-		
 		for(Defs_Uses use: uses){
 			ret+= use.toDotUses()+"\n";
 		}
-		
 		ret+=function.toDot();
-		
-//		for(KillSet kk : killSet){
-//			ret+= kk.toDot()+ "\n";
-//		}
-//		
 		return ret;
 	}
 }

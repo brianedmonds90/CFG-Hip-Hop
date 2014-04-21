@@ -1,0 +1,20 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 8-17; fpOff = 4
+  // line 2
+    0: Array array(0=>"Volvo",1=>"BMW",2=>"Toyota")
+    5: SetL 0
+    7: PopC
+  // line 3
+    8: FPushFuncD 1 "sort"
+   14: FPassL 0 0
+   17: FCall 1
+   19: PopR
+  // line 5
+   20: String "\n"
+   25: Print
+   26: PopC
+   27: Int 1
+   36: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 8-17; fpOff = 4

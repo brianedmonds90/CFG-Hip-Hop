@@ -72,11 +72,15 @@ public class BasicBlock {
 		
 		ret = getBlockNo()+ " [label=\""+instructions.get(0).line+"\"";
 
-		ret+=" tooltip=\"";
+		//ret+=" tooltip=\"";
 		for(Instruction in:instructions){
-			ret+=in.getInstrText()+"\n";
+			//ret+=in.getInstrText()+"\n";
+			if(in.type==Instruction.call){
+				ret+=" , fillcolor = red, style = filled";
+				break;
+			}
 		}
-		ret+="\"];";
+		ret+="];";
 		return ret;
 
 	}

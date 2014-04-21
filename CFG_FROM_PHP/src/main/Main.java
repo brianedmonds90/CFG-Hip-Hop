@@ -39,13 +39,16 @@ public class Main {
 			System.out.println("error in creating outpute directory");
 		}
 		String graphName = "testName";
+		CFG interconnectedCFG = new CFG();
 		for(File f: byteCodeFiles){
 			String fileName = f.getName();
 			String extension = fileName.substring(fileName.length()-3);
 			//if the file is a bytecode file
 			if(extension.equals(".bc")){
 				cfgs = f_operator.parse_byte_code(f);
+				
 				for(CFG cfg: cfgs ){
+					
 					try {
 						writer = new PrintWriter(outputPath+cfg.getFileName()+"_"+
 								cfg.getFunctionName()+".dot", "UTF-8");
@@ -73,6 +76,7 @@ public class Main {
 	public static ArrayList<String> getInstructions;
 	public static ArrayList<String> setL;
 	public static ArrayList<String> globalInstructions;
+	public static ArrayList<String> callInstructions;
 	
 	
 	public static void init(){
@@ -81,7 +85,8 @@ public class Main {
 		cfgInstructions = new ArrayList<String>();
 		globalInstructions = new ArrayList<String>();
 		setL = new ArrayList<String>();
-		//Add the CFG instructions
+		callInstructions = new ArrayList<String>();
+		//Add the Control flow instructions
 		cfgInstructions.add("Jmp");
 		cfgInstructions.add("JmpNS");
 		cfgInstructions.add("JmpZ");
@@ -105,7 +110,6 @@ public class Main {
 		getInstructions.add("AGetL");
 		//getInstructions.add("VGetG");
 		getInstructions.add("CGetG");
-		
 		
 		//Add the setter instructions
 		setL.add("SetL");
@@ -132,5 +136,37 @@ public class Main {
 		globalInstructions.add("IncDecG");
 		globalInstructions.add("VGetG");
 		globalInstructions.add("CGetG");
+		
+		callInstructions.add("FPushFunc");
+		callInstructions.add("FPushFuncD");
+		callInstructions.add("FPushFuncU");
+		callInstructions.add("FPushObjMethod");
+		callInstructions.add("FPushObjMethodD");
+		callInstructions.add("FPushClsMethod");
+		callInstructions.add("FPushClsMethodF");
+		callInstructions.add("FPushClsMethodD");
+		callInstructions.add("FPushCtor");
+		callInstructions.add("FPushCtorD");
+		callInstructions.add("DecodeCufIter");
+		callInstructions.add("FPushCufIter");
+		callInstructions.add("FPushCuf");
+		callInstructions.add("FPushCufF");
+		callInstructions.add("FPushCufSafe");
+		callInstructions.add("CufSafeArray");
+		callInstructions.add("CufSafeReturn");
+		callInstructions.add("FPassC");
+		callInstructions.add("FPassCW");
+		callInstructions.add("FPassCE");
+		callInstructions.add("FPassV");
+		callInstructions.add("FPassVNop");
+		callInstructions.add("FPassR");
+		callInstructions.add("FPassL");
+		callInstructions.add("FPassN");
+		callInstructions.add("FPassG");
+		callInstructions.add("FPassS");
+		callInstructions.add("FCall");
+		callInstructions.add("FCallD");
+		callInstructions.add("FCallArray");
+		callInstructions.add("FCallBuiltin");	
 	}
 }
