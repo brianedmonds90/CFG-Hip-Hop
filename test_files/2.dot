@@ -1,9 +1,0 @@
-digraph graphname {
-  a [label="B0", tooltip="bytecode 1\nbytecode2"];
-  b [label="B1"];
-  c;
-  d;
-  a -> b [xlabel="T"];
-  b -> c;
-  b -> d;
-}

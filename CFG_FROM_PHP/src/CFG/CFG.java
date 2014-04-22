@@ -161,6 +161,8 @@ public class CFG {
 		for(BasicBlock bb: basicBlocks){
 			for(Instruction inst : bb.getInstructions()){
 				if(inst.use){
+					//TODO need to support the global parameter usage
+					if(inst.getArgs()[0]!=null)
 					uses.add(new Defs_Uses(bb,inst.line,Integer.parseInt((inst.getArgs()[0]))));
 				}	
 			}

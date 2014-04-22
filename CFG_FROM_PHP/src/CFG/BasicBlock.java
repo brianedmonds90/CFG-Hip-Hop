@@ -75,10 +75,10 @@ public class BasicBlock {
 		//ret+=" tooltip=\"";
 		for(Instruction in:instructions){
 			//ret+=in.getInstrText()+"\n";
-			if(in.type==Instruction.call){
-				ret+=" , fillcolor = red, style = filled";
-				break;
-			}
+//			if(in.type==Instruction.call){
+//				ret+=" , fillcolor = red, style = filled";
+//				break;
+//			}
 		}
 		ret+="];";
 		return ret;

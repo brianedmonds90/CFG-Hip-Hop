@@ -124,6 +124,7 @@ public class File_operator {
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
 			// Get the cfg
 			cfg_ret = getCFG(basicBlocks);
+			//getCallSiteInfo(cfg_ret);
 			// cfg_ret.definitions = getDefinitions(basicBlocks);
 			// cfg_ret.getUses(basicBlocks);
 			// cfg_ret.killSet(basicBlocks, cfg_ret.definitions);
@@ -135,6 +136,20 @@ public class File_operator {
 			ret.add(cfg_ret);
 		}
 		return ret;
+	}
+
+	private void getCallSiteInfo(CFG cfg_ret) {
+		
+		for(BasicBlock bb: cfg_ret.getNodes()){
+			for(Instruction inst: bb.getInstructions()){
+				if(inst.callSite()){
+					BasicBlock c = new BasicBlock();
+					c.setBlockNo(1000);
+					cfg_ret.addBasicBlock(c);
+				}
+			}
+		}
+	
 	}
 
 	/**

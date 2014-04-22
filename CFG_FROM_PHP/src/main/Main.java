@@ -29,7 +29,9 @@ public class Main {
 		PrintWriter writer;
 		ArrayList<CFG> cfgs = new ArrayList<CFG>();
 		File directory = new File (".");
-		String currentDirectory = directory.getCanonicalPath();
+		//TODO uncomment this
+		//String currentDirectory = directory.getCanonicalPath();
+		String currentDirectory = "/Users/brianedmonds/Documents/orso_research";
 		String outputPath = currentDirectory+"/graphViz/";
 		boolean success = new File(outputPath).mkdirs();
 		if(success){
@@ -46,9 +48,7 @@ public class Main {
 			//if the file is a bytecode file
 			if(extension.equals(".bc")){
 				cfgs = f_operator.parse_byte_code(f);
-				
 				for(CFG cfg: cfgs ){
-					
 					try {
 						writer = new PrintWriter(outputPath+cfg.getFileName()+"_"+
 								cfg.getFunctionName()+".dot", "UTF-8");
@@ -108,7 +108,7 @@ public class Main {
 		getInstructions.add("VGetS");
 		getInstructions.add("AGetC");
 		getInstructions.add("AGetL");
-		//getInstructions.add("VGetG");
+		getInstructions.add("VGetG");
 		getInstructions.add("CGetG");
 		
 		//Add the setter instructions

@@ -40,7 +40,7 @@ public class Instruction{
 	private boolean unconditional;
 	public boolean definition;
 	public boolean use;
-	public boolean global;
+	public boolean global,callSite;
 	String instr_text;
 	/**
 	 * Initializes variables.
@@ -50,6 +50,7 @@ public class Instruction{
 
 		destination = null;
 		unconditional = false;
+		callSite= false;
 	}
 	
 	/**
@@ -88,6 +89,7 @@ public class Instruction{
 		}
 		else if(Main.callInstructions.contains(getInstruction_text())){
 			type = call;
+			callSite =true;
 		}
 		else{
 			type = unidentified;
@@ -214,5 +216,10 @@ public class Instruction{
 
 	public void setInstruction_text(String instruction_text) {
 		this.instruction_text = instruction_text;
+	}
+
+	public boolean callSite() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
