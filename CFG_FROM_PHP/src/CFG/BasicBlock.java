@@ -9,18 +9,31 @@ import java.util.ArrayList;
 public class BasicBlock {
 	private ArrayList<Instruction> instructions;
 	private int block_no;
-	private boolean exitNode;
+	private boolean exitNode; // Is this an exit node?
 	
+	/**
+	 * Initializes the instructions array.
+	 * Set exitNode as default false
+	 */
 	public BasicBlock(){
 		instructions = new ArrayList<Instruction>();
 		exitNode = false;
 	}
 	
+	/**
+	 * Initializes the object with a single instruction
+	 * @param inst
+	 */
 	public BasicBlock(Instruction inst) {
 		this();
 		instructions.add(inst);
 	}
 
+	/**
+	 * Split current basic block into two
+	 * @param index Insturction index of split point
+	 * @return the new basic block with the rest of the instruction
+	 */
 	public BasicBlock split(int index) {
 		BasicBlock b = new BasicBlock();
 		for(int i = index;i<instructions.size();i++){
@@ -35,7 +48,6 @@ public class BasicBlock {
 	
 	public void setAsExitNode() {
 		exitNode = true;
-		
 	}
 	
 	public void setBlockNo(int block_no) {
@@ -54,12 +66,19 @@ public class BasicBlock {
 		return block_no;
 	}
 	
+	/**
+	 * Returns a string representation:
+	 * *** Block number: [block_no] ***
+	 * head: [instructions[0]]
+	 * 			 ...
+	 * 		 [instructions[n]]
+	 */
 	public String toString(){
 		if(instructions.size()>0){
-			StringBuilder ret = new StringBuilder("B"+block_no+"  head: ");
+			StringBuilder ret = new StringBuilder("*** Block number: "+block_no+" ***\nhead: ");
 		
 			for(Instruction i: instructions){
-				ret.append(i.toString()+ "\n");
+				ret.append(i.toString());
 			}
 	
 			return ret.toString();
@@ -67,6 +86,9 @@ public class BasicBlock {
 		return "empty";
 	}
 	
+	/**
+	 * @return The appropriate graphviz syntax that represents this basic block
+	 */
 	public String toDot() {
 		String ret ="";
 		

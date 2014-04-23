@@ -36,7 +36,7 @@ public class Main {
 			System.out.println("output directory created successfully");
 		}
 		else{
-			System.out.println("error in creating outpute directory");
+			System.out.println("error in creating output directory");
 		}
 		String graphName = "testName";
 		CFG interconnectedCFG = new CFG();
@@ -63,11 +63,14 @@ public class Main {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
+					System.out.println(cfg.toString());
 					System.out.println("CHECK your "+outputPath+"for the graphviz file");
 
 				}
 			}
-		}		
+		}
+		
 	}
 	
 

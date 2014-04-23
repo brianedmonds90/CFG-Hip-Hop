@@ -184,6 +184,11 @@ public class Instruction{
 		return false;
 	}
 	
+	/**
+	 * Compares the bytecode line number
+	 * @param b
+	 * @return
+	 */
 	public int compareTo(Instruction b) {
 		if(this.equals(b))
 			return 0;
@@ -191,6 +196,14 @@ public class Instruction{
 		int bb = Integer.parseInt(b.getBCLineNO());
 		if(a<bb) return -1;
 		return 1;
+	}
+	
+	public String getInstruction_text() {
+		return instruction_text;
+	}
+
+	public void setInstruction_text(String instruction_text) {
+		this.instruction_text = instruction_text;
 	}
 	
 	/**
@@ -206,13 +219,5 @@ public class Instruction{
 			
 		sb.append("\n");
 		return sb.toString();
-	}
-
-	public String getInstruction_text() {
-		return instruction_text;
-	}
-
-	public void setInstruction_text(String instruction_text) {
-		this.instruction_text = instruction_text;
 	}
 }

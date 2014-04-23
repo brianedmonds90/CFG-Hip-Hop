@@ -124,9 +124,6 @@ public class File_operator {
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
 			// Get the cfg
 			cfg_ret = getCFG(basicBlocks);
-			// cfg_ret.definitions = getDefinitions(basicBlocks);
-			// cfg_ret.getUses(basicBlocks);
-			// cfg_ret.killSet(basicBlocks, cfg_ret.definitions);
 			cfg_ret.setFileName(file.getName());
 			cfg_ret.setFunction(f);
 			// Sets the entry node to be the first node in the nodes list
@@ -234,6 +231,11 @@ public class File_operator {
 		return leaders;
 	}
 
+	/**
+	 * Constructs a CFG by computing the edges.
+	 * @param basicBlocks List of basic blocks 
+	 * @return CFG
+	 */
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
 		cfg.getDefinitions(basicBlocks);
@@ -283,7 +285,51 @@ public class File_operator {
 		cfg.getKills_Brian();
 		return cfg;
 	}
+	
+	/**
+	 * Computers each basic block's defintion.
+	 * @param basicBlocks List of basic blocks
+	 * @return List of Defintions
+	 */
+	public ArrayList<Defs_Uses> getDefinitions(ArrayList<BasicBlock> basicBlocks) {
+		boolean bbHasDef;
+		int instrucionIndex;
+		int basicBlockIndex = 0;
+		ArrayList<Defs_Uses> ret = new ArrayList<Defs_Uses>();
+		for (BasicBlock bb : basicBlocks) {
+			bbHasDef = false;
+			instrucionIndex = 0;
+			basicBlockIndex++;
+			for (Instruction inst : bb.getInstructions()) {
+				instrucionIndex++;
+				if (inst.definition) {
+					if (!bbHasDef) {
+						bbHasDef = true;
+						ret.add(new Defs_Uses(bb, inst.line, Integer
+								.parseInt((inst.getArgs()[0]))));
+					} else {// Basic Block already has a definition in it
+							// split the basic block and add it to the
+							// basicBlocks list
+						BasicBlock b = bb.split(instrucionIndex);
+						if (basicBlockIndex == basicBlocks.size()) {
+							basicBlocks.add(b);
+						} else {
+							basicBlocks.add(basicBlockIndex, b);
+						}
+					}
+				}
+			}
+		}
+		return ret;
+	}
 
+
+	/**
+	 * Returns the destination instruction
+	 * @param destination the bytecode line number of destination
+	 * @param func function it belongs to
+	 * @return instruction
+	 */
 	private Instruction getDestinationInstruction(int destination, Function func) {
 		for (Line l : func.getLines()) {
 			for (Instruction in : l.getInstructions()) {
@@ -332,37 +378,4 @@ public class File_operator {
 		}
 		return l;
 	}
-
-	public ArrayList<Defs_Uses> getDefinitions(ArrayList<BasicBlock> basicBlocks) {
-		boolean bbHasDef;
-		int instrucionIndex;
-		int basicBlockIndex = 0;
-		ArrayList<Defs_Uses> ret = new ArrayList<Defs_Uses>();
-		for (BasicBlock bb : basicBlocks) {
-			bbHasDef = false;
-			instrucionIndex = 0;
-			basicBlockIndex++;
-			for (Instruction inst : bb.getInstructions()) {
-				instrucionIndex++;
-				if (inst.definition) {
-					if (!bbHasDef) {
-						bbHasDef = true;
-						ret.add(new Defs_Uses(bb, inst.line, Integer
-								.parseInt((inst.getArgs()[0]))));
-					} else {// Basic Block already has a definition in it
-							// split the basic block and add it to the
-							// basicBlocks list
-						BasicBlock b = bb.split(instrucionIndex);
-						if (basicBlockIndex == basicBlocks.size()) {
-							basicBlocks.add(b);
-						} else {
-							basicBlocks.add(basicBlockIndex, b);
-						}
-					}
-				}
-			}
-		}
-		return ret;
-	}
-
 }

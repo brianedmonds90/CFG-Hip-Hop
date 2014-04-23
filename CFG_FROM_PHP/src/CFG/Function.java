@@ -10,9 +10,12 @@ public class Function {
 	private ArrayList<Line> lines; 
 	private String name;
 	ArrayList<String> fpis;
-	int numParams;
+	private int numParams;
 	ArrayList<String> ehTable;
 	
+	/**
+	 * Initializes variables.
+	 */
 	public Function(){
 		lines = new ArrayList<Line>();
 		fpis = new ArrayList<String>();
@@ -20,11 +23,19 @@ public class Function {
 		ehTable = new ArrayList<String>();
 	}
 	
+	/**
+	 * Initializes variables and gives it a name
+	 * @param n
+	 */
 	public Function(String n){
 		this();
 		name = n;
 	}
 	
+	/**
+	 * Computers the number of parameters this function has
+	 * @return Number of parameters
+	 */
 	public int calcNumParams() {
 		int numVars = 0;
 		int minSetL = 999999999;
@@ -51,6 +62,10 @@ public class Function {
 		else 
 			return 0;
 		
+	}
+	
+	public void addEHTable(String str) {
+		ehTable.add(str);
 	}
 	
 	public void addLine(int str) {
@@ -81,6 +96,9 @@ public class Function {
 		return name;
 	}
 	
+	/**
+	 * Returns a string representation
+	 */
 	public String toString() {
 		StringBuilder sb = new StringBuilder("Function: " + name +" num params: "+numParams+"\n");
 		for(String s: fpis){
@@ -91,15 +109,15 @@ public class Function {
 		return sb.toString();
 	}
 	
+	/**
+	 * @return The appropriate graphviz syntax that represents this function
+	 */
 	public String toDot(){
 		String ret = "";
 		ret+= "-2 [label=\""+numParams+" params\"];";
 		return ret;
 	}
 
-	public void addEHTable(String str) {
-		ehTable.add(str);
-		
-	}
+
 	
 }

@@ -10,10 +10,10 @@ import com.sun.swing.internal.plaf.basic.resources.basic;
 public class CFG {
 	private String name; // Function name
 	ArrayList<BasicBlock> nodes;//Nodes are basic blocks
-	ArrayList<Edge> edges;
+	private ArrayList<Edge> edges;
 	BasicBlock entry;
-	String fileName;
-	Function function;
+	private String fileName;
+	private Function function;
 	private ArrayList<BasicBlock> exitNodes;
 	public ArrayList<Defs_Uses> definitions;
 	private ArrayList<Defs_Uses> uses;
@@ -98,7 +98,7 @@ public class CFG {
 	}
 	
 	/**
-	 * 
+	 * Compute the exit of this CFG
 	 */
 	public void setExitNodes(){
 		BasicBlock a,b;
@@ -254,7 +254,7 @@ public class CFG {
 		}
 		//System.out.print(":::KILLS::: There are "+killSet.size()+" number of kills.\n");
 		for (KillSet k : killSet)
-			if(k.basicBlocks.size()>0){
+			if(k.getBasicBlocks().size()>0){
 		//		System.out.println(k);
 			}
 	}
@@ -297,18 +297,26 @@ public class CFG {
 	
 	/**
 	 * Returns a string representation:
-	 * CFG:
-	 * B0: xxxxx
-	 * 0 <-> 0
+	 * ----- CFG: [fileName] -----:
+	 * *** Block number : 0 ***
+	 * Head:	[head instruction]
+	 * 				...
+	 * 			[instruction]
+	 * 
+	 * *** Block number: n ***
+	 * Head:	[head instruction]
+	 * 				...
+	 * 			[instruction]
 	 */
 	public String toString(){
-		StringBuilder sb = new StringBuilder("CFG: \n");
+		StringBuilder sb = new StringBuilder("--------------- CFG: "+ fileName + " ---------------\n");
 		for(BasicBlock b: nodes){
 			sb.append(b+"\n");
 		}
 		for( Edge e: edges){
 			sb.append(e+"\n");
 		}
+		sb.append("------------ End of CFG: "+ fileName + " ------------\n");
 		return sb.toString();
 	}
 	
