@@ -220,6 +220,7 @@ public class Instruction{
 
 	public boolean callSite() {
 		// TODO Auto-generated method stub
-		return false;
+		
+		return callSite;
 	}
 }

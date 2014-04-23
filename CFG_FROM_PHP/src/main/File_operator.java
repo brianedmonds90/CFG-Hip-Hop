@@ -139,16 +139,19 @@ public class File_operator {
 	}
 
 	private void getCallSiteInfo(CFG cfg_ret) {
-		
+		ArrayList<BasicBlock> listOfBlocks = new ArrayList<BasicBlock>();
 		for(BasicBlock bb: cfg_ret.getNodes()){
 			for(Instruction inst: bb.getInstructions()){
 				if(inst.callSite()){
 					BasicBlock c = new BasicBlock();
+					c.addInstruction(inst);
 					c.setBlockNo(1000);
-					cfg_ret.addBasicBlock(c);
+					
+					listOfBlocks.add(c);
 				}
 			}
 		}
+		cfg_ret.getNodes().addAll(listOfBlocks);
 	
 	}
 

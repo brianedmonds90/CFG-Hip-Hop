@@ -1,13 +1,25 @@
 digraph testName {
-0 [label="148"];
-1 [label="149"];
+0 [label="148" , fillcolor = red, style = filled];
+1 [label="149" , fillcolor = red, style = filled];
 2 [label="151"];
 3 [label="152"];
+1000 [label="148" , fillcolor = red, style = filled];
+1000 [label="148" , fillcolor = red, style = filled];
+1000 [label="148" , fillcolor = red, style = filled];
+1000 [label="149" , fillcolor = red, style = filled];
+1000 [label="149" , fillcolor = red, style = filled];
+1000 [label="149" , fillcolor = red, style = filled];
 0 -> 1;
 1 -> 2;
 2 -> 3;
 -2 -> 0[xlabel="ENTRY"];
 3 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
 -2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #148 : 1"];label = "DEFS";}
 0 -> g_0 [style="dashed"];
 subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #149 : 2"];label = "DEFS";}

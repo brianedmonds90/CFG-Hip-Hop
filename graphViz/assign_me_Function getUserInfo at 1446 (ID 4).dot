@@ -1,10 +1,25 @@
 digraph testName {
 0 [label="140"];
-1 [label="141"];
-2 [label="142"];
-3 [label="143"];
-4 [label="144"];
+1 [label="141" , fillcolor = red, style = filled];
+2 [label="142" , fillcolor = red, style = filled];
+3 [label="143" , fillcolor = red, style = filled];
+4 [label="144" , fillcolor = red, style = filled];
 5 [label="145"];
+1000 [label="141" , fillcolor = red, style = filled];
+1000 [label="141" , fillcolor = red, style = filled];
+1000 [label="141" , fillcolor = red, style = filled];
+1000 [label="141" , fillcolor = red, style = filled];
+1000 [label="141" , fillcolor = red, style = filled];
+1000 [label="141" , fillcolor = red, style = filled];
+1000 [label="142" , fillcolor = red, style = filled];
+1000 [label="142" , fillcolor = red, style = filled];
+1000 [label="142" , fillcolor = red, style = filled];
+1000 [label="143" , fillcolor = red, style = filled];
+1000 [label="143" , fillcolor = red, style = filled];
+1000 [label="143" , fillcolor = red, style = filled];
+1000 [label="144" , fillcolor = red, style = filled];
+1000 [label="144" , fillcolor = red, style = filled];
+1000 [label="144" , fillcolor = red, style = filled];
 0 -> 1;
 1 -> 2;
 2 -> 3;
@@ -12,6 +27,21 @@ digraph testName {
 4 -> 5;
 -2 -> 0[xlabel="ENTRY"];
 5 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
 -2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #140 : 0"];label = "DEFS";}
 0 -> g_0 [style="dashed"];
 subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #141 : 1"];label = "DEFS";}

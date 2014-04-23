@@ -1,15 +1,39 @@
 digraph testName {
-0 [label="169"];
-1 [label="170"];
-2 [label="171"];
-3 [label="172"];
+0 [label="169" , fillcolor = red, style = filled];
+1 [label="170" , fillcolor = red, style = filled];
+2 [label="171" , fillcolor = red, style = filled];
+3 [label="172" , fillcolor = red, style = filled];
 4 [label="173"];
+1000 [label="169" , fillcolor = red, style = filled];
+1000 [label="169" , fillcolor = red, style = filled];
+1000 [label="169" , fillcolor = red, style = filled];
+1000 [label="170" , fillcolor = red, style = filled];
+1000 [label="170" , fillcolor = red, style = filled];
+1000 [label="170" , fillcolor = red, style = filled];
+1000 [label="171" , fillcolor = red, style = filled];
+1000 [label="171" , fillcolor = red, style = filled];
+1000 [label="171" , fillcolor = red, style = filled];
+1000 [label="172" , fillcolor = red, style = filled];
+1000 [label="172" , fillcolor = red, style = filled];
+1000 [label="172" , fillcolor = red, style = filled];
 0 -> 1;
 1 -> 2;
 2 -> 3;
 3 -> 4;
 -2 -> 0[xlabel="ENTRY"];
 4 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
+1000 -> -1[xlabel="EXIT"];
 -2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #169 : 1"];label = "DEFS";}
 0 -> g_0 [style="dashed"];
 subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #170 : 2"];label = "DEFS";}

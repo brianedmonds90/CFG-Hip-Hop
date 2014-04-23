@@ -18,20 +18,21 @@ public class Main {
 	public static void main(String [] args) throws IOException{
 		
 		ArrayList<File> byteCodeFiles = new ArrayList<File>();
+		String pathOfCompiledFiles = args[0];
 		init();
-		System.out.println("Please enter the path of the directory that you want to parse:");
+		//System.out.println("Please enter the path of the directory that you want to parse:");
 		Scanner scan = new Scanner(System.in);
-		String path = scan.nextLine();
+		//String path = scan.nextLine();
 		File_operator f_operator = new File_operator();
 		//Get all the files from a directory specified by the user
-		f_operator.listFilesForFolder(new File(path),byteCodeFiles);
+		f_operator.listFilesForFolder(new File(pathOfCompiledFiles),byteCodeFiles);
 		//parse the given bytecode files from the directory
 		PrintWriter writer;
 		ArrayList<CFG> cfgs = new ArrayList<CFG>();
 		File directory = new File (".");
 		//TODO uncomment this
-		//String currentDirectory = directory.getCanonicalPath();
-		String currentDirectory = "/Users/brianedmonds/Documents/orso_research";
+		String currentDirectory = directory.getCanonicalPath();
+		//String currentDirectory = "/Users/brianedmonds/Documents/orso_research";
 		String outputPath = currentDirectory+"/graphViz/";
 		boolean success = new File(outputPath).mkdirs();
 		if(success){
@@ -63,7 +64,7 @@ public class Main {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					System.out.println("CHECK your "+outputPath+"for the graphviz file");
+					System.out.println("Check your "+outputPath+"for the graphviz file");
 
 				}
 			}
