@@ -1,0 +1,61 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-21; fpOff = 3
+ FPI 10-16; fpOff = 7 parentIndex = 0 (depth 2)
+  // line 3
+    0: DefCls 0
+  // line 4
+    2: DefCls 1
+  // line 12
+    4: FPushFuncD 1 "foo"
+   10: FPushCtorD 0 "Foo"
+   16: FCall 0
+   18: PopR # i0:t=Null*
+   19: FPassC 0
+   21: FCall 1
+   23: PopR
+   24: Int 1
+   33: RetC
+
+Function foo at 34 (ID 1)
+ FPI 45-51; fpOff = 4
+  // line 10
+   34: VerifyParamType 0
+  // line 7
+   36: CGetL 0
+   38: JmpZ 16 (54)
+  // line 8
+   43: CGetL 0
+   45: FPushObjMethodD 0 "frob"
+   51: FCall 0
+   53: PopR
+  // line 10
+   54: Null
+   55: RetC
+
+Method public (leaf) Bar::frob at 56
+  // line 3
+   56: String "frob\n"
+   61: Print
+   62: PopC
+   63: Null
+   64: RetC
+
+Method public (leaf) Bar::86ctor at 65
+   65: Null
+   66: RetC
+
+Method public (leaf) Foo::86ctor at 67
+  // line 4
+   67: Null
+   68: RetC
+Class Bar at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) Bar::frob at 56
+ Method public (leaf) Bar::86ctor at 65
+Class Foo at 2 (maybe-hoistable) (ID 1)
+ Method public (leaf) Foo::86ctor at 67
+Pseudo-main at 0 (ID 0)
+ FPI 4-21; fpOff = 3
+ FPI 10-16; fpOff = 7 parentIndex = 0 (depth 2)
+Function foo at 34 (ID 1)
+ FPI 45-51; fpOff = 4

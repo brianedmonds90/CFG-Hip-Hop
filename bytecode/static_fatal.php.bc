@@ -1,0 +1,105 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 10
+    2: DefCls 1
+  // line 14
+    4: DefCls 2
+  // line 26
+    6: FPushFuncD 0 "main"
+   12: FCall 0
+   14: PopR
+   15: Int 1
+   24: RetC
+
+Function main at 25 (ID 1)
+ FPI 25-31; fpOff = 6
+ FPI 37-43; fpOff = 6
+ FPI 51-60; fpOff = 5
+  // line 21
+   25: FPushCtorD 0 "two"
+   31: FCall 0
+   33: PopR # i0:t=Null*
+   34: SetL 0
+   36: PopC
+  // line 22
+   37: FPushCtorD 0 "doer"
+   43: FCall 0
+   45: PopR # i0:t=Null*
+   46: SetL 1
+   48: PopC
+  // line 23
+   49: CGetL 1
+   51: FPushObjMethodD 1 "junk"
+   57: FPassL 0 0
+   60: FCall 1
+   62: PopR
+  // line 24
+   63: Null
+   64: RetC
+
+Method static public two::foo at 65
+ FPI 78-80; fpOff = 3
+  // line 5
+   65: String "two\n"
+   70: Print
+   71: PopC
+  // line 6
+   72: String "heh"
+   77: LateBoundCls
+   78: FPushClsMethod 0
+   80: FCall 0
+   82: PopR
+  // line 7
+   83: Null
+   84: RetC
+
+Method static public (leaf) three::heh at 85
+  // line 11
+   85: Null
+   86: RetC
+
+Method public doer::junk at 87
+ FPI 89-95; fpOff = 4
+  // line 16
+   87: CGetL 0
+   89: FPushObjMethodD 0 "foo"
+   95: FCall 0
+   97: PopR
+  // line 17
+   98: Null
+   99: RetC
+
+Method public (leaf) two::86ctor at 100
+  // line 8
+  100: Null
+  101: RetC
+
+Method public (leaf) three::86ctor at 102
+  // line 12
+  102: Null
+  103: RetC
+
+Method public (leaf) doer::86ctor at 104
+  // line 18
+  104: Null
+  105: RetC
+Class two at 0 (maybe-hoistable) (ID 0)
+ Method static public two::foo at 65
+ FPI 78-80; fpOff = 3
+ Method public (leaf) two::86ctor at 100
+Class three at 2 (maybe-hoistable) (ID 1)
+ Method static public (leaf) three::heh at 85
+ Method public (leaf) three::86ctor at 102
+Class doer at 4 (maybe-hoistable) (ID 2)
+ Method public doer::junk at 87
+ FPI 89-95; fpOff = 4
+ Method public (leaf) doer::86ctor at 104
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 3
+Function main at 25 (ID 1)
+ FPI 25-31; fpOff = 6
+ FPI 37-43; fpOff = 6
+ FPI 51-60; fpOff = 5

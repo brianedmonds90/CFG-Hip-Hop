@@ -1,0 +1,74 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-13; fpOff = 3
+ FPI 18-24; fpOff = 3
+  // line 3
+    0: FPushFuncD 1 "set_error_handler"
+    6: String "handler"
+   11: FPassCE 0
+   13: FCall 1
+   15: PopR
+  // line 4
+   16: DefCls 0
+  // line 10
+   18: FPushFuncD 0 "test"
+   24: FCall 0
+   26: PopR
+   27: Int 1
+   36: RetC
+
+Function handler at 37 (ID 1)
+ FPI 37-53; fpOff = 3
+ FPI 43-49; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 2
+   37: FPushFuncD 1 "var_dump"
+   43: FPushFuncD 0 "func_get_args"
+   49: FCall 0
+   51: FPassR 0
+   53: FCall 1
+   55: PopR
+   56: Null
+   57: RetC
+
+Function test at 58 (ID 2)
+ FPI 58-64; fpOff = 4
+  // line 8
+   58: FPushCtorD 0 "X"
+   64: FCall 0
+   66: PopR # i0:t=Null*
+   67: PopC
+  // line 9
+   68: Null
+   69: RetC
+
+Method public (leaf) X::86ctor at 70
+  // line 6
+   70: Null
+   71: RetC
+
+Method static private (leaf) X::86pinit at 72
+   72: String "p"
+   77: CGetM <L:0 EC>
+   89: CGetL 1
+   91: Same
+   92: JmpZ 32 (124)
+   97: String "p"
+  // line 5
+  102: ClsCnsD "FOO" "Y"
+  // line 6
+  111: SetM <L:0 EC>
+  123: PopC
+  124: Null
+  125: RetC
+Class X at 16 (maybe-hoistable) (ID 0)
+ Method public (leaf) X::86ctor at 70
+ Method static private (leaf) X::86pinit at 72
+ Property public X::p = <non-scalar>
+Pseudo-main at 0 (ID 0)
+ FPI 0-13; fpOff = 3
+ FPI 18-24; fpOff = 3
+Function handler at 37 (ID 1)
+ FPI 37-53; fpOff = 3
+ FPI 43-49; fpOff = 6 parentIndex = 0 (depth 2)
+Function test at 58 (ID 2)
+ FPI 58-64; fpOff = 4

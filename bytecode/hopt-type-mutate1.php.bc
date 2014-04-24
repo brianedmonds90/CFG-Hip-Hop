@@ -1,0 +1,38 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-16; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 13
+    0: FPushFuncD 1 "var_dump"
+    6: FPushFuncD 0 "run"
+   12: FCall 0
+   14: FPassR 0
+   16: FCall 1
+   18: PopR
+   19: Int 1
+   28: RetC
+
+Function (leaf) run at 29 (ID 1)
+  // line 4
+   29: Int 5
+   38: SetL 0
+   40: PopC
+  // line 5
+   41: VGetL 0
+   43: BindL 1
+   45: PopV
+  // line 7
+   46: Int 1
+   55: SetL 0
+   57: PopC
+  // line 8
+   58: True
+   59: SetL 0
+   61: PopC
+  // line 10
+   62: CGetL 0
+   64: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-16; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+Function (leaf) run at 29 (ID 1)

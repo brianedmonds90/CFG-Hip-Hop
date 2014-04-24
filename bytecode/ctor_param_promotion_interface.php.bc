@@ -1,0 +1,7 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 4
+    0: String "Interface method A::__construct() cannot contain body"
+    5: Fatal Parse
+Pseudo-main at 0 (ID 0)
+HipHop Fatal error: Interface method A::__construct() cannot contain body in quick/ctor_param_promotion_interface.php on line 4

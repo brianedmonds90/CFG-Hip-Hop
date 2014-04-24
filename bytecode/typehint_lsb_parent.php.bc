@@ -1,0 +1,218 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 12-18; fpOff = 3
+  // line 2
+    0: DefCls 0
+  // line 7
+    2: DefCls 1
+  // line 13
+    4: DefCls 2
+  // line 21
+    6: DefCls 3
+  // line 25
+    8: DefCls 4
+  // line 26
+   10: DefCls 5
+  // line 40
+   12: FPushFuncD 0 "main"
+   18: FCall 0
+   20: PopR
+   21: Int 1
+   30: RetC
+
+Function main at 31 (ID 1)
+ FPI 31-37; fpOff = 7
+ FPI 43-49; fpOff = 7
+ FPI 55-61; fpOff = 7
+ FPI 67-80; fpOff = 6
+ FPI 83-96; fpOff = 6
+ FPI 99-112; fpOff = 6
+  // line 32
+   31: FPushCtorD 0 "A"
+   37: FCall 0
+   39: PopR # i0:t=Null*
+   40: SetL 0
+   42: PopC
+  // line 33
+   43: FPushCtorD 0 "B"
+   49: FCall 0
+   51: PopR # i0:t=Null*
+   52: SetL 1
+   54: PopC
+  // line 34
+   55: FPushCtorD 0 "C"
+   61: FCall 0
+   63: PopR # i0:t=Null*
+   64: SetL 2
+   66: PopC
+  // line 35
+   67: FPushClsMethodD 1 "test" "B"
+   77: FPassL 0 0
+   80: FCall 1
+   82: PopR
+  // line 36
+   83: FPushClsMethodD 1 "test" "C"
+   93: FPassL 0 1
+   96: FCall 1
+   98: PopR
+  // line 37
+   99: FPushClsMethodD 1 "test" "E"
+  109: FPassL 0 2
+  112: FCall 1
+  114: PopR
+  // line 38
+  115: Null
+  116: RetC
+
+Method static public T::bar at 117
+ FPI 119-125; fpOff = 4
+ FPI 133-142; fpOff = 6
+  // line 4
+  117: VerifyParamType 0
+  // line 3
+  119: FPushFuncD 0 "get_class"
+  125: FCall 0
+  127: UnboxR
+  // line 4
+  128: String " accepts param from subclass "
+  133: FPushFuncD 1 "get_class"
+  139: FPassL 0 0
+  142: FCall 1
+  144: UnboxR
+  145: String "\n"
+  150: Concat
+  151: Concat
+  152: Concat
+  153: Print
+  154: PopC
+  155: Null
+  156: RetC
+
+Method static public A::foo at 157
+ FPI 163-168; fpOff = 4
+  // line 8
+  157: String "bar"
+  162: LateBoundCls
+  163: FPushClsMethod 1
+  165: FPassL 0 0
+  168: FCall 1
+  170: PopR
+  171: Null
+  172: RetC
+
+Method static public A::bar at 173
+ FPI 180-189; fpOff = 5
+  // line 10
+  173: VerifyParamType 0
+  175: String "A accepts param from subclass "
+  180: FPushFuncD 1 "get_class"
+  186: FPassL 0 0
+  189: FCall 1
+  191: UnboxR
+  192: String "\n"
+  197: Concat
+  198: Concat
+  199: Print
+  200: PopC
+  201: Null
+  202: RetC
+
+Method static public B::test at 203
+ FPI 203-216; fpOff = 4
+ FPI 230-235; fpOff = 4
+  // line 15
+  203: FPushClsMethodD 1 "foo" "A"
+  213: FPassL 0 0
+  216: FCall 1
+  218: PopR
+  // line 16
+  219: String "foo"
+  224: String "B"
+  229: AGetC
+  230: FPushClsMethodF 1
+  232: FPassL 0 0
+  235: FCall 1
+  237: PopR
+  // line 17
+  238: Null
+  239: RetC
+
+Method static public B::bar at 240
+ FPI 247-256; fpOff = 5
+  // line 19
+  240: VerifyParamType 0
+  242: String "B accepts param from subclass "
+  247: FPushFuncD 1 "get_class"
+  253: FPassL 0 0
+  256: FCall 1
+  258: UnboxR
+  259: String "\n"
+  264: Concat
+  265: Concat
+  266: Print
+  267: PopC
+  268: Null
+  269: RetC
+
+Method public (leaf) T::86ctor at 270
+  // line 5
+  270: Null
+  271: RetC
+
+Method public (leaf) A::86ctor at 272
+  // line 11
+  272: Null
+  273: RetC
+
+Method public (leaf) B::86ctor at 274
+  // line 20
+  274: Null
+  275: RetC
+
+Method public (leaf) C::86ctor at 276
+  // line 23
+  276: Null
+  277: RetC
+
+Method public (leaf) D::86ctor at 278
+  // line 25
+  278: Null
+  279: RetC
+
+Method public (leaf) E::86ctor at 280
+  // line 29
+  280: Null
+  281: RetC
+Class T at 0 (maybe-hoistable) (ID 0)
+ Method static public T::bar at 117
+ FPI 119-125; fpOff = 4
+ FPI 133-142; fpOff = 6
+ Method public (leaf) T::86ctor at 270
+Class A at 2 (maybe-hoistable) (ID 1)
+ Method static public A::foo at 157
+ FPI 163-168; fpOff = 4
+ Method static public A::bar at 173
+ FPI 180-189; fpOff = 5
+ Method public (leaf) A::86ctor at 272
+Class B at 4 (maybe-hoistable) (ID 2)
+ Method static public B::test at 203
+ FPI 203-216; fpOff = 4
+ FPI 230-235; fpOff = 4
+ Method static public B::bar at 240
+ FPI 247-256; fpOff = 5
+ Method public (leaf) B::86ctor at 274
+Class C at 6 (ID 3)
+ Method public (leaf) C::86ctor at 276
+Class D at 8 (maybe-hoistable) (ID 4)
+ Method public (leaf) D::86ctor at 278
+Class E at 10 (ID 5)
+ Method public (leaf) E::86ctor at 280
+Pseudo-main at 0 (ID 0)
+ FPI 12-18; fpOff = 3
+Function main at 31 (ID 1)
+ FPI 31-37; fpOff = 7
+ FPI 43-49; fpOff = 7
+ FPI 55-61; fpOff = 7
+ FPI 67-80; fpOff = 6
+ FPI 83-96; fpOff = 6
+ FPI 99-112; fpOff = 6

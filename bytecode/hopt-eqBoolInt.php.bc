@@ -1,0 +1,543 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 104
+    0: FPushFuncD 0 "cmp"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function cmpCTrue at 19 (ID 1)
+ FPI 33-42; fpOff = 4
+ FPI 52-64; fpOff = 4
+ FPI 74-86; fpOff = 4
+  // line 4
+   19: String "----------\n"
+   24: Print
+   25: PopC
+  // line 5
+   26: String "x = "
+   31: Print
+   32: PopC
+  // line 6
+   33: FPushFuncD 1 "var_dump"
+   39: FPassL 0 0
+   42: FCall 1
+   44: PopR
+  // line 7
+   45: String "(x == true) = "
+   50: Print
+   51: PopC
+  // line 8
+   52: FPushFuncD 1 "var_dump"
+   58: True
+   59: CGetL2 0
+   61: Eq
+   62: FPassCE 0
+   64: FCall 1
+   66: PopR
+  // line 9
+   67: String "(true == x) = "
+   72: Print
+   73: PopC
+  // line 10
+   74: FPushFuncD 1 "var_dump"
+   80: False
+   81: CGetL 0
+   83: Eq
+   84: FPassCE 0
+   86: FCall 1
+   88: PopR
+  // line 11
+   89: Null
+   90: RetC
+
+Function cmpCFalse at 91 (ID 2)
+ FPI 105-114; fpOff = 4
+ FPI 124-136; fpOff = 4
+ FPI 146-158; fpOff = 4
+  // line 14
+   91: String "----------\n"
+   96: Print
+   97: PopC
+  // line 15
+   98: String "x = "
+  103: Print
+  104: PopC
+  // line 16
+  105: FPushFuncD 1 "var_dump"
+  111: FPassL 0 0
+  114: FCall 1
+  116: PopR
+  // line 17
+  117: String "(x == false) = "
+  122: Print
+  123: PopC
+  // line 18
+  124: FPushFuncD 1 "var_dump"
+  130: False
+  131: CGetL2 0
+  133: Eq
+  134: FPassCE 0
+  136: FCall 1
+  138: PopR
+  // line 19
+  139: String "(false == x) = "
+  144: Print
+  145: PopC
+  // line 20
+  146: FPushFuncD 1 "var_dump"
+  152: False
+  153: CGetL 0
+  155: Eq
+  156: FPassCE 0
+  158: FCall 1
+  160: PopR
+  // line 21
+  161: Null
+  162: RetC
+
+Function cmpC0 at 163 (ID 3)
+ FPI 177-186; fpOff = 4
+ FPI 196-216; fpOff = 4
+ FPI 226-246; fpOff = 4
+  // line 24
+  163: String "----------\n"
+  168: Print
+  169: PopC
+  // line 25
+  170: String "x = "
+  175: Print
+  176: PopC
+  // line 26
+  177: FPushFuncD 1 "var_dump"
+  183: FPassL 0 0
+  186: FCall 1
+  188: PopR
+  // line 27
+  189: String "(x == 0) = "
+  194: Print
+  195: PopC
+  // line 28
+  196: FPushFuncD 1 "var_dump"
+  202: Int 0
+  211: CGetL2 0
+  213: Eq
+  214: FPassCE 0
+  216: FCall 1
+  218: PopR
+  // line 29
+  219: String "(0 == x) = "
+  224: Print
+  225: PopC
+  // line 30
+  226: FPushFuncD 1 "var_dump"
+  232: Int 0
+  241: CGetL 0
+  243: Eq
+  244: FPassCE 0
+  246: FCall 1
+  248: PopR
+  // line 31
+  249: Null
+  250: RetC
+
+Function cmpC1 at 251 (ID 4)
+ FPI 265-274; fpOff = 4
+ FPI 284-304; fpOff = 4
+ FPI 314-334; fpOff = 4
+  // line 34
+  251: String "----------\n"
+  256: Print
+  257: PopC
+  // line 35
+  258: String "x = "
+  263: Print
+  264: PopC
+  // line 36
+  265: FPushFuncD 1 "var_dump"
+  271: FPassL 0 0
+  274: FCall 1
+  276: PopR
+  // line 37
+  277: String "(x == 1) = "
+  282: Print
+  283: PopC
+  // line 38
+  284: FPushFuncD 1 "var_dump"
+  290: Int 1
+  299: CGetL2 0
+  301: Eq
+  302: FPassCE 0
+  304: FCall 1
+  306: PopR
+  // line 39
+  307: String "(1 == x) = "
+  312: Print
+  313: PopC
+  // line 40
+  314: FPushFuncD 1 "var_dump"
+  320: Int 1
+  329: CGetL 0
+  331: Eq
+  332: FPassCE 0
+  334: FCall 1
+  336: PopR
+  // line 41
+  337: Null
+  338: RetC
+
+Function cmpC2 at 339 (ID 5)
+ FPI 353-362; fpOff = 4
+ FPI 372-392; fpOff = 4
+ FPI 402-422; fpOff = 4
+  // line 44
+  339: String "----------\n"
+  344: Print
+  345: PopC
+  // line 45
+  346: String "x = "
+  351: Print
+  352: PopC
+  // line 46
+  353: FPushFuncD 1 "var_dump"
+  359: FPassL 0 0
+  362: FCall 1
+  364: PopR
+  // line 47
+  365: String "(x == 2) = "
+  370: Print
+  371: PopC
+  // line 48
+  372: FPushFuncD 1 "var_dump"
+  378: Int 2
+  387: CGetL2 0
+  389: Eq
+  390: FPassCE 0
+  392: FCall 1
+  394: PopR
+  // line 49
+  395: String "(2 == x) = "
+  400: Print
+  401: PopC
+  // line 50
+  402: FPushFuncD 1 "var_dump"
+  408: Int 2
+  417: CGetL 0
+  419: Eq
+  420: FPassCE 0
+  422: FCall 1
+  424: PopR
+  // line 51
+  425: Null
+  426: RetC
+
+Function cmpC3 at 427 (ID 6)
+ FPI 441-450; fpOff = 4
+ FPI 460-480; fpOff = 4
+ FPI 490-510; fpOff = 4
+  // line 54
+  427: String "----------\n"
+  432: Print
+  433: PopC
+  // line 55
+  434: String "x = "
+  439: Print
+  440: PopC
+  // line 56
+  441: FPushFuncD 1 "var_dump"
+  447: FPassL 0 0
+  450: FCall 1
+  452: PopR
+  // line 57
+  453: String "(x == 3) = "
+  458: Print
+  459: PopC
+  // line 58
+  460: FPushFuncD 1 "var_dump"
+  466: Int 3
+  475: CGetL2 0
+  477: Eq
+  478: FPassCE 0
+  480: FCall 1
+  482: PopR
+  // line 59
+  483: String "(3 == x) = "
+  488: Print
+  489: PopC
+  // line 60
+  490: FPushFuncD 1 "var_dump"
+  496: Int 3
+  505: CGetL 0
+  507: Eq
+  508: FPassCE 0
+  510: FCall 1
+  512: PopR
+  // line 61
+  513: Null
+  514: RetC
+
+Function cmp3 at 515 (ID 7)
+ FPI 529-538; fpOff = 5
+ FPI 548-557; fpOff = 5
+ FPI 567-580; fpOff = 5
+ FPI 590-603; fpOff = 5
+  // line 64
+  515: String "----------\n"
+  520: Print
+  521: PopC
+  // line 65
+  522: String "x = "
+  527: Print
+  528: PopC
+  // line 66
+  529: FPushFuncD 1 "var_dump"
+  535: FPassL 0 0
+  538: FCall 1
+  540: PopR
+  // line 67
+  541: String "y = "
+  546: Print
+  547: PopC
+  // line 68
+  548: FPushFuncD 1 "var_dump"
+  554: FPassL 0 1
+  557: FCall 1
+  559: PopR
+  // line 69
+  560: String "(x == y) = "
+  565: Print
+  566: PopC
+  // line 70
+  567: FPushFuncD 1 "var_dump"
+  573: CGetL 1
+  575: CGetL2 0
+  577: Eq
+  578: FPassCE 0
+  580: FCall 1
+  582: PopR
+  // line 71
+  583: String "(x != y) = "
+  588: Print
+  589: PopC
+  // line 72
+  590: FPushFuncD 1 "var_dump"
+  596: CGetL 1
+  598: CGetL2 0
+  600: Neq
+  601: FPassCE 0
+  603: FCall 1
+  605: PopR
+  // line 73
+  606: Null
+  607: RetC
+
+Function cmp2 at 608 (ID 8)
+ FPI 608-620; fpOff = 5
+ FPI 623-635; fpOff = 5
+  // line 76
+  608: FPushFuncD 2 "cmp3"
+  614: FPassL 0 0
+  617: FPassL 1 1
+  620: FCall 2
+  622: PopR
+  // line 77
+  623: FPushFuncD 2 "cmp3"
+  629: FPassL 0 1
+  632: FPassL 1 0
+  635: FCall 2
+  637: PopR
+  // line 78
+  638: Null
+  639: RetC
+
+Function cmp1 at 640 (ID 9)
+ FPI 640-652; fpOff = 4
+ FPI 655-667; fpOff = 4
+ FPI 670-690; fpOff = 4
+ FPI 693-713; fpOff = 4
+ FPI 716-736; fpOff = 4
+ FPI 739-759; fpOff = 4
+ FPI 762-771; fpOff = 4
+ FPI 774-783; fpOff = 4
+ FPI 786-795; fpOff = 4
+ FPI 798-807; fpOff = 4
+ FPI 810-819; fpOff = 4
+ FPI 822-831; fpOff = 4
+  // line 81
+  640: FPushFuncD 2 "cmp2"
+  646: FPassL 0 0
+  649: True
+  650: FPassCE 1
+  652: FCall 2
+  654: PopR
+  // line 82
+  655: FPushFuncD 2 "cmp2"
+  661: FPassL 0 0
+  664: False
+  665: FPassCE 1
+  667: FCall 2
+  669: PopR
+  // line 83
+  670: FPushFuncD 2 "cmp2"
+  676: FPassL 0 0
+  679: Int 0
+  688: FPassCE 1
+  690: FCall 2
+  692: PopR
+  // line 84
+  693: FPushFuncD 2 "cmp2"
+  699: FPassL 0 0
+  702: Int 1
+  711: FPassCE 1
+  713: FCall 2
+  715: PopR
+  // line 85
+  716: FPushFuncD 2 "cmp2"
+  722: FPassL 0 0
+  725: Int 2
+  734: FPassCE 1
+  736: FCall 2
+  738: PopR
+  // line 86
+  739: FPushFuncD 2 "cmp2"
+  745: FPassL 0 0
+  748: Int 3
+  757: FPassCE 1
+  759: FCall 2
+  761: PopR
+  // line 87
+  762: FPushFuncD 1 "cmpCTrue"
+  768: FPassL 0 0
+  771: FCall 1
+  773: PopR
+  // line 88
+  774: FPushFuncD 1 "cmpCFalse"
+  780: FPassL 0 0
+  783: FCall 1
+  785: PopR
+  // line 89
+  786: FPushFuncD 1 "cmpC0"
+  792: FPassL 0 0
+  795: FCall 1
+  797: PopR
+  // line 90
+  798: FPushFuncD 1 "cmpC1"
+  804: FPassL 0 0
+  807: FCall 1
+  809: PopR
+  // line 91
+  810: FPushFuncD 1 "cmpC2"
+  816: FPassL 0 0
+  819: FCall 1
+  821: PopR
+  // line 92
+  822: FPushFuncD 1 "cmpC3"
+  828: FPassL 0 0
+  831: FCall 1
+  833: PopR
+  // line 93
+  834: Null
+  835: RetC
+
+Function cmp at 836 (ID 10)
+ FPI 836-845; fpOff = 3
+ FPI 848-857; fpOff = 3
+ FPI 860-877; fpOff = 3
+ FPI 880-897; fpOff = 3
+ FPI 900-917; fpOff = 3
+ FPI 920-937; fpOff = 3
+  // line 96
+  836: FPushFuncD 1 "cmp1"
+  842: True
+  843: FPassCE 0
+  845: FCall 1
+  847: PopR
+  // line 97
+  848: FPushFuncD 1 "cmp1"
+  854: False
+  855: FPassCE 0
+  857: FCall 1
+  859: PopR
+  // line 98
+  860: FPushFuncD 1 "cmp1"
+  866: Int 0
+  875: FPassCE 0
+  877: FCall 1
+  879: PopR
+  // line 99
+  880: FPushFuncD 1 "cmp1"
+  886: Int 1
+  895: FPassCE 0
+  897: FCall 1
+  899: PopR
+  // line 100
+  900: FPushFuncD 1 "cmp1"
+  906: Int 2
+  915: FPassCE 0
+  917: FCall 1
+  919: PopR
+  // line 101
+  920: FPushFuncD 1 "cmp1"
+  926: Int 1234567
+  935: FPassCE 0
+  937: FCall 1
+  939: PopR
+  // line 102
+  940: Null
+  941: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function cmpCTrue at 19 (ID 1)
+ FPI 33-42; fpOff = 4
+ FPI 52-64; fpOff = 4
+ FPI 74-86; fpOff = 4
+Function cmpCFalse at 91 (ID 2)
+ FPI 105-114; fpOff = 4
+ FPI 124-136; fpOff = 4
+ FPI 146-158; fpOff = 4
+Function cmpC0 at 163 (ID 3)
+ FPI 177-186; fpOff = 4
+ FPI 196-216; fpOff = 4
+ FPI 226-246; fpOff = 4
+Function cmpC1 at 251 (ID 4)
+ FPI 265-274; fpOff = 4
+ FPI 284-304; fpOff = 4
+ FPI 314-334; fpOff = 4
+Function cmpC2 at 339 (ID 5)
+ FPI 353-362; fpOff = 4
+ FPI 372-392; fpOff = 4
+ FPI 402-422; fpOff = 4
+Function cmpC3 at 427 (ID 6)
+ FPI 441-450; fpOff = 4
+ FPI 460-480; fpOff = 4
+ FPI 490-510; fpOff = 4
+Function cmp3 at 515 (ID 7)
+ FPI 529-538; fpOff = 5
+ FPI 548-557; fpOff = 5
+ FPI 567-580; fpOff = 5
+ FPI 590-603; fpOff = 5
+Function cmp2 at 608 (ID 8)
+ FPI 608-620; fpOff = 5
+ FPI 623-635; fpOff = 5
+Function cmp1 at 640 (ID 9)
+ FPI 640-652; fpOff = 4
+ FPI 655-667; fpOff = 4
+ FPI 670-690; fpOff = 4
+ FPI 693-713; fpOff = 4
+ FPI 716-736; fpOff = 4
+ FPI 739-759; fpOff = 4
+ FPI 762-771; fpOff = 4
+ FPI 774-783; fpOff = 4
+ FPI 786-795; fpOff = 4
+ FPI 798-807; fpOff = 4
+ FPI 810-819; fpOff = 4
+ FPI 822-831; fpOff = 4
+Function cmp at 836 (ID 10)
+ FPI 836-845; fpOff = 3
+ FPI 848-857; fpOff = 3
+ FPI 860-877; fpOff = 3
+ FPI 880-897; fpOff = 3
+ FPI 900-917; fpOff = 3
+ FPI 920-937; fpOff = 3

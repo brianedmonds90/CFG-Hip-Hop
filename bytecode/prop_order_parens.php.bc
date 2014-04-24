@@ -1,0 +1,273 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 15-21; fpOff = 10
+ FPI 36-55; fpOff = 7
+ FPI 66-86; fpOff = 7
+ FPI 80-82; fpOff = 10 parentIndex = 2 (depth 2)
+ FPI 89-126; fpOff = 7
+ FPI 137-175; fpOff = 7
+ FPI 169-171; fpOff = 10 parentIndex = 5 (depth 2)
+ FPI 178-220; fpOff = 7
+ FPI 223-269; fpOff = 7
+ FPI 259-265; fpOff = 10 parentIndex = 8 (depth 2)
+ FPI 272-278; fpOff = 8
+ FPI 292-321; fpOff = 7
+ FPI 332-366; fpOff = 7
+ FPI 360-362; fpOff = 10 parentIndex = 12 (depth 2)
+ FPI 369-375; fpOff = 8
+ FPI 381-418; fpOff = 7
+ FPI 421-462; fpOff = 7
+ FPI 452-458; fpOff = 10 parentIndex = 16 (depth 2)
+ FPI 465-471; fpOff = 8
+ FPI 485-519; fpOff = 7
+ FPI 522-570; fpOff = 7
+ FPI 560-566; fpOff = 10 parentIndex = 20 (depth 2)
+  // line 2
+    0: DefCls 0
+  // line 10
+    2: DefCls 1
+  // line 25
+    4: String "z"
+    9: String "C"
+   14: AGetC
+   15: FPushCtorD 0 "D"
+   21: FCall 0
+   23: PopR # i0:t=Null*
+   24: SetM <SC W>
+   35: PopC
+  // line 27
+   36: FPushFuncD 1 "var_dump"
+   42: String "x"
+   47: String "C"
+   52: AGetC
+   53: FPassS 0
+   55: FCall 1
+   57: PopR
+  // line 28
+   58: String "foo1"
+   63: SetL 0
+   65: PopC
+  // line 29
+   66: FPushFuncD 1 "var_dump"
+   72: CGetL 0
+   74: String "C"
+   79: AGetC
+   80: FPushClsMethod 0
+   82: FCall 0
+   84: FPassR 0
+   86: FCall 1
+   88: PopR
+  // line 31
+   89: FPushFuncD 1 "var_dump"
+   95: String "y"
+  100: String "C"
+  105: AGetC
+  106: FPassM 0 <SC EI:0>
+  126: FCall 1
+  128: PopR
+  // line 32
+  129: Array array(0=>"foo2")
+  134: SetL 1
+  136: PopC
+  // line 33
+  137: FPushFuncD 1 "var_dump"
+  143: CGetM <L:1 EI:0>
+  163: String "C"
+  168: AGetC
+  169: FPushClsMethod 0
+  171: FCall 0
+  173: FPassR 0
+  175: FCall 1
+  177: PopR
+  // line 35
+  178: FPushFuncD 1 "var_dump"
+  184: String "z"
+  189: String "C"
+  194: AGetC
+  195: FPassM 0 <SC EI:0 PT:"prop">
+  220: FCall 1
+  222: PopR
+  // line 36
+  223: FPushFuncD 1 "var_dump"
+  229: String "z"
+  234: String "C"
+  239: AGetC
+  240: CGetM <SC EI:0>
+  259: FPushObjMethodD 0 "prop"
+  265: FCall 0
+  267: FPassR 0
+  269: FCall 1
+  271: PopR
+  // line 38
+  272: FPushCtorD 0 "C"
+  278: FCall 0
+  280: PopR # i0:t=Null*
+  281: SetL 2
+  283: PopC
+  // line 39
+  284: Array array(0=>"bar1")
+  289: SetL 0
+  291: PopC
+  // line 40
+  292: FPushFuncD 1 "var_dump"
+  298: FPassM 0 <L:2 PL:0 EI:0>
+  321: FCall 1
+  323: PopR
+  // line 41
+  324: Array array(0=>"bar2")
+  329: SetL 0
+  331: PopC
+  // line 42
+  332: FPushFuncD 1 "var_dump"
+  338: CGetL 2
+  340: CGetM <L:0 EI:0>
+  360: FPushObjMethod 0
+  362: FCall 0
+  364: FPassR 0
+  366: FCall 1
+  368: PopR
+  // line 44
+  369: FPushCtorD 0 "C"
+  375: FCall 0
+  377: PopR # i0:t=Null*
+  378: SetL 2
+  380: PopC
+  // line 45
+  381: FPushFuncD 1 "var_dump"
+  387: FPassM 0 <L:2 PT:"w" EI:0 PT:"yo">
+  418: FCall 1
+  420: PopR
+  // line 46
+  421: FPushFuncD 1 "var_dump"
+  427: CGetM <L:2 PT:"w" EI:0>
+  452: FPushObjMethodD 0 "yo"
+  458: FCall 0
+  460: FPassR 0
+  462: FCall 1
+  464: PopR
+  // line 48
+  465: FPushCtorD 0 "C"
+  471: FCall 0
+  473: PopR # i0:t=Null*
+  474: SetL 2
+  476: PopC
+  // line 49
+  477: Array array(0=>"baz")
+  482: SetL 3
+  484: PopC
+  // line 50
+  485: FPushFuncD 1 "var_dump"
+  491: FPassM 0 <L:2 PL:3 EI:0 PT:"blah">
+  519: FCall 1
+  521: PopR
+  // line 51
+  522: FPushFuncD 1 "var_dump"
+  528: CGetM <L:3 EI:0>
+  548: CGetM <L:2 PC>
+  560: FPushObjMethodD 0 "blah"
+  566: FCall 0
+  568: FPassR 0
+  570: FCall 1
+  572: PopR
+  573: Int 1
+  582: RetC
+
+Method public (leaf) D::prop at 583
+  // line 4
+  583: Int 350
+  592: RetC
+
+Method public (leaf) D::yo at 593
+  // line 6
+  593: Int 550
+  602: RetC
+
+Method public (leaf) D::blah at 603
+  // line 8
+  603: Int 650
+  612: RetC
+
+Method static public (leaf) C::foo1 at 613
+  // line 14
+  613: Int 150
+  622: RetC
+
+Method static public (leaf) C::foo2 at 623
+  // line 15
+  623: Int 250
+  632: RetC
+
+Method public (leaf) C::bar2 at 633
+  // line 17
+  633: Int 450
+  642: RetC
+
+Method public C::__construct at 643
+ FPI 644-650; fpOff = 4
+ FPI 670-676; fpOff = 4
+  // line 21
+  643: CheckThis
+  644: FPushCtorD 0 "D"
+  650: FCall 0
+  652: PopR # i0:t=Null*
+  653: SetM <H PT:"baz"> # iM0:c=C
+  668: PopC
+  // line 22
+  669: CheckThis
+  670: FPushCtorD 0 "D"
+  676: FCall 0
+  678: PopR # i0:t=Null*
+  679: SetM <H PT:"w" W> # iM0:c=C
+  695: PopC
+  // line 23
+  696: Null
+  697: RetC
+
+Method public (leaf) D::86ctor at 698
+  // line 9
+  698: Null
+  699: RetC
+Class D at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) D::prop at 583
+ Method public (leaf) D::yo at 593
+ Method public (leaf) D::blah at 603
+ Method public (leaf) D::86ctor at 698
+ Property public D::prop = 300
+ Property public D::yo = 500
+ Property public D::blah = 600
+Class C at 2 (maybe-hoistable) (ID 1)
+ Method static public (leaf) C::foo1 at 613
+ Method static public (leaf) C::foo2 at 623
+ Method public (leaf) C::bar2 at 633
+ Method public C::__construct at 643
+ FPI 644-650; fpOff = 4
+ FPI 670-676; fpOff = 4
+ Property static public C::x = 100
+ Property static public C::y = array(0=>200)
+ Property static public C::z = array()
+ Property public C::bar1 = 400
+ Property public C::baz = null
+ Property public C::w = array()
+Pseudo-main at 0 (ID 0)
+ FPI 15-21; fpOff = 10
+ FPI 36-55; fpOff = 7
+ FPI 66-86; fpOff = 7
+ FPI 80-82; fpOff = 10 parentIndex = 2 (depth 2)
+ FPI 89-126; fpOff = 7
+ FPI 137-175; fpOff = 7
+ FPI 169-171; fpOff = 10 parentIndex = 5 (depth 2)
+ FPI 178-220; fpOff = 7
+ FPI 223-269; fpOff = 7
+ FPI 259-265; fpOff = 10 parentIndex = 8 (depth 2)
+ FPI 272-278; fpOff = 8
+ FPI 292-321; fpOff = 7
+ FPI 332-366; fpOff = 7
+ FPI 360-362; fpOff = 10 parentIndex = 12 (depth 2)
+ FPI 369-375; fpOff = 8
+ FPI 381-418; fpOff = 7
+ FPI 421-462; fpOff = 7
+ FPI 452-458; fpOff = 10 parentIndex = 16 (depth 2)
+ FPI 465-471; fpOff = 8
+ FPI 485-519; fpOff = 7
+ FPI 522-570; fpOff = 7
+ FPI 560-566; fpOff = 10 parentIndex = 20 (depth 2)

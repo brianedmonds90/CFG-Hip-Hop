@@ -1,0 +1,618 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Catch for 32:54
+  Handle exception at 54
+ EH 1 Catch for 88:110
+  Handle exception at 110
+ EH 2 Catch for 145:167
+  Handle exception at 167
+ EH 3 Catch for 217:239
+  Handle exception at 239
+ EH 4 Catch for 287:302
+  Handle exception at 302
+ EH 5 Catch for 336:351
+  Handle exception at 351
+ EH 6 Catch for 389:404
+  Handle exception at 404
+ EH 7 Catch for 450:469
+  Handle exception at 469
+ EH 8 Catch for 503:522
+  Handle exception at 522
+ EH 9 Catch for 560:579
+  Handle exception at 579
+ EH 10 Catch for 636:658
+  Handle exception at 658
+ EH 11 Catch for 692:718
+  Handle exception at 718
+ EH 12 Catch for 752:778
+  Handle exception at 778
+ FPI 2-29; fpOff = 6
+ FPI 37-46; fpOff = 6
+ FPI 65-85; fpOff = 6
+ FPI 93-102; fpOff = 6
+ FPI 121-142; fpOff = 6
+ FPI 150-159; fpOff = 6
+ FPI 178-184; fpOff = 7
+ FPI 190-214; fpOff = 6
+ FPI 222-231; fpOff = 6
+ FPI 252-258; fpOff = 7
+ FPI 264-284; fpOff = 6
+ FPI 292-294; fpOff = 6
+ FPI 313-333; fpOff = 6
+ FPI 341-343; fpOff = 6
+ FPI 362-386; fpOff = 6
+ FPI 394-396; fpOff = 6
+ FPI 415-421; fpOff = 7
+ FPI 427-447; fpOff = 6
+ FPI 459-461; fpOff = 6
+ FPI 480-500; fpOff = 6
+ FPI 512-514; fpOff = 6
+ FPI 533-557; fpOff = 6
+ FPI 569-571; fpOff = 6
+ FPI 590-610; fpOff = 6
+ FPI 613-633; fpOff = 6
+ FPI 641-650; fpOff = 6
+ FPI 669-689; fpOff = 6
+ FPI 701-710; fpOff = 6
+ FPI 729-749; fpOff = 6
+ FPI 761-770; fpOff = 6
+  // line 18
+    0: DefCls 0
+  // line 32
+    2: FPushFuncD 3 "fb_intercept"
+    8: String "frap"
+   13: FPassCE 0
+   15: String "handler"
+   20: FPassCE 1
+   22: String "data"
+   27: FPassCE 2
+   29: FCall 3
+   31: PopR
+  // line 34
+   32: String "frap"
+   37: FPushCuf 1
+   39: String "callfunc"
+   44: FPassC 0
+   46: FCall 1
+   48: PopR
+  // line 37
+   49: Jmp 16 (65)
+   54: Catch
+   55: SetL 0
+   57: PopC
+  // line 36
+   58: String "caught call user func 1\n"
+   63: Print
+   64: PopC
+  // line 39
+   65: FPushFuncD 2 "fb_intercept"
+   71: String "frap"
+   76: FPassCE 0
+   78: String "passthrough_handler"
+   83: FPassCE 1
+   85: FCall 2
+   87: PopR
+  // line 41
+   88: String "frap"
+   93: FPushCuf 1
+   95: String "callfunc"
+  100: FPassC 0
+  102: FCall 1
+  104: PopR
+  // line 44
+  105: Jmp 16 (121)
+  110: Catch
+  111: SetL 0
+  113: PopC
+  // line 43
+  114: String "caught call user func 2\n"
+  119: Print
+  120: PopC
+  // line 50
+  121: FPushFuncD 2 "fb_intercept"
+  // line 47
+  127: String "frap"
+  // line 50
+  132: FPassCE 0
+  134: CreateCl 0 "Closure$frap$f27daec8609a58507c4824b6f01f8bb2$"
+  140: FPassCE 1
+  142: FCall 2
+  144: PopR
+  // line 52
+  145: String "frap"
+  150: FPushCuf 1
+  152: String "claptrap"
+  157: FPassC 0
+  159: FCall 1
+  161: PopR
+  // line 55
+  162: Jmp 16 (178)
+  167: Catch
+  168: SetL 0
+  170: PopC
+  // line 54
+  171: String "caught closure 1\n"
+  176: Print
+  177: PopC
+  // line 58
+  178: FPushCtorD 0 "MagicCall"
+  184: FCall 0
+  186: PopR # i0:t=Null*
+  187: SetL 1
+  189: PopC
+  // line 59
+  190: FPushFuncD 2 "fb_intercept"
+  196: String "frap"
+  201: FPassCE 0
+  203: CGetL 1
+  205: String "i_dont_exist"
+  210: NewPackedArray 2
+  212: FPassCE 1
+  214: FCall 2
+  216: PopR
+  // line 61
+  217: String "frap"
+  222: FPushCuf 1
+  224: String "claptrap"
+  229: FPassC 0
+  231: FCall 1
+  233: PopR
+  // line 64
+  234: Jmp 16 (250)
+  239: Catch
+  240: SetL 0
+  242: PopC
+  // line 63
+  243: String "caught magic call 1\n"
+  248: Print
+  249: PopC
+  // line 66
+  250: DefCls 2
+  // line 74
+  252: FPushCtorD 0 "MagicCall"
+  258: FCall 0
+  260: PopR # i0:t=Null*
+  261: SetL 1
+  263: PopC
+  // line 77
+  264: FPushFuncD 2 "fb_intercept"
+  270: String "Blark::sfrap"
+  275: FPassCE 0
+  277: String "handler"
+  282: FPassCE 1
+  284: FCall 2
+  286: PopR
+  // line 79
+  287: Array array(0=>"Blark",1=>"sfrap")
+  292: FPushCuf 0
+  294: FCall 0
+  296: PopR
+  // line 82
+  297: Jmp 16 (313)
+  302: Catch
+  303: SetL 0
+  305: PopC
+  // line 81
+  306: String "caught static call 1\n"
+  311: Print
+  312: PopC
+  // line 84
+  313: FPushFuncD 2 "fb_intercept"
+  319: String "Blark::sfrap"
+  324: FPassCE 0
+  326: String "passthrough_handler"
+  331: FPassCE 1
+  333: FCall 2
+  335: PopR
+  // line 86
+  336: Array array(0=>"Blark",1=>"sfrap")
+  341: FPushCuf 0
+  343: FCall 0
+  345: PopR
+  // line 89
+  346: Jmp 16 (362)
+  351: Catch
+  352: SetL 0
+  354: PopC
+  // line 88
+  355: String "caught static call 2\n"
+  360: Print
+  361: PopC
+  // line 91
+  362: FPushFuncD 2 "fb_intercept"
+  368: String "Blark::sfrap"
+  373: FPassCE 0
+  375: CGetL 1
+  377: String "i_dont_exist_either"
+  382: NewPackedArray 2
+  384: FPassCE 1
+  386: FCall 2
+  388: PopR
+  // line 93
+  389: Array array(0=>"Blark",1=>"sfrap")
+  394: FPushCuf 0
+  396: FCall 0
+  398: PopR
+  // line 96
+  399: Jmp 16 (415)
+  404: Catch
+  405: SetL 0
+  407: PopC
+  // line 95
+  408: String "caught magic call 2\n"
+  413: Print
+  414: PopC
+  // line 99
+  415: FPushCtorD 0 "Blark"
+  421: FCall 0
+  423: PopR # i0:t=Null*
+  424: SetL 2
+  426: PopC
+  // line 100
+  427: FPushFuncD 2 "fb_intercept"
+  433: String "Blark::frap"
+  438: FPassCE 0
+  440: String "handler"
+  445: FPassCE 1
+  447: FCall 2
+  449: PopR
+  // line 102
+  450: CGetL 2
+  452: String "frap"
+  457: NewPackedArray 2
+  459: FPushCuf 0
+  461: FCall 0
+  463: PopR
+  // line 105
+  464: Jmp 16 (480)
+  469: Catch
+  470: SetL 0
+  472: PopC
+  // line 104
+  473: String "caught non-static call 1\n"
+  478: Print
+  479: PopC
+  // line 107
+  480: FPushFuncD 2 "fb_intercept"
+  486: String "Blark::frap"
+  491: FPassCE 0
+  493: String "passthrough_handler"
+  498: FPassCE 1
+  500: FCall 2
+  502: PopR
+  // line 109
+  503: CGetL 2
+  505: String "frap"
+  510: NewPackedArray 2
+  512: FPushCuf 0
+  514: FCall 0
+  516: PopR
+  // line 112
+  517: Jmp 16 (533)
+  522: Catch
+  523: SetL 0
+  525: PopC
+  // line 111
+  526: String "caught non-static call 2\n"
+  531: Print
+  532: PopC
+  // line 114
+  533: FPushFuncD 2 "fb_intercept"
+  539: String "Blark::frap"
+  544: FPassCE 0
+  546: CGetL 1
+  548: String "i_dont_exist_either"
+  553: NewPackedArray 2
+  555: FPassCE 1
+  557: FCall 2
+  559: PopR
+  // line 116
+  560: CGetL 2
+  562: String "frap"
+  567: NewPackedArray 2
+  569: FPushCuf 0
+  571: FCall 0
+  573: PopR
+  // line 119
+  574: Jmp 16 (590)
+  579: Catch
+  580: SetL 0
+  582: PopC
+  // line 118
+  583: String "caught magic call 3\n"
+  588: Print
+  589: PopC
+  // line 122
+  590: FPushFuncD 2 "fb_intercept"
+  596: String "frap"
+  601: FPassCE 0
+  603: String "handler"
+  608: FPassCE 1
+  610: FCall 2
+  612: PopR
+  // line 123
+  613: FPushFuncD 2 "fb_intercept"
+  619: String "handler"
+  624: FPassCE 0
+  626: String "passthrough_handler"
+  631: FPassCE 1
+  633: FCall 2
+  635: PopR
+  // line 125
+  636: String "frap"
+  641: FPushCuf 1
+  643: String "claptrap"
+  648: FPassC 0
+  650: FCall 1
+  652: PopR
+  // line 128
+  653: Jmp 16 (669)
+  658: Catch
+  659: SetL 0
+  661: PopC
+  // line 127
+  662: String "caught double intercept 1\n"
+  667: Print
+  668: PopC
+  // line 131
+  669: FPushFuncD 2 "fb_intercept"
+  675: String "MagicCall::__call"
+  680: FPassCE 0
+  682: String "handler"
+  687: FPassCE 1
+  689: FCall 2
+  691: PopR
+  // line 133
+  692: CGetL 1
+  694: String "blark"
+  699: NewPackedArray 2
+  701: FPushCuf 1
+  703: String "hi"
+  708: FPassC 0
+  710: FCall 1
+  712: PopR
+  // line 136
+  713: Jmp 16 (729)
+  718: Catch
+  719: SetL 0
+  721: PopC
+  // line 135
+  722: String "caught __call 1\n"
+  727: Print
+  728: PopC
+  // line 137
+  729: FPushFuncD 2 "fb_intercept"
+  735: String "MagicCall::__call"
+  740: FPassCE 0
+  742: String "passthrough_handler"
+  747: FPassCE 1
+  749: FCall 2
+  751: PopR
+  // line 139
+  752: CGetL 1
+  754: String "blark"
+  759: NewPackedArray 2
+  761: FPushCuf 1
+  763: String "ho"
+  768: FPassC 0
+  770: FCall 1
+  772: PopR
+  // line 142
+  773: Jmp 16 (789)
+  778: Catch
+  779: SetL 0
+  781: PopC
+  // line 141
+  782: String "caught __call 2\n"
+  787: Print
+  788: PopC
+  789: Int 1
+  798: RetC
+
+Function handler at 799 (ID 1)
+ FPI 806-827; fpOff = 8
+ FPI 837-843; fpOff = 9
+  // line 4
+  799: String "----HANDLER----\n"
+  804: Print
+  805: PopC
+  // line 5
+  806: FPushFuncD 5 "var_dump"
+  812: FPassL 0 0
+  815: FPassL 1 1
+  818: FPassL 2 2
+  821: FPassL 3 3
+  824: FPassL 4 4
+  827: FCall 5
+  829: PopR
+  // line 6
+  830: String "---------------\n"
+  835: Print
+  836: PopC
+  // line 7
+  837: FPushCtorD 0 "Exception"
+  843: FCall 0
+  845: PopR # i0:t=Null*
+  846: Throw
+
+Function passthrough_handler at 847 (ID 2)
+ FPI 854-875; fpOff = 8
+ FPI 889-895; fpOff = 9
+  // line 11
+  847: String "----HANDLER----\n"
+  852: Print
+  853: PopC
+  // line 12
+  854: FPushFuncD 5 "var_dump"
+  860: FPassL 0 0
+  863: FPassL 1 1
+  866: FPassL 2 2
+  869: FPassL 3 3
+  872: FPassL 4 4
+  875: FCall 5
+  877: PopR
+  // line 13
+  878: False
+  879: SetL 4
+  881: PopC
+  // line 14
+  882: String "---------------\n"
+  887: Print
+  888: PopC
+  // line 15
+  889: FPushCtorD 0 "Exception"
+  895: FCall 0
+  897: PopR # i0:t=Null*
+  898: Throw
+
+Function (leaf) frap at 899 (ID 3)
+  // line 28
+  899: String "frap "
+  904: CGetL 0
+  906: Concat
+  907: String "\n"
+  912: Concat
+  913: Print
+  914: PopC
+  // line 29
+  915: Null
+  916: RetC
+
+Method public MagicCall::__call at 917
+ FPI 924-936; fpOff = 5
+ FPI 946-952; fpOff = 6
+  // line 20
+  917: String "magic call! "
+  922: Print
+  923: PopC
+  // line 21
+  924: FPushFuncD 2 "var_dump"
+  930: FPassL 0 0
+  933: FPassL 1 1
+  936: FCall 2
+  938: PopR
+  // line 22
+  939: String "\n"
+  944: Print
+  945: PopC
+  // line 23
+  946: FPushCtorD 0 "Exception"
+  952: FCall 0
+  954: PopR # i0:t=Null*
+  955: Throw
+
+Method public Closure$frap$f27daec8609a58507c4824b6f01f8bb2$::__invoke at 956
+ FPI 963-969; fpOff = 5
+  // line 48
+  956: String "Closure! wooooo\n"
+  961: Print
+  962: PopC
+  // line 49
+  963: FPushCtorD 0 "Exception"
+  969: FCall 0
+  971: PopR # i0:t=Null*
+  972: Throw
+
+Method static public (leaf) Blark::sfrap at 973
+  // line 68
+  973: String "static frap\n"
+  978: Print
+  979: PopC
+  // line 69
+  980: Null
+  981: RetC
+
+Method public (leaf) Blark::frap at 982
+  // line 71
+  982: String "non-static frap\n"
+  987: Print
+  988: PopC
+  // line 72
+  989: Null
+  990: RetC
+
+Method public (leaf) MagicCall::86ctor at 991
+  // line 25
+  991: Null
+  992: RetC
+
+Method public (leaf) Blark::86ctor at 993
+  // line 73
+  993: Null
+  994: RetC
+Class MagicCall at 0 (maybe-hoistable) (ID 0)
+ Method public MagicCall::__call at 917
+ FPI 924-936; fpOff = 5
+ FPI 946-952; fpOff = 6
+ Method public (leaf) MagicCall::86ctor at 991
+Class Closure$frap$f27daec8609a58507c4824b6f01f8bb2$ at 140 (unique) (ID 1)
+ Method public Closure$frap$f27daec8609a58507c4824b6f01f8bb2$::__invoke at 956
+ FPI 963-969; fpOff = 5
+Class Blark at 250 (maybe-hoistable) (ID 2)
+ Method static public (leaf) Blark::sfrap at 973
+ Method public (leaf) Blark::frap at 982
+ Method public (leaf) Blark::86ctor at 993
+Pseudo-main at 0 (ID 0)
+ EH 0 Catch for 32:54
+  Handle exception at 54
+ EH 1 Catch for 88:110
+  Handle exception at 110
+ EH 2 Catch for 145:167
+  Handle exception at 167
+ EH 3 Catch for 217:239
+  Handle exception at 239
+ EH 4 Catch for 287:302
+  Handle exception at 302
+ EH 5 Catch for 336:351
+  Handle exception at 351
+ EH 6 Catch for 389:404
+  Handle exception at 404
+ EH 7 Catch for 450:469
+  Handle exception at 469
+ EH 8 Catch for 503:522
+  Handle exception at 522
+ EH 9 Catch for 560:579
+  Handle exception at 579
+ EH 10 Catch for 636:658
+  Handle exception at 658
+ EH 11 Catch for 692:718
+  Handle exception at 718
+ EH 12 Catch for 752:778
+  Handle exception at 778
+ FPI 2-29; fpOff = 6
+ FPI 37-46; fpOff = 6
+ FPI 65-85; fpOff = 6
+ FPI 93-102; fpOff = 6
+ FPI 121-142; fpOff = 6
+ FPI 150-159; fpOff = 6
+ FPI 178-184; fpOff = 7
+ FPI 190-214; fpOff = 6
+ FPI 222-231; fpOff = 6
+ FPI 252-258; fpOff = 7
+ FPI 264-284; fpOff = 6
+ FPI 292-294; fpOff = 6
+ FPI 313-333; fpOff = 6
+ FPI 341-343; fpOff = 6
+ FPI 362-386; fpOff = 6
+ FPI 394-396; fpOff = 6
+ FPI 415-421; fpOff = 7
+ FPI 427-447; fpOff = 6
+ FPI 459-461; fpOff = 6
+ FPI 480-500; fpOff = 6
+ FPI 512-514; fpOff = 6
+ FPI 533-557; fpOff = 6
+ FPI 569-571; fpOff = 6
+ FPI 590-610; fpOff = 6
+ FPI 613-633; fpOff = 6
+ FPI 641-650; fpOff = 6
+ FPI 669-689; fpOff = 6
+ FPI 701-710; fpOff = 6
+ FPI 729-749; fpOff = 6
+ FPI 761-770; fpOff = 6
+Function handler at 799 (ID 1)
+ FPI 806-827; fpOff = 8
+ FPI 837-843; fpOff = 9
+Function passthrough_handler at 847 (ID 2)
+ FPI 854-875; fpOff = 8
+ FPI 889-895; fpOff = 9
+Function (leaf) frap at 899 (ID 3)

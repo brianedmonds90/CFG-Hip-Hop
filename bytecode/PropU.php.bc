@@ -1,0 +1,32 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 7-13; fpOff = 5
+ FPI 65-74; fpOff = 4
+  // line 3
+    0: String "Test begin\n"
+    5: Print
+    6: PopC
+  // line 5
+    7: FPushCtorD 0 "stdclass"
+   13: FCall 0
+   15: PopR # i0:t=Null*
+   16: SetL 0
+   18: PopC
+  // line 6
+   19: UnsetM <L:0 PT:"doh" PT:"re" PT:"mi" PT:"fa" PT:"sol" PT:"la" PT:"ti">
+  // line 7
+   65: FPushFuncD 1 "var_dump"
+  // line 6
+   71: FPassL 0 0
+  // line 7
+   74: FCall 1
+   76: PopR
+  // line 9
+   77: String "Test end\n"
+   82: Print
+   83: PopC
+   84: Int 1
+   93: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 7-13; fpOff = 5
+ FPI 65-74; fpOff = 4

@@ -1,0 +1,56 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 4
+    0: DefCls 0
+  // line 17
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function main at 21 (ID 1)
+ FPI 28-45; fpOff = 4
+ FPI 56-71; fpOff = 4
+  // line 9
+   21: String "Test begin\n"
+   26: Print
+   27: PopC
+  // line 11
+   28: FPushFuncD 1 "var_dump"
+   34: ClsCnsD "x" "C"
+   43: FPassCE 0
+   45: FCall 1
+   47: PopR
+  // line 12
+   48: String "C"
+   53: SetL 0
+   55: PopC
+  // line 13
+   56: FPushFuncD 1 "var_dump"
+   62: AGetL 0
+   64: ClsCns "x"
+   69: FPassCE 0
+   71: FCall 1
+   73: PopR
+  // line 15
+   74: String "Test end\n"
+   79: Print
+   80: PopC
+  // line 16
+   81: Null
+   82: RetC
+
+Method public (leaf) C::86ctor at 83
+  // line 6
+   83: Null
+   84: RetC
+Class C at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) C::86ctor at 83
+ Constant C::x = "C::x constant"
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function main at 21 (ID 1)
+ FPI 28-45; fpOff = 4
+ FPI 56-71; fpOff = 4

@@ -1,0 +1,205 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-24; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+ FPI 29-57; fpOff = 3
+ FPI 60-88; fpOff = 3
+ FPI 91-111; fpOff = 3
+ FPI 114-138; fpOff = 3
+ FPI 141-169; fpOff = 3
+ FPI 172-200; fpOff = 3
+ FPI 203-223; fpOff = 3
+ FPI 226-250; fpOff = 3
+ FPI 253-273; fpOff = 3
+ FPI 276-296; fpOff = 3
+ FPI 299-311; fpOff = 3
+ FPI 314-330; fpOff = 3
+ FPI 333-357; fpOff = 3
+ FPI 360-384; fpOff = 3
+ FPI 387-403; fpOff = 3
+ FPI 406-426; fpOff = 3
+  // line 4
+    0: FPushFuncD 1 "error_reporting"
+    6: FPushFuncD 0 "error_reporting"
+   12: FCall 0
+   14: UnboxR
+   15: Cns "E_NOTICE"
+   20: BitNot
+   21: BitAnd
+   22: FPassCE 0
+   24: FCall 1
+   26: PopR
+  // line 6
+   27: DefCls 0
+  // line 12
+   29: FPushFuncD 2 "foo"
+   35: Int 1
+   44: FPassCE 0
+   46: Int 1
+   55: FPassCE 1
+   57: FCall 2
+   59: PopR
+  // line 13
+   60: FPushFuncD 2 "foo"
+   66: Int 1
+   75: FPassCE 0
+   77: Double 2.1
+   86: FPassCE 1
+   88: FCall 2
+   90: PopR
+  // line 14
+   91: FPushFuncD 2 "foo"
+   97: Int 1
+  106: FPassCE 0
+  108: True
+  109: FPassCE 1
+  111: FCall 2
+  113: PopR
+  // line 15
+  114: FPushFuncD 2 "foo"
+  120: Int 1
+  129: FPassCE 0
+  131: Array array(0=>1)
+  136: FPassCE 1
+  138: FCall 2
+  140: PopR
+  // line 17
+  141: FPushFuncD 2 "foo"
+  147: Double 2.1
+  156: FPassCE 0
+  158: Int 1
+  167: FPassCE 1
+  169: FCall 2
+  171: PopR
+  // line 18
+  172: FPushFuncD 2 "foo"
+  178: Double 2.1
+  187: FPassCE 0
+  189: Double 2.1
+  198: FPassCE 1
+  200: FCall 2
+  202: PopR
+  // line 19
+  203: FPushFuncD 2 "foo"
+  209: Double 2.1
+  218: FPassCE 0
+  220: True
+  221: FPassCE 1
+  223: FCall 2
+  225: PopR
+  // line 20
+  226: FPushFuncD 2 "foo"
+  232: Double 2.1
+  241: FPassCE 0
+  243: Array array(0=>1)
+  248: FPassCE 1
+  250: FCall 2
+  252: PopR
+  // line 22
+  253: FPushFuncD 2 "foo"
+  259: True
+  260: FPassCE 0
+  262: Int 1
+  271: FPassCE 1
+  273: FCall 2
+  275: PopR
+  // line 23
+  276: FPushFuncD 2 "foo"
+  282: True
+  283: FPassCE 0
+  285: Double 2.1
+  294: FPassCE 1
+  296: FCall 2
+  298: PopR
+  // line 24
+  299: FPushFuncD 2 "foo"
+  305: True
+  306: FPassCE 0
+  308: True
+  309: FPassCE 1
+  311: FCall 2
+  313: PopR
+  // line 25
+  314: FPushFuncD 2 "foo"
+  320: True
+  321: FPassCE 0
+  323: Array array(0=>1)
+  328: FPassCE 1
+  330: FCall 2
+  332: PopR
+  // line 27
+  333: FPushFuncD 2 "foo"
+  339: Array array(0=>1)
+  344: FPassCE 0
+  346: Int 1
+  355: FPassCE 1
+  357: FCall 2
+  359: PopR
+  // line 28
+  360: FPushFuncD 2 "foo"
+  366: Array array(0=>1)
+  371: FPassCE 0
+  373: Double 2.1
+  382: FPassCE 1
+  384: FCall 2
+  386: PopR
+  // line 29
+  387: FPushFuncD 2 "foo"
+  393: Array array(0=>1)
+  398: FPassCE 0
+  400: True
+  401: FPassCE 1
+  403: FCall 2
+  405: PopR
+  // line 30
+  406: FPushFuncD 2 "foo"
+  412: Array array(0=>1)
+  417: FPassCE 0
+  419: Array array(0=>1)
+  424: FPassCE 1
+  426: FCall 2
+  428: PopR
+  429: Int 1
+  438: RetC
+
+Function (leaf) foo at 439 (ID 1)
+  // line 9
+  439: String " "
+  444: CGetL2 0
+  446: Concat
+  447: CGetL 1
+  449: Concat
+  450: String "\n"
+  455: Concat
+  456: Print
+  457: PopC
+  // line 10
+  458: Null
+  459: RetC
+
+Method public (leaf) C::86ctor at 460
+  // line 6
+  460: Null
+  461: RetC
+Class C at 27 (maybe-hoistable) (ID 0)
+ Method public (leaf) C::86ctor at 460
+Pseudo-main at 0 (ID 0)
+ FPI 0-24; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+ FPI 29-57; fpOff = 3
+ FPI 60-88; fpOff = 3
+ FPI 91-111; fpOff = 3
+ FPI 114-138; fpOff = 3
+ FPI 141-169; fpOff = 3
+ FPI 172-200; fpOff = 3
+ FPI 203-223; fpOff = 3
+ FPI 226-250; fpOff = 3
+ FPI 253-273; fpOff = 3
+ FPI 276-296; fpOff = 3
+ FPI 299-311; fpOff = 3
+ FPI 314-330; fpOff = 3
+ FPI 333-357; fpOff = 3
+ FPI 360-384; fpOff = 3
+ FPI 387-403; fpOff = 3
+ FPI 406-426; fpOff = 3
+Function (leaf) foo at 439 (ID 1)

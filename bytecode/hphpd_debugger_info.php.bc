@@ -1,0 +1,47 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 11
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function main at 19 (ID 1)
+ FPI 19-25; fpOff = 5
+ FPI 31-40; fpOff = 5
+ FPI 43-49; fpOff = 5
+ FPI 55-64; fpOff = 5
+  // line 5
+   19: FPushFuncD 0 "hphp_debugger_attached"
+   25: FCall 0
+   27: UnboxR
+   28: SetL 0
+   30: PopC
+  // line 6
+   31: FPushFuncD 1 "var_dump"
+   37: FPassL 0 0
+   40: FCall 1
+   42: PopR
+  // line 7
+   43: FPushFuncD 0 "hphp_get_debugger_info"
+   49: FCall 0
+   51: UnboxR
+   52: SetL 1
+   54: PopC
+  // line 8
+   55: FPushFuncD 1 "var_dump"
+   61: FPassL 0 1
+   64: FCall 1
+   66: PopR
+  // line 9
+   67: Null
+   68: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function main at 19 (ID 1)
+ FPI 19-25; fpOff = 5
+ FPI 31-40; fpOff = 5
+ FPI 43-49; fpOff = 5
+ FPI 55-64; fpOff = 5

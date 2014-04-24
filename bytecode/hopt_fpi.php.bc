@@ -1,0 +1,120 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-33; fpOff = 3
+  // line 4
+    0: DefCls 0
+  // line 39
+    2: FPushFuncD 3 "test"
+    8: Int 1
+   17: FPassCE 0
+   19: String "f3"
+   24: FPassCE 1
+   26: String "f4"
+   31: FPassCE 2
+   33: FCall 3
+   35: PopR
+   36: Int 1
+   45: RetC
+
+Function (leaf) f3 at 46 (ID 1)
+  // line 25
+   46: CGetL 1
+   48: CGetL2 0
+   50: Add
+   51: RetC
+
+Function (leaf) f4 at 52 (ID 2)
+  // line 29
+   52: Int 1
+   61: CGetL2 0
+   63: Add
+   64: RetC
+
+Function test at 65 (ID 3)
+ FPI 67-83; fpOff = 7
+ FPI 71-76; fpOff = 10 parentIndex = 0 (depth 2)
+  // line 34
+   65: CGetL 1
+   67: FPushFunc 2
+   69: CGetL 2
+   71: FPushFunc 1
+   73: FPassL 0 0
+   76: FCall 1
+   78: FPassR 0
+   80: FPassL 1 0
+   83: FCall 2
+   85: UnboxR
+   86: SetL 3
+   88: PopC
+  // line 35
+   89: CGetL 3
+   91: Print
+   92: PopC
+  // line 36
+   93: String "\n"
+   98: Print
+   99: PopC
+  // line 37
+  100: Null
+  101: RetC
+
+Method public (leaf) C::f1 at 102
+  // line 6
+  102: CGetL 1
+  104: CGetL2 0
+  106: Add
+  107: RetC
+
+Method public (leaf) C::f2 at 108
+  // line 10
+  108: Int 1
+  117: CGetL2 0
+  119: Add
+  120: RetC
+
+Method public C::test at 121
+ FPI 122-145; fpOff = 5
+ FPI 129-138; fpOff = 8 parentIndex = 0 (depth 2)
+  // line 15
+  121: This
+  122: FPushObjMethodD 2 "f1" # i0:c=C
+  128: This
+  129: FPushObjMethodD 1 "f2" # i0:c=C
+  135: FPassL 0 0
+  138: FCall 1
+  140: FPassR 0
+  142: FPassL 1 0
+  145: FCall 2
+  147: UnboxR
+  148: SetL 1
+  150: PopC
+  // line 16
+  151: CGetL 1
+  153: Print
+  154: PopC
+  // line 17
+  155: String "\n"
+  160: Print
+  161: PopC
+  // line 18
+  162: Null
+  163: RetC
+
+Method public (leaf) C::86ctor at 164
+  // line 19
+  164: Null
+  165: RetC
+Class C at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) C::f1 at 102
+ Method public (leaf) C::f2 at 108
+ Method public C::test at 121
+ FPI 122-145; fpOff = 5
+ FPI 129-138; fpOff = 8 parentIndex = 0 (depth 2)
+ Method public (leaf) C::86ctor at 164
+Pseudo-main at 0 (ID 0)
+ FPI 2-33; fpOff = 3
+Function (leaf) f3 at 46 (ID 1)
+Function (leaf) f4 at 52 (ID 2)
+Function test at 65 (ID 3)
+ FPI 67-83; fpOff = 7
+ FPI 71-76; fpOff = 10 parentIndex = 0 (depth 2)

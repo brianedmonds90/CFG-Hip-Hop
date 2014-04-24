@@ -1,0 +1,345 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-45; fpOff = 3
+ FPI 13-41; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 48-93; fpOff = 3
+ FPI 61-89; fpOff = 7 parentIndex = 2 (depth 2)
+ FPI 96-141; fpOff = 3
+ FPI 109-137; fpOff = 7 parentIndex = 4 (depth 2)
+  // line 101
+    0: FPushFuncD 2 "test"
+    6: String "f"
+   11: FPassCE 0
+   13: FPushFuncD 2 "range"
+   19: Int 0
+   28: FPassCE 0
+   30: Int 149
+   39: FPassCE 1
+   41: FCall 2
+   43: FPassR 1
+   45: FCall 2
+   47: PopR
+  // line 102
+   48: FPushFuncD 2 "test"
+   54: String "g"
+   59: FPassCE 0
+   61: FPushFuncD 2 "range"
+   67: Int 0
+   76: FPassCE 0
+   78: Int 149
+   87: FPassCE 1
+   89: FCall 2
+   91: FPassR 1
+   93: FCall 2
+   95: PopR
+  // line 103
+   96: FPushFuncD 2 "test"
+  102: String "gr"
+  107: FPassCE 0
+  109: FPushFuncD 2 "range"
+  115: Int 0
+  124: FPassCE 0
+  126: Int 149
+  135: FPassCE 1
+  137: FCall 2
+  139: FPassR 1
+  141: FCall 2
+  143: PopR
+  144: Int 1
+  153: RetC
+
+Function (leaf) f at 154 (ID 1)
+  // line 13
+  154: Int 0
+  163: SetL 77
+  // line 15
+  165: PopC
+  // line 13
+  166: Int 77
+  175: CGetL2 77
+  177: Lt
+  178: JmpZ 32 (210)
+  // line 14
+  183: String "a"
+  188: CGetL 77
+  190: Concat
+  191: CGetN
+  192: Print
+  193: PopC
+  194: String "\n"
+  199: Print
+  200: PopC
+  // line 13
+  201: IncDecL 77 PreInc
+  // line 15
+  204: PopC
+  205: Jmp -39
+  // line 16
+  210: Null
+  211: RetC
+
+Function (leaf) g at 212 (ID 2)
+  // line 37
+  212: Int 0
+  221: SetL 141
+  // line 39
+  226: PopC
+  // line 37
+  227: Int 141
+  236: CGetL2 141
+  241: Lt
+  242: JmpZ 38 (280)
+  // line 38
+  247: String "a"
+  252: CGetL 141
+  257: Concat
+  258: CGetN
+  259: Print
+  260: PopC
+  261: String "\n"
+  266: Print
+  267: PopC
+  // line 37
+  268: IncDecL 141 PreInc
+  // line 39
+  274: PopC
+  275: Jmp -48
+  // line 40
+  280: Null
+  281: RetC
+
+Function (leaf) gr at 282 (ID 3)
+  // line 61
+  282: Int 0
+  291: SetL 141
+  // line 63
+  296: PopC
+  // line 61
+  297: Int 141
+  306: CGetL2 141
+  311: Lt
+  312: JmpZ 31 (343)
+  // line 62
+  317: String "a"
+  322: CGetL 141
+  327: Concat
+  328: IncDecN PreInc
+  330: PopC
+  // line 61
+  331: IncDecL 141 PreInc
+  // line 63
+  337: PopC
+  338: Jmp -41
+  // line 64
+  343: Null
+  344: RetC
+
+Function test at 345 (ID 4)
+ FPI 347-3568; fpOff = 5
+ FPI 3574-3583; fpOff = 5
+  // line 96
+  345: CGetL 0
+  347: FPushFunc 150
+  // line 67
+  352: FPassM 0 <L:1 EI:0>
+  373: FPassM 1 <L:1 EI:1>
+  394: FPassM 2 <L:1 EI:2>
+  415: FPassM 3 <L:1 EI:3>
+  436: FPassM 4 <L:1 EI:4>
+  // line 68
+  457: FPassM 5 <L:1 EI:5>
+  478: FPassM 6 <L:1 EI:6>
+  499: FPassM 7 <L:1 EI:7>
+  520: FPassM 8 <L:1 EI:8>
+  541: FPassM 9 <L:1 EI:9>
+  // line 69
+  562: FPassM 10 <L:1 EI:10>
+  583: FPassM 11 <L:1 EI:11>
+  604: FPassM 12 <L:1 EI:12>
+  625: FPassM 13 <L:1 EI:13>
+  646: FPassM 14 <L:1 EI:14>
+  // line 70
+  667: FPassM 15 <L:1 EI:15>
+  688: FPassM 16 <L:1 EI:16>
+  709: FPassM 17 <L:1 EI:17>
+  730: FPassM 18 <L:1 EI:18>
+  751: FPassM 19 <L:1 EI:19>
+  // line 71
+  772: FPassM 20 <L:1 EI:20>
+  793: FPassM 21 <L:1 EI:21>
+  814: FPassM 22 <L:1 EI:22>
+  835: FPassM 23 <L:1 EI:23>
+  856: FPassM 24 <L:1 EI:24>
+  // line 72
+  877: FPassM 25 <L:1 EI:25>
+  898: FPassM 26 <L:1 EI:26>
+  919: FPassM 27 <L:1 EI:27>
+  940: FPassM 28 <L:1 EI:28>
+  961: FPassM 29 <L:1 EI:29>
+  // line 73
+  982: FPassM 30 <L:1 EI:30>
+ 1003: FPassM 31 <L:1 EI:31>
+ 1024: FPassM 32 <L:1 EI:32>
+ 1045: FPassM 33 <L:1 EI:33>
+ 1066: FPassM 34 <L:1 EI:34>
+  // line 74
+ 1087: FPassM 35 <L:1 EI:35>
+ 1108: FPassM 36 <L:1 EI:36>
+ 1129: FPassM 37 <L:1 EI:37>
+ 1150: FPassM 38 <L:1 EI:38>
+ 1171: FPassM 39 <L:1 EI:39>
+  // line 75
+ 1192: FPassM 40 <L:1 EI:40>
+ 1213: FPassM 41 <L:1 EI:41>
+ 1234: FPassM 42 <L:1 EI:42>
+ 1255: FPassM 43 <L:1 EI:43>
+ 1276: FPassM 44 <L:1 EI:44>
+  // line 76
+ 1297: FPassM 45 <L:1 EI:45>
+ 1318: FPassM 46 <L:1 EI:46>
+ 1339: FPassM 47 <L:1 EI:47>
+ 1360: FPassM 48 <L:1 EI:48>
+ 1381: FPassM 49 <L:1 EI:49>
+  // line 77
+ 1402: FPassM 50 <L:1 EI:50>
+ 1423: FPassM 51 <L:1 EI:51>
+ 1444: FPassM 52 <L:1 EI:52>
+ 1465: FPassM 53 <L:1 EI:53>
+ 1486: FPassM 54 <L:1 EI:54>
+  // line 78
+ 1507: FPassM 55 <L:1 EI:55>
+ 1528: FPassM 56 <L:1 EI:56>
+ 1549: FPassM 57 <L:1 EI:57>
+ 1570: FPassM 58 <L:1 EI:58>
+ 1591: FPassM 59 <L:1 EI:59>
+  // line 79
+ 1612: FPassM 60 <L:1 EI:60>
+ 1633: FPassM 61 <L:1 EI:61>
+ 1654: FPassM 62 <L:1 EI:62>
+ 1675: FPassM 63 <L:1 EI:63>
+ 1696: FPassM 64 <L:1 EI:64>
+  // line 80
+ 1717: FPassM 65 <L:1 EI:65>
+ 1738: FPassM 66 <L:1 EI:66>
+ 1759: FPassM 67 <L:1 EI:67>
+ 1780: FPassM 68 <L:1 EI:68>
+ 1801: FPassM 69 <L:1 EI:69>
+  // line 81
+ 1822: FPassM 70 <L:1 EI:70>
+ 1843: FPassM 71 <L:1 EI:71>
+ 1864: FPassM 72 <L:1 EI:72>
+ 1885: FPassM 73 <L:1 EI:73>
+ 1906: FPassM 74 <L:1 EI:74>
+  // line 82
+ 1927: FPassM 75 <L:1 EI:75>
+ 1948: FPassM 76 <L:1 EI:76>
+ 1969: FPassM 77 <L:1 EI:77>
+ 1990: FPassM 78 <L:1 EI:78>
+ 2011: FPassM 79 <L:1 EI:79>
+  // line 83
+ 2032: FPassM 80 <L:1 EI:80>
+ 2053: FPassM 81 <L:1 EI:81>
+ 2074: FPassM 82 <L:1 EI:82>
+ 2095: FPassM 83 <L:1 EI:83>
+ 2116: FPassM 84 <L:1 EI:84>
+  // line 84
+ 2137: FPassM 85 <L:1 EI:85>
+ 2158: FPassM 86 <L:1 EI:86>
+ 2179: FPassM 87 <L:1 EI:87>
+ 2200: FPassM 88 <L:1 EI:88>
+ 2221: FPassM 89 <L:1 EI:89>
+  // line 85
+ 2242: FPassM 90 <L:1 EI:90>
+ 2263: FPassM 91 <L:1 EI:91>
+ 2284: FPassM 92 <L:1 EI:92>
+ 2305: FPassM 93 <L:1 EI:93>
+ 2326: FPassM 94 <L:1 EI:94>
+  // line 86
+ 2347: FPassM 95 <L:1 EI:95>
+ 2368: FPassM 96 <L:1 EI:96>
+ 2389: FPassM 97 <L:1 EI:97>
+ 2410: FPassM 98 <L:1 EI:98>
+ 2431: FPassM 99 <L:1 EI:99>
+  // line 87
+ 2452: FPassM 100 <L:1 EI:100>
+ 2473: FPassM 101 <L:1 EI:101>
+ 2494: FPassM 102 <L:1 EI:102>
+ 2515: FPassM 103 <L:1 EI:103>
+ 2536: FPassM 104 <L:1 EI:104>
+  // line 88
+ 2557: FPassM 105 <L:1 EI:105>
+ 2578: FPassM 106 <L:1 EI:106>
+ 2599: FPassM 107 <L:1 EI:107>
+ 2620: FPassM 108 <L:1 EI:108>
+ 2641: FPassM 109 <L:1 EI:109>
+  // line 89
+ 2662: FPassM 110 <L:1 EI:110>
+ 2683: FPassM 111 <L:1 EI:111>
+ 2704: FPassM 112 <L:1 EI:112>
+ 2725: FPassM 113 <L:1 EI:113>
+ 2746: FPassM 114 <L:1 EI:114>
+  // line 90
+ 2767: FPassM 115 <L:1 EI:115>
+ 2788: FPassM 116 <L:1 EI:116>
+ 2809: FPassM 117 <L:1 EI:117>
+ 2830: FPassM 118 <L:1 EI:118>
+ 2851: FPassM 119 <L:1 EI:119>
+  // line 91
+ 2872: FPassM 120 <L:1 EI:120>
+ 2893: FPassM 121 <L:1 EI:121>
+ 2914: FPassM 122 <L:1 EI:122>
+ 2935: FPassM 123 <L:1 EI:123>
+ 2956: FPassM 124 <L:1 EI:124>
+  // line 92
+ 2977: FPassM 125 <L:1 EI:125>
+ 2998: FPassM 126 <L:1 EI:126>
+ 3019: FPassM 127 <L:1 EI:127>
+ 3040: FPassM 128 <L:1 EI:128>
+ 3064: FPassM 129 <L:1 EI:129>
+  // line 93
+ 3088: FPassM 130 <L:1 EI:130>
+ 3112: FPassM 131 <L:1 EI:131>
+ 3136: FPassM 132 <L:1 EI:132>
+ 3160: FPassM 133 <L:1 EI:133>
+ 3184: FPassM 134 <L:1 EI:134>
+  // line 94
+ 3208: FPassM 135 <L:1 EI:135>
+ 3232: FPassM 136 <L:1 EI:136>
+ 3256: FPassM 137 <L:1 EI:137>
+ 3280: FPassM 138 <L:1 EI:138>
+ 3304: FPassM 139 <L:1 EI:139>
+  // line 95
+ 3328: FPassM 140 <L:1 EI:140>
+ 3352: FPassM 141 <L:1 EI:141>
+ 3376: FPassM 142 <L:1 EI:142>
+ 3400: FPassM 143 <L:1 EI:143>
+ 3424: FPassM 144 <L:1 EI:144>
+  // line 96
+ 3448: FPassM 145 <L:1 EI:145>
+ 3472: FPassM 146 <L:1 EI:146>
+ 3496: FPassM 147 <L:1 EI:147>
+ 3520: FPassM 148 <L:1 EI:148>
+ 3544: FPassM 149 <L:1 EI:149>
+ 3568: FCall 150
+ 3573: PopR
+  // line 98
+ 3574: FPushFuncD 1 "var_dump"
+ 3580: FPassL 0 1
+ 3583: FCall 1
+ 3585: PopR
+  // line 99
+ 3586: Null
+ 3587: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-45; fpOff = 3
+ FPI 13-41; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 48-93; fpOff = 3
+ FPI 61-89; fpOff = 7 parentIndex = 2 (depth 2)
+ FPI 96-141; fpOff = 3
+ FPI 109-137; fpOff = 7 parentIndex = 4 (depth 2)
+Function (leaf) f at 154 (ID 1)
+Function (leaf) g at 212 (ID 2)
+Function (leaf) gr at 282 (ID 3)
+Function test at 345 (ID 4)
+ FPI 347-3568; fpOff = 5
+ FPI 3574-3583; fpOff = 5

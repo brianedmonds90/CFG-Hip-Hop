@@ -1,0 +1,62 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 22-34; fpOff = 4
+ FPI 37-49; fpOff = 4
+ FPI 52-72; fpOff = 4
+ FPI 75-95; fpOff = 4
+  // line 8
+    0: Int 1
+    9: SetM <L:0 W>
+   21: PopC
+  // line 9
+   22: FPushFuncD 2 "test"
+   28: False
+   29: FPassCE 0
+   31: FPassL 1 0
+   34: FCall 2
+   36: PopR
+  // line 10
+   37: FPushFuncD 2 "test"
+   43: True
+   44: FPassCE 0
+   46: FPassL 1 0
+   49: FCall 2
+   51: PopR
+  // line 11
+   52: FPushFuncD 2 "test"
+   58: Int 1
+   67: FPassCE 0
+   69: FPassL 1 0
+   72: FCall 2
+   74: PopR
+  // line 12
+   75: FPushFuncD 2 "test"
+   81: Double 1
+   90: FPassCE 0
+   92: FPassL 1 0
+   95: FCall 2
+   97: PopR
+   98: Int 1
+  107: RetC
+
+Function test at 108 (ID 1)
+ FPI 112-124; fpOff = 5
+  // line 4
+  108: IncDecL 0 PreInc
+  111: PopC
+  // line 5
+  112: FPushFuncD 2 "var_dump"
+  118: FPassL 0 0
+  121: FPassL 1 1
+  124: FCall 2
+  126: PopR
+  // line 6
+  127: Null
+  128: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 22-34; fpOff = 4
+ FPI 37-49; fpOff = 4
+ FPI 52-72; fpOff = 4
+ FPI 75-95; fpOff = 4
+Function test at 108 (ID 1)
+ FPI 112-124; fpOff = 5

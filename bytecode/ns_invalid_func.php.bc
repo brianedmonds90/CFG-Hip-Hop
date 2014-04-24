@@ -1,0 +1,22 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-10; fpOff = 3
+  // line 5
+    0: FPushFuncU 0 "A\\main" "main"
+   10: FCall 0
+   12: PopR
+   13: Int 1
+   22: RetC
+
+Function A\main at 23 (ID 1)
+ FPI 23-29; fpOff = 3
+  // line 4
+   23: FPushFuncD 0 "b"
+   29: FCall 0
+   31: PopR
+   32: Null
+   33: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-10; fpOff = 3
+Function A\main at 23 (ID 1)
+ FPI 23-29; fpOff = 3

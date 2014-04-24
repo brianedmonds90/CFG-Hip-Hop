@@ -1,0 +1,85 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 68-77; fpOff = 8
+ FPI 80-89; fpOff = 8
+ FPI 104-131; fpOff = 8
+ FPI 134-143; fpOff = 8
+ FPI 181-190; fpOff = 8
+  // line 3
+    0: String "Test begin\n"
+    5: Print
+    6: PopC
+  // line 6
+    7: Array array(0=>0)
+   12: SetL 0
+   14: PopC
+  // line 7
+   15: Int 1
+   24: SetL 1
+   26: PopC
+  // line 8
+   27: VGetM <L:0 EI:0>
+   47: BindM <L:1 EI:0>
+   67: PopV
+  // line 9
+   68: FPushFuncD 1 "var_dump"
+   74: FPassL 0 0
+   77: FCall 1
+   79: PopR
+  // line 10
+   80: FPushFuncD 1 "var_dump"
+   86: FPassL 0 1
+   89: FCall 1
+   91: PopR
+  // line 16
+   92: Int 1
+  101: SetL 2
+  103: PopC
+  // line 17
+  104: FPushFuncD 1 "f"
+  110: FPassM 0 <L:2 EI:0>
+  131: FCall 1
+  133: PopR
+  // line 18
+  134: FPushFuncD 1 "var_dump"
+  140: FPassL 0 2
+  143: FCall 1
+  145: PopR
+  // line 21
+  146: Int 1
+  155: SetL 3
+  157: PopC
+  // line 22
+  158: VGetM <L:3 EI:0>
+  178: BindL 4
+  180: PopV
+  // line 23
+  181: FPushFuncD 1 "var_dump"
+  187: FPassL 0 4
+  190: FCall 1
+  192: PopR
+  // line 25
+  193: String "Test end\n"
+  198: Print
+  199: PopC
+  200: Int 1
+  209: RetC
+
+Function f at 210 (ID 1)
+ FPI 210-219; fpOff = 4
+  // line 14
+  210: FPushFuncD 1 "var_dump"
+  216: FPassL 0 0
+  219: FCall 1
+  221: PopR
+  // line 15
+  222: Null
+  223: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 68-77; fpOff = 8
+ FPI 80-89; fpOff = 8
+ FPI 104-131; fpOff = 8
+ FPI 134-143; fpOff = 8
+ FPI 181-190; fpOff = 8
+Function f at 210 (ID 1)
+ FPI 210-219; fpOff = 4

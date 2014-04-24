@@ -1,0 +1,18 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 2
+    0: DefCls 0
+  // line 3
+    2: String "Done\n"
+    7: Print
+    8: PopC
+    9: Int 1
+   18: RetC
+
+Method public (leaf) string::86ctor at 19
+  // line 2
+   19: Null
+   20: RetC
+Class string at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) string::86ctor at 19
+Pseudo-main at 0 (ID 0)

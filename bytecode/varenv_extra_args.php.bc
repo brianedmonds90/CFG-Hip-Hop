@@ -1,0 +1,56 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-31; fpOff = 3
+  // line 9
+    0: FPushFuncD 3 "foo"
+    6: Int 2
+   15: FPassCE 0
+   17: String "foo"
+   22: FPassCE 1
+   24: String "bar"
+   29: FPassCE 2
+   31: FCall 3
+   33: PopR
+   34: Int 1
+   43: RetC
+
+Function foo at 44 (ID 1)
+ FPI 65-81; fpOff = 5
+ FPI 71-77; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 84-111; fpOff = 5
+ FPI 90-107; fpOff = 8 parentIndex = 2 (depth 2)
+  // line 4
+   44: String "a"
+   49: SetL 1
+   51: PopC
+  // line 5
+   52: Int 12
+   61: CGetL2 1
+   63: SetN
+   64: PopC
+  // line 6
+   65: FPushFuncD 1 "var_dump"
+   71: FPushFuncD 0 "func_get_args"
+   77: FCall 0
+   79: FPassR 0
+   81: FCall 1
+   83: PopR
+  // line 7
+   84: FPushFuncD 1 "var_dump"
+   90: FPushFuncD 1 "func_get_arg"
+   96: Int 2
+  105: FPassCE 0
+  107: FCall 1
+  109: FPassR 0
+  111: FCall 1
+  113: PopR
+  // line 8
+  114: Null
+  115: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-31; fpOff = 3
+Function foo at 44 (ID 1)
+ FPI 65-81; fpOff = 5
+ FPI 71-77; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 84-111; fpOff = 5
+ FPI 90-107; fpOff = 8 parentIndex = 2 (depth 2)

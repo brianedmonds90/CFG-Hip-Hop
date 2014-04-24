@@ -1,0 +1,37 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 11
+    0: FPushFuncD 0 "bar"
+    6: FCall 0
+    8: UnboxR
+    9: String "\n"
+   14: Concat
+   15: Print
+   16: PopC
+   17: Int 1
+   26: RetC
+
+Function (leaf) foo at 27 (ID 1)
+  // line 4
+   27: Int 3
+   36: RetC
+
+Function (leaf) bar at 37 (ID 2)
+ DV for parameter 0 at 50 = 10
+  // line 8
+   37: Int 3
+   46: CGetL2 0
+   48: Add
+   49: RetC
+  // line 7
+   50: Int 10
+  // line 9
+   59: SetL 0 # i1:t=Uninit
+   61: PopC
+   62: JmpNS -25
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) foo at 27 (ID 1)
+Function (leaf) bar at 37 (ID 2)
+ DV for parameter 0 at 50 = 10

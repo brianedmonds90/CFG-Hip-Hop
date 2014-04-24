@@ -1,0 +1,48 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 5
+ FPI 34-43; fpOff = 4
+  // line 10
+    0: FPushCtorD 0 "stdclass"
+    6: FCall 0
+    8: PopR # i0:t=Null*
+    9: SetL 0
+   11: PopC
+  // line 11
+   12: Array array(23=>"hi")
+   17: SetM <L:0 PT:"prop">
+   33: PopC
+  // line 12
+   34: FPushFuncD 1 "main"
+   40: FPassL 0 0
+   43: FCall 1
+   45: UnboxR
+   46: JmpZ 15 (61)
+   51: String "true\n"
+   56: Jmp 10 (66)
+   61: String "false\n"
+   66: Print
+   67: PopC
+   68: Int 1
+   77: RetC
+
+Function (leaf) main at 78 (ID 1)
+  // line 5
+   78: VGetL 2
+   80: BindL 1
+   82: PopV
+  // line 6
+   83: CGetM <L:0 PT:"prop">
+   99: SetL 1
+  101: PopC
+  // line 7
+  102: IssetM <L:1 EI:23>
+  122: JmpZ 11 (133)
+  127: True
+  128: Jmp 6 (134)
+  133: False
+  134: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 5
+ FPI 34-43; fpOff = 4
+Function (leaf) main at 78 (ID 1)

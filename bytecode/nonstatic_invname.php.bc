@@ -1,0 +1,102 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-19; fpOff = 3
+ FPI 8-14; fpOff = 7 parentIndex = 0 (depth 2)
+  // line 3
+    0: DefCls 0
+  // line 19
+    2: FPushFuncD 1 "main"
+    8: FPushCtorD 0 "Blah"
+   14: FCall 0
+   16: PopR # i0:t=Null*
+   17: FPassC 0
+   19: FCall 1
+   21: PopR
+   22: Int 1
+   31: RetC
+
+Function heh at 32 (ID 1)
+ FPI 37-43; fpOff = 4
+  // line 12
+   32: String "zzzz"
+   37: FPushFuncD 0 "mt_rand"
+   43: FCall 0
+   45: UnboxR
+   46: Concat
+   47: RetC
+
+Function main at 48 (ID 2)
+ FPI 52-58; fpOff = 5
+ FPI 61-63; fpOff = 4
+  // line 17
+   48: VerifyParamType 0
+  // line 16
+   50: CGetL 0
+   52: FPushFuncD 0 "heh"
+   58: FCall 0
+   60: UnboxR
+   61: FPushObjMethod 0
+   63: FCall 0
+   65: PopR
+  // line 17
+   66: Null
+   67: RetC
+
+Method public Blah::__call at 68
+ FPI 70-111; fpOff = 5
+ FPI 76-107; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 140-181; fpOff = 5
+ FPI 146-177; fpOff = 8 parentIndex = 2 (depth 2)
+  // line 8
+   68: VerifyParamType 0
+  // line 5
+   70: FPushFuncD 1 "var_dump"
+   76: FPushFuncD 3 "substr"
+   82: FPassL 0 0
+   85: Int 0
+   94: FPassCE 1
+   96: Int 4
+  105: FPassCE 2
+  107: FCall 3
+  109: FPassR 0
+  111: FCall 1
+  113: PopR
+  // line 6
+  114: String "a"
+  119: SetM <L:0 EI:2>
+  139: PopC
+  // line 7
+  140: FPushFuncD 1 "var_dump"
+  146: FPushFuncD 3 "substr"
+  152: FPassL 0 0
+  155: Int 0
+  164: FPassCE 1
+  166: Int 4
+  175: FPassCE 2
+  177: FCall 3
+  179: FPassR 0
+  181: FCall 1
+  183: PopR
+  // line 8
+  184: Null
+  185: RetC
+
+Method public (leaf) Blah::86ctor at 186
+  // line 9
+  186: Null
+  187: RetC
+Class Blah at 0 (maybe-hoistable) (ID 0)
+ Method public Blah::__call at 68
+ FPI 70-111; fpOff = 5
+ FPI 76-107; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 140-181; fpOff = 5
+ FPI 146-177; fpOff = 8 parentIndex = 2 (depth 2)
+ Method public (leaf) Blah::86ctor at 186
+Pseudo-main at 0 (ID 0)
+ FPI 2-19; fpOff = 3
+ FPI 8-14; fpOff = 7 parentIndex = 0 (depth 2)
+Function heh at 32 (ID 1)
+ FPI 37-43; fpOff = 4
+Function main at 48 (ID 2)
+ FPI 52-58; fpOff = 5
+ FPI 61-63; fpOff = 4

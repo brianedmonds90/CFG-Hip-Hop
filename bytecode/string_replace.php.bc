@@ -1,0 +1,224 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 40
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function replace_array_str at 19 (ID 1)
+ FPI 39-61; fpOff = 7
+ FPI 67-81; fpOff = 7
+  // line 4
+   19: Array array(0=>"a",1=>"b")
+   24: SetL 1
+   26: PopC
+  // line 5
+   27: Int 0
+   36: SetL 2
+   38: PopC
+  // line 6
+   39: FPushFuncD 4 "str_replace"
+   45: FPassL 0 1
+   48: String ""
+   53: FPassCE 1
+   55: FPassL 2 0
+   58: FPassL 3 2
+   61: FCall 4
+   63: UnboxR
+   64: SetL 3
+   66: PopC
+  // line 7
+   67: FPushFuncD 1 "var_dump"
+   73: CGetL 3
+   75: CGetL 2
+   77: NewPackedArray 2
+   79: FPassCE 0
+   81: FCall 1
+   83: PopR
+  // line 8
+   84: Null
+   85: RetC
+
+Function replace_array_array at 86 (ID 2)
+ FPI 106-128; fpOff = 7
+ FPI 134-148; fpOff = 7
+  // line 11
+   86: Array array(0=>"a",1=>"b")
+   91: SetL 1
+   93: PopC
+  // line 12
+   94: Int 0
+  103: SetL 2
+  105: PopC
+  // line 13
+  106: FPushFuncD 4 "str_replace"
+  112: FPassL 0 1
+  115: String ""
+  120: FPassCE 1
+  122: FPassL 2 0
+  125: FPassL 3 2
+  128: FCall 4
+  130: UnboxR
+  131: SetL 3
+  133: PopC
+  // line 14
+  134: FPushFuncD 1 "var_dump"
+  140: CGetL 3
+  142: CGetL 2
+  144: NewPackedArray 2
+  146: FPassCE 0
+  148: FCall 1
+  150: PopR
+  // line 15
+  151: Null
+  152: RetC
+
+Function replace_str_str at 153 (ID 3)
+ FPI 173-195; fpOff = 7
+ FPI 201-215; fpOff = 7
+  // line 18
+  153: String "a"
+  158: SetL 1
+  160: PopC
+  // line 19
+  161: Int 0
+  170: SetL 2
+  172: PopC
+  // line 20
+  173: FPushFuncD 4 "str_replace"
+  179: FPassL 0 1
+  182: String ""
+  187: FPassCE 1
+  189: FPassL 2 0
+  192: FPassL 3 2
+  195: FCall 4
+  197: UnboxR
+  198: SetL 3
+  200: PopC
+  // line 21
+  201: FPushFuncD 1 "var_dump"
+  207: CGetL 3
+  209: CGetL 2
+  211: NewPackedArray 2
+  213: FPassCE 0
+  215: FCall 1
+  217: PopR
+  // line 22
+  218: Null
+  219: RetC
+
+Function main at 220 (ID 4)
+ FPI 220-233; fpOff = 3
+ FPI 236-249; fpOff = 3
+ FPI 252-265; fpOff = 3
+ FPI 268-281; fpOff = 3
+ FPI 284-297; fpOff = 3
+ FPI 300-313; fpOff = 3
+ FPI 316-329; fpOff = 3
+ FPI 332-345; fpOff = 3
+ FPI 348-361; fpOff = 3
+ FPI 364-377; fpOff = 3
+ FPI 380-393; fpOff = 3
+ FPI 396-409; fpOff = 3
+  // line 25
+  220: FPushFuncD 1 "replace_array_str"
+  226: String "a"
+  231: FPassCE 0
+  233: FCall 1
+  235: PopR
+  // line 26
+  236: FPushFuncD 1 "replace_array_str"
+  242: String "b"
+  247: FPassCE 0
+  249: FCall 1
+  251: PopR
+  // line 27
+  252: FPushFuncD 1 "replace_array_str"
+  258: String "ab"
+  263: FPassCE 0
+  265: FCall 1
+  267: PopR
+  // line 28
+  268: FPushFuncD 1 "replace_array_str"
+  274: String "xabx"
+  279: FPassCE 0
+  281: FCall 1
+  283: PopR
+  // line 29
+  284: FPushFuncD 1 "replace_array_str"
+  290: String "xaaabx"
+  295: FPassCE 0
+  297: FCall 1
+  299: PopR
+  // line 31
+  300: FPushFuncD 1 "replace_array_array"
+  306: Array array(0=>"a",1=>"b")
+  311: FPassCE 0
+  313: FCall 1
+  315: PopR
+  // line 32
+  316: FPushFuncD 1 "replace_array_array"
+  322: Array array(0=>"a",1=>"x")
+  327: FPassCE 0
+  329: FCall 1
+  331: PopR
+  // line 33
+  332: FPushFuncD 1 "replace_array_array"
+  338: Array array(0=>"x",1=>"a")
+  343: FPassCE 0
+  345: FCall 1
+  347: PopR
+  // line 34
+  348: FPushFuncD 1 "replace_array_array"
+  354: Array array(0=>"xxabax",1=>"xxbx")
+  359: FPassCE 0
+  361: FCall 1
+  363: PopR
+  // line 36
+  364: FPushFuncD 1 "replace_str_str"
+  370: String "a"
+  375: FPassCE 0
+  377: FCall 1
+  379: PopR
+  // line 37
+  380: FPushFuncD 1 "replace_str_str"
+  386: String "x"
+  391: FPassCE 0
+  393: FCall 1
+  395: PopR
+  // line 38
+  396: FPushFuncD 1 "replace_str_str"
+  402: String "xaxax"
+  407: FPassCE 0
+  409: FCall 1
+  411: PopR
+  // line 39
+  412: Null
+  413: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function replace_array_str at 19 (ID 1)
+ FPI 39-61; fpOff = 7
+ FPI 67-81; fpOff = 7
+Function replace_array_array at 86 (ID 2)
+ FPI 106-128; fpOff = 7
+ FPI 134-148; fpOff = 7
+Function replace_str_str at 153 (ID 3)
+ FPI 173-195; fpOff = 7
+ FPI 201-215; fpOff = 7
+Function main at 220 (ID 4)
+ FPI 220-233; fpOff = 3
+ FPI 236-249; fpOff = 3
+ FPI 252-265; fpOff = 3
+ FPI 268-281; fpOff = 3
+ FPI 284-297; fpOff = 3
+ FPI 300-313; fpOff = 3
+ FPI 316-329; fpOff = 3
+ FPI 332-345; fpOff = 3
+ FPI 348-361; fpOff = 3
+ FPI 364-377; fpOff = 3
+ FPI 380-393; fpOff = 3
+ FPI 396-409; fpOff = 3

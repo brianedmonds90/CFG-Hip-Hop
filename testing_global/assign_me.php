@@ -238,5 +238,12 @@ function getAnnouncementsByClass($classId) {
 	$result = $_PLATFORM->secureWeb($url);
 	header('Content-Type: application/json');
 	echo $result['body'];
+	foo($result);
 }
+
+function foo($param){
+	echo "BRIAN IS A BOSS";
+	echo $param;
+}
+
 ?>

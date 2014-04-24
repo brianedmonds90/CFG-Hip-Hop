@@ -1,0 +1,43 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-65; fpOff = 3
+  // line 8
+    0: FPushFuncU 5 "foo\\bar" "bar"
+   10: Int 1
+   19: FPassCE 0
+   21: Int 2
+   30: FPassCE 1
+   32: Int 3
+   41: FPassCE 2
+   43: Int 4
+   52: FPassCE 3
+   54: Int 5
+   63: FPassCE 4
+   65: FCall 5
+   67: PopR
+   68: Int 1
+   77: RetC
+
+Function foo\bar at 78 (ID 1)
+ FPI 78-116; fpOff = 5
+ FPI 88-98; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 102-112; fpOff = 9 parentIndex = 0 (depth 2)
+  // line 5
+   78: FPushFuncU 2 "foo\\var_dump" "var_dump"
+   88: FPushFuncU 0 "foo\\func_num_args" "func_num_args"
+   98: FCall 0
+  100: FPassR 0
+  102: FPushFuncU 0 "foo\\func_get_args" "func_get_args"
+  112: FCall 0
+  114: FPassR 1
+  116: FCall 2
+  118: PopR
+  // line 6
+  119: Null
+  120: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-65; fpOff = 3
+Function foo\bar at 78 (ID 1)
+ FPI 78-116; fpOff = 5
+ FPI 88-98; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 102-112; fpOff = 9 parentIndex = 0 (depth 2)

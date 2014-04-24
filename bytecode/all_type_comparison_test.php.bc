@@ -1,0 +1,264 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 417:631 iterId 0 itRef false to 656
+ EH 1 Fault for 427:623 outer EH 0 iterId 1 itRef false to 653 parentIndex 0
+ FPI 0-17; fpOff = 16
+ FPI 24-30; fpOff = 17
+ FPI 36-42; fpOff = 17
+ FPI 74-80; fpOff = 17
+ FPI 86-106; fpOff = 16
+ FPI 631-640; fpOff = 16
+  // line 2
+    0: FPushFuncD 1 "error_reporting"
+    6: Int 0
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+  // line 3
+   20: DefCls 0
+  // line 6
+   22: DefCls 1
+  // line 9
+   24: FPushCtorD 0 "C"
+   30: FCall 0
+   32: PopR # i0:t=Null*
+   33: SetL 0
+   35: PopC
+  // line 10
+   36: FPushCtorD 0 "C"
+   42: FCall 0
+   44: PopR # i0:t=Null*
+   45: SetL 1
+   47: PopC
+  // line 11
+   48: Int 3
+   57: SetM <L:1 PT:"a">
+   73: PopC
+  // line 12
+   74: FPushCtorD 0 "D"
+   80: FCall 0
+   82: PopR # i0:t=Null*
+   83: SetL 2
+   85: PopC
+  // line 13
+   86: FPushFuncD 2 "fopen"
+   92: String "php://stdout"
+   97: FPassCE 0
+   99: String "w"
+  104: FPassCE 1
+  106: FCall 2
+  108: UnboxR
+  109: SetL 3
+  111: PopC
+  // line 21
+  112: NewArrayReserve 25
+  // line 14
+  114: String "null"
+  119: Null
+  120: AddElemC
+  121: String "false"
+  126: False
+  127: AddElemC
+  128: String "true"
+  133: True
+  134: AddElemC
+  135: String "int 0"
+  140: Int 0
+  149: AddElemC
+  // line 15
+  150: String "int 99"
+  155: Int 99
+  164: AddElemC
+  165: String "int -1"
+  170: Int -1
+  179: AddElemC
+  180: String "float 0"
+  185: Double 0
+  194: AddElemC
+  195: String "double 99"
+  200: Double 99
+  209: AddElemC
+  // line 16
+  210: String "float 99"
+  215: Double 99
+  224: AddElemC
+  225: String "float -1"
+  230: Double -1
+  239: AddElemC
+  240: String "INF"
+  245: Cns "INF"
+  250: AddElemC
+  // line 17
+  251: String "-INF"
+  256: Double -inf
+  265: AddElemC
+  266: String "\"\""
+  271: String ""
+  276: AddElemC
+  277: String "\"0\""
+  282: String "0"
+  287: AddElemC
+  // line 18
+  288: String "\"99\""
+  293: String "99"
+  298: AddElemC
+  299: String "\"-1\""
+  304: String "-1"
+  309: AddElemC
+  310: String "\"0.0\""
+  315: String "0.0"
+  320: AddElemC
+  // line 19
+  321: String "\"99.0\""
+  326: String "99.0"
+  331: AddElemC
+  332: String "\"-1.0\""
+  337: String "-1.0"
+  342: AddElemC
+  343: String "array()"
+  348: Array array()
+  353: AddElemC
+  // line 20
+  354: String "array(99)"
+  359: Array array(0=>99)
+  364: AddElemC
+  365: String "object c1"
+  370: CGetL 0
+  372: AddElemC
+  373: String "object c2"
+  378: CGetL 1
+  380: AddElemC
+  // line 21
+  381: String "object d"
+  386: CGetL 2
+  388: AddElemC
+  389: String "resource"
+  394: CGetL 3
+  396: AddElemC
+  397: SetL 4
+  399: PopC
+  // line 22
+  400: String "  same lt  lte eq  ne  nw2 gte gt\n\n"
+  405: Print
+  406: PopC
+  // line 34
+  407: CGetL 4
+  409: IterInitK 0 222 (631) 6 5
+  // line 33
+  417: CGetL 4
+  419: IterInitK 1 204 (623) 8 7
+  // line 25
+  427: String " cmp "
+  432: CGetL2 5
+  434: Concat
+  435: CGetL 7
+  437: Concat
+  438: String ":\n  "
+  443: Concat
+  444: Print
+  445: PopC
+  // line 26
+  446: CGetL 8
+  448: CGetL2 6
+  450: Same
+  451: JmpZ 15 (466)
+  456: String "T    "
+  461: Jmp 10 (471)
+  466: String "F    "
+  471: Print
+  472: PopC
+  // line 27
+  473: CGetL 8
+  475: CGetL2 6
+  477: Lt
+  478: JmpZ 15 (493)
+  483: String "T   "
+  488: Jmp 10 (498)
+  493: String "F   "
+  498: Print
+  499: PopC
+  // line 28
+  500: CGetL 8
+  502: CGetL2 6
+  504: Lte
+  505: JmpZ 15 (520)
+  510: String "T   "
+  515: Jmp 10 (525)
+  520: String "F   "
+  525: Print
+  526: PopC
+  // line 29
+  527: CGetL 8
+  529: CGetL2 6
+  531: Eq
+  532: JmpZ 15 (547)
+  537: String "T   "
+  542: Jmp 10 (552)
+  547: String "F   "
+  552: Print
+  553: PopC
+  // line 30
+  554: CGetL 8
+  556: CGetL2 6
+  558: Gte
+  559: JmpZ 15 (574)
+  564: String "T   "
+  569: Jmp 10 (579)
+  574: String "F   "
+  579: Print
+  580: PopC
+  // line 31
+  581: CGetL 8
+  583: CGetL2 6
+  585: Gt
+  586: JmpZ 15 (601)
+  591: String "T   "
+  596: Jmp 10 (606)
+  601: String "F   "
+  606: Print
+  607: PopC
+  // line 32
+  608: String "\n"
+  613: Print
+  614: PopC
+  // line 33
+  615: IterNextK 1 -188 8 7
+  // line 34
+  623: IterNextK 0 -206 6 5
+  // line 35
+  631: FPushFuncD 1 "fclose"
+  637: FPassL 0 3
+  640: FCall 1
+  642: PopR
+  643: Int 1
+  652: RetC
+  // line 36
+  653: IterFree 1
+  655: Unwind
+  656: IterFree 0
+  658: Unwind
+
+Method public (leaf) C::86ctor at 659
+  // line 5
+  659: Null
+  660: RetC
+
+Method public (leaf) D::86ctor at 661
+  // line 8
+  661: Null
+  662: RetC
+Class C at 20 (maybe-hoistable) (ID 0)
+ Method public (leaf) C::86ctor at 659
+ Property public C::a = 2
+Class D at 22 (maybe-hoistable) (ID 1)
+ Method public (leaf) D::86ctor at 661
+ Property public D::b = 1
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 417:631 iterId 0 itRef false to 656
+ EH 1 Fault for 427:623 outer EH 0 iterId 1 itRef false to 653 parentIndex 0
+ FPI 0-17; fpOff = 16
+ FPI 24-30; fpOff = 17
+ FPI 36-42; fpOff = 17
+ FPI 74-80; fpOff = 17
+ FPI 86-106; fpOff = 16
+ FPI 631-640; fpOff = 16

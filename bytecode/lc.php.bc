@@ -1,0 +1,113 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 32-59; fpOff = 9
+ FPI 62-89; fpOff = 9
+ FPI 92-119; fpOff = 9
+ FPI 122-153; fpOff = 9
+ FPI 156-187; fpOff = 9
+ FPI 190-221; fpOff = 9
+ FPI 224-258; fpOff = 9
+ FPI 261-295; fpOff = 9
+ FPI 298-332; fpOff = 9
+ FPI 343-374; fpOff = 9
+  // line 2
+    0: Array array(0=>"foo",1=>"bar",2=>"baz")
+    5: SetL 0
+    7: PopC
+  // line 3
+    8: String "foo"
+   13: SetL 1
+   15: PopC
+  // line 4
+   16: String "bar"
+   21: SetL 2
+   23: PopC
+  // line 5
+   24: String "baz"
+   29: SetL 3
+   31: PopC
+  // line 6
+   32: FPushFuncD 1 "var_dump"
+   38: FPassM 0 <L:0 EI:0>
+   59: FCall 1
+   61: PopR
+  // line 7
+   62: FPushFuncD 1 "var_dump"
+   68: FPassM 0 <L:0 EI:1>
+   89: FCall 1
+   91: PopR
+  // line 8
+   92: FPushFuncD 1 "var_dump"
+   98: FPassM 0 <L:0 EI:2>
+  119: FCall 1
+  121: PopR
+  // line 9
+  122: FPushFuncD 1 "var_dump"
+  128: Array array(0=>"foo",1=>"bar",2=>"baz")
+  133: FPassM 0 <C EI:0>
+  153: FCall 1
+  155: PopR
+  // line 10
+  156: FPushFuncD 1 "var_dump"
+  162: Array array(0=>"foo",1=>"bar",2=>"baz")
+  167: FPassM 0 <C EI:1>
+  187: FCall 1
+  189: PopR
+  // line 11
+  190: FPushFuncD 1 "var_dump"
+  196: Array array(0=>"foo",1=>"bar",2=>"baz")
+  201: FPassM 0 <C EI:2>
+  221: FCall 1
+  223: PopR
+  // line 12
+  224: FPushFuncD 1 "var_dump"
+  230: CGetL 1
+  232: CGetL 2
+  234: CGetL 3
+  236: NewPackedArray 3
+  238: FPassM 0 <C EI:0>
+  258: FCall 1
+  260: PopR
+  // line 13
+  261: FPushFuncD 1 "var_dump"
+  267: CGetL 1
+  269: CGetL 2
+  271: CGetL 3
+  273: NewPackedArray 3
+  275: FPassM 0 <C EI:1>
+  295: FCall 1
+  297: PopR
+  // line 14
+  298: FPushFuncD 1 "var_dump"
+  304: CGetL 1
+  306: CGetL 2
+  308: CGetL 3
+  310: NewPackedArray 3
+  312: FPassM 0 <C EI:2>
+  332: FCall 1
+  334: PopR
+  // line 15
+  335: Array array(0=>"blah")
+  340: SetL 4
+  342: PopC
+  // line 16
+  343: FPushFuncD 1 "var_dump"
+  349: VGetL 4
+  351: BindL 5
+  353: Unbox
+  354: FPassM 0 <C EI:0>
+  374: FCall 1
+  376: PopR
+  377: Int 1
+  386: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 32-59; fpOff = 9
+ FPI 62-89; fpOff = 9
+ FPI 92-119; fpOff = 9
+ FPI 122-153; fpOff = 9
+ FPI 156-187; fpOff = 9
+ FPI 190-221; fpOff = 9
+ FPI 224-258; fpOff = 9
+ FPI 261-295; fpOff = 9
+ FPI 298-332; fpOff = 9
+ FPI 343-374; fpOff = 9

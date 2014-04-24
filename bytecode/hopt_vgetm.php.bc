@@ -1,0 +1,185 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 14-23; fpOff = 6
+ FPI 31-37; fpOff = 5
+ FPI 40-49; fpOff = 5
+ FPI 82-99; fpOff = 5
+  // line 4
+    0: DefCls 0
+  // line 41
+    2: Int 3
+   11: SetL 0
+   13: PopC
+  // line 42
+   14: FPushCtorD 1 "C"
+   20: FPassL 0 0
+   23: FCall 1
+   25: PopR # i0:t=Null*
+   26: SetL 1
+   28: PopC
+  // line 43
+   29: CGetL 1
+   31: FPushObjMethodD 0 "test"
+   37: FCall 0
+   39: PopR
+  // line 44
+   40: FPushFuncD 1 "foo"
+   46: FPassL 0 1
+   49: FCall 1
+   51: PopR
+  // line 45
+   52: String "var is "
+   57: CGetL 0
+   59: Concat
+   60: String "\n"
+   65: Concat
+   66: Print
+   67: PopC
+  // line 46
+   68: Int 4
+   77: SetL 0
+   79: PopC
+  // line 47
+   80: CGetL 1
+   82: FPushObjMethodD 1 "setX"
+   88: Int 3
+   97: FPassCE 0
+   99: FCall 1
+  101: PopR
+  // line 48
+  102: String "var is "
+  107: CGetL 0
+  109: Concat
+  110: String "\n"
+  115: Concat
+  116: Print
+  117: PopC
+  118: Int 1
+  127: RetC
+
+Function foo at 128 (ID 1)
+ FPI 130-136; fpOff = 4
+ FPI 150-156; fpOff = 4
+  // line 34
+  128: CGetL 0
+  130: FPushObjMethodD 0 "getX"
+  136: FCall 0
+  138: UnboxR
+  139: Print
+  140: PopC
+  // line 35
+  141: String "\n"
+  146: Print
+  147: PopC
+  // line 37
+  148: CGetL 0
+  150: FPushObjMethodD 0 "incX"
+  156: FCall 0
+  158: UnboxR
+  159: Print
+  160: PopC
+  // line 38
+  161: String "\n"
+  166: Print
+  167: PopC
+  // line 39
+  168: Null
+  169: RetC
+
+Method public (leaf) C::__construct at 170
+  // line 7
+  170: CheckThis
+  171: CGetL 0
+  173: SetM <H PT:"x"> # iM0:c=C
+  188: PopC
+  // line 8
+  189: Null
+  190: RetC
+
+Method public (leaf) C::getX at 191
+  // line 10
+  191: CheckThis
+  192: CGetM <H PT:"x"> # iM0:c=C
+  207: RetC
+
+Method public (leaf) C::incX at 208
+  // line 13
+  208: CheckThis
+  209: IncDecM PreInc <H PT:"x"> # iM0:c=C
+  225: RetC
+
+Method public (leaf) C::setX at 226
+  // line 16
+  226: CheckThis
+  227: CGetL 0
+  229: SetM <H PT:"x"> # iM0:c=C
+  244: PopC
+  // line 17
+  245: Null
+  246: RetC
+
+Method public (leaf) C::printX at 247
+  // line 19
+  247: String "x is "
+  252: Print
+  253: PopC
+  // line 20
+  254: CheckThis
+  255: CGetM <H PT:"x"> # iM0:c=C
+  270: Print
+  271: PopC
+  // line 21
+  272: String "\n"
+  277: Print
+  278: PopC
+  // line 22
+  279: Null
+  280: RetC
+
+Method public C::test at 281
+ FPI 313-319; fpOff = 4
+ FPI 335-341; fpOff = 4
+  // line 24
+  281: Int 4
+  290: SetL 0
+  292: PopC
+  // line 25
+  293: CheckThis
+  294: VGetL 0
+  296: BindM <H PT:"x"> # iM0:c=C
+  311: PopV
+  // line 26
+  312: This
+  313: FPushObjMethodD 0 "printX" # i0:c=C
+  319: FCall 0
+  321: PopR
+  // line 27
+  322: Int 5
+  331: SetL 0
+  333: PopC
+  // line 28
+  334: This
+  335: FPushObjMethodD 0 "printX" # i0:c=C
+  341: FCall 0
+  343: PopR
+  // line 29
+  344: Null
+  345: RetC
+Class C at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) C::__construct at 170
+ Method public (leaf) C::getX at 191
+ Method public (leaf) C::incX at 208
+ Method public (leaf) C::setX at 226
+ Method public (leaf) C::printX at 247
+ Method public C::test at 281
+ FPI 313-319; fpOff = 4
+ FPI 335-341; fpOff = 4
+ Property public C::x = null
+Pseudo-main at 0 (ID 0)
+ FPI 14-23; fpOff = 6
+ FPI 31-37; fpOff = 5
+ FPI 40-49; fpOff = 5
+ FPI 82-99; fpOff = 5
+Function foo at 128 (ID 1)
+ FPI 130-136; fpOff = 4
+ FPI 150-156; fpOff = 4

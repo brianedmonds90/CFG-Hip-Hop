@@ -1,0 +1,73 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 8
+ FPI 14-27; fpOff = 8
+ FPI 30-36; fpOff = 7
+ FPI 42-55; fpOff = 8
+ FPI 58-71; fpOff = 7
+ FPI 77-90; fpOff = 8
+ FPI 93-99; fpOff = 7
+  // line 2
+    0: DefCls 0
+  // line 10
+    2: FPushCtorD 0 "foo"
+    8: FCall 0
+   10: PopR # i0:t=Null*
+   11: SetL 0
+   13: PopC
+  // line 11
+   14: FPushCtorD 1 "ReflectionClass"
+   20: String "foo"
+   25: FPassCE 0
+   27: FCall 1
+   29: PopR # i0:t=Null*
+   30: FPushObjMethodD 0 "newInstance"
+   36: FCall 0
+   38: UnboxR
+   39: SetL 1
+   41: PopC
+  // line 12
+   42: FPushCtorD 1 "ReflectionClass"
+   48: String "foo"
+   53: FPassCE 0
+   55: FCall 1
+   57: PopR # i0:t=Null*
+   58: FPushObjMethodD 1 "newInstanceArgs"
+   64: Array array()
+   69: FPassCE 0
+   71: FCall 1
+   73: UnboxR
+   74: SetL 2
+   76: PopC
+  // line 13
+   77: FPushCtorD 1 "ReflectionClass"
+   83: String "foo"
+   88: FPassCE 0
+   90: FCall 1
+   92: PopR # i0:t=Null*
+   93: FPushObjMethodD 0 "newInstanceWithoutConstructor"
+   99: FCall 0
+  101: UnboxR
+  102: SetL 3
+  104: PopC
+  105: Int 1
+  114: RetC
+
+Method public (leaf) foo::__construct at 115
+  // line 5
+  115: String "this should only be printed three times!\n"
+  120: Print
+  121: PopC
+  // line 6
+  122: Null
+  123: RetC
+Class foo at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) foo::__construct at 115
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 8
+ FPI 14-27; fpOff = 8
+ FPI 30-36; fpOff = 7
+ FPI 42-55; fpOff = 8
+ FPI 58-71; fpOff = 7
+ FPI 77-90; fpOff = 8
+ FPI 93-99; fpOff = 7

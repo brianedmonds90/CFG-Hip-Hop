@@ -1,0 +1,28 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 37-46; fpOff = 6
+  // line 3
+    0: Int 42
+    9: SetL 0
+   11: PopC
+  // line 4
+   12: String "x"
+   17: SetL 1
+   19: PopC
+  // line 5
+   20: CGetL 1
+   22: VGetN
+   23: BindL 2
+   25: Unbox
+   26: Int 1
+   35: Add
+   36: PopC
+  // line 6
+   37: FPushFuncD 1 "var_dump"
+   43: FPassL 0 2
+   46: FCall 1
+   48: PopR
+   49: Int 1
+   58: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 37-46; fpOff = 6

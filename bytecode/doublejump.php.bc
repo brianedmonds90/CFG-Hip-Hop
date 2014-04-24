@@ -1,0 +1,87 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 28
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function (leaf) f at 19 (ID 1)
+  // line 4
+   19: True
+   20: SetL 0
+   22: PopC
+  // line 5
+   23: True
+   24: SetL 1
+   26: PopC
+  // line 6
+   27: Int 0
+   36: SetL 2
+   38: PopC
+  // line 8
+   39: CGetL 0
+   41: JmpZ 46 (87)
+  // line 9
+   46: CGetL 1
+   48: JmpZ 22 (70)
+  // line 10
+   53: Int 1
+   62: SetL 2
+   64: PopC
+  // line 13
+   65: Jmp 58 (123)
+  // line 12
+   70: Int 2
+   79: SetL 2
+   81: PopC
+  // line 20
+   82: Jmp 41 (123)
+  // line 15
+   87: CGetL 1
+   89: JmpZ 22 (111)
+  // line 16
+   94: Int 3
+  103: SetL 2
+  105: PopC
+  // line 19
+  106: Jmp 17 (123)
+  // line 18
+  111: Int 4
+  120: SetL 2
+  122: PopC
+  // line 21
+  123: Null
+  124: RetC
+
+Function main at 125 (ID 2)
+ FPI 154-160; fpOff = 4
+  // line 24
+  125: Int 0
+  134: SetL 0
+  // line 26
+  136: PopC
+  // line 24
+  137: Int 1000
+  146: CGetL2 0
+  148: Lt
+  149: JmpZ 23 (172)
+  // line 25
+  154: FPushFuncD 0 "f"
+  160: FCall 0
+  162: PopR
+  // line 24
+  163: IncDecL 0 PreInc
+  // line 26
+  166: PopC
+  167: Jmp -30
+  // line 27
+  172: Null
+  173: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) f at 19 (ID 1)
+Function main at 125 (ID 2)
+ FPI 154-160; fpOff = 4

@@ -1,0 +1,37 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 10
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function (leaf) one at 19 (ID 1)
+  // line 4
+   19: Int 1
+   28: RetC
+
+Function main at 29 (ID 2)
+ FPI 29-56; fpOff = 3
+ FPI 35-41; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 8
+   29: FPushFuncD 1 "var_dump"
+   35: FPushFuncD 0 "one"
+   41: FCall 0
+   43: UnboxR
+   44: Int 0
+   53: Mod
+   54: FPassCE 0
+   56: FCall 1
+   58: PopR
+  // line 9
+   59: Null
+   60: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) one at 19 (ID 1)
+Function main at 29 (ID 2)
+ FPI 29-56; fpOff = 3
+ FPI 35-41; fpOff = 6 parentIndex = 0 (depth 2)

@@ -1,0 +1,398 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 3
+  // line 2
+    0: DefCls 0
+  // line 6
+    2: DefCls 1
+  // line 10
+    4: DefCls 2
+  // line 50
+    6: FPushFuncD 0 "main"
+   12: FCall 0
+   14: PopR
+   15: Int 1
+   24: RetC
+
+Function main at 25 (ID 1)
+ FPI 25-31; fpOff = 5
+ FPI 46-48; fpOff = 4
+ FPI 60-62; fpOff = 4
+ FPI 74-76; fpOff = 4
+ FPI 88-90; fpOff = 4
+ FPI 102-104; fpOff = 4
+ FPI 116-118; fpOff = 4
+ FPI 130-132; fpOff = 4
+ FPI 144-146; fpOff = 4
+ FPI 149-155; fpOff = 5
+ FPI 170-172; fpOff = 4
+ FPI 184-186; fpOff = 4
+ FPI 198-200; fpOff = 4
+ FPI 212-214; fpOff = 4
+ FPI 226-228; fpOff = 4
+ FPI 240-242; fpOff = 4
+ FPI 254-256; fpOff = 4
+ FPI 268-270; fpOff = 4
+ FPI 273-279; fpOff = 5
+ FPI 294-296; fpOff = 4
+ FPI 308-310; fpOff = 4
+ FPI 322-324; fpOff = 4
+ FPI 336-338; fpOff = 4
+ FPI 350-352; fpOff = 4
+ FPI 364-366; fpOff = 4
+ FPI 378-380; fpOff = 4
+ FPI 392-394; fpOff = 4
+  // line 17
+   25: FPushCtorD 0 "C"
+   31: FCall 0
+   33: PopR # i0:t=Null*
+   34: SetL 0
+   36: PopC
+  // line 18
+   37: CGetL 0
+   39: String "foo"
+   44: NewPackedArray 2
+   46: FPushCuf 0
+   48: FCall 0
+   50: PopR
+  // line 19
+   51: CGetL 0
+   53: String "C::foo"
+   58: NewPackedArray 2
+   60: FPushCuf 0
+   62: FCall 0
+   64: PopR
+  // line 20
+   65: CGetL 0
+   67: String "D::foo"
+   72: NewPackedArray 2
+   74: FPushCuf 0
+   76: FCall 0
+   78: PopR
+  // line 21
+   79: CGetL 0
+   81: String "E::foo"
+   86: NewPackedArray 2
+   88: FPushCuf 0
+   90: FCall 0
+   92: PopR
+  // line 23
+   93: CGetL 0
+   95: String "bar"
+  100: NewPackedArray 2
+  102: FPushCuf 0
+  104: FCall 0
+  106: PopR
+  // line 24
+  107: CGetL 0
+  109: String "C::bar"
+  114: NewPackedArray 2
+  116: FPushCuf 0
+  118: FCall 0
+  120: PopR
+  // line 25
+  121: CGetL 0
+  123: String "D::bar"
+  128: NewPackedArray 2
+  130: FPushCuf 0
+  132: FCall 0
+  134: PopR
+  // line 26
+  135: CGetL 0
+  137: String "E::bar"
+  142: NewPackedArray 2
+  144: FPushCuf 0
+  146: FCall 0
+  148: PopR
+  // line 28
+  149: FPushCtorD 0 "D"
+  155: FCall 0
+  157: PopR # i0:t=Null*
+  158: SetL 0
+  160: PopC
+  // line 29
+  161: CGetL 0
+  163: String "foo"
+  168: NewPackedArray 2
+  170: FPushCuf 0
+  172: FCall 0
+  174: PopR
+  // line 30
+  175: CGetL 0
+  177: String "C::foo"
+  182: NewPackedArray 2
+  184: FPushCuf 0
+  186: FCall 0
+  188: PopR
+  // line 31
+  189: CGetL 0
+  191: String "D::foo"
+  196: NewPackedArray 2
+  198: FPushCuf 0
+  200: FCall 0
+  202: PopR
+  // line 32
+  203: CGetL 0
+  205: String "E::foo"
+  210: NewPackedArray 2
+  212: FPushCuf 0
+  214: FCall 0
+  216: PopR
+  // line 34
+  217: CGetL 0
+  219: String "bar"
+  224: NewPackedArray 2
+  226: FPushCuf 0
+  228: FCall 0
+  230: PopR
+  // line 35
+  231: CGetL 0
+  233: String "C::bar"
+  238: NewPackedArray 2
+  240: FPushCuf 0
+  242: FCall 0
+  244: PopR
+  // line 36
+  245: CGetL 0
+  247: String "D::bar"
+  252: NewPackedArray 2
+  254: FPushCuf 0
+  256: FCall 0
+  258: PopR
+  // line 37
+  259: CGetL 0
+  261: String "E::bar"
+  266: NewPackedArray 2
+  268: FPushCuf 0
+  270: FCall 0
+  272: PopR
+  // line 39
+  273: FPushCtorD 0 "E"
+  279: FCall 0
+  281: PopR # i0:t=Null*
+  282: SetL 0
+  284: PopC
+  // line 40
+  285: CGetL 0
+  287: String "foo"
+  292: NewPackedArray 2
+  294: FPushCuf 0
+  296: FCall 0
+  298: PopR
+  // line 41
+  299: CGetL 0
+  301: String "C::foo"
+  306: NewPackedArray 2
+  308: FPushCuf 0
+  310: FCall 0
+  312: PopR
+  // line 42
+  313: CGetL 0
+  315: String "D::foo"
+  320: NewPackedArray 2
+  322: FPushCuf 0
+  324: FCall 0
+  326: PopR
+  // line 43
+  327: CGetL 0
+  329: String "E::foo"
+  334: NewPackedArray 2
+  336: FPushCuf 0
+  338: FCall 0
+  340: PopR
+  // line 45
+  341: CGetL 0
+  343: String "bar"
+  348: NewPackedArray 2
+  350: FPushCuf 0
+  352: FCall 0
+  354: PopR
+  // line 46
+  355: CGetL 0
+  357: String "C::bar"
+  362: NewPackedArray 2
+  364: FPushCuf 0
+  366: FCall 0
+  368: PopR
+  // line 47
+  369: CGetL 0
+  371: String "D::bar"
+  376: NewPackedArray 2
+  378: FPushCuf 0
+  380: FCall 0
+  382: PopR
+  // line 48
+  383: CGetL 0
+  385: String "E::bar"
+  390: NewPackedArray 2
+  392: FPushCuf 0
+  394: FCall 0
+  396: PopR
+  // line 49
+  397: Null
+  398: RetC
+
+Method public C::foo at 399
+ FPI 406-422; fpOff = 3
+ FPI 412-418; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 3
+  399: String "C::foo\n"
+  404: Print
+  405: PopC
+  406: FPushFuncD 1 "var_dump"
+  412: FPushFuncD 0 "get_called_class"
+  418: FCall 0
+  420: FPassR 0
+  422: FCall 1
+  424: PopR
+  425: Null
+  426: RetC
+
+Method static public C::bar at 427
+ FPI 434-450; fpOff = 3
+ FPI 440-446; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 4
+  427: String "C::bar\n"
+  432: Print
+  433: PopC
+  434: FPushFuncD 1 "var_dump"
+  440: FPushFuncD 0 "get_called_class"
+  446: FCall 0
+  448: FPassR 0
+  450: FCall 1
+  452: PopR
+  453: Null
+  454: RetC
+
+Method public D::foo at 455
+ FPI 462-478; fpOff = 3
+ FPI 468-474; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 7
+  455: String "D::foo\n"
+  460: Print
+  461: PopC
+  462: FPushFuncD 1 "var_dump"
+  468: FPushFuncD 0 "get_called_class"
+  474: FCall 0
+  476: FPassR 0
+  478: FCall 1
+  480: PopR
+  481: Null
+  482: RetC
+
+Method static public D::bar at 483
+ FPI 490-506; fpOff = 3
+ FPI 496-502; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 8
+  483: String "D::bar\n"
+  488: Print
+  489: PopC
+  490: FPushFuncD 1 "var_dump"
+  496: FPushFuncD 0 "get_called_class"
+  502: FCall 0
+  504: FPassR 0
+  506: FCall 1
+  508: PopR
+  509: Null
+  510: RetC
+
+Method public E::foo at 511
+ FPI 518-534; fpOff = 3
+ FPI 524-530; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 11
+  511: String "E::foo\n"
+  516: Print
+  517: PopC
+  518: FPushFuncD 1 "var_dump"
+  524: FPushFuncD 0 "get_called_class"
+  530: FCall 0
+  532: FPassR 0
+  534: FCall 1
+  536: PopR
+  537: Null
+  538: RetC
+
+Method static public E::bar at 539
+ FPI 546-562; fpOff = 3
+ FPI 552-558; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 12
+  539: String "E::bar\n"
+  544: Print
+  545: PopC
+  546: FPushFuncD 1 "var_dump"
+  552: FPushFuncD 0 "get_called_class"
+  558: FCall 0
+  560: FPassR 0
+  562: FCall 1
+  564: PopR
+  565: Null
+  566: RetC
+
+Method public (leaf) C::86ctor at 567
+  // line 5
+  567: Null
+  568: RetC
+
+Method public (leaf) D::86ctor at 569
+  // line 9
+  569: Null
+  570: RetC
+
+Method public (leaf) E::86ctor at 571
+  // line 13
+  571: Null
+  572: RetC
+Class C at 0 (maybe-hoistable) (ID 0)
+ Method public C::foo at 399
+ FPI 406-422; fpOff = 3
+ FPI 412-418; fpOff = 6 parentIndex = 0 (depth 2)
+ Method static public C::bar at 427
+ FPI 434-450; fpOff = 3
+ FPI 440-446; fpOff = 6 parentIndex = 0 (depth 2)
+ Method public (leaf) C::86ctor at 567
+Class D at 2 (maybe-hoistable) (ID 1)
+ Method public D::foo at 455
+ FPI 462-478; fpOff = 3
+ FPI 468-474; fpOff = 6 parentIndex = 0 (depth 2)
+ Method static public D::bar at 483
+ FPI 490-506; fpOff = 3
+ FPI 496-502; fpOff = 6 parentIndex = 0 (depth 2)
+ Method public (leaf) D::86ctor at 569
+Class E at 4 (maybe-hoistable) (ID 2)
+ Method public E::foo at 511
+ FPI 518-534; fpOff = 3
+ FPI 524-530; fpOff = 6 parentIndex = 0 (depth 2)
+ Method static public E::bar at 539
+ FPI 546-562; fpOff = 3
+ FPI 552-558; fpOff = 6 parentIndex = 0 (depth 2)
+ Method public (leaf) E::86ctor at 571
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 3
+Function main at 25 (ID 1)
+ FPI 25-31; fpOff = 5
+ FPI 46-48; fpOff = 4
+ FPI 60-62; fpOff = 4
+ FPI 74-76; fpOff = 4
+ FPI 88-90; fpOff = 4
+ FPI 102-104; fpOff = 4
+ FPI 116-118; fpOff = 4
+ FPI 130-132; fpOff = 4
+ FPI 144-146; fpOff = 4
+ FPI 149-155; fpOff = 5
+ FPI 170-172; fpOff = 4
+ FPI 184-186; fpOff = 4
+ FPI 198-200; fpOff = 4
+ FPI 212-214; fpOff = 4
+ FPI 226-228; fpOff = 4
+ FPI 240-242; fpOff = 4
+ FPI 254-256; fpOff = 4
+ FPI 268-270; fpOff = 4
+ FPI 273-279; fpOff = 5
+ FPI 294-296; fpOff = 4
+ FPI 308-310; fpOff = 4
+ FPI 322-324; fpOff = 4
+ FPI 336-338; fpOff = 4
+ FPI 350-352; fpOff = 4
+ FPI 364-366; fpOff = 4
+ FPI 378-380; fpOff = 4
+ FPI 392-394; fpOff = 4

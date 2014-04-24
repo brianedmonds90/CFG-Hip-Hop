@@ -1,0 +1,112 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 6
+ FPI 16-22; fpOff = 5
+ FPI 28-56; fpOff = 5
+ FPI 36-38; fpOff = 8 parentIndex = 2 (depth 2)
+  // line 3
+    0: DefCls 0
+  // line 17
+    2: FPushCtorD 0 "foo"
+    8: FCall 0
+   10: PopR # i0:t=Null*
+   11: SetL 0
+   13: PopC
+  // line 18
+   14: CGetL 0
+   16: FPushObjMethodD 0 "x"
+   22: FCall 0
+   24: UnboxR
+   25: SetL 1
+   27: PopC
+  // line 19
+   28: FPushFuncD 1 "var_dump"
+   34: CGetL 1
+   36: FPushFunc 0
+   38: FCall 0
+   40: FPassM 0 <R PT:"test">
+   56: FCall 1
+   58: PopR
+   59: Int 1
+   68: RetC
+
+Method public foo::x at 69
+ FPI 101-133; fpOff = 5
+ FPI 123-129; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 136-176; fpOff = 5
+ FPI 142-172; fpOff = 8 parentIndex = 2 (depth 2)
+ FPI 179-212; fpOff = 5
+ FPI 185-208; fpOff = 8 parentIndex = 4 (depth 2)
+  // line 14
+   69: InitThisLoc 1
+  // line 7
+   71: VGetL 1
+   73: BindL 0
+   75: PopV
+  // line 8
+   76: CheckThis
+   77: VGetL 0
+   79: CreateCl 1 "Closure$foo::x"
+   85: SetM <H PT:"a"> # iM0:c=foo
+  100: PopC
+  // line 9
+  101: FPushFuncD 1 "var_dump"
+  107: CheckThis
+  108: CGetM <H PT:"a"> # iM0:c=foo
+  123: FPushObjMethodD 0 "__invoke"
+  129: FCall 0
+  131: FPassR 0
+  133: FCall 1
+  135: PopR
+  // line 10
+  136: FPushFuncD 1 "var_dump"
+  142: FPushFuncD 2 "is_a"
+  148: CheckThis
+  149: FPassM 0 <H PT:"a"> # iM0:c=foo
+  165: String "closure"
+  170: FPassCE 1
+  172: FCall 2
+  174: FPassR 0
+  176: FCall 1
+  178: PopR
+  // line 11
+  179: FPushFuncD 1 "var_dump"
+  185: FPushFuncD 1 "is_callable"
+  191: CheckThis
+  192: FPassM 0 <H PT:"a"> # iM0:c=foo
+  208: FCall 1
+  210: FPassR 0
+  212: FCall 1
+  214: PopR
+  // line 13
+  215: CheckThis
+  216: CGetM <H PT:"a"> # iM0:c=foo
+  231: RetC
+
+Method public (leaf) Closure$foo::x::__invoke at 232
+  // line 8
+  232: CGetL 1
+  234: RetC
+
+Method public (leaf) foo::86ctor at 235
+  // line 15
+  235: Null
+  236: RetC
+Class foo at 0 (maybe-hoistable) (ID 0)
+ Method public foo::x at 69
+ FPI 101-133; fpOff = 5
+ FPI 123-129; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 136-176; fpOff = 5
+ FPI 142-172; fpOff = 8 parentIndex = 2 (depth 2)
+ FPI 179-212; fpOff = 5
+ FPI 185-208; fpOff = 8 parentIndex = 4 (depth 2)
+ Method public (leaf) foo::86ctor at 235
+ Property private foo::test = 3
+Class Closure$foo::x at 85 (unique) (ID 1)
+ Method public (leaf) Closure$foo::x::__invoke at 232
+ Property private Closure$foo::x::a = <non-scalar>
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 6
+ FPI 16-22; fpOff = 5
+ FPI 28-56; fpOff = 5
+ FPI 36-38; fpOff = 8 parentIndex = 2 (depth 2)

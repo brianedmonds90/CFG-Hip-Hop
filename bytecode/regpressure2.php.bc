@@ -1,0 +1,95 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 20
+    0: FPushFuncD 0 "test"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function test at 19 (ID 2)
+ FPI 155-194; fpOff = 14
+  // line 4
+   19: Int 1
+   28: SetL 0
+   30: PopC
+  // line 5
+   31: Int 2
+   40: SetL 1
+   42: PopC
+  // line 6
+   43: Int 3
+   52: SetL 2
+   54: PopC
+  // line 7
+   55: Int 4
+   64: SetL 3
+   66: PopC
+  // line 8
+   67: Int 5
+   76: SetL 4
+   78: PopC
+  // line 9
+   79: Int 6
+   88: SetL 5
+   90: PopC
+  // line 10
+   91: Int 7
+  100: SetL 6
+  102: PopC
+  // line 11
+  103: Int 8
+  112: SetL 7
+  114: PopC
+  // line 12
+  115: Int 9
+  124: SetL 8
+  126: PopC
+  // line 13
+  127: Int 10
+  136: SetL 9
+  138: PopC
+  // line 14
+  139: Int 11
+  148: SetL 10
+  150: PopC
+  // line 15
+  151: DefFunc 1
+  // line 16
+  153: DefCls 0
+  // line 17
+  155: FPushFuncD 11 "var_dump"
+  161: FPassL 0 0
+  164: FPassL 1 1
+  167: FPassL 2 2
+  170: FPassL 3 3
+  173: FPassL 4 4
+  176: FPassL 5 5
+  179: FPassL 6 6
+  182: FPassL 7 7
+  185: FPassL 8 8
+  188: FPassL 9 9
+  191: FPassL 10 10
+  194: FCall 11
+  196: PopR
+  // line 18
+  197: Null
+  198: RetC
+
+Function (leaf) foo at 199 (ID 1)
+  // line 15
+  199: Null
+  200: RetC
+
+Method public (leaf) bar::86ctor at 201
+  // line 16
+  201: Null
+  202: RetC
+Class bar at 153 (ID 0)
+ Method public (leaf) bar::86ctor at 201
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) foo at 199 (ID 1)
+Function test at 19 (ID 2)
+ FPI 155-194; fpOff = 14

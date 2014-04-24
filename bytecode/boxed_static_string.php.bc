@@ -1,0 +1,55 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 17
+    0: FPushFuncD 0 "foo"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function breaker at 19 (ID 1)
+ FPI 19-25; fpOff = 4
+  // line 4
+   19: FPushFuncD 0 "mt_rand"
+   25: FCall 0
+   27: UnboxR
+   28: CastString
+   29: SetL 0
+   31: PopC
+  // line 5
+   32: Null
+   33: RetC
+
+Function foo at 34 (ID 2)
+ FPI 42-51; fpOff = 4
+  // line 8
+   34: String ""
+   39: SetL 0
+   41: PopC
+  // line 9
+   42: FPushFuncD 1 "breaker"
+   48: FPassL 0 0
+   51: FCall 1
+   53: PopR
+  // line 12
+   54: String "Num: "
+   59: Print
+   60: PopC
+  // line 13
+   61: CGetL 0
+   63: Print
+   64: PopC
+  // line 14
+   65: String "\n"
+   70: Print
+   71: PopC
+  // line 15
+   72: Null
+   73: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function breaker at 19 (ID 1)
+ FPI 19-25; fpOff = 4
+Function foo at 34 (ID 2)
+ FPI 42-51; fpOff = 4

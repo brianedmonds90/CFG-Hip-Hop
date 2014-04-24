@@ -1,0 +1,113 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 17
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+ FPI 35-41; fpOff = 4
+  // line 14
+   21: FPushCtorD 0 "foo"
+   27: FCall 0
+   29: PopR # i0:t=Null*
+   30: SetL 0
+   32: PopC
+  // line 15
+   33: CGetL 0
+   35: FPushObjMethodD 0 "bar"
+   41: FCall 0
+   43: PopR
+  // line 16
+   44: Null
+   45: RetC
+
+Method public (leaf) foo::bar at 46
+  // line 5
+   46: CreateCl 0 "Closure$foo::bar"
+   52: SetL 0
+   54: PopC
+  // line 6
+   55: CreateCl 0 "Closure$foo::bar#2"
+   61: SetL 1
+   63: PopC
+  // line 7
+   64: CreateCl 0 "Closure$foo::bar#3"
+   70: SetL 2
+   72: PopC
+  // line 8
+   73: CreateCl 0 "Closure$foo::bar#4"
+   79: SetL 3
+   81: PopC
+  // line 9
+   82: CreateCl 0 "Closure$foo::bar#5"
+   88: SetL 4
+   90: PopC
+  // line 10
+   91: CreateCl 0 "Closure$foo::bar#6"
+   97: SetL 5
+   99: PopC
+  // line 11
+  100: Null
+  101: RetC
+
+Method public (leaf) Closure$foo::bar::__invoke at 102
+  // line 5
+  102: Null
+  103: RetC
+
+Method public (leaf) Closure$foo::bar#2::__invoke at 104
+  // line 6
+  104: Null
+  105: RetC
+
+Method public (leaf) Closure$foo::bar#3::__invoke at 106
+  // line 7
+  106: Null
+  107: RetC
+
+Method public (leaf) Closure$foo::bar#4::__invoke at 108
+  // line 8
+  108: Null
+  109: RetC
+
+Method public (leaf) Closure$foo::bar#5::__invoke at 110
+  // line 9
+  110: Null
+  111: RetC
+
+Method public (leaf) Closure$foo::bar#6::__invoke at 112
+  // line 10
+  112: Null
+  113: RetC
+
+Method public (leaf) foo::86ctor at 114
+  // line 12
+  114: Null
+  115: RetC
+Class foo at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) foo::bar at 46
+ Method public (leaf) foo::86ctor at 114
+Class Closure$foo::bar at 52 (unique) (ID 1)
+ Method public (leaf) Closure$foo::bar::__invoke at 102
+Class Closure$foo::bar#2 at 61 (unique) (ID 2)
+ Method public (leaf) Closure$foo::bar#2::__invoke at 104
+Class Closure$foo::bar#3 at 70 (unique) (ID 3)
+ Method public (leaf) Closure$foo::bar#3::__invoke at 106
+Class Closure$foo::bar#4 at 79 (unique) (ID 4)
+ Method public (leaf) Closure$foo::bar#4::__invoke at 108
+Class Closure$foo::bar#5 at 88 (unique) (ID 5)
+ Method public (leaf) Closure$foo::bar#5::__invoke at 110
+Class Closure$foo::bar#6 at 97 (unique) (ID 6)
+ Method public (leaf) Closure$foo::bar#6::__invoke at 112
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+ FPI 35-41; fpOff = 4

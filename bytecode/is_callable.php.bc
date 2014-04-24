@@ -1,0 +1,192 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-23; fpOff = 4
+ FPI 6-19; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 26-49; fpOff = 4
+ FPI 32-45; fpOff = 7 parentIndex = 2 (depth 2)
+ FPI 52-75; fpOff = 4
+ FPI 58-71; fpOff = 7 parentIndex = 4 (depth 2)
+ FPI 87-110; fpOff = 4
+ FPI 93-106; fpOff = 7 parentIndex = 6 (depth 2)
+ FPI 113-136; fpOff = 4
+ FPI 119-132; fpOff = 7 parentIndex = 8 (depth 2)
+ FPI 139-162; fpOff = 4
+ FPI 145-158; fpOff = 7 parentIndex = 10 (depth 2)
+ FPI 174-180; fpOff = 5
+ FPI 186-213; fpOff = 4
+ FPI 192-209; fpOff = 7 parentIndex = 13 (depth 2)
+ FPI 216-243; fpOff = 4
+ FPI 222-239; fpOff = 7 parentIndex = 15 (depth 2)
+ FPI 246-273; fpOff = 4
+ FPI 252-269; fpOff = 7 parentIndex = 17 (depth 2)
+  // line 5
+    0: FPushFuncD 1 "var_dump"
+    6: FPushFuncD 1 "is_callable"
+   12: String "f"
+   17: FPassCE 0
+   19: FCall 1
+   21: FPassR 0
+   23: FCall 1
+   25: PopR
+  // line 7
+   26: FPushFuncD 1 "var_dump"
+   32: FPushFuncD 1 "is_callable"
+   38: String "array_merge"
+   43: FPassCE 0
+   45: FCall 1
+   47: FPassR 0
+   49: FCall 1
+   51: PopR
+  // line 9
+   52: FPushFuncD 1 "var_dump"
+   58: FPushFuncD 1 "is_callable"
+   64: String "asdfjkl"
+   69: FPassCE 0
+   71: FCall 1
+   73: FPassR 0
+   75: FCall 1
+   77: PopR
+  // line 10
+   78: String "\n"
+   83: Print
+   84: PopC
+  // line 12
+   85: DefCls 0
+  // line 17
+   87: FPushFuncD 1 "var_dump"
+   93: FPushFuncD 1 "is_callable"
+   99: Array array(0=>"C",1=>"foo")
+  104: FPassCE 0
+  106: FCall 1
+  108: FPassR 0
+  110: FCall 1
+  112: PopR
+  // line 19
+  113: FPushFuncD 1 "var_dump"
+  119: FPushFuncD 1 "is_callable"
+  125: Array array(0=>"C",1=>"bar")
+  130: FPassCE 0
+  132: FCall 1
+  134: FPassR 0
+  136: FCall 1
+  138: PopR
+  // line 21
+  139: FPushFuncD 1 "var_dump"
+  145: FPushFuncD 1 "is_callable"
+  151: Array array(0=>"C",1=>"asdfjkl")
+  156: FPassCE 0
+  158: FCall 1
+  160: FPassR 0
+  162: FCall 1
+  164: PopR
+  // line 22
+  165: String "\n"
+  170: Print
+  171: PopC
+  // line 24
+  172: DefCls 1
+  // line 28
+  174: FPushCtorD 0 "D"
+  180: FCall 0
+  182: PopR # i0:t=Null*
+  183: SetL 0
+  185: PopC
+  // line 30
+  186: FPushFuncD 1 "var_dump"
+  192: FPushFuncD 1 "is_callable"
+  198: CGetL 0
+  200: String "foo"
+  205: NewPackedArray 2
+  207: FPassCE 0
+  209: FCall 1
+  211: FPassR 0
+  213: FCall 1
+  215: PopR
+  // line 32
+  216: FPushFuncD 1 "var_dump"
+  222: FPushFuncD 1 "is_callable"
+  228: CGetL 0
+  230: String "bar"
+  235: NewPackedArray 2
+  237: FPassCE 0
+  239: FCall 1
+  241: FPassR 0
+  243: FCall 1
+  245: PopR
+  // line 34
+  246: FPushFuncD 1 "var_dump"
+  252: FPushFuncD 1 "is_callable"
+  258: CGetL 0
+  260: String "asdfjkl"
+  265: NewPackedArray 2
+  267: FPassCE 0
+  269: FCall 1
+  271: FPassR 0
+  273: FCall 1
+  275: PopR
+  276: Int 1
+  285: RetC
+
+Function (leaf) f at 286 (ID 1)
+  // line 3
+  286: Null
+  287: RetC
+
+Method static public (leaf) C::foo at 288
+  // line 13
+  288: Null
+  289: RetC
+
+Method static private (leaf) C::bar at 290
+  // line 14
+  290: Null
+  291: RetC
+
+Method public (leaf) D::foo at 292
+  // line 25
+  292: Null
+  293: RetC
+
+Method private (leaf) D::bar at 294
+  // line 26
+  294: Null
+  295: RetC
+
+Method public (leaf) C::86ctor at 296
+  // line 15
+  296: Null
+  297: RetC
+
+Method public (leaf) D::86ctor at 298
+  // line 27
+  298: Null
+  299: RetC
+Class C at 85 (maybe-hoistable) (ID 0)
+ Method static public (leaf) C::foo at 288
+ Method static private (leaf) C::bar at 290
+ Method public (leaf) C::86ctor at 296
+Class D at 172 (maybe-hoistable) (ID 1)
+ Method public (leaf) D::foo at 292
+ Method private (leaf) D::bar at 294
+ Method public (leaf) D::86ctor at 298
+Pseudo-main at 0 (ID 0)
+ FPI 0-23; fpOff = 4
+ FPI 6-19; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 26-49; fpOff = 4
+ FPI 32-45; fpOff = 7 parentIndex = 2 (depth 2)
+ FPI 52-75; fpOff = 4
+ FPI 58-71; fpOff = 7 parentIndex = 4 (depth 2)
+ FPI 87-110; fpOff = 4
+ FPI 93-106; fpOff = 7 parentIndex = 6 (depth 2)
+ FPI 113-136; fpOff = 4
+ FPI 119-132; fpOff = 7 parentIndex = 8 (depth 2)
+ FPI 139-162; fpOff = 4
+ FPI 145-158; fpOff = 7 parentIndex = 10 (depth 2)
+ FPI 174-180; fpOff = 5
+ FPI 186-213; fpOff = 4
+ FPI 192-209; fpOff = 7 parentIndex = 13 (depth 2)
+ FPI 216-243; fpOff = 4
+ FPI 222-239; fpOff = 7 parentIndex = 15 (depth 2)
+ FPI 246-273; fpOff = 4
+ FPI 252-269; fpOff = 7 parentIndex = 17 (depth 2)
+Function (leaf) f at 286 (ID 1)

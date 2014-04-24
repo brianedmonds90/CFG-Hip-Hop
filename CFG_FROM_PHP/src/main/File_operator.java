@@ -62,18 +62,15 @@ public class File_operator {
 			if (state == state_machine.function) {
 				func = new Function(str);
 				functions.add(func);
-			}
-			else if (state == state_machine.fpi) {
+			} else if (state == state_machine.fpi) {
 				func = functions.get(functions.size() - 1);
 				func.addFPI(str);
-			} 
-			else if (state == state_machine.line) {
+			} else if (state == state_machine.line) {
 				func = functions.get(functions.size() - 1);
 				String number = str.substring(10);
 				func.addLine(Integer.parseInt(number));
 
-			} 
-			else if (state == state_machine.instruction) {
+			} else if (state == state_machine.instruction) {
 				// Get the most current function
 				func = functions.get(functions.size() - 1);
 				Line l = func.getLines().get(func.getLines().size() - 1);
@@ -92,8 +89,7 @@ public class File_operator {
 					inst.setBCLineNo(bc_line_no);
 					inst.setLine(l);
 				}
-			} 
-			else if (state == state_machine.eh_state) {
+			} else if (state == state_machine.eh_state) {
 				func = functions.get(functions.size() - 1);
 				func.addEHTable(str);
 			}
@@ -121,13 +117,13 @@ public class File_operator {
 			int numParams = f.calcNumParams();
 			f.setNumParams(numParams);
 			// Get the basic blocks for the current function
-			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions, leaders);
+			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions,
+					leaders);
 			// Get the cfg
 			cfg_ret = getCFG(basicBlocks);
-			//getCallSiteInfo(cfg_ret);
-			// cfg_ret.definitions = getDefinitions(basicBlocks);
-			// cfg_ret.getUses(basicBlocks);
-			// cfg_ret.killSet(basicBlocks, cfg_ret.definitions);
+
+			// getCallSiteInfo(cfg_ret);
+
 			cfg_ret.setFileName(file.getName());
 			cfg_ret.setFunction(f);
 			// Sets the entry node to be the first node in the nodes list
@@ -140,19 +136,19 @@ public class File_operator {
 
 	private void getCallSiteInfo(CFG cfg_ret) {
 		ArrayList<BasicBlock> listOfBlocks = new ArrayList<BasicBlock>();
-		for(BasicBlock bb: cfg_ret.getNodes()){
-			for(Instruction inst: bb.getInstructions()){
-				if(inst.callSite()){
+		for (BasicBlock bb : cfg_ret.getNodes()) {
+			for (Instruction inst : bb.getInstructions()) {
+				if (inst.callSite()) {
 					BasicBlock c = new BasicBlock();
 					c.addInstruction(inst);
 					c.setBlockNo(1000);
-					
+
 					listOfBlocks.add(c);
 				}
 			}
 		}
 		cfg_ret.getNodes().addAll(listOfBlocks);
-	
+
 	}
 
 	/**
@@ -166,7 +162,7 @@ public class File_operator {
 		// List of leaders of the program
 		int i = 1;
 		BasicBlock b = new BasicBlock();
-		Instruction currentLeader = null;
+		Instruction currentLeader = leaders.get(0);
 		for (Instruction inst : instructions) {
 
 			if (i < leaders.size()) {
@@ -216,9 +212,9 @@ public class File_operator {
 				// If the current instruction is a conditional jmp
 				if (inst.type == inst.control_flow) {
 					// Find the destination of the current branching instruction
-					System.out.println("args: " + inst.getArgs()[0]);
 					// NOTE. we do not support the UNWIND Instruction
-					if (!inst.getInstruction_text().equals("Unwind")) {
+					if (!inst.getInstruction_text().equals("Unwind")
+							&& !inst.getInstruction_text().equals("Throw")) {
 						int offset = Integer.parseInt(inst.getArgs()[0]);
 						int destination = Integer.parseInt(inst.getBCLineNO())
 								+ offset;
@@ -252,6 +248,13 @@ public class File_operator {
 		return leaders;
 	}
 
+	/**
+	 * Constructs a CFG by computing the edges.
+	 * 
+	 * @param basicBlocks
+	 *            List of basic blocks
+	 * @return CFG
+	 */
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
 		cfg.getDefinitions(basicBlocks);
@@ -298,10 +301,57 @@ public class File_operator {
 						cfg.addEdge(bi, bj, null);
 			}
 		}
-		cfg.getKills_Brian();
 		return cfg;
 	}
 
+	/**
+	 * Computers each basic block's defintion.
+	 * 
+	 * @param basicBlocks
+	 *            List of basic blocks
+	 * @return List of Defintions
+	 */
+	public ArrayList<Defs_Uses> getDefinitions(ArrayList<BasicBlock> basicBlocks) {
+		boolean bbHasDef;
+		int instrucionIndex;
+		int basicBlockIndex = 0;
+		ArrayList<Defs_Uses> ret = new ArrayList<Defs_Uses>();
+		for (BasicBlock bb : basicBlocks) {
+			bbHasDef = false;
+			instrucionIndex = 0;
+			basicBlockIndex++;
+			for (Instruction inst : bb.getInstructions()) {
+				instrucionIndex++;
+				if (inst.definition) {
+					if (!bbHasDef) {
+						bbHasDef = true;
+						ret.add(new Defs_Uses(bb, inst.line, Integer
+								.parseInt((inst.getArgs()[0]))));
+					} else {// Basic Block already has a definition in it
+							// split the basic block and add it to the
+							// basicBlocks list
+						BasicBlock b = bb.split(instrucionIndex);
+						if (basicBlockIndex == basicBlocks.size()) {
+							basicBlocks.add(b);
+						} else {
+							basicBlocks.add(basicBlockIndex, b);
+						}
+					}
+				}
+			}
+		}
+		return ret;
+	}
+
+	/**
+	 * Returns the destination instruction
+	 * 
+	 * @param destination
+	 *            the bytecode line number of destination
+	 * @param func
+	 *            function it belongs to
+	 * @return instruction
+	 */
 	private Instruction getDestinationInstruction(int destination, Function func) {
 		for (Line l : func.getLines()) {
 			for (Instruction in : l.getInstructions()) {
@@ -350,37 +400,4 @@ public class File_operator {
 		}
 		return l;
 	}
-
-	public ArrayList<Defs_Uses> getDefinitions(ArrayList<BasicBlock> basicBlocks) {
-		boolean bbHasDef;
-		int instrucionIndex;
-		int basicBlockIndex = 0;
-		ArrayList<Defs_Uses> ret = new ArrayList<Defs_Uses>();
-		for (BasicBlock bb : basicBlocks) {
-			bbHasDef = false;
-			instrucionIndex = 0;
-			basicBlockIndex++;
-			for (Instruction inst : bb.getInstructions()) {
-				instrucionIndex++;
-				if (inst.definition) {
-					if (!bbHasDef) {
-						bbHasDef = true;
-						ret.add(new Defs_Uses(bb, inst.line, Integer
-								.parseInt((inst.getArgs()[0]))));
-					} else {// Basic Block already has a definition in it
-							// split the basic block and add it to the
-							// basicBlocks list
-						BasicBlock b = bb.split(instrucionIndex);
-						if (basicBlockIndex == basicBlocks.size()) {
-							basicBlocks.add(b);
-						} else {
-							basicBlocks.add(basicBlockIndex, b);
-						}
-					}
-				}
-			}
-		}
-		return ret;
-	}
-
 }

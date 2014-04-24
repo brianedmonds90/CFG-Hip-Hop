@@ -1,0 +1,585 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 24
+    0: DefCls 0
+  // line 97
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function throwing_profiler at 21 (ID 1)
+ FPI 60-73; fpOff = 6
+  // line 5
+   21: String "enter"
+   26: CGetL2 0
+   28: Eq
+   29: JmpZ 48 (77)
+   34: String "bar"
+   39: CGetL2 1
+   41: Eq
+   42: JmpNZ 18 (60)
+   47: String "baz"
+   52: CGetL2 1
+   54: Eq
+   55: JmpZ 22 (77)
+  // line 6
+   60: FPushCtorD 1 "Exception"
+   66: String "yeah"
+   71: FPassCE 0
+   73: FCall 1
+   75: PopR # i0:t=Null*
+   76: Throw
+  // line 8
+   77: Null
+   78: RetC
+
+Function (leaf) bar at 79 (ID 2)
+  // line 10
+   79: String "bar()\n"
+   84: Print
+   85: PopC
+   86: Null
+   87: RetC
+
+Function (leaf) baz at 88 (ID 3)
+  // line 11
+   88: String "baz()\n"
+   93: Print
+   94: PopC
+   95: Null
+   96: RetC
+
+Function foo at 97 (ID 4)
+ FPI 99-101; fpOff = 4
+  // line 14
+   97: CGetL 0
+   99: FPushFunc 0
+  101: FCall 0
+  103: PopR
+  // line 15
+  104: Null
+  105: RetC
+
+Function signal_thrower at 106 (ID 5)
+ FPI 113-126; fpOff = 4
+  // line 18
+  106: String "signal throwing\n"
+  111: Print
+  112: PopC
+  // line 19
+  113: FPushCtorD 1 "Exception"
+  119: String "Sig exception"
+  124: FPassCE 0
+  126: FCall 1
+  128: PopR # i0:t=Null*
+  129: Throw
+
+Function (leaf) func_to_enter at 130 (ID 6)
+  // line 22
+  130: Null
+  131: RetC
+
+Function func_entry at 132 (ID 7)
+ FPI 132-149; fpOff = 19
+ FPI 155-172; fpOff = 19
+ FPI 178-195; fpOff = 19
+ FPI 201-218; fpOff = 19
+ FPI 224-241; fpOff = 19
+ FPI 247-264; fpOff = 19
+ FPI 270-287; fpOff = 19
+ FPI 293-310; fpOff = 19
+ FPI 316-333; fpOff = 19
+ FPI 339-356; fpOff = 19
+ FPI 362-379; fpOff = 19
+ FPI 385-402; fpOff = 19
+ FPI 408-425; fpOff = 19
+ FPI 431-448; fpOff = 19
+ FPI 454-471; fpOff = 19
+ FPI 477-504; fpOff = 18
+ FPI 483-489; fpOff = 21 parentIndex = 15 (depth 2)
+ FPI 507-513; fpOff = 18
+  // line 31
+  132: FPushCtorD 1 "DtorObj"
+  138: Int 1
+  147: FPassCE 0
+  149: FCall 1
+  151: PopR # i0:t=Null*
+  152: SetL 0
+  154: PopC
+  // line 32
+  155: FPushCtorD 1 "DtorObj"
+  161: Int 2
+  170: FPassCE 0
+  172: FCall 1
+  174: PopR # i0:t=Null*
+  175: SetL 1
+  177: PopC
+  // line 33
+  178: FPushCtorD 1 "DtorObj"
+  184: Int 3
+  193: FPassCE 0
+  195: FCall 1
+  197: PopR # i0:t=Null*
+  198: SetL 2
+  200: PopC
+  // line 34
+  201: FPushCtorD 1 "DtorObj"
+  207: Int 4
+  216: FPassCE 0
+  218: FCall 1
+  220: PopR # i0:t=Null*
+  221: SetL 3
+  223: PopC
+  // line 35
+  224: FPushCtorD 1 "DtorObj"
+  230: Int 5
+  239: FPassCE 0
+  241: FCall 1
+  243: PopR # i0:t=Null*
+  244: SetL 4
+  246: PopC
+  // line 37
+  247: FPushCtorD 1 "DtorObj"
+  253: Int 6
+  262: FPassCE 0
+  264: FCall 1
+  266: PopR # i0:t=Null*
+  267: SetL 5
+  269: PopC
+  // line 38
+  270: FPushCtorD 1 "DtorObj"
+  276: Int 7
+  285: FPassCE 0
+  287: FCall 1
+  289: PopR # i0:t=Null*
+  290: SetL 6
+  292: PopC
+  // line 39
+  293: FPushCtorD 1 "DtorObj"
+  299: Int 8
+  308: FPassCE 0
+  310: FCall 1
+  312: PopR # i0:t=Null*
+  313: SetL 7
+  315: PopC
+  // line 40
+  316: FPushCtorD 1 "DtorObj"
+  322: Int 9
+  331: FPassCE 0
+  333: FCall 1
+  335: PopR # i0:t=Null*
+  336: SetL 8
+  338: PopC
+  // line 41
+  339: FPushCtorD 1 "DtorObj"
+  345: Int 10
+  354: FPassCE 0
+  356: FCall 1
+  358: PopR # i0:t=Null*
+  359: SetL 9
+  361: PopC
+  // line 43
+  362: FPushCtorD 1 "DtorObj"
+  368: Int 11
+  377: FPassCE 0
+  379: FCall 1
+  381: PopR # i0:t=Null*
+  382: SetL 10
+  384: PopC
+  // line 44
+  385: FPushCtorD 1 "DtorObj"
+  391: Int 12
+  400: FPassCE 0
+  402: FCall 1
+  404: PopR # i0:t=Null*
+  405: SetL 11
+  407: PopC
+  // line 45
+  408: FPushCtorD 1 "DtorObj"
+  414: Int 13
+  423: FPassCE 0
+  425: FCall 1
+  427: PopR # i0:t=Null*
+  428: SetL 12
+  430: PopC
+  // line 46
+  431: FPushCtorD 1 "DtorObj"
+  437: Int 14
+  446: FPassCE 0
+  448: FCall 1
+  450: PopR # i0:t=Null*
+  451: SetL 13
+  453: PopC
+  // line 47
+  454: FPushCtorD 1 "DtorObj"
+  460: Int 15
+  469: FPassCE 0
+  471: FCall 1
+  473: PopR # i0:t=Null*
+  474: SetL 14
+  476: PopC
+  // line 49
+  477: FPushFuncD 2 "posix_kill"
+  483: FPushFuncD 0 "posix_getpid"
+  489: FCall 0
+  491: FPassR 0
+  493: Int 10
+  502: FPassCE 1
+  504: FCall 2
+  506: PopR
+  // line 52
+  507: FPushFuncD 0 "func_to_enter"
+  513: FCall 0
+  515: PopR
+  // line 53
+  516: Null
+  517: RetC
+
+Function func_backward at 518 (ID 8)
+ FPI 518-535; fpOff = 20
+ FPI 541-558; fpOff = 20
+ FPI 564-581; fpOff = 20
+ FPI 587-604; fpOff = 20
+ FPI 610-627; fpOff = 20
+ FPI 633-650; fpOff = 20
+ FPI 656-673; fpOff = 20
+ FPI 679-696; fpOff = 20
+ FPI 702-719; fpOff = 20
+ FPI 725-742; fpOff = 20
+ FPI 748-765; fpOff = 20
+ FPI 771-788; fpOff = 20
+ FPI 794-811; fpOff = 20
+ FPI 817-834; fpOff = 20
+ FPI 840-857; fpOff = 20
+ FPI 863-890; fpOff = 19
+ FPI 869-875; fpOff = 22 parentIndex = 15 (depth 2)
+  // line 57
+  518: FPushCtorD 1 "DtorObj"
+  524: Int 1
+  533: FPassCE 0
+  535: FCall 1
+  537: PopR # i0:t=Null*
+  538: SetL 0
+  540: PopC
+  // line 58
+  541: FPushCtorD 1 "DtorObj"
+  547: Int 2
+  556: FPassCE 0
+  558: FCall 1
+  560: PopR # i0:t=Null*
+  561: SetL 1
+  563: PopC
+  // line 59
+  564: FPushCtorD 1 "DtorObj"
+  570: Int 3
+  579: FPassCE 0
+  581: FCall 1
+  583: PopR # i0:t=Null*
+  584: SetL 2
+  586: PopC
+  // line 60
+  587: FPushCtorD 1 "DtorObj"
+  593: Int 4
+  602: FPassCE 0
+  604: FCall 1
+  606: PopR # i0:t=Null*
+  607: SetL 3
+  609: PopC
+  // line 61
+  610: FPushCtorD 1 "DtorObj"
+  616: Int 5
+  625: FPassCE 0
+  627: FCall 1
+  629: PopR # i0:t=Null*
+  630: SetL 4
+  632: PopC
+  // line 63
+  633: FPushCtorD 1 "DtorObj"
+  639: Int 6
+  648: FPassCE 0
+  650: FCall 1
+  652: PopR # i0:t=Null*
+  653: SetL 5
+  655: PopC
+  // line 64
+  656: FPushCtorD 1 "DtorObj"
+  662: Int 7
+  671: FPassCE 0
+  673: FCall 1
+  675: PopR # i0:t=Null*
+  676: SetL 6
+  678: PopC
+  // line 65
+  679: FPushCtorD 1 "DtorObj"
+  685: Int 8
+  694: FPassCE 0
+  696: FCall 1
+  698: PopR # i0:t=Null*
+  699: SetL 7
+  701: PopC
+  // line 66
+  702: FPushCtorD 1 "DtorObj"
+  708: Int 9
+  717: FPassCE 0
+  719: FCall 1
+  721: PopR # i0:t=Null*
+  722: SetL 8
+  724: PopC
+  // line 67
+  725: FPushCtorD 1 "DtorObj"
+  731: Int 10
+  740: FPassCE 0
+  742: FCall 1
+  744: PopR # i0:t=Null*
+  745: SetL 9
+  747: PopC
+  // line 69
+  748: FPushCtorD 1 "DtorObj"
+  754: Int 11
+  763: FPassCE 0
+  765: FCall 1
+  767: PopR # i0:t=Null*
+  768: SetL 10
+  770: PopC
+  // line 70
+  771: FPushCtorD 1 "DtorObj"
+  777: Int 12
+  786: FPassCE 0
+  788: FCall 1
+  790: PopR # i0:t=Null*
+  791: SetL 11
+  793: PopC
+  // line 71
+  794: FPushCtorD 1 "DtorObj"
+  800: Int 13
+  809: FPassCE 0
+  811: FCall 1
+  813: PopR # i0:t=Null*
+  814: SetL 12
+  816: PopC
+  // line 72
+  817: FPushCtorD 1 "DtorObj"
+  823: Int 14
+  832: FPassCE 0
+  834: FCall 1
+  836: PopR # i0:t=Null*
+  837: SetL 13
+  839: PopC
+  // line 73
+  840: FPushCtorD 1 "DtorObj"
+  846: Int 15
+  855: FPassCE 0
+  857: FCall 1
+  859: PopR # i0:t=Null*
+  860: SetL 14
+  862: PopC
+  // line 75
+  863: FPushFuncD 2 "posix_kill"
+  869: FPushFuncD 0 "posix_getpid"
+  875: FCall 0
+  877: FPassR 0
+  879: Int 10
+  888: FPassCE 1
+  890: FCall 2
+  892: PopR
+  // line 78
+  893: Int 0
+  902: SetL 15
+  904: PopC
+  905: Int 2
+  914: CGetL2 15
+  916: Lt
+  917: JmpZ 14 (931)
+  922: IncDecL 15 PreInc
+  925: PopC
+  926: Jmp -21
+  // line 79
+  931: Null
+  932: RetC
+
+Function main at 933 (ID 9)
+ EH 0 Catch for 949:970
+  Handle exception at 970
+ EH 1 Catch for 981:1002
+  Handle exception at 1002
+ EH 2 Catch for 1052:1066
+  Handle exception at 1066
+ EH 3 Catch for 1077:1091
+  Handle exception at 1091
+ FPI 933-946; fpOff = 4
+ FPI 949-962; fpOff = 4
+ FPI 981-994; fpOff = 4
+ FPI 1013-1022; fpOff = 4
+ FPI 1025-1049; fpOff = 4
+ FPI 1052-1058; fpOff = 4
+ FPI 1077-1083; fpOff = 4
+  // line 83
+  933: FPushFuncD 1 "fb_setprofile"
+  939: String "throwing_profiler"
+  944: FPassCE 0
+  946: FCall 1
+  948: PopR
+  // line 84
+  949: FPushFuncD 1 "foo"
+  955: String "bar"
+  960: FPassCE 0
+  962: FCall 1
+  964: PopR
+  965: Jmp 16 (981)
+  970: Catch
+  971: SetL 0
+  973: PopC
+  974: String "Caught\n"
+  979: Print
+  980: PopC
+  // line 85
+  981: FPushFuncD 1 "foo"
+  987: String "baz"
+  992: FPassCE 0
+  994: FCall 1
+  996: PopR
+  997: Jmp 16 (1013)
+ 1002: Catch
+ 1003: SetL 0
+ 1005: PopC
+ 1006: String "Caught\n"
+ 1011: Print
+ 1012: PopC
+  // line 86
+ 1013: FPushFuncD 1 "fb_setprofile"
+ 1019: Null
+ 1020: FPassCE 0
+ 1022: FCall 1
+ 1024: PopR
+  // line 91
+ 1025: FPushFuncD 2 "pcntl_signal"
+ 1031: Int 10
+ 1040: FPassCE 0
+ 1042: String "signal_thrower"
+ 1047: FPassCE 1
+ 1049: FCall 2
+ 1051: PopR
+  // line 93
+ 1052: FPushFuncD 0 "func_entry"
+ 1058: FCall 0
+ 1060: PopR
+ 1061: Jmp 16 (1077)
+ 1066: Catch
+ 1067: SetL 0
+ 1069: PopC
+ 1070: String "caught\n"
+ 1075: Print
+ 1076: PopC
+  // line 94
+ 1077: FPushFuncD 0 "func_backward"
+ 1083: FCall 0
+ 1085: PopR
+ 1086: Jmp 16 (1102)
+ 1091: Catch
+ 1092: SetL 0
+ 1094: PopC
+ 1095: String "caught\n"
+ 1100: Print
+ 1101: PopC
+  // line 95
+ 1102: Null
+ 1103: RetC
+
+Method public (leaf) DtorObj::__construct at 1104
+  // line 25
+ 1104: CheckThis
+ 1105: CGetL 0
+ 1107: SetM <H PT:"x"> # iM0:c=DtorObj
+ 1122: PopC
+ 1123: String "__ctor "
+ 1128: CGetL 0
+ 1130: Concat
+ 1131: String "\n"
+ 1136: Concat
+ 1137: Print
+ 1138: PopC
+ 1139: Null
+ 1140: RetC
+
+Method public (leaf) DtorObj::__destruct at 1141
+  // line 26
+ 1141: String "__dtor "
+ 1146: CheckThis
+ 1147: CGetM <H PT:"x"> # iM0:c=DtorObj
+ 1162: String "\n"
+ 1167: Concat
+ 1168: Concat
+ 1169: Print
+ 1170: PopC
+ 1171: Null
+ 1172: RetC
+Class DtorObj at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) DtorObj::__construct at 1104
+ Method public (leaf) DtorObj::__destruct at 1141
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function throwing_profiler at 21 (ID 1)
+ FPI 60-73; fpOff = 6
+Function (leaf) bar at 79 (ID 2)
+Function (leaf) baz at 88 (ID 3)
+Function foo at 97 (ID 4)
+ FPI 99-101; fpOff = 4
+Function signal_thrower at 106 (ID 5)
+ FPI 113-126; fpOff = 4
+Function (leaf) func_to_enter at 130 (ID 6)
+Function func_entry at 132 (ID 7)
+ FPI 132-149; fpOff = 19
+ FPI 155-172; fpOff = 19
+ FPI 178-195; fpOff = 19
+ FPI 201-218; fpOff = 19
+ FPI 224-241; fpOff = 19
+ FPI 247-264; fpOff = 19
+ FPI 270-287; fpOff = 19
+ FPI 293-310; fpOff = 19
+ FPI 316-333; fpOff = 19
+ FPI 339-356; fpOff = 19
+ FPI 362-379; fpOff = 19
+ FPI 385-402; fpOff = 19
+ FPI 408-425; fpOff = 19
+ FPI 431-448; fpOff = 19
+ FPI 454-471; fpOff = 19
+ FPI 477-504; fpOff = 18
+ FPI 483-489; fpOff = 21 parentIndex = 15 (depth 2)
+ FPI 507-513; fpOff = 18
+Function func_backward at 518 (ID 8)
+ FPI 518-535; fpOff = 20
+ FPI 541-558; fpOff = 20
+ FPI 564-581; fpOff = 20
+ FPI 587-604; fpOff = 20
+ FPI 610-627; fpOff = 20
+ FPI 633-650; fpOff = 20
+ FPI 656-673; fpOff = 20
+ FPI 679-696; fpOff = 20
+ FPI 702-719; fpOff = 20
+ FPI 725-742; fpOff = 20
+ FPI 748-765; fpOff = 20
+ FPI 771-788; fpOff = 20
+ FPI 794-811; fpOff = 20
+ FPI 817-834; fpOff = 20
+ FPI 840-857; fpOff = 20
+ FPI 863-890; fpOff = 19
+ FPI 869-875; fpOff = 22 parentIndex = 15 (depth 2)
+Function main at 933 (ID 9)
+ EH 0 Catch for 949:970
+  Handle exception at 970
+ EH 1 Catch for 981:1002
+  Handle exception at 1002
+ EH 2 Catch for 1052:1066
+  Handle exception at 1066
+ EH 3 Catch for 1077:1091
+  Handle exception at 1091
+ FPI 933-946; fpOff = 4
+ FPI 949-962; fpOff = 4
+ FPI 981-994; fpOff = 4
+ FPI 1013-1022; fpOff = 4
+ FPI 1025-1049; fpOff = 4
+ FPI 1052-1058; fpOff = 4
+ FPI 1077-1083; fpOff = 4

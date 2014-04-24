@@ -1,0 +1,124 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 34
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 9
+ FPI 83-92; fpOff = 8
+ FPI 109-115; fpOff = 9
+ FPI 142-151; fpOff = 8
+ FPI 160-169; fpOff = 8
+  // line 17
+   21: FPushCtorD 0 "A"
+   27: FCall 0
+   29: PopR # i0:t=Null*
+   30: SetL 0
+   32: PopC
+  // line 18
+   33: String "foo"
+   38: SetM <L:0 PT:"y">
+   54: PopC
+  // line 19
+   55: CGetL 0
+   57: Clone
+   58: SetL 1
+   60: PopC
+  // line 20
+   61: String "bar"
+   66: SetM <L:0 PT:"y">
+   82: PopC
+  // line 21
+   83: FPushFuncD 1 "var_dump"
+   89: FPassL 0 1
+   92: FCall 1
+   94: PopR
+  // line 24
+   95: DefCls 1
+  // line 25
+   97: Int 10
+  106: SetL 2
+  108: PopC
+  // line 26
+  109: FPushCtorD 0 "C"
+  115: FCall 0
+  117: PopR # i0:t=Null*
+  118: SetL 3
+  120: PopC
+  // line 27
+  121: VGetL 2
+  123: BindM <L:3 PT:"thing">
+  139: PopV
+  // line 28
+  140: UnsetL 2
+  // line 30
+  142: FPushFuncD 1 "var_dump"
+  148: FPassL 0 3
+  151: FCall 1
+  153: PopR
+  // line 31
+  154: CGetL 3
+  156: Clone
+  157: SetL 4
+  159: PopC
+  // line 32
+  160: FPushFuncD 1 "var_dump"
+  166: FPassL 0 3
+  169: FCall 1
+  171: PopR
+  // line 33
+  172: Null
+  173: RetC
+
+Method public (leaf) A::__construct at 174
+  // line 8
+  174: CheckThis
+  175: String "count"
+  180: String "A"
+  185: AGetC
+  186: IncDecS PreInc
+  188: SetM <H PT:"x"> # iM0:c=A
+  203: PopC
+  // line 9
+  204: Null
+  205: RetC
+
+Method public (leaf) A::__clone at 206
+  // line 12
+  206: CheckThis
+  207: String "count"
+  212: String "A"
+  217: AGetC
+  218: IncDecS PreInc
+  220: SetM <H PT:"x"> # iM0:c=A
+  235: PopC
+  // line 13
+  236: Null
+  237: RetC
+
+Method public (leaf) C::86ctor at 238
+  // line 24
+  238: Null
+  239: RetC
+Class A at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) A::__construct at 174
+ Method public (leaf) A::__clone at 206
+ Property public A::x = null
+ Property static public A::count = 0
+Class C at 95 (ID 1)
+ Method public (leaf) C::86ctor at 238
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 9
+ FPI 83-92; fpOff = 8
+ FPI 109-115; fpOff = 9
+ FPI 142-151; fpOff = 8
+ FPI 160-169; fpOff = 8

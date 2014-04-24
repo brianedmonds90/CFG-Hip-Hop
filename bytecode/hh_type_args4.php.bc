@@ -1,0 +1,77 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 2
+    0: DefCls 0
+  // line 7
+    2: DefCls 1
+  // line 11
+    4: DefCls 2
+  // line 12
+    6: DefCls 3
+  // line 13
+    8: DefCls 4
+  // line 14
+   10: String "Done\n"
+   15: Print
+   16: PopC
+   17: Int 1
+   26: RetC
+
+Function foo at 27 (ID 1)
+ FPI 33-42; fpOff = 5
+  // line 10
+   27: VerifyParamType 0
+   29: VerifyParamType 1
+  // line 9
+   31: CGetL 0
+   33: FPushObjMethodD 1 "getT"
+   39: FPassL 0 1
+   42: FCall 1
+   44: UnboxR
+   45: RetC
+
+Method public (leaf) A::getT at 46
+  // line 5
+   46: VerifyParamType 0
+  // line 4
+   48: CGetL 0
+   50: RetC
+
+Method public (leaf) A::86ctor at 51
+  // line 6
+   51: Null
+   52: RetC
+
+Method public (leaf) B::86ctor at 53
+  // line 7
+   53: Null
+   54: RetC
+
+Method public (leaf) C::86ctor at 55
+  // line 11
+   55: Null
+   56: RetC
+
+Method public (leaf) D::86ctor at 57
+  // line 12
+   57: Null
+   58: RetC
+
+Method public (leaf) E::86ctor at 59
+  // line 13
+   59: Null
+   60: RetC
+Class A at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) A::getT at 46
+ Method public (leaf) A::86ctor at 51
+Class B at 2 (maybe-hoistable) (ID 1)
+ Method public (leaf) B::86ctor at 53
+Class C at 4 (maybe-hoistable) (ID 2)
+ Method public (leaf) C::86ctor at 55
+Class D at 6 (maybe-hoistable) (ID 3)
+ Method public (leaf) D::86ctor at 57
+Class E at 8 (maybe-hoistable) (ID 4)
+ Method public (leaf) E::86ctor at 59
+Pseudo-main at 0 (ID 0)
+Function foo at 27 (ID 1)
+ FPI 33-42; fpOff = 5

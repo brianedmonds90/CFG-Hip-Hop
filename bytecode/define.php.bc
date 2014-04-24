@@ -1,0 +1,142 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+ FPI 9-15; fpOff = 3
+  // line 31
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+  // line 37
+    9: FPushFuncD 0 "bug"
+   15: FCall 0
+   17: PopR
+   18: Int 1
+   27: RetC
+
+Function (leaf) foo at 28 (ID 1)
+  // line 3
+   28: String "define.inc"
+   33: Req
+   34: PopC
+  // line 4
+   35: Null
+   36: RetC
+
+Function main at 37 (ID 2)
+ FPI 52-65; fpOff = 3
+ FPI 128-141; fpOff = 3
+ FPI 144-157; fpOff = 3
+ FPI 160-166; fpOff = 3
+ FPI 169-182; fpOff = 3
+ FPI 196-209; fpOff = 3
+ FPI 212-225; fpOff = 3
+  // line 7
+   37: Int 42
+   46: DefCns "FOO"
+   51: PopC
+  // line 8
+   52: FPushFuncD 1 "defined"
+   58: String "FOO"
+   63: FPassCE 0
+   65: FCall 1
+   67: UnboxR
+   68: JmpNZ 23 (91)
+  // line 9
+   73: String "how can we run phpMyAdmin without defined() working\?"
+   78: Print
+   79: PopC
+  // line 10
+   80: Int 1
+   89: Exit
+   90: PopC
+  // line 12
+   91: String "hello"
+   96: DefCns "BAR"
+  101: PopC
+  // line 14
+  102: Int 43
+  111: DefCns "FOO"
+  116: PopC
+  // line 15
+  117: Array array(0=>"a",1=>"b",2=>"c")
+  122: DefCns "BIZ"
+  127: PopC
+  // line 17
+  128: FPushFuncD 1 "var_dump"
+  134: Cns "FOO"
+  139: FPassCE 0
+  141: FCall 1
+  143: PopR
+  // line 18
+  144: FPushFuncD 1 "var_dump"
+  150: Cns "BAR"
+  155: FPassCE 0
+  157: FCall 1
+  159: PopR
+  // line 20
+  160: FPushFuncD 0 "foo"
+  166: FCall 0
+  168: PopR
+  // line 21
+  169: FPushFuncD 1 "var_dump"
+  175: Cns "BAZ"
+  180: FPassCE 0
+  182: FCall 1
+  184: PopR
+  // line 23
+  185: String "baz_a"
+  190: DefCns "BAZ"
+  195: PopC
+  // line 24
+  196: FPushFuncD 1 "var_dump"
+  202: Cns "BAZ"
+  207: FPassCE 0
+  209: FCall 1
+  211: PopR
+  // line 26
+  212: FPushFuncD 1 "strtoupper"
+  218: String "hello"
+  223: FPassCE 0
+  225: FCall 1
+  227: UnboxR
+  228: DefCns "HI"
+  233: PopC
+  // line 27
+  234: Cns "HI"
+  239: Print
+  240: PopC
+  // line 28
+  241: Cns "HI"
+  246: Print
+  247: PopC
+  // line 29
+  248: String "\n"
+  253: Print
+  254: PopC
+  // line 30
+  255: Null
+  256: RetC
+
+Function bug at 257 (ID 3)
+ FPI 257-270; fpOff = 3
+  // line 34
+  257: FPushFuncD 1 "defined"
+  263: String "static::SOME_CONST"
+  268: FPassCE 0
+  270: FCall 1
+  272: UnboxR
+  273: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+ FPI 9-15; fpOff = 3
+Function (leaf) foo at 28 (ID 1)
+Function main at 37 (ID 2)
+ FPI 52-65; fpOff = 3
+ FPI 128-141; fpOff = 3
+ FPI 144-157; fpOff = 3
+ FPI 160-166; fpOff = 3
+ FPI 169-182; fpOff = 3
+ FPI 196-209; fpOff = 3
+ FPI 212-225; fpOff = 3
+Function bug at 257 (ID 3)
+ FPI 257-270; fpOff = 3

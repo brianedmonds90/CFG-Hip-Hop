@@ -1,0 +1,78 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 7
+    2: DefCls 1
+  // line 16
+    4: FPushFuncD 0 "main"
+   10: FCall 0
+   12: PopR
+   13: Int 1
+   22: RetC
+
+Function main at 23 (ID 1)
+ FPI 23-29; fpOff = 5
+ FPI 37-43; fpOff = 4
+  // line 12
+   23: FPushCtorD 0 "Bar"
+   29: FCall 0
+   31: PopR # i0:t=Null*
+   32: SetL 0
+   34: PopC
+  // line 13
+   35: CGetL 0
+   37: FPushObjMethodD 0 "test"
+   43: FCall 0
+   45: UnboxR
+   46: Print
+   47: PopC
+  // line 14
+   48: Null
+   49: RetC
+
+Method static public abstract (leaf) Foo::who at 50
+  // line 4
+   50: String "Cannot call abstract method Foo::who()"
+   55: Fatal RuntimeOmitFrame
+
+Method static public Foo::test at 57
+ FPI 68-70; fpOff = 3
+  // line 5
+   57: String "who"
+   62: String "Foo"
+   67: AGetC
+   68: FPushClsMethodF 0
+   70: FCall 0
+   72: PopR
+   73: Null
+   74: RetC
+
+Method static public (leaf) Bar::who at 75
+  // line 8
+   75: String "Bar"
+   80: RetC
+
+Method public (leaf) Foo::86ctor at 81
+  // line 6
+   81: Null
+   82: RetC
+
+Method public (leaf) Bar::86ctor at 83
+  // line 9
+   83: Null
+   84: RetC
+Class abstract Foo at 0 (maybe-hoistable) (ID 0)
+ Method static public abstract (leaf) Foo::who at 50
+ Method static public Foo::test at 57
+ FPI 68-70; fpOff = 3
+ Method public (leaf) Foo::86ctor at 81
+Class Bar at 2 (maybe-hoistable) (ID 1)
+ Method static public (leaf) Bar::who at 75
+ Method public (leaf) Bar::86ctor at 83
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+Function main at 23 (ID 1)
+ FPI 23-29; fpOff = 5
+ FPI 37-43; fpOff = 4

@@ -1,0 +1,60 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 8
+    0: FPushFuncD 0 "foo"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function foo at 19 (ID 1)
+ EH 0 Fault for 37:90 iterId 0 itRef false to 98
+ EH 1 Fault for 37:59 outer EH 0 to 95 parentIndex 0
+ EH 2 Fault for 37:53 outer EH 1 to 92 parentIndex 1
+ FPI 59-79; fpOff = 8
+  // line 3
+   19: Array array(0=>12,1=>34,2=>56)
+   24: SetL 0
+   26: PopC
+  // line 6
+   27: CGetL 0
+   29: IterInitK 0 61 (90) 2 1
+  // line 4
+   37: String "_ENV"
+   42: String "_FILES"
+  // line 6
+   47: CGetL 2
+   49: SetG
+   50: PopC
+   51: UnsetL 2
+   53: CGetL 1
+   55: SetG
+   56: PopC
+   57: UnsetL 1
+  // line 5
+   59: FPushFuncD 2 "var_dump"
+   65: String "_ENV"
+   70: FPassG 0
+   72: String "_FILES"
+   77: FPassG 1
+   79: FCall 2
+   81: PopR
+  // line 6
+   82: IterNextK 0 -45 2 1
+  // line 7
+   90: Null
+   91: RetC
+   92: UnsetL 2
+   94: Unwind
+   95: UnsetL 1
+   97: Unwind
+   98: IterFree 0
+  100: Unwind
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function foo at 19 (ID 1)
+ EH 0 Fault for 37:90 iterId 0 itRef false to 98
+ EH 1 Fault for 37:59 outer EH 0 to 95 parentIndex 0
+ EH 2 Fault for 37:53 outer EH 1 to 92 parentIndex 1
+ FPI 59-79; fpOff = 8

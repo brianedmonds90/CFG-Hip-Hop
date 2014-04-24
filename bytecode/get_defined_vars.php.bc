@@ -1,0 +1,164 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 23:32 to 106
+ FPI 0-17; fpOff = 4
+ FPI 23-29; fpOff = 4
+ FPI 32-42; fpOff = 5
+ FPI 62-72; fpOff = 5
+ FPI 76-93; fpOff = 4
+ FPI 106-116; fpOff = 4
+ FPI 136-146; fpOff = 4
+  // line 21
+    0: FPushFuncD 1 "error_reporting"
+    6: Int 0
+   15: FPassC 0
+   17: FCall 1
+   19: UnboxR
+   20: SetL 0
+   22: PopC
+   23: FPushFuncD 0 "f"
+   29: FCall 0
+   31: UnboxR
+   32: FPushFuncD 1 "error_reporting"
+   38: CGetL 0
+   40: FPassC 0
+   42: FCall 1
+   44: UnboxR
+   45: SetL 0
+   47: Int 0
+   56: Eq
+   57: JmpNZ 18 (75)
+   62: FPushFuncD 1 "error_reporting"
+   68: CGetL 0
+   70: FPassC 0
+   72: FCall 1
+   74: PopR
+   75: PopC
+  // line 22
+   76: FPushFuncD 1 "ref"
+   82: Int 20
+   91: FPassCE 0
+   93: FCall 1
+   95: PopR
+   96: Int 1
+  105: RetC
+  106: FPushFuncD 1 "error_reporting"
+  112: CGetL 0
+  114: FPassC 0
+  116: FCall 1
+  118: UnboxR
+  119: SetL 0
+  121: Int 0
+  130: Eq
+  131: JmpNZ 18 (149)
+  136: FPushFuncD 1 "error_reporting"
+  142: CGetL 0
+  144: FPassC 0
+  146: FCall 1
+  148: PopR
+  149: Unwind
+
+Function f at 150 (ID 1)
+ DV for parameter 0 at 171 = 500
+ FPI 150-166; fpOff = 5
+ FPI 156-162; fpOff = 8 parentIndex = 0 (depth 2)
+  // line 5
+  150: FPushFuncD 1 "var_dump"
+  156: FPushFuncD 0 "get_defined_vars"
+  162: FCall 0
+  164: FPassR 0
+  166: FCall 1
+  168: PopR
+  // line 6
+  169: Null
+  170: RetC
+  // line 3
+  171: Int 500
+  // line 6
+  180: SetL 0 # i1:t=Uninit
+  182: PopC
+  183: JmpNS -33
+
+Function (leaf) modify at 188 (ID 2)
+  // line 9
+  188: Int 200
+  197: SetOpM PlusEqual <L:0 ET:"a">
+  214: PopC
+  // line 10
+  215: Null
+  216: RetC
+
+Function rvalue_sort at 217 (ID 3)
+ FPI 217-226; fpOff = 4
+  // line 12
+  217: FPushFuncD 1 "ksort"
+  223: FPassL 0 0
+  226: FCall 1
+  228: PopR
+  229: CGetL 0
+  231: RetC
+
+Function ref at 232 (ID 4)
+ FPI 237-263; fpOff = 5
+ FPI 243-259; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 249-255; fpOff = 11 parentIndex = 1 (depth 3)
+ FPI 266-292; fpOff = 5
+ FPI 272-288; fpOff = 8 parentIndex = 3 (depth 2)
+ FPI 278-284; fpOff = 11 parentIndex = 4 (depth 3)
+ FPI 295-304; fpOff = 5
+  // line 15
+  232: VGetL 0
+  234: BindL 1
+  236: PopV
+  // line 16
+  237: FPushFuncD 1 "var_dump"
+  243: FPushFuncD 1 "rvalue_sort"
+  249: FPushFuncD 0 "get_defined_vars"
+  255: FCall 0
+  257: FPassR 0
+  259: FCall 1
+  261: FPassR 0
+  263: FCall 1
+  265: PopR
+  // line 17
+  266: FPushFuncD 1 "modify"
+  272: FPushFuncD 1 "rvalue_sort"
+  278: FPushFuncD 0 "get_defined_vars"
+  284: FCall 0
+  286: FPassR 0
+  288: FCall 1
+  290: FPassR 0
+  292: FCall 1
+  294: PopR
+  // line 18
+  295: FPushFuncD 1 "var_dump"
+  301: FPassL 0 1
+  304: FCall 1
+  306: PopR
+  // line 19
+  307: Null
+  308: RetC
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 23:32 to 106
+ FPI 0-17; fpOff = 4
+ FPI 23-29; fpOff = 4
+ FPI 32-42; fpOff = 5
+ FPI 62-72; fpOff = 5
+ FPI 76-93; fpOff = 4
+ FPI 106-116; fpOff = 4
+ FPI 136-146; fpOff = 4
+Function f at 150 (ID 1)
+ DV for parameter 0 at 171 = 500
+ FPI 150-166; fpOff = 5
+ FPI 156-162; fpOff = 8 parentIndex = 0 (depth 2)
+Function (leaf) modify at 188 (ID 2)
+Function rvalue_sort at 217 (ID 3)
+ FPI 217-226; fpOff = 4
+Function ref at 232 (ID 4)
+ FPI 237-263; fpOff = 5
+ FPI 243-259; fpOff = 8 parentIndex = 0 (depth 2)
+ FPI 249-255; fpOff = 11 parentIndex = 1 (depth 3)
+ FPI 266-292; fpOff = 5
+ FPI 272-288; fpOff = 8 parentIndex = 3 (depth 2)
+ FPI 278-284; fpOff = 11 parentIndex = 4 (depth 3)
+ FPI 295-304; fpOff = 5

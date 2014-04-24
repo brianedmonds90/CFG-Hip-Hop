@@ -1,0 +1,188 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 45
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function (leaf) pure_function at 19 (ID 1)
+  // line 4
+   19: Int 7
+   28: RetC
+
+Function pure_function_2 at 29 (ID 2)
+ FPI 29-38; fpOff = 5
+ FPI 41-50; fpOff = 6
+  // line 8
+   29: FPushFuncD 1 "pure_function"
+   35: FPassL 0 0
+   38: FCall 1
+   40: UnboxR
+   41: FPushFuncD 1 "pure_function"
+   47: FPassL 0 1
+   50: FCall 1
+   52: UnboxR
+   53: Add
+   54: RetC
+
+Function (leaf) pure_function_no_profile at 55 (ID 3)
+  // line 12
+   55: Null
+   56: RetC
+
+Function test_exception at 57 (ID 4)
+ FPI 57-70; fpOff = 4
+  // line 16
+   57: FPushCtorD 1 "Exception"
+   63: String "test"
+   68: FPassCE 0
+   70: FCall 1
+   72: PopR # i0:t=Null*
+   73: Throw
+
+Function profiler at 74 (ID 5)
+ FPI 74-80; fpOff = 3
+ FPI 83-99; fpOff = 3
+ FPI 89-95; fpOff = 6 parentIndex = 1 (depth 2)
+  // line 22
+   74: FPushFuncD 0 "pure_function_no_profile"
+   80: FCall 0
+   82: PopR
+  // line 23
+   83: FPushFuncD 1 "var_dump"
+   89: FPushFuncD 0 "func_get_args"
+   95: FCall 0
+   97: FPassR 0
+   99: FCall 1
+  101: PopR
+  // line 24
+  102: Null
+  103: RetC
+
+Function (leaf) gen at 104 (ID 6)
+  // line 29
+  104: CreateCont
+  105: RetC
+
+Function (leaf) gen$continuation at 106 (ID 7)
+  106: UnpackCont
+  107: Switch <141 153 154 166 167> 0 0
+  141: PopC
+  // line 27
+  142: Int 1
+  151: ContSuspend 2
+  153: Throw
+  154: PopC
+  // line 28
+  155: Int 2
+  164: ContSuspend 4
+  166: Throw
+  167: PopC
+  // line 29
+  168: Null
+  169: ContRetC
+
+Function main at 170 (ID 8)
+ EH 0 Catch for 268:282
+  Handle exception at 282
+ EH 1 Fault for 302:309 iterId 0 itRef false to 354
+ FPI 170-198; fpOff = 7
+ FPI 201-214; fpOff = 7
+ FPI 217-245; fpOff = 7
+ FPI 248-265; fpOff = 7
+ FPI 268-274; fpOff = 7
+ FPI 286-292; fpOff = 7
+ FPI 309-318; fpOff = 7
+ FPI 321-349; fpOff = 7
+  // line 32
+  170: FPushFuncD 2 "pure_function_2"
+  176: Int 1
+  185: FPassCE 0
+  187: Int 2
+  196: FPassCE 1
+  198: FCall 2
+  200: PopR
+  // line 33
+  201: FPushFuncD 1 "fb_setprofile"
+  207: String "profiler"
+  212: FPassCE 0
+  214: FCall 1
+  216: PopR
+  // line 34
+  217: FPushFuncD 2 "pure_function_2"
+  223: Int 3
+  232: FPassCE 0
+  234: Int 4
+  243: FPassCE 1
+  245: FCall 2
+  247: PopR
+  // line 35
+  248: FPushFuncD 1 "srand"
+  254: Int 3735928559
+  263: FPassCE 0
+  265: FCall 1
+  267: PopR
+  // line 37
+  268: FPushFuncD 0 "test_exception"
+  274: FCall 0
+  276: PopR
+  // line 40
+  277: Jmp 9 (286)
+  282: Catch
+  283: SetL 0
+  285: PopC
+  // line 41
+  286: FPushFuncD 0 "gen"
+  292: FCall 0
+  294: UnboxR
+  295: IterInit 0 14 (309) 1
+  302: IterNext 0 0 (302) 1
+  // line 42
+  309: FPushFuncD 1 "fb_setprofile"
+  315: Null
+  316: FPassCE 0
+  318: FCall 1
+  320: PopR
+  // line 43
+  321: FPushFuncD 2 "pure_function_2"
+  327: Int 5
+  336: FPassCE 0
+  338: Int 6
+  347: FPassCE 1
+  349: FCall 2
+  351: PopR
+  // line 44
+  352: Null
+  353: RetC
+  354: IterFree 0
+  356: Unwind
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) pure_function at 19 (ID 1)
+Function pure_function_2 at 29 (ID 2)
+ FPI 29-38; fpOff = 5
+ FPI 41-50; fpOff = 6
+Function (leaf) pure_function_no_profile at 55 (ID 3)
+Function test_exception at 57 (ID 4)
+ FPI 57-70; fpOff = 4
+Function profiler at 74 (ID 5)
+ FPI 74-80; fpOff = 3
+ FPI 83-99; fpOff = 3
+ FPI 89-95; fpOff = 6 parentIndex = 1 (depth 2)
+Function (leaf) gen at 104 (ID 6)
+Function (leaf) gen$continuation at 106 (ID 7)
+Function main at 170 (ID 8)
+ EH 0 Catch for 268:282
+  Handle exception at 282
+ EH 1 Fault for 302:309 iterId 0 itRef false to 354
+ FPI 170-198; fpOff = 7
+ FPI 201-214; fpOff = 7
+ FPI 217-245; fpOff = 7
+ FPI 248-265; fpOff = 7
+ FPI 268-274; fpOff = 7
+ FPI 286-292; fpOff = 7
+ FPI 309-318; fpOff = 7
+ FPI 321-349; fpOff = 7

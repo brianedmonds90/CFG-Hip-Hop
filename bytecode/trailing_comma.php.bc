@@ -1,0 +1,7 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 2
+    0: String "Syntax only allowed with -v Eval.EnableHipHopSyntax=true"
+    5: Fatal Parse
+Pseudo-main at 0 (ID 0)
+HipHop Fatal error: Syntax only allowed with -v Eval.EnableHipHopSyntax=true in quick/trailing_comma.php on line 2

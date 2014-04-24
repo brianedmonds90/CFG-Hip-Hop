@@ -1,0 +1,7 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 17
+    0: String "Cannot use collection initialization for non-collection class"
+    5: Fatal Runtime
+Pseudo-main at 0 (ID 0)
+HipHop Fatal error: Cannot use collection initialization for non-collection class in quick/debug_backtrace.php on line 17

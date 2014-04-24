@@ -1,0 +1,564 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-24; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+ FPI 45-51; fpOff = 3
+  // line 4
+    0: FPushFuncD 1 "error_reporting"
+    6: FPushFuncD 0 "error_reporting"
+   12: FCall 0
+   14: UnboxR
+   15: Cns "E_NOTICE"
+   20: BitNot
+   21: BitAnd
+   22: FPassCE 0
+   24: FCall 1
+   26: PopR
+  // line 6
+   27: DefCls 0
+  // line 46
+   29: DefCls 1
+  // line 54
+   31: DefCls 2
+  // line 62
+   33: DefCls 3
+  // line 70
+   35: DefCls 4
+  // line 77
+   37: DefCls 5
+  // line 85
+   39: DefCls 6
+  // line 93
+   41: DefCls 7
+  // line 97
+   43: DefCls 8
+  // line 115
+   45: FPushFuncD 0 "main"
+   51: FCall 0
+   53: PopR
+   54: Int 1
+   63: RetC
+
+Function banner at 64 (ID 1)
+ FPI 64-80; fpOff = 4
+  // line 43
+   64: FPushFuncD 2 "printf"
+   70: String "---- %40s\n"
+   75: FPassCE 0
+   77: FPassL 1 0
+   80: FCall 2
+   82: PopR
+  // line 44
+   83: Null
+   84: RetC
+
+Function main at 85 (ID 2)
+ FPI 85-91; fpOff = 11
+ FPI 97-103; fpOff = 11
+ FPI 109-115; fpOff = 11
+ FPI 121-127; fpOff = 11
+ FPI 133-139; fpOff = 11
+ FPI 145-151; fpOff = 11
+ FPI 157-163; fpOff = 11
+  // line 107
+   85: FPushCtorD 0 "Ascending"
+   91: FCall 0
+   93: PopR # i0:t=Null*
+   94: SetL 0
+   96: PopC
+  // line 108
+   97: FPushCtorD 0 "Descending"
+  103: FCall 0
+  105: PopR # i0:t=Null*
+  106: SetL 1
+  108: PopC
+  // line 109
+  109: FPushCtorD 0 "Equal"
+  115: FCall 0
+  117: PopR # i0:t=Null*
+  118: SetL 2
+  120: PopC
+  // line 110
+  121: FPushCtorD 0 "Str"
+  127: FCall 0
+  129: PopR # i0:t=Null*
+  130: SetL 3
+  132: PopC
+  // line 111
+  133: FPushCtorD 0 "NotEqual"
+  139: FCall 0
+  141: PopR # i0:t=Null*
+  142: SetL 4
+  144: PopC
+  // line 112
+  145: FPushCtorD 0 "Bools"
+  151: FCall 0
+  153: PopR # i0:t=Null*
+  154: SetL 5
+  156: PopC
+  // line 113
+  157: FPushCtorD 0 "DifferentTypes"
+  163: FCall 0
+  165: PopR # i0:t=Null*
+  166: SetL 6
+  168: PopC
+  // line 114
+  169: Null
+  170: RetC
+
+Method public (leaf) T::binary at 171
+ EH 0 Fault for 209:464 iterId 0 itRef false to 478
+ EH 1 Fault for 218:457 outer EH 0 iterId 1 itRef false to 475 parentIndex 0
+  // line 10
+  171: Int 0
+  180: SetL 2
+  // line 25
+  182: PopC
+  // line 10
+  183: Int 3
+  192: CGetL2 2
+  194: Lt
+  195: JmpZ 278 (473)
+  // line 24
+  200: CGetL 0
+  202: IterInit 0 262 (464) 3
+  209: CGetL 1
+  211: IterInit 1 246 (457) 4
+  // line 16
+  218: CGetL 4
+  220: CGetL2 3
+  222: Same
+  223: JmpZ 24 (247)
+  228: String " === "
+  233: CGetL2 3
+  235: Concat
+  236: CGetL 4
+  238: Concat
+  239: String "\n"
+  244: Concat
+  245: Print
+  246: PopC
+  // line 17
+  247: CGetL 4
+  249: CGetL2 3
+  251: NSame
+  252: JmpZ 24 (276)
+  257: String " !== "
+  262: CGetL2 3
+  264: Concat
+  265: CGetL 4
+  267: Concat
+  268: String "\n"
+  273: Concat
+  274: Print
+  275: PopC
+  // line 18
+  276: CGetL 4
+  278: CGetL2 3
+  280: Eq
+  281: JmpZ 24 (305)
+  286: String " == "
+  291: CGetL2 3
+  293: Concat
+  294: CGetL 4
+  296: Concat
+  297: String "\n"
+  302: Concat
+  303: Print
+  304: PopC
+  // line 19
+  305: CGetL 4
+  307: CGetL2 3
+  309: Neq
+  310: JmpZ 24 (334)
+  315: String " != "
+  320: CGetL2 3
+  322: Concat
+  323: CGetL 4
+  325: Concat
+  326: String "\n"
+  331: Concat
+  332: Print
+  333: PopC
+  // line 20
+  334: CGetL 4
+  336: CGetL2 3
+  338: Lte
+  339: JmpZ 24 (363)
+  344: String " <= "
+  349: CGetL2 3
+  351: Concat
+  352: CGetL 4
+  354: Concat
+  355: String "\n"
+  360: Concat
+  361: Print
+  362: PopC
+  // line 21
+  363: CGetL 4
+  365: CGetL2 3
+  367: Gte
+  368: JmpZ 24 (392)
+  373: String " >= "
+  378: CGetL2 3
+  380: Concat
+  381: CGetL 4
+  383: Concat
+  384: String "\n"
+  389: Concat
+  390: Print
+  391: PopC
+  // line 22
+  392: CGetL 4
+  394: CGetL2 3
+  396: Lt
+  397: JmpZ 24 (421)
+  402: String " < "
+  407: CGetL2 3
+  409: Concat
+  410: CGetL 4
+  412: Concat
+  413: String "\n"
+  418: Concat
+  419: Print
+  420: PopC
+  // line 23
+  421: CGetL 4
+  423: CGetL2 3
+  425: Gt
+  426: JmpZ 24 (450)
+  431: String " > "
+  436: CGetL2 3
+  438: Concat
+  439: CGetL 4
+  441: Concat
+  442: String "\n"
+  447: Concat
+  448: Print
+  449: PopC
+  // line 24
+  450: IterNext 1 -232 4
+  457: IterNext 0 -248 3
+  // line 10
+  464: IncDecL 2 PreInc
+  // line 25
+  467: PopC
+  468: Jmp -285
+  // line 26
+  473: Null
+  474: RetC
+  475: IterFree 1
+  477: Unwind
+  478: IterFree 0
+  480: Unwind
+
+Method public (leaf) T::unary at 481
+ EH 0 Fault for 519:652 iterId 0 itRef false to 663
+  // line 28
+  481: Int 0
+  490: SetL 1
+  // line 38
+  492: PopC
+  // line 28
+  493: Int 3
+  502: CGetL2 1
+  504: Lt
+  505: JmpZ 156 (661)
+  // line 37
+  510: CGetL 0
+  512: IterInit 0 140 (652) 2
+  // line 30
+  519: IsTypeL 2 Int
+  522: JmpZ 15 (537)
+  527: String " is_int\n"
+  532: CGetL2 2
+  534: Concat
+  535: Print
+  536: PopC
+  // line 31
+  537: IsTypeL 2 Str
+  540: JmpZ 15 (555)
+  545: String " is_string\n"
+  550: CGetL2 2
+  552: Concat
+  553: Print
+  554: PopC
+  // line 32
+  555: IsTypeL 2 Dbl
+  558: JmpZ 15 (573)
+  563: String " is_double\n"
+  568: CGetL2 2
+  570: Concat
+  571: Print
+  572: PopC
+  // line 33
+  573: IsTypeL 2 Null
+  576: JmpZ 15 (591)
+  581: String " is_null\n"
+  586: CGetL2 2
+  588: Concat
+  589: Print
+  590: PopC
+  // line 34
+  591: IsTypeL 2 Dbl
+  594: JmpZ 15 (609)
+  599: String " is_double\n"
+  604: CGetL2 2
+  606: Concat
+  607: Print
+  608: PopC
+  // line 35
+  609: IsTypeL 2 Arr
+  612: JmpZ 15 (627)
+  617: String " is_array\n"
+  622: CGetL2 2
+  624: Concat
+  625: Print
+  626: PopC
+  // line 36
+  627: IsTypeL 2 Obj
+  630: JmpZ 15 (645)
+  635: String " is_object\n"
+  640: CGetL2 2
+  642: Concat
+  643: Print
+  644: PopC
+  // line 37
+  645: IterNext 0 -126 2
+  // line 28
+  652: IncDecL 1 PreInc
+  // line 38
+  655: PopC
+  656: Jmp -163
+  // line 39
+  661: Null
+  662: RetC
+  663: IterFree 0
+  665: Unwind
+
+Method public Ascending::__construct at 666
+ FPI 666-679; fpOff = 3
+ FPI 683-703; fpOff = 3
+  // line 49
+  666: FPushFuncD 1 "banner"
+  672: String "asc"
+  677: FPassCE 0
+  679: FCall 1
+  681: PopR
+  // line 50
+  682: This
+  683: FPushObjMethodD 2 "binary" # i0:c=Ascending
+  689: Array array(0=>-1,1=>0,2=>1)
+  694: FPassCE 0
+  696: Array array(0=>-1,1=>0,2=>1)
+  701: FPassCE 1
+  703: FCall 2
+  705: PopR
+  // line 51
+  706: Null
+  707: RetC
+
+Method public Descending::__construct at 708
+ FPI 708-721; fpOff = 3
+ FPI 725-745; fpOff = 3
+  // line 57
+  708: FPushFuncD 1 "banner"
+  714: String "desc"
+  719: FPassCE 0
+  721: FCall 1
+  723: PopR
+  // line 58
+  724: This
+  725: FPushObjMethodD 2 "binary" # i0:c=Descending
+  731: Array array(0=>1,1=>0,2=>-1)
+  736: FPassCE 0
+  738: Array array(0=>1,1=>0,2=>-1)
+  743: FPassCE 1
+  745: FCall 2
+  747: PopR
+  // line 59
+  748: Null
+  749: RetC
+
+Method public Equal::__construct at 750
+ FPI 750-763; fpOff = 3
+ FPI 767-787; fpOff = 3
+  // line 65
+  750: FPushFuncD 1 "banner"
+  756: String "eq"
+  761: FPassCE 0
+  763: FCall 1
+  765: PopR
+  // line 66
+  766: This
+  767: FPushObjMethodD 2 "binary" # i0:c=Equal
+  773: Array array(0=>0,1=>0,2=>0)
+  778: FPassCE 0
+  780: Array array(0=>0,1=>0,2=>0)
+  785: FPassCE 1
+  787: FCall 2
+  789: PopR
+  // line 67
+  790: Null
+  791: RetC
+
+Method public Str::__construct at 792
+ FPI 801-813; fpOff = 4
+  // line 73
+  792: Array array(0=>"a",1=>"abc",2=>"abcd",3=>"0",4=>"1",5=>"2")
+  797: SetL 0
+  799: PopC
+  // line 74
+  800: This
+  801: FPushObjMethodD 2 "binary" # i0:c=Str
+  807: FPassL 0 0
+  810: FPassL 1 0
+  813: FCall 2
+  815: PopR
+  // line 75
+  816: Null
+  817: RetC
+
+Method public NotEqual::__construct at 818
+ FPI 818-831; fpOff = 3
+ FPI 835-855; fpOff = 3
+  // line 80
+  818: FPushFuncD 1 "banner"
+  824: String "neq"
+  829: FPassCE 0
+  831: FCall 1
+  833: PopR
+  // line 81
+  834: This
+  835: FPushObjMethodD 2 "binary" # i0:c=NotEqual
+  841: Array array(0=>1,1=>2,2=>3)
+  846: FPassCE 0
+  848: Array array(0=>4,1=>5,2=>6)
+  853: FPassCE 1
+  855: FCall 2
+  857: PopR
+  // line 82
+  858: Null
+  859: RetC
+
+Method public Bools::__construct at 860
+ FPI 860-873; fpOff = 3
+ FPI 877-897; fpOff = 3
+  // line 88
+  860: FPushFuncD 1 "banner"
+  866: String "bools"
+  871: FPassCE 0
+  873: FCall 1
+  875: PopR
+  // line 89
+  876: This
+  877: FPushObjMethodD 2 "binary" # i0:c=Bools
+  883: Array array(0=>false,1=>true)
+  888: FPassCE 0
+  890: Array array(0=>false,1=>true)
+  895: FPassCE 1
+  897: FCall 2
+  899: PopR
+  // line 90
+  900: Null
+  901: RetC
+
+Method public (leaf) C::__toString at 902
+  // line 94
+  902: String "snee!"
+  907: RetC
+
+Method public DifferentTypes::__construct at 908
+ FPI 908-921; fpOff = 4
+ FPI 954-960; fpOff = 11
+ FPI 969-978; fpOff = 4
+  // line 100
+  908: FPushFuncD 1 "banner"
+  914: String "weirdTypes"
+  919: FPassCE 0
+  921: FCall 1
+  923: PopR
+  // line 101
+  924: Int 0
+  933: True
+  934: Null
+  935: Double 0.3
+  944: String "str"
+  949: Array array()
+  954: FPushCtorD 0 "C"
+  960: FCall 0
+  962: PopR # i0:t=Null*
+  963: NewPackedArray 7
+  965: SetL 0
+  967: PopC
+  // line 102
+  968: This
+  969: FPushObjMethodD 1 "unary" # i0:c=DifferentTypes
+  975: FPassL 0 0
+  978: FCall 1
+  980: PopR
+  // line 103
+  981: Null
+  982: RetC
+
+Method public (leaf) T::86ctor at 983
+  // line 40
+  983: Null
+  984: RetC
+
+Method public (leaf) C::86ctor at 985
+  // line 95
+  985: Null
+  986: RetC
+Class T at 27 (maybe-hoistable) (ID 0)
+ Method public (leaf) T::binary at 171
+ EH 0 Fault for 209:464 iterId 0 itRef false to 478
+ EH 1 Fault for 218:457 outer EH 0 iterId 1 itRef false to 475 parentIndex 0
+ Method public (leaf) T::unary at 481
+ EH 0 Fault for 519:652 iterId 0 itRef false to 663
+ Method public (leaf) T::86ctor at 983
+Class Ascending at 29 (ID 1)
+ Method public Ascending::__construct at 666
+ FPI 666-679; fpOff = 3
+ FPI 683-703; fpOff = 3
+Class Descending at 31 (ID 2)
+ Method public Descending::__construct at 708
+ FPI 708-721; fpOff = 3
+ FPI 725-745; fpOff = 3
+Class Equal at 33 (ID 3)
+ Method public Equal::__construct at 750
+ FPI 750-763; fpOff = 3
+ FPI 767-787; fpOff = 3
+Class Str at 35 (ID 4)
+ Method public Str::__construct at 792
+ FPI 801-813; fpOff = 4
+Class NotEqual at 37 (ID 5)
+ Method public NotEqual::__construct at 818
+ FPI 818-831; fpOff = 3
+ FPI 835-855; fpOff = 3
+Class Bools at 39 (ID 6)
+ Method public Bools::__construct at 860
+ FPI 860-873; fpOff = 3
+ FPI 877-897; fpOff = 3
+Class C at 41 (maybe-hoistable) (ID 7)
+ Method public (leaf) C::__toString at 902
+ Method public (leaf) C::86ctor at 985
+Class DifferentTypes at 43 (ID 8)
+ Method public DifferentTypes::__construct at 908
+ FPI 908-921; fpOff = 4
+ FPI 954-960; fpOff = 11
+ FPI 969-978; fpOff = 4
+Pseudo-main at 0 (ID 0)
+ FPI 0-24; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+ FPI 45-51; fpOff = 3
+Function banner at 64 (ID 1)
+ FPI 64-80; fpOff = 4
+Function main at 85 (ID 2)
+ FPI 85-91; fpOff = 11
+ FPI 97-103; fpOff = 11
+ FPI 109-115; fpOff = 11
+ FPI 121-127; fpOff = 11
+ FPI 133-139; fpOff = 11
+ FPI 145-151; fpOff = 11
+ FPI 157-163; fpOff = 11

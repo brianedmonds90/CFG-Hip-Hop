@@ -1,0 +1,210 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-17; fpOff = 3
+ FPI 26-32; fpOff = 3
+ FPI 42-48; fpOff = 3
+ FPI 58-64; fpOff = 3
+  // line 3
+    0: FPushFuncD 1 "error_reporting"
+    6: Int -1
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+  // line 7
+   20: DefCls 0
+  // line 21
+   22: DefCls 1
+  // line 35
+   24: DefCls 2
+  // line 52
+   26: FPushFuncD 0 "main1"
+   32: FCall 0
+   34: PopR
+  // line 53
+   35: String "--\n"
+   40: Print
+   41: PopC
+  // line 54
+   42: FPushFuncD 0 "main2"
+   48: FCall 0
+   50: PopR
+  // line 55
+   51: String "--\n"
+   56: Print
+   57: PopC
+  // line 56
+   58: FPushFuncD 0 "main3"
+   64: FCall 0
+   66: PopR
+  // line 57
+   67: String "--\n"
+   72: Print
+   73: PopC
+   74: Int 1
+   83: RetC
+
+Function main1 at 84 (ID 1)
+ FPI 84-90; fpOff = 5
+  // line 15
+   84: FPushCtorD 0 "Foo"
+   90: FCall 0
+   92: PopR # i0:t=Null*
+   93: SetL 0
+   95: PopC
+  // line 16
+   96: UnsetM <L:0 PT:"foo">
+  // line 17
+  112: Null
+  113: RetC
+
+Function main2 at 114 (ID 2)
+ FPI 114-120; fpOff = 5
+  // line 29
+  114: FPushCtorD 0 "Foo2"
+  120: FCall 0
+  122: PopR # i0:t=Null*
+  123: SetL 0
+  125: PopC
+  // line 30
+  126: UnsetM <L:0 PT:"bar">
+  // line 31
+  142: Null
+  143: RetC
+
+Function main3 at 144 (ID 3)
+ FPI 144-150; fpOff = 5
+  // line 46
+  144: FPushCtorD 0 "CaseFoo"
+  150: FCall 0
+  152: PopR # i0:t=Null*
+  153: SetL 0
+  155: PopC
+  // line 47
+  156: UnsetM <L:0 PT:"bar">
+  // line 48
+  172: Null
+  173: RetC
+
+Method public Foo::__unset at 174
+ FPI 174-183; fpOff = 4
+  // line 9
+  174: FPushFuncD 1 "var_dump"
+  // line 47
+  180: FPassL 0 0
+  // line 9
+  183: FCall 1
+  185: PopR
+  // line 10
+  186: String "bar"
+  191: CGetL2 0
+  193: Neq
+  194: JmpZ 21 (215)
+  199: CheckThis
+  200: UnsetM <H PT:"bar"> # iM0:c=Foo
+  // line 11
+  215: Null
+  216: RetC
+
+Method public Foo2::__unset at 217
+ FPI 217-226; fpOff = 4
+  // line 23
+  217: FPushFuncD 1 "var_dump"
+  // line 10
+  223: FPassL 0 0
+  // line 23
+  226: FCall 1
+  228: PopR
+  // line 24
+  229: CheckThis
+  230: UnsetM <H PT:"foo"> # iM0:c=Foo2
+  // line 25
+  245: Null
+  246: RetC
+
+Method public CaseFoo::__unset at 247
+ FPI 247-256; fpOff = 4
+ FPI 352-365; fpOff = 4
+  // line 37
+  247: FPushFuncD 1 "var_dump"
+  // line 24
+  253: FPassL 0 0
+  // line 37
+  256: FCall 1
+  258: PopR
+  // line 38
+  259: String "bar"
+  264: CGetL2 0
+  266: Same
+  267: JmpZ 23 (290)
+  272: CheckThis
+  273: UnsetM <H PT:"Bar"> # iM0:c=CaseFoo
+  288: Null
+  289: RetC
+  // line 39
+  290: String "Bar"
+  295: CGetL2 0
+  297: Same
+  298: JmpZ 23 (321)
+  303: CheckThis
+  304: UnsetM <H PT:"foo"> # iM0:c=CaseFoo
+  319: Null
+  320: RetC
+  // line 40
+  321: String "foo"
+  326: CGetL2 0
+  328: Same
+  329: JmpZ 23 (352)
+  334: CheckThis
+  335: UnsetM <H PT:"bar"> # iM0:c=CaseFoo
+  350: Null
+  351: RetC
+  // line 41
+  352: FPushFuncD 1 "var_dump"
+  358: String "shouldn't get here"
+  // line 40
+  363: FPassCE 0
+  // line 41
+  365: FCall 1
+  367: PopR
+  // line 42
+  368: Null
+  369: RetC
+
+Method public (leaf) Foo::86ctor at 370
+  // line 12
+  370: Null
+  371: RetC
+
+Method public (leaf) Foo2::86ctor at 372
+  // line 26
+  372: Null
+  373: RetC
+
+Method public (leaf) CaseFoo::86ctor at 374
+  // line 43
+  374: Null
+  375: RetC
+Class Foo at 20 (maybe-hoistable) (ID 0)
+ Method public Foo::__unset at 174
+ FPI 174-183; fpOff = 4
+ Method public (leaf) Foo::86ctor at 370
+Class Foo2 at 22 (maybe-hoistable) (ID 1)
+ Method public Foo2::__unset at 217
+ FPI 217-226; fpOff = 4
+ Method public (leaf) Foo2::86ctor at 372
+Class CaseFoo at 24 (maybe-hoistable) (ID 2)
+ Method public CaseFoo::__unset at 247
+ FPI 247-256; fpOff = 4
+ FPI 352-365; fpOff = 4
+ Method public (leaf) CaseFoo::86ctor at 374
+Pseudo-main at 0 (ID 0)
+ FPI 0-17; fpOff = 3
+ FPI 26-32; fpOff = 3
+ FPI 42-48; fpOff = 3
+ FPI 58-64; fpOff = 3
+Function main1 at 84 (ID 1)
+ FPI 84-90; fpOff = 5
+Function main2 at 114 (ID 2)
+ FPI 114-120; fpOff = 5
+Function main3 at 144 (ID 3)
+ FPI 144-150; fpOff = 5

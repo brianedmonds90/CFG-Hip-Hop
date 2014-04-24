@@ -1,0 +1,69 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 18
+    2: FPushFuncD 0 "foo"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function foo at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+  // line 11
+   21: FPushCtorD 0 "Bar"
+   27: FCall 0
+   29: PopR # i0:t=Null*
+   30: SetL 0
+   32: PopC
+  // line 12
+   33: VGetL 0
+   35: BindM <L:0 PT:"x">
+   51: PopV
+  // line 13
+   52: String "First: "
+   57: Print
+   58: PopC
+  // line 14
+   59: String "something"
+   64: SetL 0
+   66: Print
+   67: PopC
+  // line 15
+   68: String "\n"
+   73: Print
+   74: PopC
+  // line 16
+   75: String "\n"
+   80: CGetL2 0
+   82: Concat
+   83: Print
+   84: PopC
+  // line 17
+   85: Null
+   86: RetC
+
+Method public (leaf) Bar::__destruct at 87
+  // line 6
+   87: CheckThis
+   88: String "dtor"
+   93: SetM <H PT:"x"> # iM0:c=Bar
+  108: PopC
+  // line 7
+  109: Null
+  110: RetC
+
+Method public (leaf) Bar::86ctor at 111
+  // line 8
+  111: Null
+  112: RetC
+Class Bar at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) Bar::__destruct at 87
+ Method public (leaf) Bar::86ctor at 111
+ Property public Bar::x = null
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function foo at 21 (ID 1)
+ FPI 21-27; fpOff = 5

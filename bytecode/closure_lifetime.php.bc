@@ -1,0 +1,73 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 15
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+ FPI 30-36; fpOff = 4
+ FPI 44-46; fpOff = 4
+  // line 9
+   21: FPushCtorD 0 "blah"
+   27: FCall 0
+   29: PopR # i0:t=Null*
+   30: FPushObjMethodD 0 "foo"
+   36: FCall 0
+   38: UnboxR
+   39: SetL 0
+   41: PopC
+  // line 10
+   42: CGetL 0
+   44: FPushFunc 0
+   46: FCall 0
+   48: PopR
+  // line 11
+   49: UnsetL 0
+  // line 12
+   51: String "done\n"
+   56: Print
+   57: PopC
+  // line 13
+   58: Null
+   59: RetC
+
+Method public (leaf) blah::__destruct at 60
+  // line 4
+   60: String "~blah()\n"
+   65: Print
+   66: PopC
+   67: Null
+   68: RetC
+
+Method public (leaf) blah::foo at 69
+  // line 5
+   69: CreateCl 0 "Closure$blah::foo"
+   75: RetC
+
+Method public (leaf) Closure$blah::foo::__invoke at 76
+   76: String "hi"
+   81: RetC
+
+Method public (leaf) blah::86ctor at 82
+  // line 6
+   82: Null
+   83: RetC
+Class blah at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) blah::__destruct at 60
+ Method public (leaf) blah::foo at 69
+ Method public (leaf) blah::86ctor at 82
+Class Closure$blah::foo at 75 (unique) (ID 1)
+ Method public (leaf) Closure$blah::foo::__invoke at 76
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+ FPI 30-36; fpOff = 4
+ FPI 44-46; fpOff = 4

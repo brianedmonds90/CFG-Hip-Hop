@@ -1,0 +1,27 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-17; fpOff = 3
+  // line 10
+    0: DefTypeAlias 0
+    2: DefTypeAlias 1
+    4: FPushFuncD 1 "main"
+   10: Array array(0=>12)
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+   20: Int 1
+   29: RetC
+
+Function (leaf) main at 30 (ID 1)
+  // line 8
+   30: VerifyParamType 0
+  // line 7
+   32: String "Hi\n"
+   37: Print
+   38: PopC
+  // line 8
+   39: Null
+   40: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 4-17; fpOff = 3
+Function (leaf) main at 30 (ID 1)

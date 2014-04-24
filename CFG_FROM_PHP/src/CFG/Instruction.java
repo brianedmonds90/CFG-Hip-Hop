@@ -78,18 +78,18 @@ public class Instruction{
 		if(Main.cfgInstructions.contains(getInstruction_text())){
 			type = control_flow;
 		}
-		else if(Main.getInstructions.contains(getInstruction_text())){
+		else if(Main.useInstructions.contains(getInstruction_text())){
 			type = get;
 			use = true;
 		}
-		else if(Main.setL.contains(getInstruction_text())){
+		else if(Main.defInstructions.contains(getInstruction_text())){
 			//Mutator instructions
 			type = set;
 			definition  = true;
 		}
-		else if(Main.callInstructions.contains(getInstruction_text())){
-			type = call;
-			callSite =true;
+		else if(Main.mutator.contains(getInstruction_text())){
+			use=true;
+			definition=true;
 		}
 		else{
 			type = unidentified;
@@ -97,6 +97,10 @@ public class Instruction{
 		
 		if(Main.globalInstructions.contains(getInstruction_text())){
 			global = true;
+		}
+		if(Main.callInstructions.contains(getInstruction_text())){
+			type = call;
+			callSite =true;
 		}
 		/* Parse the instruction */
 		boolean instr = true;
@@ -186,6 +190,11 @@ public class Instruction{
 		return false;
 	}
 	
+	/**
+	 * Compares the bytecode line number
+	 * @param b
+	 * @return
+	 */
 	public int compareTo(Instruction b) {
 		if(this.equals(b))
 			return 0;
@@ -193,6 +202,14 @@ public class Instruction{
 		int bb = Integer.parseInt(b.getBCLineNO());
 		if(a<bb) return -1;
 		return 1;
+	}
+	
+	public String getInstruction_text() {
+		return instruction_text;
+	}
+
+	public void setInstruction_text(String instruction_text) {
+		this.instruction_text = instruction_text;
 	}
 	
 	/**
@@ -209,18 +226,11 @@ public class Instruction{
 		sb.append("\n");
 		return sb.toString();
 	}
-
-	public String getInstruction_text() {
-		return instruction_text;
-	}
-
-	public void setInstruction_text(String instruction_text) {
-		this.instruction_text = instruction_text;
-	}
-
+	
 	public boolean callSite() {
-		// TODO Auto-generated method stub
+
 		
 		return callSite;
 	}
+
 }

@@ -1,0 +1,38 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 5-33; fpOff = 4
+  // line 9
+    0: String "foo(): "
+    5: FPushFuncD 2 "foo"
+   11: Int 1
+   20: FPassCE 0
+   22: Int 2
+   31: FPassCE 1
+   33: FCall 2
+   35: UnboxR
+   36: String "\n"
+   41: Concat
+   42: Concat
+   43: Print
+   44: PopC
+   45: Int 1
+   54: RetC
+
+Function (leaf) foo at 55 (ID 1)
+  // line 4
+   55: Int 5
+   64: SetL 0
+   66: PopC
+  // line 5
+   67: CGetL 1
+   69: CGetL2 0
+   71: Add
+   72: JmpZ 8 (80)
+   77: CGetL 0
+   79: RetC
+  // line 6
+   80: Int 2
+   89: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 5-33; fpOff = 4
+Function (leaf) foo at 55 (ID 1)

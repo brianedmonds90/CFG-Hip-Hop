@@ -1,5 +1,9 @@
 package main;
 
+/**
+ * State machine for handling each bytecode line
+ *
+ */
 public class StateMachine {
 	int state;
 	int input;

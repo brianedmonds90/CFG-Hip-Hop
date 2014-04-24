@@ -1,0 +1,149 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-16; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+ FPI 19-35; fpOff = 3
+ FPI 25-31; fpOff = 6 parentIndex = 2 (depth 2)
+ FPI 38-54; fpOff = 3
+ FPI 44-50; fpOff = 6 parentIndex = 4 (depth 2)
+ FPI 57-73; fpOff = 3
+ FPI 63-69; fpOff = 6 parentIndex = 6 (depth 2)
+ FPI 76-92; fpOff = 3
+ FPI 82-88; fpOff = 6 parentIndex = 8 (depth 2)
+ FPI 95-111; fpOff = 3
+ FPI 101-107; fpOff = 6 parentIndex = 10 (depth 2)
+ FPI 114-130; fpOff = 3
+ FPI 120-126; fpOff = 6 parentIndex = 12 (depth 2)
+ FPI 133-149; fpOff = 3
+ FPI 139-145; fpOff = 6 parentIndex = 14 (depth 2)
+  // line 27
+    0: FPushFuncD 1 "var_dump"
+    6: FPushFuncD 0 "elemPromo"
+   12: FCall 0
+   14: FPassR 0
+   16: FCall 1
+   18: PopR
+  // line 28
+   19: FPushFuncD 1 "var_dump"
+   25: FPushFuncD 0 "elemPromo"
+   31: FCall 0
+   33: FPassR 0
+   35: FCall 1
+   37: PopR
+  // line 29
+   38: FPushFuncD 1 "var_dump"
+   44: FPushFuncD 0 "elemNoPromo"
+   50: FCall 0
+   52: FPassR 0
+   54: FCall 1
+   56: PopR
+  // line 30
+   57: FPushFuncD 1 "var_dump"
+   63: FPushFuncD 0 "elemNoPromo"
+   69: FCall 0
+   71: FPassR 0
+   73: FCall 1
+   75: PopR
+  // line 31
+   76: FPushFuncD 1 "var_dump"
+   82: FPushFuncD 0 "propPromo"
+   88: FCall 0
+   90: FPassR 0
+   92: FCall 1
+   94: PopR
+  // line 32
+   95: FPushFuncD 1 "var_dump"
+  101: FPushFuncD 0 "propPromo"
+  107: FCall 0
+  109: FPassR 0
+  111: FCall 1
+  113: PopR
+  // line 33
+  114: FPushFuncD 1 "var_dump"
+  120: FPushFuncD 0 "propNoPromo"
+  126: FCall 0
+  128: FPassR 0
+  130: FCall 1
+  132: PopR
+  // line 34
+  133: FPushFuncD 1 "var_dump"
+  139: FPushFuncD 0 "propNoPromo"
+  145: FCall 0
+  147: FPassR 0
+  149: FCall 1
+  151: PopR
+  152: Int 1
+  161: RetC
+
+Function (leaf) elemNoPromo at 162 (ID 1)
+  // line 4
+  162: String " "
+  167: SetL 0
+  169: PopC
+  // line 5
+  170: String "A"
+  175: SetM <L:0 EI:0>
+  195: PopC
+  // line 6
+  196: CGetL 0
+  198: RetC
+
+Function (leaf) elemPromo at 199 (ID 2)
+  // line 10
+  199: String ""
+  204: SetL 0
+  206: PopC
+  // line 11
+  207: String "A"
+  212: SetM <L:0 EI:0>
+  232: PopC
+  // line 12
+  233: CGetL 0
+  235: RetC
+
+Function (leaf) propNoPromo at 236 (ID 3)
+  // line 16
+  236: String " "
+  241: SetL 0
+  243: PopC
+  // line 17
+  244: String "A"
+  249: SetM <L:0 PT:"prop">
+  265: PopC
+  // line 18
+  266: CGetL 0
+  268: RetC
+
+Function (leaf) propPromo at 269 (ID 4)
+  // line 22
+  269: String ""
+  274: SetL 0
+  276: PopC
+  // line 23
+  277: String "A"
+  282: SetM <L:0 PT:"prop">
+  298: PopC
+  // line 24
+  299: CGetL 0
+  301: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-16; fpOff = 3
+ FPI 6-12; fpOff = 6 parentIndex = 0 (depth 2)
+ FPI 19-35; fpOff = 3
+ FPI 25-31; fpOff = 6 parentIndex = 2 (depth 2)
+ FPI 38-54; fpOff = 3
+ FPI 44-50; fpOff = 6 parentIndex = 4 (depth 2)
+ FPI 57-73; fpOff = 3
+ FPI 63-69; fpOff = 6 parentIndex = 6 (depth 2)
+ FPI 76-92; fpOff = 3
+ FPI 82-88; fpOff = 6 parentIndex = 8 (depth 2)
+ FPI 95-111; fpOff = 3
+ FPI 101-107; fpOff = 6 parentIndex = 10 (depth 2)
+ FPI 114-130; fpOff = 3
+ FPI 120-126; fpOff = 6 parentIndex = 12 (depth 2)
+ FPI 133-149; fpOff = 3
+ FPI 139-145; fpOff = 6 parentIndex = 14 (depth 2)
+Function (leaf) elemNoPromo at 162 (ID 1)
+Function (leaf) elemPromo at 199 (ID 2)
+Function (leaf) propNoPromo at 236 (ID 3)
+Function (leaf) propPromo at 269 (ID 4)

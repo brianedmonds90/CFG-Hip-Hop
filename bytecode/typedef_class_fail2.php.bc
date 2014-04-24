@@ -1,0 +1,28 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 13
+    2: DefTypeAlias 0
+    4: FPushFuncD 0 "test"
+   10: FCall 0
+   12: PopR
+   13: Int 1
+   22: RetC
+
+Function (leaf) test at 23 (ID 1)
+  // line 11
+   23: ClsCnsD "ASD" "Foo"
+   32: RetC
+
+Method public (leaf) MyClass::86ctor at 33
+  // line 5
+   33: Null
+   34: RetC
+Class MyClass at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) MyClass::86ctor at 33
+ Constant MyClass::ASD = "wat"
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+Function (leaf) test at 23 (ID 1)

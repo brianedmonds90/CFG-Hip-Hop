@@ -1,0 +1,92 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 17
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function main at 19 (ID 1)
+ FPI 31-51; fpOff = 6
+ FPI 74-95; fpOff = 6
+ FPI 114-138; fpOff = 6
+ FPI 165-195; fpOff = 6
+  // line 3
+   19: Int 20
+   28: SetL 0
+   30: PopC
+  // line 4
+   31: FPushFuncD 1 "var_dump"
+   37: Int 10
+   46: SetOpL 0 PlusEqual
+   49: FPassCW 0
+   51: FCall 1
+   53: PopR
+  // line 6
+   54: String "x"
+   59: SetL 1
+   61: PopC
+  // line 7
+   62: Int 20
+   71: SetL 2
+   73: PopC
+  // line 8
+   74: FPushFuncD 1 "var_dump"
+   80: Int 10
+   89: CGetL2 1
+   91: SetOpN PlusEqual
+   93: FPassCW 0
+   95: FCall 1
+   97: PopR
+  // line 10
+   98: String "_SERVER"
+  103: Int 20
+  112: SetG
+  113: PopC
+  // line 11
+  114: FPushFuncD 1 "var_dump"
+  120: String "_SERVER"
+  125: Int 10
+  134: SetOpG PlusEqual
+  136: FPassCW 0
+  138: FCall 1
+  140: PopR
+  // line 13
+  141: DefCls 0
+  // line 14
+  143: String "a"
+  148: String "C"
+  153: AGetC
+  154: Int 20
+  163: SetS
+  164: PopC
+  // line 15
+  165: FPushFuncD 1 "var_dump"
+  171: String "a"
+  176: String "C"
+  181: AGetC
+  182: Int 10
+  191: SetOpS PlusEqual
+  193: FPassCW 0
+  195: FCall 1
+  197: PopR
+  // line 16
+  198: Null
+  199: RetC
+
+Method public (leaf) C::86ctor at 200
+  // line 13
+  200: Null
+  201: RetC
+Class C at 141 (ID 0)
+ Method public (leaf) C::86ctor at 200
+ Property static public C::a = null
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function main at 19 (ID 1)
+ FPI 31-51; fpOff = 6
+ FPI 74-95; fpOff = 6
+ FPI 114-138; fpOff = 6
+ FPI 165-195; fpOff = 6

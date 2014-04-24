@@ -1,0 +1,110 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-34; fpOff = 3
+ FPI 37-71; fpOff = 3
+ FPI 74-108; fpOff = 3
+  // line 20
+    0: FPushFuncD 2 "go"
+    6: NewCol 1 2
+    9: String "zero"
+   14: ColAddNewElemC
+   15: String "one"
+   20: ColAddNewElemC
+   21: FPassCE 0
+   23: Int 2
+   32: FPassCE 1
+   34: FCall 2
+   36: PopR
+  // line 21
+   37: FPushFuncD 2 "go"
+   43: NewCol 1 2
+   46: String "zero"
+   51: ColAddNewElemC
+   52: String "one"
+   57: ColAddNewElemC
+   58: FPassCE 0
+   60: Int -2
+   69: FPassCE 1
+   71: FCall 2
+   73: PopR
+  // line 22
+   74: FPushFuncD 2 "go"
+   80: NewCol 5 2
+   83: String "zero"
+   88: ColAddNewElemC
+   89: String "one"
+   94: ColAddNewElemC
+   95: FPassCE 0
+   97: Int 2
+  106: FPassCE 1
+  108: FCall 2
+  110: PopR
+  111: Int 1
+  120: RetC
+
+Function go at 121 (ID 1)
+ EH 0 Catch for 121:142
+  Handle exception at 142
+ EH 1 Catch for 167:195
+  Handle exception at 195
+ FPI 146-164; fpOff = 7
+ FPI 154-160; fpOff = 10 parentIndex = 0 (depth 2)
+ FPI 199-217; fpOff = 7
+ FPI 207-213; fpOff = 10 parentIndex = 2 (depth 2)
+ FPI 220-229; fpOff = 7
+  // line 6
+  121: CGetM <L:0 EL:1>
+  134: SetL 2
+  136: PopC
+  // line 9
+  137: Jmp 30 (167)
+  142: Catch
+  143: SetL 3
+  145: PopC
+  // line 8
+  146: FPushFuncD 1 "var_dump"
+  152: CGetL 3
+  154: FPushObjMethodD 0 "getMessage"
+  160: FCall 0
+  162: FPassR 0
+  164: FCall 1
+  166: PopR
+  // line 12
+  167: Int 0
+  176: SetM <L:0 EL:1>
+  189: PopC
+  // line 15
+  190: Jmp 30 (220)
+  195: Catch
+  196: SetL 3
+  198: PopC
+  // line 14
+  199: FPushFuncD 1 "var_dump"
+  205: CGetL 3
+  207: FPushObjMethodD 0 "getMessage"
+  213: FCall 0
+  215: FPassR 0
+  217: FCall 1
+  219: PopR
+  // line 17
+  220: FPushFuncD 1 "var_dump"
+  226: FPassL 0 0
+  229: FCall 1
+  231: PopR
+  // line 18
+  232: Null
+  233: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-34; fpOff = 3
+ FPI 37-71; fpOff = 3
+ FPI 74-108; fpOff = 3
+Function go at 121 (ID 1)
+ EH 0 Catch for 121:142
+  Handle exception at 142
+ EH 1 Catch for 167:195
+  Handle exception at 195
+ FPI 146-164; fpOff = 7
+ FPI 154-160; fpOff = 10 parentIndex = 0 (depth 2)
+ FPI 199-217; fpOff = 7
+ FPI 207-213; fpOff = 10 parentIndex = 2 (depth 2)
+ FPI 220-229; fpOff = 7

@@ -1,0 +1,51 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 10
+    0: FPushFuncD 0 "foo"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function foo at 19 (ID 1)
+ FPI 27-50; fpOff = 4
+  // line 4
+   19: String "asd"
+   24: SetL 0
+   26: PopC
+  // line 8
+   27: FPushFuncD 2 "array_map"
+  // line 6
+   33: CGetL 0
+   35: CreateCl 1 "Closure$foo"
+  // line 8
+   41: FPassCE 0
+  // line 7
+   43: Array array(0=>1,1=>2,2=>3,3=>4)
+  // line 8
+   48: FPassCE 1
+   50: FCall 2
+   52: PopR
+  // line 9
+   53: Null
+   54: RetC
+
+Method static public (leaf) Closure$foo::__invoke at 55
+  // line 6
+   55: String "\n"
+   60: CGetL2 2
+   62: Concat
+   63: CGetL2 0
+   65: Concat
+   66: Print
+   67: PopC
+   68: Null
+   69: RetC
+Class Closure$foo at 41 (unique) (ID 0)
+ Method static public (leaf) Closure$foo::__invoke at 55
+ Property private Closure$foo::y = <non-scalar>
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function foo at 19 (ID 1)
+ FPI 27-50; fpOff = 4

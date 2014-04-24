@@ -1,0 +1,89 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-17; fpOff = 3
+ FPI 35-48; fpOff = 3
+ FPI 66-79; fpOff = 3
+ FPI 82-105; fpOff = 3
+ FPI 88-101; fpOff = 6 parentIndex = 3 (depth 2)
+ FPI 108-131; fpOff = 3
+ FPI 114-127; fpOff = 6 parentIndex = 5 (depth 2)
+ FPI 134-157; fpOff = 3
+ FPI 140-153; fpOff = 6 parentIndex = 7 (depth 2)
+ FPI 160-183; fpOff = 3
+ FPI 166-179; fpOff = 6 parentIndex = 9 (depth 2)
+  // line 2
+    0: FPushFuncD 1 "error_reporting"
+    6: Int -1
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+  // line 4
+   20: Int 1
+   29: DefCns "\\B"
+   34: PopC
+  // line 5
+   35: FPushFuncD 1 "var_dump"
+   41: Cns "B"
+   46: FPassCE 0
+   48: FCall 1
+   50: PopR
+  // line 7
+   51: Int 1
+   60: DefCns "B"
+   65: PopC
+  // line 8
+   66: FPushFuncD 1 "var_dump"
+   72: Cns "B"
+   77: FPassCE 0
+   79: FCall 1
+   81: PopR
+  // line 10
+   82: FPushFuncD 1 "var_dump"
+   88: FPushFuncD 1 "constant"
+   94: String "B"
+   99: FPassCE 0
+  101: FCall 1
+  103: FPassR 0
+  105: FCall 1
+  107: PopR
+  // line 11
+  108: FPushFuncD 1 "var_dump"
+  114: FPushFuncD 1 "constant"
+  120: String "\\B"
+  125: FPassCE 0
+  127: FCall 1
+  129: FPassR 0
+  131: FCall 1
+  133: PopR
+  // line 13
+  134: FPushFuncD 1 "var_dump"
+  140: FPushFuncD 1 "defined"
+  146: String "B"
+  151: FPassCE 0
+  153: FCall 1
+  155: FPassR 0
+  157: FCall 1
+  159: PopR
+  // line 14
+  160: FPushFuncD 1 "var_dump"
+  166: FPushFuncD 1 "defined"
+  172: String "\\B"
+  177: FPassCE 0
+  179: FCall 1
+  181: FPassR 0
+  183: FCall 1
+  185: PopR
+  186: Int 1
+  195: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-17; fpOff = 3
+ FPI 35-48; fpOff = 3
+ FPI 66-79; fpOff = 3
+ FPI 82-105; fpOff = 3
+ FPI 88-101; fpOff = 6 parentIndex = 3 (depth 2)
+ FPI 108-131; fpOff = 3
+ FPI 114-127; fpOff = 6 parentIndex = 5 (depth 2)
+ FPI 134-157; fpOff = 3
+ FPI 140-153; fpOff = 6 parentIndex = 7 (depth 2)
+ FPI 160-183; fpOff = 3
+ FPI 166-179; fpOff = 6 parentIndex = 9 (depth 2)

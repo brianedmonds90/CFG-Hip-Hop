@@ -1,0 +1,30 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 17:46 iterId 0 itRef false to 56
+ FPI 17-36; fpOff = 7
+ FPI 23-32; fpOff = 10 parentIndex = 0 (depth 2)
+  // line 5
+    0: Array array(0=>"\"foo\\nbar\"",1=>"\"baz\\u003dbong\"")
+    5: SetL 0
+    7: PopC
+  // line 9
+    8: CGetL 0
+   10: IterInit 0 36 (46) 1
+  // line 8
+   17: FPushFuncD 1 "var_dump"
+   23: FPushFuncD 1 "json_decode"
+   29: FPassL 0 1
+   32: FCall 1
+   34: FPassR 0
+   36: FCall 1
+   38: PopR
+  // line 9
+   39: IterNext 0 -22 1
+   46: Int 1
+   55: RetC
+   56: IterFree 0
+   58: Unwind
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 17:46 iterId 0 itRef false to 56
+ FPI 17-36; fpOff = 7
+ FPI 23-32; fpOff = 10 parentIndex = 0 (depth 2)

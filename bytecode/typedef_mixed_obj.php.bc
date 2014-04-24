@@ -1,0 +1,38 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-19; fpOff = 3
+ FPI 8-14; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 22-39; fpOff = 3
+  // line 10
+    0: DefTypeAlias 0
+  // line 8
+    2: FPushFuncD 1 "foo"
+    8: FPushCtorD 0 "stdclass"
+   14: FCall 0
+   16: PopR # i0:t=Null*
+   17: FPassC 0
+   19: FCall 1
+   21: PopR
+  // line 9
+   22: FPushFuncD 1 "foo"
+   28: Int 12
+   37: FPassCE 0
+   39: FCall 1
+   41: PopR
+  // line 10
+   42: String "done\n"
+   47: Print
+   48: PopC
+   49: Int 1
+   58: RetC
+
+Function (leaf) foo at 59 (ID 1)
+  // line 6
+   59: VerifyParamType 0
+   61: Null
+   62: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 2-19; fpOff = 3
+ FPI 8-14; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 22-39; fpOff = 3
+Function (leaf) foo at 59 (ID 1)

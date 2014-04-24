@@ -1,0 +1,101 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 20
+    0: FPushFuncD 0 "f"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function (leaf) f at 19 (ID 1)
+  // line 4
+   19: String "x"
+   24: SetL 0
+   26: PopC
+  // line 5
+   27: String "y"
+   32: SetL 1
+   34: PopC
+  // line 6
+   35: CGetL 1
+   37: Dup
+   38: VGetG
+   39: BindN
+   40: PopV
+  // line 8
+   41: Int 0
+   50: SetL 2
+   52: PopC
+  // line 9
+   53: Int 0
+   62: CGetL2 1
+   64: SetN
+   65: PopC
+  // line 10
+   66: String ":"
+   71: EmptyL 2
+   73: String ":\n"
+   78: Concat
+   79: Concat
+   80: Print
+   81: PopC
+  // line 11
+   82: String ":"
+   87: CGetL 0
+   89: EmptyN
+   90: String ":\n"
+   95: Concat
+   96: Concat
+   97: Print
+   98: PopC
+  // line 12
+   99: String ":"
+  104: CGetL 1
+  106: EmptyN
+  107: String ":\n"
+  112: Concat
+  113: Concat
+  114: Print
+  115: PopC
+  // line 14
+  116: Int 1
+  125: SetL 2
+  127: PopC
+  // line 15
+  128: Int 1
+  137: CGetL2 1
+  139: SetN
+  140: PopC
+  // line 16
+  141: String ":"
+  146: EmptyL 2
+  148: String ":\n"
+  153: Concat
+  154: Concat
+  155: Print
+  156: PopC
+  // line 17
+  157: String ":"
+  162: CGetL 0
+  164: EmptyN
+  165: String ":\n"
+  170: Concat
+  171: Concat
+  172: Print
+  173: PopC
+  // line 18
+  174: String ":"
+  179: CGetL 1
+  181: EmptyN
+  182: String ":\n"
+  187: Concat
+  188: Concat
+  189: Print
+  190: PopC
+  // line 19
+  191: Null
+  192: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) f at 19 (ID 1)

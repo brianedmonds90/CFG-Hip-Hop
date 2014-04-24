@@ -1,0 +1,135 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 32
+    0: FPushFuncD 0 "main"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function (leaf) foo at 19 (ID 1)
+  // line 4
+   19: Int 12
+   28: SetL 0
+   30: PopC
+  // line 17
+   31: CGetL 0
+   33: CreateCl 1 "Closure$foo#3"
+   39: SetL 1
+   41: PopC
+  // line 19
+   42: CGetL 1
+   44: RetC
+
+Function main at 45 (ID 2)
+ FPI 45-51; fpOff = 6
+ FPI 57-72; fpOff = 6
+ FPI 77-79; fpOff = 6
+ FPI 85-100; fpOff = 6
+ FPI 105-107; fpOff = 6
+ FPI 113-128; fpOff = 6
+ FPI 131-145; fpOff = 6
+ FPI 139-141; fpOff = 9 parentIndex = 6 (depth 2)
+  // line 23
+   45: FPushFuncD 0 "foo"
+   51: FCall 0
+   53: UnboxR
+   54: SetL 0
+   56: PopC
+  // line 24
+   57: FPushFuncD 1 "var_dump"
+   63: CGetL 0
+   65: InstanceOfD "Closure"
+   70: FPassCE 0
+   72: FCall 1
+   74: PopR
+  // line 25
+   75: CGetL 0
+   77: FPushFunc 0
+   79: FCall 0
+   81: UnboxR
+   82: SetL 1
+   84: PopC
+  // line 26
+   85: FPushFuncD 1 "var_dump"
+   91: CGetL 1
+   93: InstanceOfD "Closure"
+   98: FPassCE 0
+  100: FCall 1
+  102: PopR
+  // line 27
+  103: CGetL 1
+  105: FPushFunc 0
+  107: FCall 0
+  109: UnboxR
+  110: SetL 2
+  112: PopC
+  // line 28
+  113: FPushFuncD 1 "var_dump"
+  119: CGetL 2
+  121: InstanceOfD "Closure"
+  126: FPassCE 0
+  128: FCall 1
+  130: PopR
+  // line 29
+  131: FPushFuncD 1 "var_dump"
+  137: CGetL 2
+  139: FPushFunc 0
+  141: FCall 0
+  143: FPassR 0
+  145: FCall 1
+  147: PopR
+  // line 30
+  148: Null
+  149: RetC
+
+Method static public (leaf) Closure$foo#3::__invoke at 150
+  // line 14
+  150: CGetL 1
+  152: CreateCl 1 "Closure$foo#2"
+  158: SetL 2
+  160: PopC
+  // line 16
+  161: CGetL 2
+  163: RetC
+
+Method static public (leaf) Closure$foo#2::__invoke at 164
+  // line 9
+  164: CGetL 1
+  166: CreateCl 1 "Closure$foo"
+  172: SetL 2
+  174: PopC
+  // line 11
+  175: Int 12
+  184: SetL 3
+  186: PopC
+  // line 13
+  187: CGetL 2
+  189: RetC
+
+Method static public (leaf) Closure$foo::__invoke at 190
+  // line 8
+  190: CGetL 1
+  192: RetC
+Class Closure$foo#3 at 39 (unique) (ID 0)
+ Method static public (leaf) Closure$foo#3::__invoke at 150
+ Property private Closure$foo#3::y = <non-scalar>
+Class Closure$foo#2 at 158 (unique) (ID 1)
+ Method static public (leaf) Closure$foo#2::__invoke at 164
+ Property private Closure$foo#2::y = <non-scalar>
+Class Closure$foo at 172 (unique) (ID 2)
+ Method static public (leaf) Closure$foo::__invoke at 190
+ Property private Closure$foo::y = <non-scalar>
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) foo at 19 (ID 1)
+Function main at 45 (ID 2)
+ FPI 45-51; fpOff = 6
+ FPI 57-72; fpOff = 6
+ FPI 77-79; fpOff = 6
+ FPI 85-100; fpOff = 6
+ FPI 105-107; fpOff = 6
+ FPI 113-128; fpOff = 6
+ FPI 131-145; fpOff = 6
+ FPI 139-141; fpOff = 9 parentIndex = 6 (depth 2)

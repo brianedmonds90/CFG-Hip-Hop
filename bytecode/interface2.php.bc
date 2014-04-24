@@ -1,0 +1,66 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 2
+    0: DefCls 0
+  // line 3
+    2: DefCls 1
+  // line 4
+    4: DefCls 2
+  // line 5
+    6: DefCls 3
+  // line 6
+    8: DefCls 4
+  // line 7
+   10: String "Done\n"
+   15: Print
+   16: PopC
+   17: Int 1
+   26: RetC
+
+Method public abstract (leaf) I::foo at 27
+  // line 2
+   27: Null
+   28: RetC
+
+Method public (leaf) C::foo at 29
+  // line 6
+   29: Null
+   30: RetC
+
+Method public abstract (leaf) I::86ctor at 31
+  // line 2
+   31: Null
+   32: RetC
+
+Method public abstract (leaf) J::86ctor at 33
+  // line 3
+   33: Null
+   34: RetC
+
+Method public abstract (leaf) K::86ctor at 35
+  // line 4
+   35: Null
+   36: RetC
+
+Method public abstract (leaf) L::86ctor at 37
+  // line 5
+   37: Null
+   38: RetC
+
+Method public (leaf) C::86ctor at 39
+  // line 6
+   39: Null
+   40: RetC
+Class interface I at 0 (maybe-hoistable) (ID 0)
+ Method public abstract (leaf) I::foo at 27
+ Method public abstract (leaf) I::86ctor at 31
+Class interface J at 2 (ID 1)
+ Method public abstract (leaf) J::86ctor at 33
+Class interface K at 4 (ID 2)
+ Method public abstract (leaf) K::86ctor at 35
+Class interface L at 6 (ID 3)
+ Method public abstract (leaf) L::86ctor at 37
+Class C at 8 (ID 4)
+ Method public (leaf) C::foo at 29
+ Method public (leaf) C::86ctor at 39
+Pseudo-main at 0 (ID 0)

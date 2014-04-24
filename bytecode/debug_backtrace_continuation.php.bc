@@ -1,0 +1,164 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+ FPI 11-17; fpOff = 3
+  // line 13
+    0: DefCls 0
+  // line 26
+    2: FPushFuncD 0 "my_wrapper"
+    8: FCall 0
+   10: PopR
+  // line 27
+   11: FPushFuncD 0 "my_class_wrapper"
+   17: FCall 0
+   19: PopR
+   20: Int 1
+   29: RetC
+
+Function (leaf) my_generator at 30 (ID 1)
+  // line 5
+   30: CreateCont
+   31: RetC
+
+Function my_generator$continuation at 32 (ID 2)
+ EH 0 Fault for 67:67 to 93
+ FPI 72-88; fpOff = 5
+ FPI 78-84; fpOff = 8 parentIndex = 0 (depth 2)
+   32: UnpackCont
+   33: Switch <59 63 64> 0 0
+   59: PopC
+  // line 3
+   60: Null
+   61: ContSuspend 2
+   63: Throw
+   64: SetL 1
+   66: PopC
+   67: PushL 1
+   69: SetL 0
+   71: PopC
+  // line 4
+   72: FPushFuncD 1 "var_dump"
+   78: FPushFuncD 0 "debug_backtrace"
+   84: FCall 0
+   86: FPassR 0
+   88: FCall 1
+   90: PopR
+  // line 5
+   91: Null
+   92: ContRetC
+   93: UnsetL 1
+   95: Unwind
+
+Function my_wrapper at 96 (ID 3)
+ FPI 96-102; fpOff = 4
+ FPI 110-116; fpOff = 4
+ FPI 121-130; fpOff = 4
+  // line 8
+   96: FPushFuncD 0 "my_generator"
+  102: FCall 0
+  104: UnboxR
+  105: SetL 0
+  107: PopC
+  // line 9
+  108: CGetL 0
+  110: FPushObjMethodD 0 "next"
+  116: FCall 0
+  118: PopR
+  // line 10
+  119: CGetL 0
+  121: FPushObjMethodD 1 "send"
+  127: Null
+  128: FPassCE 0
+  130: FCall 1
+  132: PopR
+  // line 11
+  133: Null
+  134: RetC
+
+Function my_class_wrapper at 135 (ID 4)
+ FPI 135-145; fpOff = 4
+ FPI 153-159; fpOff = 4
+ FPI 164-173; fpOff = 4
+  // line 21
+  135: FPushClsMethodD 0 "my_member_generator" "my_class"
+  145: FCall 0
+  147: UnboxR
+  148: SetL 0
+  150: PopC
+  // line 22
+  151: CGetL 0
+  153: FPushObjMethodD 0 "next"
+  159: FCall 0
+  161: PopR
+  // line 23
+  162: CGetL 0
+  164: FPushObjMethodD 1 "send"
+  170: Null
+  171: FPassCE 0
+  173: FCall 1
+  175: PopR
+  // line 24
+  176: Null
+  177: RetC
+
+Method static public (leaf) my_class::my_member_generator at 178
+  // line 17
+  178: CreateCont
+  179: RetC
+
+Method static public my_class::my_member_generator$continuation at 180
+ EH 0 Fault for 215:215 to 241
+ FPI 220-236; fpOff = 5
+ FPI 226-232; fpOff = 8 parentIndex = 0 (depth 2)
+  180: UnpackCont
+  181: Switch <207 211 212> 0 0
+  207: PopC
+  // line 15
+  208: Null
+  209: ContSuspend 2
+  211: Throw
+  212: SetL 1
+  214: PopC
+  215: PushL 1
+  217: SetL 0
+  219: PopC
+  // line 16
+  220: FPushFuncD 1 "var_dump"
+  226: FPushFuncD 0 "debug_backtrace"
+  232: FCall 0
+  234: FPassR 0
+  236: FCall 1
+  238: PopR
+  // line 17
+  239: Null
+  240: ContRetC
+  241: UnsetL 1
+  243: Unwind
+
+Method public (leaf) my_class::86ctor at 244
+  // line 18
+  244: Null
+  245: RetC
+Class my_class at 0 (maybe-hoistable) (ID 0)
+ Method static public (leaf) my_class::my_member_generator at 178
+ Method public (leaf) my_class::86ctor at 244
+ Method static public my_class::my_member_generator$continuation at 180
+ EH 0 Fault for 215:215 to 241
+ FPI 220-236; fpOff = 5
+ FPI 226-232; fpOff = 8 parentIndex = 0 (depth 2)
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+ FPI 11-17; fpOff = 3
+Function (leaf) my_generator at 30 (ID 1)
+Function my_generator$continuation at 32 (ID 2)
+ EH 0 Fault for 67:67 to 93
+ FPI 72-88; fpOff = 5
+ FPI 78-84; fpOff = 8 parentIndex = 0 (depth 2)
+Function my_wrapper at 96 (ID 3)
+ FPI 96-102; fpOff = 4
+ FPI 110-116; fpOff = 4
+ FPI 121-130; fpOff = 4
+Function my_class_wrapper at 135 (ID 4)
+ FPI 135-145; fpOff = 4
+ FPI 153-159; fpOff = 4
+ FPI 164-173; fpOff = 4

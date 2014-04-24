@@ -1,0 +1,113 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 5
+ FPI 20-26; fpOff = 4
+  // line 3
+    0: DefCls 0
+  // line 10
+    2: DefCls 1
+  // line 16
+    4: DefCls 2
+  // line 25
+    6: FPushCtorD 0 "B"
+   12: FCall 0
+   14: PopR # i0:t=Null*
+   15: SetL 0
+   17: PopC
+  // line 26
+   18: CGetL 0
+   20: FPushObjMethodD 0 "foo"
+   26: FCall 0
+   28: PopR
+   29: Int 1
+   38: RetC
+
+Method protected (leaf) X::foo at 39
+  // line 4
+   39: String "X::foo\n"
+   44: Print
+   45: PopC
+   46: Null
+   47: RetC
+
+Method private (leaf) X::bar at 48
+  // line 5
+   48: String "X::bar\n"
+   53: Print
+   54: PopC
+   55: Null
+   56: RetC
+
+Method protected (leaf) A::foo at 57
+  // line 12
+   57: String "A::foo "
+   62: CheckThis
+   63: CGetM <H PT:"field"> # iM0:c=A
+   78: String "\n"
+   83: Concat
+   84: Concat
+   85: Print
+   86: PopC
+  // line 13
+   87: Null
+   88: RetC
+
+Method public B::foo at 89
+ FPI 89-95; fpOff = 5
+ FPI 103-109; fpOff = 4
+ FPI 140-146; fpOff = 4
+  // line 18
+   89: FPushCtorD 0 "A"
+   95: FCall 0
+   97: PopR # i0:t=Null*
+   98: SetL 0
+  100: PopC
+  // line 19
+  101: CGetL 0
+  103: FPushObjMethodD 0 "foo"
+  109: FCall 0
+  111: PopR
+  // line 20
+  112: Int 123
+  121: SetM <L:0 PT:"field">
+  137: PopC
+  // line 21
+  138: CGetL 0
+  140: FPushObjMethodD 0 "foo"
+  146: FCall 0
+  148: PopR
+  // line 22
+  149: Null
+  150: RetC
+
+Method public (leaf) X::86ctor at 151
+  // line 7
+  151: Null
+  152: RetC
+
+Method public (leaf) A::86ctor at 153
+  // line 14
+  153: Null
+  154: RetC
+
+Method public (leaf) B::86ctor at 155
+  // line 23
+  155: Null
+  156: RetC
+Class X at 0 (maybe-hoistable) (ID 0)
+ Method protected (leaf) X::foo at 39
+ Method private (leaf) X::bar at 48
+ Method public (leaf) X::86ctor at 151
+ Property protected X::field = 1
+Class A at 2 (maybe-hoistable) (ID 1)
+ Method protected (leaf) A::foo at 57
+ Method public (leaf) A::86ctor at 153
+Class B at 4 (maybe-hoistable) (ID 2)
+ Method public B::foo at 89
+ FPI 89-95; fpOff = 5
+ FPI 103-109; fpOff = 4
+ FPI 140-146; fpOff = 4
+ Method public (leaf) B::86ctor at 155
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 5
+ FPI 20-26; fpOff = 4

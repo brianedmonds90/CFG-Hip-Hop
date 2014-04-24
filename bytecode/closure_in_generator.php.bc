@@ -1,0 +1,90 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 32:49 iterId 0 itRef false to 59
+ FPI 2-8; fpOff = 8
+ FPI 16-22; fpOff = 7
+  // line 3
+    0: DefCls 0
+  // line 15
+    2: FPushCtorD 0 "A"
+    8: FCall 0
+   10: PopR # i0:t=Null*
+   11: SetL 0
+   13: PopC
+  // line 16
+   14: CGetL 0
+   16: FPushObjMethodD 0 "b"
+   22: FCall 0
+  // line 18
+   24: UnboxR
+   25: IterInit 0 24 (49) 1
+  // line 17
+   32: String "\n"
+   37: CGetL2 1
+   39: Concat
+   40: Print
+   41: PopC
+  // line 18
+   42: IterNext 0 -10 1
+   49: Int 1
+   58: RetC
+   59: IterFree 0
+   61: Unwind
+
+Method public (leaf) A::b at 62
+  // line 9
+   62: CreateCont
+   63: RetC
+
+Method public A::b$continuation at 64
+ FPI 103-105; fpOff = 4
+   64: UnpackCont
+   65: Switch <91 110 111> 0 0
+   91: PopC
+  // line 7
+   92: CreateCl 0 "Closure$A::b"
+   98: SetL 0
+  100: PopC
+  // line 8
+  101: CGetL 0
+  103: FPushFunc 0
+  105: FCall 0
+  107: UnboxR
+  108: ContSuspend 2
+  110: Throw
+  111: PopC
+  // line 9
+  112: Null
+  113: ContRetC
+
+Method private (leaf) A::c at 114
+  // line 11
+  114: String "A"
+  119: RetC
+
+Method public Closure$A::b::__invoke at 120
+ FPI 121-127; fpOff = 5
+  // line 6
+  120: This
+  121: FPushObjMethodD 0 "c" # i0:c=A
+  127: FCall 0
+  129: UnboxR
+  130: RetC
+
+Method public (leaf) A::86ctor at 131
+  // line 13
+  131: Null
+  132: RetC
+Class A at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) A::b at 62
+ Method private (leaf) A::c at 114
+ Method public (leaf) A::86ctor at 131
+ Method public A::b$continuation at 64
+ FPI 103-105; fpOff = 4
+Class Closure$A::b at 98 (unique) (ID 1)
+ Method public Closure$A::b::__invoke at 120
+ FPI 121-127; fpOff = 5
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 32:49 iterId 0 itRef false to 59
+ FPI 2-8; fpOff = 8
+ FPI 16-22; fpOff = 7

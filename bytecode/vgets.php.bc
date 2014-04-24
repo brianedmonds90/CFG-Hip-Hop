@@ -1,0 +1,182 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 9-15; fpOff = 3
+ FPI 18-24; fpOff = 3
+ FPI 27-40; fpOff = 3
+ FPI 43-56; fpOff = 3
+ FPI 59-65; fpOff = 3
+ FPI 68-74; fpOff = 3
+  // line 4
+    0: String "Test begin\n"
+    5: Print
+    6: PopC
+  // line 6
+    7: DefCls 0
+  // line 35
+    9: FPushFuncD 0 "main"
+   15: FCall 0
+   17: PopR
+  // line 36
+   18: FPushFuncD 0 "main"
+   24: FCall 0
+   26: PopR
+  // line 38
+   27: FPushFuncD 1 "main2"
+   33: String "A"
+   38: FPassCE 0
+   40: FCall 1
+   42: PopR
+  // line 39
+   43: FPushFuncD 1 "main2"
+   49: String "A"
+   54: FPassCE 0
+   56: FCall 1
+   58: PopR
+  // line 41
+   59: FPushFuncD 0 "main3"
+   65: FCall 0
+   67: PopR
+  // line 42
+   68: FPushFuncD 0 "main3"
+   74: FCall 0
+   76: PopR
+   77: Int 1
+   86: RetC
+
+Function (leaf) main at 87 (ID 1)
+  // line 14
+   87: String "main\n"
+   92: Print
+   93: PopC
+  // line 15
+   94: String "a"
+   99: String "A"
+  104: AGetC
+  105: Int 30
+  114: SetS
+  115: PopC
+  // line 16
+  116: String "a"
+  121: String "A"
+  126: AGetC
+  127: VGetS
+  128: BindL 0
+  130: PopV
+  // line 17
+  131: String "a"
+  136: String "A"
+  141: AGetC
+  142: CGetS
+  143: String "\n"
+  148: Concat
+  149: CGetL2 0
+  151: Concat
+  152: Print
+  153: PopC
+  // line 18
+  154: Int 5
+  163: SetL 0
+  165: PopC
+  // line 19
+  166: String "a"
+  171: String "A"
+  176: AGetC
+  177: CGetS
+  178: String "\n"
+  183: Concat
+  184: CGetL2 0
+  186: Concat
+  187: Print
+  188: PopC
+  // line 20
+  189: Null
+  190: RetC
+
+Function (leaf) main2 at 191 (ID 2)
+  // line 23
+  191: String "main2\n"
+  196: Print
+  197: PopC
+  // line 24
+  198: String "a"
+  203: AGetL 0
+  205: Int 30
+  214: SetS
+  215: PopC
+  // line 25
+  216: String "a"
+  221: AGetL 0
+  223: VGetS
+  224: BindL 1
+  226: PopV
+  // line 26
+  227: String "a"
+  232: AGetL 0
+  234: CGetS
+  235: String "\n"
+  240: Concat
+  241: CGetL2 1
+  243: Concat
+  244: Print
+  245: PopC
+  // line 27
+  246: Int 5
+  255: SetL 1
+  257: PopC
+  // line 28
+  258: String "a"
+  263: AGetL 0
+  265: CGetS
+  266: String "\n"
+  271: Concat
+  272: CGetL2 1
+  274: Concat
+  275: Print
+  276: PopC
+  // line 29
+  277: Null
+  278: RetC
+
+Function main3 at 279 (ID 3)
+ FPI 279-300; fpOff = 3
+  // line 32
+  279: FPushClsMethodD 1 "setA" "A"
+  289: Int 5
+  298: FPassCE 0
+  300: FCall 1
+  302: PopR
+  // line 33
+  303: Null
+  304: RetC
+
+Method static public (leaf) A::setA at 305
+  // line 9
+  305: String "a"
+  310: String "A"
+  315: AGetC
+  316: VGetL 0
+  318: BindS
+  319: PopV
+  // line 10
+  320: Null
+  321: RetC
+
+Method public (leaf) A::86ctor at 322
+  // line 11
+  322: Null
+  323: RetC
+Class A at 7 (maybe-hoistable) (ID 0)
+ Method static public (leaf) A::setA at 305
+ Method public (leaf) A::86ctor at 322
+ Property static public A::a = 1
+Pseudo-main at 0 (ID 0)
+ FPI 9-15; fpOff = 3
+ FPI 18-24; fpOff = 3
+ FPI 27-40; fpOff = 3
+ FPI 43-56; fpOff = 3
+ FPI 59-65; fpOff = 3
+ FPI 68-74; fpOff = 3
+Function (leaf) main at 87 (ID 1)
+Function (leaf) main2 at 191 (ID 2)
+Function main3 at 279 (ID 3)
+ FPI 279-300; fpOff = 3

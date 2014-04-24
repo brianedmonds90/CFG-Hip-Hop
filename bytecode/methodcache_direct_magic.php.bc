@@ -1,0 +1,326 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 12-18; fpOff = 3
+ FPI 21-27; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 9
+    2: DefCls 1
+  // line 15
+    4: DefCls 2
+  // line 35
+    6: DefCls 3
+  // line 41
+    8: DefCls 4
+  // line 42
+   10: DefCls 5
+  // line 58
+   12: FPushFuncD 0 "main"
+   18: FCall 0
+   20: PopR
+  // line 59
+   21: FPushFuncD 0 "main2"
+   27: FCall 0
+   29: PopR
+   30: Int 1
+   39: RetC
+
+Function main at 40 (ID 1)
+ EH 0 Fault for 88:179 iterId 0 itRef false to 181
+ FPI 40-46; fpOff = 10
+ FPI 52-58; fpOff = 10
+ FPI 64-70; fpOff = 10
+ FPI 90-99; fpOff = 9
+ FPI 104-113; fpOff = 9
+ FPI 118-127; fpOff = 9
+ FPI 132-141; fpOff = 9
+ FPI 146-155; fpOff = 9
+ FPI 160-169; fpOff = 9
+  // line 22
+   40: FPushCtorD 0 "goer"
+   46: FCall 0
+   48: PopR # i0:t=Null*
+   49: SetL 0
+   51: PopC
+  // line 23
+   52: FPushCtorD 0 "one"
+   58: FCall 0
+   60: PopR # i0:t=Null*
+   61: SetL 1
+   63: PopC
+  // line 24
+   64: FPushCtorD 0 "two"
+   70: FCall 0
+   72: PopR # i0:t=Null*
+   73: SetL 2
+   75: PopC
+  // line 25
+   76: Array array(0=>1,1=>2)
+  // line 32
+   81: IterInit 0 98 (179) 3
+  // line 26
+   88: CGetL 0
+   90: FPushObjMethodD 1 "go"
+   96: FPassL 0 1
+   99: FCall 1
+  101: PopR
+  // line 27
+  102: CGetL 0
+  104: FPushObjMethodD 1 "go"
+  110: FPassL 0 1
+  113: FCall 1
+  115: PopR
+  // line 28
+  116: CGetL 0
+  118: FPushObjMethodD 1 "go"
+  124: FPassL 0 1
+  127: FCall 1
+  129: PopR
+  // line 29
+  130: CGetL 0
+  132: FPushObjMethodD 1 "go"
+  138: FPassL 0 2
+  141: FCall 1
+  143: PopR
+  // line 30
+  144: CGetL 0
+  146: FPushObjMethodD 1 "go"
+  152: FPassL 0 2
+  155: FCall 1
+  157: PopR
+  // line 31
+  158: CGetL 0
+  160: FPushObjMethodD 1 "go"
+  166: FPassL 0 2
+  169: FCall 1
+  171: PopR
+  // line 32
+  172: IterNext 0 -84 3
+  // line 33
+  179: Null
+  180: RetC
+  181: IterFree 0
+  183: Unwind
+
+Function main2 at 184 (ID 2)
+ EH 0 Fault for 232:323 iterId 0 itRef false to 325
+ FPI 184-190; fpOff = 10
+ FPI 196-202; fpOff = 10
+ FPI 208-214; fpOff = 10
+ FPI 234-243; fpOff = 9
+ FPI 248-257; fpOff = 9
+ FPI 262-271; fpOff = 9
+ FPI 276-285; fpOff = 9
+ FPI 290-299; fpOff = 9
+ FPI 304-313; fpOff = 9
+  // line 45
+  184: FPushCtorD 0 "goer"
+  190: FCall 0
+  192: PopR # i0:t=Null*
+  193: SetL 0
+  195: PopC
+  // line 46
+  196: FPushCtorD 0 "related_one"
+  202: FCall 0
+  204: PopR # i0:t=Null*
+  205: SetL 1
+  207: PopC
+  // line 47
+  208: FPushCtorD 0 "related_two"
+  214: FCall 0
+  216: PopR # i0:t=Null*
+  217: SetL 2
+  219: PopC
+  // line 48
+  220: Array array(0=>1,1=>2)
+  // line 55
+  225: IterInit 0 98 (323) 3
+  // line 49
+  232: CGetL 0
+  234: FPushObjMethodD 1 "go"
+  240: FPassL 0 1
+  243: FCall 1
+  245: PopR
+  // line 50
+  246: CGetL 0
+  248: FPushObjMethodD 1 "go"
+  254: FPassL 0 1
+  257: FCall 1
+  259: PopR
+  // line 51
+  260: CGetL 0
+  262: FPushObjMethodD 1 "go"
+  268: FPassL 0 1
+  271: FCall 1
+  273: PopR
+  // line 52
+  274: CGetL 0
+  276: FPushObjMethodD 1 "go"
+  282: FPassL 0 2
+  285: FCall 1
+  287: PopR
+  // line 53
+  288: CGetL 0
+  290: FPushObjMethodD 1 "go"
+  296: FPassL 0 2
+  299: FCall 1
+  301: PopR
+  // line 54
+  302: CGetL 0
+  304: FPushObjMethodD 1 "go"
+  310: FPassL 0 2
+  313: FCall 1
+  315: PopR
+  // line 55
+  316: IterNext 0 -84 3
+  // line 56
+  323: Null
+  324: RetC
+  325: IterFree 0
+  327: Unwind
+
+Method public (leaf) one::__call at 328
+  // line 5
+  328: String "one::__call: "
+  333: CGetL 0
+  335: Concat
+  336: String ", "
+  341: Concat
+  342: CGetL 1
+  344: Concat
+  345: String "\n"
+  350: Concat
+  351: Print
+  352: PopC
+  // line 6
+  353: Null
+  354: RetC
+
+Method public (leaf) two::__call at 355
+  // line 11
+  355: String "two::__call: "
+  360: CGetL 0
+  362: Concat
+  363: String ", "
+  368: Concat
+  369: CGetL 1
+  371: Concat
+  372: String "\n"
+  377: Concat
+  378: Print
+  379: PopC
+  // line 12
+  380: Null
+  381: RetC
+
+Method public goer::go at 382
+ FPI 384-404; fpOff = 4
+  // line 17
+  382: CGetL 0
+  384: FPushObjMethodD 2 "__call"
+  390: String "heh"
+  395: FPassCE 0
+  397: String "heh"
+  402: FPassCE 1
+  404: FCall 2
+  406: PopR
+  // line 18
+  407: Null
+  408: RetC
+
+Method public base::__call at 409
+ FPI 432-438; fpOff = 6
+  // line 37
+  409: String "base::__call: "
+  414: CGetL 0
+  416: Concat
+  417: String ", "
+  422: Concat
+  423: CGetL 1
+  425: Concat
+  426: String ": "
+  431: Concat
+  432: FPushFuncD 0 "get_called_class"
+  438: FCall 0
+  440: UnboxR
+  441: String "\n"
+  446: Concat
+  447: Concat
+  448: Print
+  449: PopC
+  // line 38
+  450: Null
+  451: RetC
+
+Method public (leaf) one::86ctor at 452
+  // line 7
+  452: Null
+  453: RetC
+
+Method public (leaf) two::86ctor at 454
+  // line 13
+  454: Null
+  455: RetC
+
+Method public (leaf) goer::86ctor at 456
+  // line 19
+  456: Null
+  457: RetC
+
+Method public (leaf) base::86ctor at 458
+  // line 39
+  458: Null
+  459: RetC
+
+Method public (leaf) related_one::86ctor at 460
+  // line 41
+  460: Null
+  461: RetC
+
+Method public (leaf) related_two::86ctor at 462
+  // line 42
+  462: Null
+  463: RetC
+Class one at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) one::__call at 328
+ Method public (leaf) one::86ctor at 452
+Class two at 2 (maybe-hoistable) (ID 1)
+ Method public (leaf) two::__call at 355
+ Method public (leaf) two::86ctor at 454
+Class goer at 4 (maybe-hoistable) (ID 2)
+ Method public goer::go at 382
+ FPI 384-404; fpOff = 4
+ Method public (leaf) goer::86ctor at 456
+Class base at 6 (maybe-hoistable) (ID 3)
+ Method public base::__call at 409
+ FPI 432-438; fpOff = 6
+ Method public (leaf) base::86ctor at 458
+Class related_one at 8 (maybe-hoistable) (ID 4)
+ Method public (leaf) related_one::86ctor at 460
+Class related_two at 10 (maybe-hoistable) (ID 5)
+ Method public (leaf) related_two::86ctor at 462
+Pseudo-main at 0 (ID 0)
+ FPI 12-18; fpOff = 3
+ FPI 21-27; fpOff = 3
+Function main at 40 (ID 1)
+ EH 0 Fault for 88:179 iterId 0 itRef false to 181
+ FPI 40-46; fpOff = 10
+ FPI 52-58; fpOff = 10
+ FPI 64-70; fpOff = 10
+ FPI 90-99; fpOff = 9
+ FPI 104-113; fpOff = 9
+ FPI 118-127; fpOff = 9
+ FPI 132-141; fpOff = 9
+ FPI 146-155; fpOff = 9
+ FPI 160-169; fpOff = 9
+Function main2 at 184 (ID 2)
+ EH 0 Fault for 232:323 iterId 0 itRef false to 325
+ FPI 184-190; fpOff = 10
+ FPI 196-202; fpOff = 10
+ FPI 208-214; fpOff = 10
+ FPI 234-243; fpOff = 9
+ FPI 248-257; fpOff = 9
+ FPI 262-271; fpOff = 9
+ FPI 276-285; fpOff = 9
+ FPI 290-299; fpOff = 9
+ FPI 304-313; fpOff = 9

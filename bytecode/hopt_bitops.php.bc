@@ -1,0 +1,98 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-12; fpOff = 3
+ FPI 15-43; fpOff = 3
+ FPI 46-74; fpOff = 3
+  // line 18
+    0: FPushFuncD 2 "test"
+    6: True
+    7: FPassCE 0
+    9: True
+   10: FPassCE 1
+   12: FCall 2
+   14: PopR
+  // line 19
+   15: FPushFuncD 2 "test"
+   21: Int 1
+   30: FPassCE 0
+   32: Int 3
+   41: FPassCE 1
+   43: FCall 2
+   45: PopR
+  // line 20
+   46: FPushFuncD 2 "test"
+   52: Double 2.3
+   61: FPassCE 0
+   63: Double 4.6
+   72: FPassCE 1
+   74: FCall 2
+   76: PopR
+   77: Int 1
+   86: RetC
+
+Function (leaf) foo at 87 (ID 1)
+  // line 5
+   87: CGetL 1
+   89: CGetL2 0
+   91: BitAnd
+   92: RetC
+
+Function test at 93 (ID 2)
+ FPI 147-159; fpOff = 7
+  // line 9
+   93: String "test foo("
+   98: CGetL 0
+  100: Concat
+  101: String ", "
+  106: Concat
+  107: CGetL 1
+  109: Concat
+  110: String ")\n"
+  115: Concat
+  116: Print
+  117: PopC
+  // line 10
+  118: Int 0
+  127: SetL 2
+  // line 14
+  129: PopC
+  // line 10
+  130: Int 20
+  139: CGetL2 2
+  141: Lt
+  142: JmpZ 43 (185)
+  // line 11
+  147: FPushFuncD 2 "foo"
+  153: FPassL 0 0
+  156: FPassL 1 1
+  159: FCall 2
+  161: UnboxR
+  162: SetL 3
+  164: PopC
+  // line 12
+  165: CGetL 3
+  167: Print
+  168: PopC
+  // line 13
+  169: String ", "
+  174: Print
+  175: PopC
+  // line 10
+  176: IncDecL 2 PreInc
+  // line 14
+  179: PopC
+  180: Jmp -50
+  // line 15
+  185: String "\n"
+  190: Print
+  191: PopC
+  // line 16
+  192: Null
+  193: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-12; fpOff = 3
+ FPI 15-43; fpOff = 3
+ FPI 46-74; fpOff = 3
+Function (leaf) foo at 87 (ID 1)
+Function test at 93 (ID 2)
+ FPI 147-159; fpOff = 7

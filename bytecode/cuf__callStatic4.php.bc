@@ -1,0 +1,80 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 9
+    2: DefCls 1
+  // line 20
+    4: FPushFuncD 0 "main"
+   10: FCall 0
+   12: PopR
+   13: Int 1
+   22: RetC
+
+Function main at 23 (ID 1)
+ FPI 28-30; fpOff = 4
+ FPI 38-40; fpOff = 4
+ FPI 43-49; fpOff = 5
+ FPI 64-66; fpOff = 4
+  // line 14
+   23: String "A::Test"
+   28: FPushCuf 0
+   30: FCall 0
+   32: PopR
+  // line 15
+   33: Array array(0=>"A",1=>"Test")
+   38: FPushCuf 0
+   40: FCall 0
+   42: PopR
+  // line 17
+   43: FPushCtorD 0 "A"
+   49: FCall 0
+   51: PopR # i0:t=Null*
+   52: SetL 0
+   54: PopC
+  // line 18
+   55: CGetL 0
+   57: String "Test"
+   62: NewPackedArray 2
+   64: FPushCuf 0
+   66: FCall 0
+   68: PopR
+  // line 19
+   69: Null
+   70: RetC
+
+Method static public (leaf) TestTrait::__callStatic at 71
+  // line 5
+   71: String "__callStatic: "
+   76: String "\n"
+   81: CGetL2 0
+   83: Concat
+   84: Concat
+   85: Print
+   86: PopC
+  // line 6
+   87: Null
+   88: RetC
+
+Method public (leaf) TestTrait::86ctor at 89
+  // line 7
+   89: Null
+   90: RetC
+
+Method public (leaf) A::86ctor at 91
+  // line 11
+   91: Null
+   92: RetC
+Class TestTrait at 0 (maybe-hoistable) (ID 0)
+ Method static public (leaf) TestTrait::__callStatic at 71
+ Method public (leaf) TestTrait::86ctor at 89
+Class A at 2 (ID 1)
+ Method public (leaf) A::86ctor at 91
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+Function main at 23 (ID 1)
+ FPI 28-30; fpOff = 4
+ FPI 38-40; fpOff = 4
+ FPI 43-49; fpOff = 5
+ FPI 64-66; fpOff = 4

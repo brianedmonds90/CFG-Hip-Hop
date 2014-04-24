@@ -1,0 +1,56 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 12
+    0: FPushFuncD 0 "foo"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function foo at 19 (ID 1)
+ FPI 31-42; fpOff = 6
+ FPI 57-68; fpOff = 6
+ FPI 83-94; fpOff = 6
+  // line 4
+   19: Int 123
+   28: SetL 0
+   30: PopC
+  // line 5
+   31: FPushFuncD 1 "var_dump"
+   37: CGetL 0
+   39: CastString
+   40: FPassCE 0
+   42: FCall 1
+   44: PopR
+  // line 6
+   45: Int -456
+   54: SetL 1
+   56: PopC
+  // line 7
+   57: FPushFuncD 1 "var_dump"
+   63: CGetL 1
+   65: CastString
+   66: FPassCE 0
+   68: FCall 1
+   70: PopR
+  // line 8
+   71: Int 9223372036854775807
+   80: SetL 2
+   82: PopC
+  // line 9
+   83: FPushFuncD 1 "var_dump"
+   89: CGetL 2
+   91: CastString
+   92: FPassCE 0
+   94: FCall 1
+   96: PopR
+  // line 10
+   97: Null
+   98: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function foo at 19 (ID 1)
+ FPI 31-42; fpOff = 6
+ FPI 57-68; fpOff = 6
+ FPI 83-94; fpOff = 6

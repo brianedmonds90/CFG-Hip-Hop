@@ -1,0 +1,25 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 3
+    0: String "Test begin\n"
+    5: Print
+    6: PopC
+  // line 5
+    7: String "reqonce2.inc"
+   12: ReqOnce
+   13: PopC
+  // line 6
+   14: String "Between require_once invocations\n"
+   19: Print
+   20: PopC
+  // line 7
+   21: String "reqonce2.inc"
+   26: ReqOnce
+   27: PopC
+  // line 9
+   28: String "Test end\n"
+   33: Print
+   34: PopC
+   35: Int 1
+   44: RetC
+Pseudo-main at 0 (ID 0)

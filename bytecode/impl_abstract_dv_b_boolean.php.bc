@@ -1,0 +1,43 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 2
+    0: DefCls 0
+  // line 3
+    2: DefCls 1
+    4: Int 1
+   13: RetC
+
+Method public abstract (leaf) A::b at 14
+ DV for parameter 0 at 23 = NULL
+  // line 2
+   14: VerifyParamType 0
+   16: String "Cannot call abstract method A::b()"
+   21: Fatal RuntimeOmitFrame
+   23: Null
+   24: SetL 0 # i1:t=Uninit
+   26: PopC
+   27: JmpNS -13
+
+Method public (leaf) B::b at 32
+ DV for parameter 0 at 36 = NULL
+  // line 3
+   32: VerifyParamType 0
+   34: Null
+   35: RetC
+   36: Null
+   37: SetL 0 # i1:t=Uninit
+   39: PopC
+   40: JmpNS -8
+
+Method public (leaf) A::86ctor at 45
+  // line 2
+   45: Null
+   46: RetC
+Class abstract A at 0 (maybe-hoistable) (ID 0)
+ Method public abstract (leaf) A::b at 14
+ DV for parameter 0 at 23 = NULL
+ Method public (leaf) A::86ctor at 45
+Class B at 2 (maybe-hoistable) (ID 1)
+ Method public (leaf) B::b at 32
+ DV for parameter 0 at 36 = NULL
+Pseudo-main at 0 (ID 0)

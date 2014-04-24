@@ -1,0 +1,18 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-23; fpOff = 3
+ FPI 6-19; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 5
+    0: FPushFuncD 1 "var_dump"
+    6: FPushFuncD 1 "defined"
+   12: String "AF_INET"
+   17: FPassCE 0
+   19: FCall 1
+   21: FPassR 0
+   23: FCall 1
+   25: PopR
+   26: Int 1
+   35: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-23; fpOff = 3
+ FPI 6-19; fpOff = 6 parentIndex = 0 (depth 2)

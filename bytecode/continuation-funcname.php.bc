@@ -1,0 +1,85 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 5
+ FPI 16-43; fpOff = 4
+ FPI 24-30; fpOff = 7 parentIndex = 1 (depth 2)
+ FPI 33-39; fpOff = 7 parentIndex = 1 (depth 2)
+ FPI 46-73; fpOff = 4
+ FPI 54-60; fpOff = 7 parentIndex = 4 (depth 2)
+ FPI 63-69; fpOff = 7 parentIndex = 4 (depth 2)
+  // line 3
+    0: DefCls 0
+  // line 9
+    2: DefCls 1
+  // line 11
+    4: FPushCtorD 0 "ShortDerp"
+   10: FCall 0
+   12: PopR # i0:t=Null*
+   13: SetL 0
+   15: PopC
+  // line 12
+   16: FPushFuncD 1 "var_dump"
+   22: CGetL 0
+   24: FPushObjMethodD 0 "genDerp"
+   30: FCall 0
+   32: UnboxR
+   33: FPushObjMethodD 0 "getOrigFuncName"
+   39: FCall 0
+   41: FPassR 0
+   43: FCall 1
+   45: PopR
+  // line 13
+   46: FPushFuncD 1 "var_dump"
+   52: CGetL 0
+   54: FPushObjMethodD 0 "genDerp"
+   60: FCall 0
+   62: UnboxR
+   63: FPushObjMethodD 0 "getCalledClass"
+   69: FCall 0
+   71: FPassR 0
+   73: FCall 1
+   75: PopR
+   76: Int 1
+   85: RetC
+
+Method public (leaf) BaseDerp::genDerp at 86
+  // line 6
+   86: CreateCont
+   87: RetC
+
+Method public (leaf) BaseDerp::genDerp$continuation at 88
+   88: UnpackCont
+   89: Switch <115 123 124> 0 0
+  115: PopC
+  // line 5
+  116: String "derp"
+  121: ContSuspend 2
+  123: Throw
+  124: PopC
+  // line 6
+  125: Null
+  126: ContRetC
+
+Method public (leaf) BaseDerp::86ctor at 127
+  // line 7
+  127: Null
+  128: RetC
+
+Method public (leaf) ShortDerp::86ctor at 129
+  // line 9
+  129: Null
+  130: RetC
+Class BaseDerp at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) BaseDerp::genDerp at 86
+ Method public (leaf) BaseDerp::86ctor at 127
+ Method public (leaf) BaseDerp::genDerp$continuation at 88
+Class ShortDerp at 2 (maybe-hoistable) (ID 1)
+ Method public (leaf) ShortDerp::86ctor at 129
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 5
+ FPI 16-43; fpOff = 4
+ FPI 24-30; fpOff = 7 parentIndex = 1 (depth 2)
+ FPI 33-39; fpOff = 7 parentIndex = 1 (depth 2)
+ FPI 46-73; fpOff = 4
+ FPI 54-60; fpOff = 7 parentIndex = 4 (depth 2)
+ FPI 63-69; fpOff = 7 parentIndex = 4 (depth 2)

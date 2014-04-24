@@ -1,0 +1,141 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-50; fpOff = 3
+ FPI 53-103; fpOff = 3
+ FPI 106-156; fpOff = 3
+ FPI 159-209; fpOff = 3
+ FPI 212-254; fpOff = 3
+  // line 15
+    0: FPushFuncD 4 "main"
+    6: Double 0
+   15: FPassCE 0
+   17: Double 0.5
+   26: FPassCE 1
+   28: Double 0.25
+   37: FPassCE 2
+   39: Double 0.75
+   48: FPassCE 3
+   50: FCall 4
+   52: PopR
+  // line 16
+   53: FPushFuncD 4 "main"
+   59: Double 0
+   68: FPassCE 0
+   70: Double -0.5
+   79: FPassCE 1
+   81: Double -0.25
+   90: FPassCE 2
+   92: Double -0.75
+  101: FPassCE 3
+  103: FCall 4
+  105: PopR
+  // line 20
+  106: FPushFuncD 4 "main"
+  // line 17
+  112: Double 2e+19
+  // line 20
+  121: FPassCE 0
+  // line 18
+  123: Double 9.22337e+18
+  // line 20
+  132: FPassCE 1
+  // line 19
+  134: Double 1.84467e+19
+  // line 20
+  143: FPassCE 2
+  145: Double 9.22337e+18
+  154: FPassCE 3
+  156: FCall 4
+  158: PopR
+  // line 24
+  159: FPushFuncD 4 "main"
+  // line 21
+  165: Double -2e+19
+  // line 24
+  174: FPassCE 0
+  // line 22
+  176: Double -9.22337e+18
+  // line 24
+  185: FPassCE 1
+  // line 23
+  187: Double -1.84467e+19
+  // line 24
+  196: FPassCE 2
+  198: Double -9.22337e+18
+  207: FPassCE 3
+  209: FCall 4
+  211: PopR
+  // line 25
+  212: FPushFuncD 4 "main"
+  218: Cns "NAN"
+  223: FPassCE 0
+  225: Double nan
+  234: FPassCE 1
+  236: Cns "INF"
+  241: FPassCE 2
+  243: Double -inf
+  252: FPassCE 3
+  254: FCall 4
+  256: PopR
+  257: Int 1
+  266: RetC
+
+Function main at 267 (ID 1)
+ FPI 291-300; fpOff = 11
+ FPI 303-312; fpOff = 11
+ FPI 315-324; fpOff = 11
+ FPI 327-336; fpOff = 11
+  // line 4
+  267: CGetL 0
+  269: CastInt
+  270: SetL 4
+  272: PopC
+  // line 5
+  273: CGetL 1
+  275: CastInt
+  276: SetL 5
+  278: PopC
+  // line 6
+  279: CGetL 2
+  281: CastInt
+  282: SetL 6
+  284: PopC
+  // line 7
+  285: CGetL 3
+  287: CastInt
+  288: SetL 7
+  290: PopC
+  // line 9
+  291: FPushFuncD 1 "var_dump"
+  297: FPassL 0 4
+  300: FCall 1
+  302: PopR
+  // line 10
+  303: FPushFuncD 1 "var_dump"
+  309: FPassL 0 5
+  312: FCall 1
+  314: PopR
+  // line 11
+  315: FPushFuncD 1 "var_dump"
+  321: FPassL 0 6
+  324: FCall 1
+  326: PopR
+  // line 12
+  327: FPushFuncD 1 "var_dump"
+  333: FPassL 0 7
+  336: FCall 1
+  338: PopR
+  // line 13
+  339: Null
+  340: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-50; fpOff = 3
+ FPI 53-103; fpOff = 3
+ FPI 106-156; fpOff = 3
+ FPI 159-209; fpOff = 3
+ FPI 212-254; fpOff = 3
+Function main at 267 (ID 1)
+ FPI 291-300; fpOff = 11
+ FPI 303-312; fpOff = 11
+ FPI 315-324; fpOff = 11
+ FPI 327-336; fpOff = 11

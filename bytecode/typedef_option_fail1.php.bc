@@ -1,0 +1,21 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-15; fpOff = 3
+  // line 5
+    0: DefTypeAlias 0
+    2: FPushFuncD 1 "bar"
+    8: String "fail"
+   13: FPassCE 0
+   15: FCall 1
+   17: PopR
+   18: Int 1
+   27: RetC
+
+Function (leaf) bar at 28 (ID 1)
+  // line 4
+   28: VerifyParamType 0
+   30: Null
+   31: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 2-15; fpOff = 3
+Function (leaf) bar at 28 (ID 1)

@@ -1,0 +1,72 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 5
+ FPI 20-37; fpOff = 4
+  // line 2
+    0: DefCls 0
+  // line 5
+    2: DefCls 1
+  // line 8
+    4: DefCls 2
+  // line 11
+    6: FPushCtorD 0 "C"
+   12: FCall 0
+   14: PopR # i0:t=Null*
+   15: SetL 0
+   17: PopC
+  // line 12
+   18: CGetL 0
+   20: FPushObjMethodD 1 "foo"
+   26: Int 1
+   35: FPassCE 0
+   37: FCall 1
+   39: PopR
+   40: Int 1
+   49: RetC
+
+Method public abstract (leaf) I::foo at 50
+  // line 3
+   50: Null
+   51: RetC
+
+Method public abstract (leaf) B::foo at 52
+  // line 6
+   52: String "Cannot call abstract method B::foo()"
+   57: Fatal RuntimeOmitFrame
+
+Method public (leaf) C::foo at 59
+  // line 9
+   59: String "\n"
+   64: CGetL2 0
+   66: Concat
+   67: Print
+   68: PopC
+   69: Null
+   70: RetC
+
+Method public abstract (leaf) I::86ctor at 71
+  // line 4
+   71: Null
+   72: RetC
+
+Method public (leaf) B::86ctor at 73
+  // line 7
+   73: Null
+   74: RetC
+
+Method public (leaf) C::86ctor at 75
+  // line 10
+   75: Null
+   76: RetC
+Class interface I at 0 (maybe-hoistable) (ID 0)
+ Method public abstract (leaf) I::foo at 50
+ Method public abstract (leaf) I::86ctor at 71
+Class abstract B at 2 (ID 1)
+ Method public abstract (leaf) B::foo at 52
+ Method public (leaf) B::86ctor at 73
+Class C at 4 (maybe-hoistable) (ID 2)
+ Method public (leaf) C::foo at 59
+ Method public (leaf) C::86ctor at 75
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 5
+ FPI 20-37; fpOff = 4

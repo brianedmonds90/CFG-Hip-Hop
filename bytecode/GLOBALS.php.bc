@@ -1,0 +1,68 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 3
+    0: String "Test begin\n"
+    5: Print
+    6: PopC
+  // line 6
+    7: String "k"
+   12: SetL 0
+   14: PopC
+  // line 7
+   15: CGetL 0
+   17: IssetG
+   18: JmpZ 19 (37)
+  // line 8
+   23: String "k"
+   28: SetOpL 0 ConcatEqual
+   31: PopC
+  // line 9
+   32: Jmp -17
+  // line 11
+   37: String "GLOBALS"
+   42: CGetG
+   43: SetL 1
+   45: PopC
+  // line 12
+   46: Int 42
+   55: CGetL2 0
+   57: SetG
+   58: PopC
+  // line 13
+   59: CGetL 0
+   61: IssetG
+   62: JmpZ 12 (74)
+  // line 14
+   67: String "Key is set in $GLOBALS\n"
+   72: Print
+   73: PopC
+  // line 16
+   74: IssetM <L:1 EL:0>
+   87: JmpZ 12 (99)
+  // line 17
+   92: String "Key set visible via $a\n"
+   97: Print
+   98: PopC
+  // line 19
+   99: CGetL 1
+  101: SetL 2
+  103: PopC
+  // line 20
+  104: IncDecM PreInc <L:1 EL:0>
+  118: PopC
+  // line 21
+  119: CGetM <L:2 EL:0>
+  132: Int 43
+  141: Eq
+  142: JmpZ 12 (154)
+  // line 22
+  147: String "Key update visible via $b\n"
+  152: Print
+  153: PopC
+  // line 25
+  154: String "Test end\n"
+  159: Print
+  160: PopC
+  161: Int 1
+  170: RetC
+Pseudo-main at 0 (ID 0)

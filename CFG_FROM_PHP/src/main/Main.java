@@ -19,6 +19,7 @@ public class Main {
 		
 		ArrayList<File> byteCodeFiles = new ArrayList<File>();
 		String pathOfCompiledFiles = args[0];
+		//System.out.println("Path: "+pathOfCompiledFiles);
 		init();
 		//System.out.println("Please enter the path of the directory that you want to parse:");
 		Scanner scan = new Scanner(System.in);
@@ -39,7 +40,7 @@ public class Main {
 			System.out.println("output directory created successfully");
 		}
 		else{
-			System.out.println("error in creating outpute directory");
+			System.out.println("error in creating output directory");
 		}
 		String graphName = "testName";
 		CFG interconnectedCFG = new CFG();
@@ -65,28 +66,27 @@ public class Main {
 						e.printStackTrace();
 					}
 					System.out.println("Check your "+outputPath+"for the graphviz file");
-
 				}
 			}
-		}		
+		}
+		
 	}
 	
-
-	
 	public static ArrayList<String> cfgInstructions;
-	public static ArrayList<String> getInstructions;
-	public static ArrayList<String> setL;
+	public static ArrayList<String> useInstructions;
+	public static ArrayList<String> defInstructions;
 	public static ArrayList<String> globalInstructions;
-	public static ArrayList<String> callInstructions;
+	public static ArrayList<String> callInstructions,mutator;
 	
 	
 	public static void init(){
 		
-		getInstructions = new ArrayList<String>();
+		useInstructions = new ArrayList<String>();
 		cfgInstructions = new ArrayList<String>();
 		globalInstructions = new ArrayList<String>();
-		setL = new ArrayList<String>();
+		defInstructions = new ArrayList<String>();
 		callInstructions = new ArrayList<String>();
+		mutator = new ArrayList<String>();
 		//Add the Control flow instructions
 		cfgInstructions.add("Jmp");
 		cfgInstructions.add("JmpNS");
@@ -98,37 +98,41 @@ public class Main {
 		cfgInstructions.add("Throw");
 		
 		//Add the getInstructions
-		getInstructions.add("CGetL");
-		getInstructions.add("CGetL2");
-		getInstructions.add("CGetL3");
-		getInstructions.add("PushL");
-		getInstructions.add("CGetN");
-		getInstructions.add("CGetS");
-		getInstructions.add("VGetL");
-		getInstructions.add("VGetN");
-		getInstructions.add("VGetS");
-		getInstructions.add("AGetC");
-		getInstructions.add("AGetL");
-		getInstructions.add("VGetG");
-		getInstructions.add("CGetG");
-		
+		useInstructions.add("CGetL");
+		useInstructions.add("CGetL2");
+		useInstructions.add("CGetL3");
+		useInstructions.add("PushL");
+		useInstructions.add("CGetN");
+		useInstructions.add("CGetS");
+		useInstructions.add("VGetL");
+		useInstructions.add("VGetN");
+		useInstructions.add("VGetS");
+		useInstructions.add("AGetC");
+		useInstructions.add("AGetL");
+		useInstructions.add("VGetG");
+		useInstructions.add("CGetG");
+		useInstructions.add("FPassL"); //this is a pass instruction
+	
+
 		//Add the setter instructions
-		setL.add("SetL");
-		setL.add("SetN");
-		setL.add("SetS");
-		setL.add("SetOpL");
-		setL.add("SetOpN");
-		setL.add("SetOpS");
-		//setL.add("IncDecL");
-		//setL.add("IncDecN");
-		setL.add("IncDecS");
-		setL.add("BindL");
-		setL.add("BindN");
-		setL.add("BindS");
-		setL.add("UnsetL");
-		setL.add("UnsetN");
-		setL.add("CheckProp");
-		setL.add("InitProp");
+		defInstructions.add("SetL");
+		defInstructions.add("SetN");
+		defInstructions.add("SetS");
+		defInstructions.add("SetOpL");
+		defInstructions.add("SetOpN");
+		defInstructions.add("SetOpS");
+		//defInstructions.add("FPushFuncD");
+		
+		mutator.add("IncDecL");
+		mutator.add("IncDecN");
+		mutator.add("IncDecS");
+		mutator.add("BindL");
+		mutator.add("BindN");
+		mutator.add("BindS");
+		mutator.add("UnsetL");
+		mutator.add("UnsetN");
+		mutator.add("CheckProp");
+		mutator.add("InitProp");
 		
 		globalInstructions.add("UnsetG");
 		globalInstructions.add("SetG");
@@ -161,8 +165,8 @@ public class Main {
 		callInstructions.add("FPassV");
 		callInstructions.add("FPassVNop");
 		callInstructions.add("FPassR");
-		callInstructions.add("FPassL");
 		callInstructions.add("FPassN");
+		callInstructions.add("FPassL");
 		callInstructions.add("FPassG");
 		callInstructions.add("FPassS");
 		callInstructions.add("FCall");

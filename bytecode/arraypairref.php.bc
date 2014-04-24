@@ -1,0 +1,26 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 60-69; fpOff = 5
+  // line 2
+    0: Null
+    1: SetL 0
+    3: PopC
+  // line 3
+    4: NewArrayReserve 1
+    6: VGetM <L:0 EI:0>
+   26: AddNewElemV
+   27: SetL 1
+   29: PopC
+  // line 4
+   30: Int 2
+   39: SetM <L:1 EI:0>
+   59: PopC
+  // line 5
+   60: FPushFuncD 1 "var_dump"
+   66: FPassL 0 0
+   69: FCall 1
+   71: PopR
+   72: Int 1
+   81: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 60-69; fpOff = 5

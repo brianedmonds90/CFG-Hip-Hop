@@ -1,0 +1,44 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-17; fpOff = 3
+ FPI 20-37; fpOff = 3
+  // line 12
+    0: DefTypeAlias 0
+  // line 5
+    2: DefCls 0
+  // line 11
+    4: FPushFuncD 1 "main"
+   10: String "42"
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+  // line 12
+   20: FPushFuncD 1 "main"
+   26: Int 42
+   35: FPassCE 0
+   37: FCall 1
+   39: PopR
+   40: Int 1
+   49: RetC
+
+Function (leaf) main at 50 (ID 1)
+  // line 9
+   50: VerifyParamType 0
+  // line 8
+   52: String "Hi\n"
+   57: Print
+   58: PopC
+  // line 9
+   59: Null
+   60: RetC
+
+Method public abstract (leaf) Dummy::86ctor at 61
+  // line 5
+   61: Null
+   62: RetC
+Class interface Dummy at 2 (maybe-hoistable) (ID 0)
+ Method public abstract (leaf) Dummy::86ctor at 61
+Pseudo-main at 0 (ID 0)
+ FPI 4-17; fpOff = 3
+ FPI 20-37; fpOff = 3
+Function (leaf) main at 50 (ID 1)

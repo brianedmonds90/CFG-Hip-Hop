@@ -1,0 +1,33 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 3
+    0: Array array()
+    5: SetL 0
+    7: PopC
+  // line 4
+    8: Int 4660
+   17: SetM <L:0 W>
+   29: PopC
+  // line 5
+   30: Int 22136
+   39: SetM <L:0 W>
+   51: PopC
+  // line 7
+   52: CGetM <L:0 EI:0>
+   72: Print
+   73: PopC
+  // line 8
+   74: String " "
+   79: Print
+   80: PopC
+  // line 9
+   81: CGetM <L:0 EI:1>
+  101: Print
+  102: PopC
+  // line 10
+  103: String "\n"
+  108: Print
+  109: PopC
+  110: Int 1
+  119: RetC
+Pseudo-main at 0 (ID 0)

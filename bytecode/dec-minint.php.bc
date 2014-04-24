@@ -1,0 +1,26 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-27; fpOff = 3
+ FPI 6-23; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 7
+    0: FPushFuncD 1 "var_dump"
+    6: FPushFuncD 1 "dec"
+   12: Int 1
+   21: FPassCE 0
+   23: FCall 1
+   25: FPassR 0
+   27: FCall 1
+   29: PopR
+   30: Int 1
+   39: RetC
+
+Function (leaf) dec at 40 (ID 1)
+  // line 4
+   40: Int -9223372036854775808
+   49: CGetL2 0
+   51: Sub
+   52: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-27; fpOff = 3
+ FPI 6-23; fpOff = 6 parentIndex = 0 (depth 2)
+Function (leaf) dec at 40 (ID 1)

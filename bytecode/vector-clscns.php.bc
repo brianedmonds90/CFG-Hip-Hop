@@ -1,0 +1,34 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-25; fpOff = 3
+ FPI 8-21; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 4
+    0: DefCls 0
+  // line 10
+    2: FPushFuncD 1 "var_dump"
+    8: FPushFuncD 1 "main"
+   14: Array array("hello there"=>"success")
+   19: FPassCE 0
+   21: FCall 1
+   23: FPassR 0
+   25: FCall 1
+   27: PopR
+   28: Int 1
+   37: RetC
+
+Function (leaf) main at 38 (ID 1)
+  // line 8
+   38: ClsCnsD "BAR" "c"
+   47: CGetM <L:0 EC>
+   59: RetC
+
+Method public (leaf) c::86ctor at 60
+  // line 5
+   60: Null
+   61: RetC
+Class c at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) c::86ctor at 60
+Pseudo-main at 0 (ID 0)
+ FPI 2-25; fpOff = 3
+ FPI 8-21; fpOff = 6 parentIndex = 0 (depth 2)
+Function (leaf) main at 38 (ID 1)

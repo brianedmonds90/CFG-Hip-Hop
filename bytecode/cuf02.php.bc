@@ -1,0 +1,201 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 3
+  // line 2
+    0: DefCls 0
+  // line 5
+    2: DefCls 1
+  // line 9
+    4: DefCls 2
+  // line 25
+    6: FPushFuncD 0 "main"
+   12: FCall 0
+   14: PopR
+   15: Int 1
+   24: RetC
+
+Function main at 25 (ID 1)
+ FPI 30-32; fpOff = 3
+ FPI 40-42; fpOff = 3
+ FPI 50-52; fpOff = 3
+ FPI 60-62; fpOff = 3
+ FPI 70-72; fpOff = 3
+ FPI 80-82; fpOff = 3
+  // line 17
+   25: String "C::foo"
+   30: FPushCuf 0
+   32: FCall 0
+   34: PopR
+  // line 18
+   35: String "D::foo"
+   40: FPushCuf 0
+   42: FCall 0
+   44: PopR
+  // line 19
+   45: String "E::foo"
+   50: FPushCuf 0
+   52: FCall 0
+   54: PopR
+  // line 21
+   55: String "C::bar"
+   60: FPushCuf 0
+   62: FCall 0
+   64: PopR
+  // line 22
+   65: String "D::bar"
+   70: FPushCuf 0
+   72: FCall 0
+   74: PopR
+  // line 23
+   75: String "E::bar"
+   80: FPushCuf 0
+   82: FCall 0
+   84: PopR
+  // line 24
+   85: Null
+   86: RetC
+
+Method public C::foo at 87
+ FPI 94-110; fpOff = 3
+ FPI 100-106; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 2
+   87: String "C::foo\n"
+   92: Print
+   93: PopC
+   94: FPushFuncD 1 "var_dump"
+  100: FPushFuncD 0 "get_called_class"
+  106: FCall 0
+  108: FPassR 0
+  110: FCall 1
+  112: PopR
+  113: Null
+  114: RetC
+
+Method static public C::bar at 115
+ FPI 122-138; fpOff = 3
+ FPI 128-134; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 3
+  115: String "C::bar\n"
+  120: Print
+  121: PopC
+  122: FPushFuncD 1 "var_dump"
+  128: FPushFuncD 0 "get_called_class"
+  134: FCall 0
+  136: FPassR 0
+  138: FCall 1
+  140: PopR
+  141: Null
+  142: RetC
+
+Method public D::foo at 143
+ FPI 150-166; fpOff = 3
+ FPI 156-162; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 6
+  143: String "D::foo\n"
+  148: Print
+  149: PopC
+  150: FPushFuncD 1 "var_dump"
+  156: FPushFuncD 0 "get_called_class"
+  162: FCall 0
+  164: FPassR 0
+  166: FCall 1
+  168: PopR
+  169: Null
+  170: RetC
+
+Method static public D::bar at 171
+ FPI 178-194; fpOff = 3
+ FPI 184-190; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 7
+  171: String "D::bar\n"
+  176: Print
+  177: PopC
+  178: FPushFuncD 1 "var_dump"
+  184: FPushFuncD 0 "get_called_class"
+  190: FCall 0
+  192: FPassR 0
+  194: FCall 1
+  196: PopR
+  197: Null
+  198: RetC
+
+Method public E::foo at 199
+ FPI 206-222; fpOff = 3
+ FPI 212-218; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 10
+  199: String "E::foo\n"
+  204: Print
+  205: PopC
+  206: FPushFuncD 1 "var_dump"
+  212: FPushFuncD 0 "get_called_class"
+  218: FCall 0
+  220: FPassR 0
+  222: FCall 1
+  224: PopR
+  225: Null
+  226: RetC
+
+Method static public E::bar at 227
+ FPI 234-250; fpOff = 3
+ FPI 240-246; fpOff = 6 parentIndex = 0 (depth 2)
+  // line 11
+  227: String "E::bar\n"
+  232: Print
+  233: PopC
+  234: FPushFuncD 1 "var_dump"
+  240: FPushFuncD 0 "get_called_class"
+  246: FCall 0
+  248: FPassR 0
+  250: FCall 1
+  252: PopR
+  // line 12
+  253: Null
+  254: RetC
+
+Method public (leaf) C::86ctor at 255
+  // line 4
+  255: Null
+  256: RetC
+
+Method public (leaf) D::86ctor at 257
+  // line 8
+  257: Null
+  258: RetC
+
+Method public (leaf) E::86ctor at 259
+  // line 13
+  259: Null
+  260: RetC
+Class C at 0 (maybe-hoistable) (ID 0)
+ Method public C::foo at 87
+ FPI 94-110; fpOff = 3
+ FPI 100-106; fpOff = 6 parentIndex = 0 (depth 2)
+ Method static public C::bar at 115
+ FPI 122-138; fpOff = 3
+ FPI 128-134; fpOff = 6 parentIndex = 0 (depth 2)
+ Method public (leaf) C::86ctor at 255
+Class D at 2 (maybe-hoistable) (ID 1)
+ Method public D::foo at 143
+ FPI 150-166; fpOff = 3
+ FPI 156-162; fpOff = 6 parentIndex = 0 (depth 2)
+ Method static public D::bar at 171
+ FPI 178-194; fpOff = 3
+ FPI 184-190; fpOff = 6 parentIndex = 0 (depth 2)
+ Method public (leaf) D::86ctor at 257
+Class E at 4 (maybe-hoistable) (ID 2)
+ Method public E::foo at 199
+ FPI 206-222; fpOff = 3
+ FPI 212-218; fpOff = 6 parentIndex = 0 (depth 2)
+ Method static public E::bar at 227
+ FPI 234-250; fpOff = 3
+ FPI 240-246; fpOff = 6 parentIndex = 0 (depth 2)
+ Method public (leaf) E::86ctor at 259
+Pseudo-main at 0 (ID 0)
+ FPI 6-12; fpOff = 3
+Function main at 25 (ID 1)
+ FPI 30-32; fpOff = 3
+ FPI 40-42; fpOff = 3
+ FPI 50-52; fpOff = 3
+ FPI 60-62; fpOff = 3
+ FPI 70-72; fpOff = 3
+ FPI 80-82; fpOff = 3

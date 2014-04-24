@@ -1,0 +1,452 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 40-46; fpOff = 4
+  // line 3
+    0: DefCls 0
+  // line 9
+    2: IssetL 0
+    4: JmpNZ 9 (13)
+  // line 10
+    9: DefCls 1
+  // line 13
+   11: DefCls 2
+  // line 19
+   13: DefCls 3
+  // line 24
+   15: IssetL 0
+   17: JmpNZ 7 (24)
+  // line 25
+   22: DefCls 4
+  // line 30
+   24: DefCls 5
+  // line 34
+   26: DefCls 6
+  // line 37
+   28: DefCls 7
+  // line 39
+   30: DefCls 8
+  // line 43
+   32: DefCls 9
+  // line 46
+   34: DefCls 10
+  // line 49
+   36: DefCls 11
+  // line 51
+   38: DefCls 12
+  // line 102
+   40: FPushFuncD 0 "main"
+   46: FCall 0
+   48: PopR
+   49: Int 1
+   58: RetC
+
+Function (leaf) __autoload at 59 (ID 1)
+  // line 55
+   59: DefCls 13
+  // line 58
+   61: Null
+   62: RetC
+
+Function main at 63 (ID 2)
+ FPI 70-87; fpOff = 3
+ FPI 90-107; fpOff = 3
+ FPI 110-127; fpOff = 3
+ FPI 130-147; fpOff = 3
+ FPI 150-167; fpOff = 3
+ FPI 170-187; fpOff = 3
+ FPI 190-207; fpOff = 3
+ FPI 210-227; fpOff = 3
+ FPI 230-247; fpOff = 3
+ FPI 250-267; fpOff = 3
+ FPI 270-287; fpOff = 3
+ FPI 290-307; fpOff = 3
+ FPI 321-338; fpOff = 3
+ FPI 341-358; fpOff = 3
+ FPI 372-389; fpOff = 3
+ FPI 392-409; fpOff = 3
+ FPI 412-429; fpOff = 3
+ FPI 432-449; fpOff = 3
+ FPI 452-475; fpOff = 3
+ FPI 458-471; fpOff = 6 parentIndex = 18 (depth 2)
+ FPI 478-501; fpOff = 3
+ FPI 484-497; fpOff = 6 parentIndex = 20 (depth 2)
+ FPI 504-527; fpOff = 3
+ FPI 510-523; fpOff = 6 parentIndex = 22 (depth 2)
+ FPI 530-547; fpOff = 3
+ FPI 557-574; fpOff = 3
+  // line 61
+   63: String "Test begin\n"
+   68: Print
+   69: PopC
+  // line 63
+   70: FPushFuncD 1 "var_dump"
+   76: ClsCnsD "BAZ" "X"
+   85: FPassCE 0
+   87: FCall 1
+   89: PopR
+  // line 64
+   90: FPushFuncD 1 "var_dump"
+   96: ClsCnsD "FOO" "X"
+  105: FPassCE 0
+  107: FCall 1
+  109: PopR
+  // line 65
+  110: FPushFuncD 1 "var_dump"
+  116: ClsCnsD "FOO" "Z"
+  125: FPassCE 0
+  127: FCall 1
+  129: PopR
+  // line 66
+  130: FPushFuncD 1 "var_dump"
+  136: ClsCnsD "BIZ" "Z"
+  145: FPassCE 0
+  147: FCall 1
+  149: PopR
+  // line 68
+  150: FPushFuncD 1 "var_dump"
+  156: ClsCnsD "BAR" "A"
+  165: FPassCE 0
+  167: FCall 1
+  169: PopR
+  // line 69
+  170: FPushFuncD 1 "var_dump"
+  176: ClsCnsD "FOO" "A"
+  185: FPassCE 0
+  187: FCall 1
+  189: PopR
+  // line 70
+  190: FPushFuncD 1 "var_dump"
+  196: ClsCnsD "BAR" "A"
+  205: FPassCE 0
+  207: FCall 1
+  209: PopR
+  // line 71
+  210: FPushFuncD 1 "var_dump"
+  216: ClsCnsD "FOO" "B"
+  225: FPassCE 0
+  227: FCall 1
+  229: PopR
+  // line 72
+  230: FPushFuncD 1 "var_dump"
+  236: ClsCnsD "BAR" "B"
+  245: FPassCE 0
+  247: FCall 1
+  249: PopR
+  // line 73
+  250: FPushFuncD 1 "var_dump"
+  256: ClsCnsD "FOO" "C"
+  265: FPassCE 0
+  267: FCall 1
+  269: PopR
+  // line 74
+  270: FPushFuncD 1 "var_dump"
+  276: ClsCnsD "BAR" "C"
+  285: FPassCE 0
+  287: FCall 1
+  289: PopR
+  // line 78
+  290: FPushFuncD 1 "var_dump"
+  296: ClsCnsD "WIZ" "C"
+  305: FPassCE 0
+  307: FCall 1
+  309: PopR
+  // line 79
+  310: String "--- WIZ ---"
+  315: DefCns "WIZ"
+  320: PopC
+  // line 80
+  321: FPushFuncD 1 "var_dump"
+  327: ClsCnsD "WIZ" "A"
+  336: FPassCE 0
+  338: FCall 1
+  340: PopR
+  // line 81
+  341: FPushFuncD 1 "var_dump"
+  347: ClsCnsD "WIZ" "C"
+  356: FPassCE 0
+  358: FCall 1
+  360: PopR
+  // line 83
+  361: String "DCD"
+  366: DefCns "DCD"
+  371: PopC
+  // line 84
+  372: FPushFuncD 1 "var_dump"
+  378: ClsCnsD "CD" "F"
+  387: FPassCE 0
+  389: FCall 1
+  391: PopR
+  // line 86
+  392: FPushFuncD 1 "var_dump"
+  398: ClsCnsD "WEE" "K"
+  407: FPassCE 0
+  409: FCall 1
+  411: PopR
+  // line 87
+  412: FPushFuncD 1 "var_dump"
+  418: ClsCnsD "WOO" "K"
+  427: FPassCE 0
+  429: FCall 1
+  431: PopR
+  // line 88
+  432: FPushFuncD 1 "var_dump"
+  438: ClsCnsD "WEE" "L"
+  447: FPassCE 0
+  449: FCall 1
+  451: PopR
+  // line 90
+  452: FPushFuncD 1 "var_dump"
+  458: FPushFuncD 1 "constant"
+  464: String "K::WEE"
+  469: FPassCE 0
+  471: FCall 1
+  473: FPassR 0
+  475: FCall 1
+  477: PopR
+  // line 91
+  478: FPushFuncD 1 "var_dump"
+  484: FPushFuncD 1 "constant"
+  490: String "K::WOO"
+  495: FPassCE 0
+  497: FCall 1
+  499: FPassR 0
+  501: FCall 1
+  503: PopR
+  // line 92
+  504: FPushFuncD 1 "var_dump"
+  510: FPushFuncD 1 "constant"
+  516: String "L::WEE"
+  521: FPassCE 0
+  523: FCall 1
+  525: FPassR 0
+  527: FCall 1
+  529: PopR
+  // line 95
+  530: FPushFuncD 1 "var_dump"
+  536: ClsCnsD "INDEED" "AutoloadedClass"
+  545: FPassCE 0
+  547: FCall 1
+  549: PopR
+  // line 97
+  550: String "Test end\n"
+  555: Print
+  556: PopC
+  // line 98
+  557: FPushFuncD 1 "var_dump"
+  563: ClsCnsD "FakeConstant" "D"
+  572: FPassCE 0
+  574: FCall 1
+  576: PopR
+  // line 100
+  577: Null
+  578: RetC
+
+Method public (leaf) X::86ctor at 579
+  // line 7
+  579: Null
+  580: RetC
+
+Method public (leaf) Y::86ctor at 581
+  // line 12
+  581: Null
+  582: RetC
+
+Method public (leaf) Z::86ctor at 583
+  // line 16
+  583: Null
+  584: RetC
+
+Method public (leaf) A::86ctor at 585
+  // line 23
+  585: Null
+  586: RetC
+
+Method public (leaf) B::86ctor at 587
+  // line 28
+  587: Null
+  588: RetC
+
+Method public (leaf) C::86ctor at 589
+  // line 31
+  589: Null
+  590: RetC
+
+Method public (leaf) D::86ctor at 591
+  // line 36
+  591: Null
+  592: RetC
+
+Method public (leaf) E::86ctor at 593
+  // line 38
+  593: Null
+  594: RetC
+
+Method public (leaf) F::86ctor at 595
+  // line 40
+  595: Null
+  596: RetC
+
+Method public abstract (leaf) I::86ctor at 597
+  // line 45
+  597: Null
+  598: RetC
+
+Method public abstract (leaf) J::86ctor at 599
+  // line 48
+  599: Null
+  600: RetC
+
+Method public (leaf) K::86ctor at 601
+  // line 50
+  601: Null
+  602: RetC
+
+Method public (leaf) L::86ctor at 603
+  // line 52
+  603: Null
+  604: RetC
+
+Method public (leaf) AutoloadedClass::86ctor at 605
+  // line 57
+  605: Null
+  606: RetC
+
+Method static private (leaf) X::86cinit at 607
+  // line 7
+  607: CGetL 0
+  609: String "FOO"
+  614: Eq
+  615: JmpZ 19 (634)
+  // line 4
+  620: ClsCnsD "BAR" "Y"
+  // line 7
+  629: Jmp 14 (643)
+  // line 6
+  634: ClsCnsD "BAR" "Y"
+  // line 7
+  643: RetC
+
+Method static private (leaf) Y::86cinit at 644
+  // line 11
+  644: ClsCnsD "BAZ" "X"
+  // line 12
+  653: RetC
+
+Method static private (leaf) Z::86cinit at 654
+  // line 15
+  654: ClsCnsD "WIZ" "W"
+  // line 16
+  663: RetC
+
+Method static private (leaf) A::86cinit at 664
+  // line 23
+  664: CGetL 0
+  666: String "FOO"
+  671: Eq
+  672: JmpZ 19 (691)
+  // line 20
+  677: ClsCnsD "FOO" "B"
+  // line 23
+  686: Jmp 10 (696)
+  // line 22
+  691: Cns "WIZ"
+  // line 23
+  696: RetC
+
+Method static private (leaf) B::86cinit at 697
+  // line 27
+  697: ClsCnsD "BAR" "A"
+  // line 28
+  706: RetC
+
+Method static private (leaf) D::86cinit at 707
+  // line 35
+  707: Cns "DCD"
+  // line 36
+  712: RetC
+
+Method static private abstract (leaf) J::86cinit at 713
+  // line 47
+  713: ClsCnsD "WEE" "J"
+  // line 48
+  722: RetC
+Class X at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) X::86ctor at 579
+ Method static private (leaf) X::86cinit at 607
+ Constant X::FOO = <non-scalar>
+ Constant X::BAZ = 5
+ Constant X::BIZ = <non-scalar>
+Class Y at 9 (ID 1)
+ Method public (leaf) Y::86ctor at 581
+ Method static private (leaf) Y::86cinit at 644
+ Constant Y::BAR = <non-scalar>
+Class Z at 11 (ID 2)
+ Method public (leaf) Z::86ctor at 583
+ Method static private (leaf) Z::86cinit at 654
+ Constant Z::FOO = 6
+ Constant Z::WIZ = <non-scalar>
+Class A at 13 (maybe-hoistable) (ID 3)
+ Method public (leaf) A::86ctor at 585
+ Method static private (leaf) A::86cinit at 664
+ Constant A::FOO = <non-scalar>
+ Constant A::BAR = "A::BAR"
+ Constant A::WIZ = <non-scalar>
+Class B at 22 (ID 4)
+ Method public (leaf) B::86ctor at 587
+ Method static private (leaf) B::86cinit at 697
+ Constant B::FOO = "B::FOO"
+ Constant B::BAR = <non-scalar>
+Class C at 24 (maybe-hoistable) (ID 5)
+ Method public (leaf) C::86ctor at 589
+Class D at 26 (maybe-hoistable) (ID 6)
+ Method public (leaf) D::86ctor at 591
+ Method static private (leaf) D::86cinit at 707
+ Constant D::CD = <non-scalar>
+Class E at 28 (maybe-hoistable) (ID 7)
+ Method public (leaf) E::86ctor at 593
+Class F at 30 (maybe-hoistable) (ID 8)
+ Method public (leaf) F::86ctor at 595
+Class interface I at 32 (maybe-hoistable) (ID 9)
+ Method public abstract (leaf) I::86ctor at 597
+ Constant I::WEE = 123
+Class interface J at 34 (ID 10)
+ Method public abstract (leaf) J::86ctor at 599
+ Method static private abstract (leaf) J::86cinit at 713
+ Constant J::WOO = <non-scalar>
+Class K at 36 (ID 11)
+ Method public (leaf) K::86ctor at 601
+Class L at 38 (ID 12)
+ Method public (leaf) L::86ctor at 603
+Class AutoloadedClass at 59 (ID 13)
+ Method public (leaf) AutoloadedClass::86ctor at 605
+ Constant AutoloadedClass::INDEED = 711
+Pseudo-main at 0 (ID 0)
+ FPI 40-46; fpOff = 4
+Function (leaf) __autoload at 59 (ID 1)
+Function main at 63 (ID 2)
+ FPI 70-87; fpOff = 3
+ FPI 90-107; fpOff = 3
+ FPI 110-127; fpOff = 3
+ FPI 130-147; fpOff = 3
+ FPI 150-167; fpOff = 3
+ FPI 170-187; fpOff = 3
+ FPI 190-207; fpOff = 3
+ FPI 210-227; fpOff = 3
+ FPI 230-247; fpOff = 3
+ FPI 250-267; fpOff = 3
+ FPI 270-287; fpOff = 3
+ FPI 290-307; fpOff = 3
+ FPI 321-338; fpOff = 3
+ FPI 341-358; fpOff = 3
+ FPI 372-389; fpOff = 3
+ FPI 392-409; fpOff = 3
+ FPI 412-429; fpOff = 3
+ FPI 432-449; fpOff = 3
+ FPI 452-475; fpOff = 3
+ FPI 458-471; fpOff = 6 parentIndex = 18 (depth 2)
+ FPI 478-501; fpOff = 3
+ FPI 484-497; fpOff = 6 parentIndex = 20 (depth 2)
+ FPI 504-527; fpOff = 3
+ FPI 510-523; fpOff = 6 parentIndex = 22 (depth 2)
+ FPI 530-547; fpOff = 3
+ FPI 557-574; fpOff = 3

@@ -1,0 +1,75 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 21
+    2: FPushFuncD 0 "test"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function handler at 21 (ID 1)
+ FPI 47-53; fpOff = 6
+  // line 9
+   21: String "exit"
+   26: CGetL2 0
+   28: Eq
+   29: JmpZ 28 (57)
+   34: String "X::__construct"
+   39: CGetL2 1
+   41: Eq
+   42: JmpZ 15 (57)
+   47: FPushCtorD 0 "Exception"
+   53: FCall 0
+   55: PopR # i0:t=Null*
+   56: Throw
+  // line 10
+   57: Null
+   58: RetC
+
+Function test at 59 (ID 2)
+ EH 0 Catch for 75:90
+  Handle exception at 90
+ FPI 59-72; fpOff = 4
+ FPI 75-81; fpOff = 5
+  // line 13
+   59: FPushFuncD 1 "fb_setprofile"
+   65: String "handler"
+   70: FPassCE 0
+   72: FCall 1
+   74: PopR
+  // line 15
+   75: FPushCtorD 0 "X"
+   81: FCall 0
+   83: PopR # i0:t=Null*
+   84: PopC
+  // line 18
+   85: Jmp 16 (101)
+   90: Catch
+   91: SetL 0
+   93: PopC
+  // line 17
+   94: String "ok\n"
+   99: Print
+  100: PopC
+  // line 19
+  101: Null
+  102: RetC
+
+Method public (leaf) X::__construct at 103
+  // line 5
+  103: Null
+  104: RetC
+Class X at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) X::__construct at 103
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function handler at 21 (ID 1)
+ FPI 47-53; fpOff = 6
+Function test at 59 (ID 2)
+ EH 0 Catch for 75:90
+  Handle exception at 90
+ FPI 59-72; fpOff = 4
+ FPI 75-81; fpOff = 5

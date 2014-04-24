@@ -1,0 +1,8 @@
+digraph testName {
+0 [label="20" , fillcolor = red, style = filled];
+1 [label="21" , fillcolor = red, style = filled];
+0 -> 1;
+-2 -> 0[xlabel="ENTRY"];
+1 -> -1[xlabel="EXIT"];
+-2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] -2 [label="999999999 params"];
+}

@@ -1,0 +1,64 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 5
+ FPI 16-22; fpOff = 4
+  // line 3
+    0: DefCls 0
+  // line 13
+    2: FPushCtorD 0 "Foo"
+    8: FCall 0
+   10: PopR # i0:t=Null*
+   11: SetL 0
+   13: PopC
+  // line 14
+   14: CGetL 0
+   16: FPushObjMethodD 0 "f"
+   22: FCall 0
+   24: PopR
+  // line 15
+   25: String "done\n"
+   30: Print
+   31: PopC
+   32: Int 1
+   41: RetC
+
+Method public (leaf) Foo::f at 42
+  // line 7
+   42: Array array()
+   47: SetL 0
+   49: PopC
+  // line 8
+   50: String "x"
+   55: String "Foo"
+   60: AGetC
+   61: VGetL 0
+   63: BindS
+   64: PopV
+  // line 9
+   65: String "x"
+   70: String "Foo"
+   75: AGetC
+   76: Int 12
+   85: SetM <SC EI:0>
+  104: PopC
+  // line 10
+  105: CGetM <L:0 EI:0>
+  125: String "\n"
+  130: Concat
+  131: Print
+  132: PopC
+  // line 11
+  133: Null
+  134: RetC
+
+Method public (leaf) Foo::86ctor at 135
+  // line 12
+  135: Null
+  136: RetC
+Class Foo at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) Foo::f at 42
+ Method public (leaf) Foo::86ctor at 135
+ Property static public Foo::x = null
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 5
+ FPI 16-22; fpOff = 4

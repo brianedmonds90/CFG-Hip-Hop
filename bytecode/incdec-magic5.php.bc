@@ -1,0 +1,77 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 10-16; fpOff = 4
+ FPI 19-28; fpOff = 4
+  // line 3
+    0: DefCls 0
+  // line 10
+    2: String "asd"
+    7: SetL 0
+    9: PopC
+  // line 18
+   10: FPushFuncD 0 "main"
+   16: FCall 0
+   18: PopR
+  // line 19
+   19: FPushFuncD 1 "var_dump"
+   25: FPassL 0 0
+   28: FCall 1
+   30: PopR
+   31: Int 1
+   40: RetC
+
+Function main at 41 (ID 1)
+ FPI 41-47; fpOff = 5
+ FPI 71-80; fpOff = 4
+  // line 13
+   41: FPushCtorD 0 "Whatever"
+   47: FCall 0
+   49: PopR # i0:t=Null*
+   50: SetL 0
+   52: PopC
+  // line 14
+   53: IncDecM PreInc <L:0 PT:"blah">
+   70: PopC
+  // line 15
+   71: FPushFuncD 1 "var_dump"
+   77: FPassL 0 0
+   80: FCall 1
+   82: PopR
+  // line 16
+   83: Null
+   84: RetC
+
+Method public Whatever::__get at 85
+ FPI 85-94; fpOff = 5
+  // line 5
+   85: FPushFuncD 1 "var_dump"
+   91: FPassL 0 0
+   94: FCall 1
+   96: PopR
+   97: String "lol"
+  102: VGetG
+  103: BindL 1
+  105: PopV
+  106: VGetL 1
+  108: RetV
+
+Method public (leaf) Whatever::__set at 109
+  // line 7
+  109: Null
+  110: RetC
+
+Method public (leaf) Whatever::86ctor at 111
+  // line 8
+  111: Null
+  112: RetC
+Class Whatever at 0 (maybe-hoistable) (ID 0)
+ Method public Whatever::__get at 85
+ FPI 85-94; fpOff = 5
+ Method public (leaf) Whatever::__set at 109
+ Method public (leaf) Whatever::86ctor at 111
+Pseudo-main at 0 (ID 0)
+ FPI 10-16; fpOff = 4
+ FPI 19-28; fpOff = 4
+Function main at 41 (ID 1)
+ FPI 41-47; fpOff = 5
+ FPI 71-80; fpOff = 4

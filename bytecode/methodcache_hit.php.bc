@@ -1,0 +1,97 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 6
+    2: DefCls 1
+  // line 19
+    4: FPushFuncD 0 "main"
+   10: FCall 0
+   12: PopR
+   13: Int 1
+   22: RetC
+
+Function main at 23 (ID 1)
+ FPI 23-29; fpOff = 6
+ FPI 35-41; fpOff = 6
+ FPI 49-58; fpOff = 5
+ FPI 63-72; fpOff = 5
+ FPI 77-86; fpOff = 5
+  // line 13
+   23: FPushCtorD 0 "doer"
+   29: FCall 0
+   31: PopR # i0:t=Null*
+   32: SetL 0
+   34: PopC
+  // line 14
+   35: FPushCtorD 0 "one"
+   41: FCall 0
+   43: PopR # i0:t=Null*
+   44: SetL 1
+   46: PopC
+  // line 15
+   47: CGetL 0
+   49: FPushObjMethodD 1 "junk"
+   55: FPassL 0 1
+   58: FCall 1
+   60: PopR
+  // line 16
+   61: CGetL 0
+   63: FPushObjMethodD 1 "junk"
+   69: FPassL 0 1
+   72: FCall 1
+   74: PopR
+  // line 17
+   75: CGetL 0
+   77: FPushObjMethodD 1 "junk"
+   83: FPassL 0 1
+   86: FCall 1
+   88: PopR
+  // line 18
+   89: Null
+   90: RetC
+
+Method public (leaf) one::foo at 91
+  // line 4
+   91: String "foo\n"
+   96: Print
+   97: PopC
+   98: Null
+   99: RetC
+
+Method public doer::junk at 100
+ FPI 102-108; fpOff = 4
+  // line 8
+  100: CGetL 0
+  102: FPushObjMethodD 0 "foo"
+  108: FCall 0
+  110: PopR
+  // line 9
+  111: Null
+  112: RetC
+
+Method public (leaf) one::86ctor at 113
+  // line 5
+  113: Null
+  114: RetC
+
+Method public (leaf) doer::86ctor at 115
+  // line 10
+  115: Null
+  116: RetC
+Class one at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) one::foo at 91
+ Method public (leaf) one::86ctor at 113
+Class doer at 2 (maybe-hoistable) (ID 1)
+ Method public doer::junk at 100
+ FPI 102-108; fpOff = 4
+ Method public (leaf) doer::86ctor at 115
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 3
+Function main at 23 (ID 1)
+ FPI 23-29; fpOff = 6
+ FPI 35-41; fpOff = 6
+ FPI 49-58; fpOff = 5
+ FPI 63-72; fpOff = 5
+ FPI 77-86; fpOff = 5

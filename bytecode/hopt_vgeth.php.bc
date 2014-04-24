@@ -1,0 +1,29 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+  // line 13
+    0: FPushFuncD 0 "f"
+    6: FCall 0
+    8: PopR
+    9: Int 1
+   18: RetC
+
+Function (leaf) f at 19 (ID 1)
+  // line 5
+   19: Int 30
+   28: SetL 0
+   30: PopC
+  // line 6
+   31: VGetL 0
+   33: BindL 1
+   35: PopV
+  // line 11
+   36: CGetL 1
+   38: Print
+   39: PopC
+  // line 12
+   40: Null
+   41: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 3
+Function (leaf) f at 19 (ID 1)

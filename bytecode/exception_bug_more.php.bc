@@ -1,0 +1,69 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Catch for 0:14
+  Handle exception at 14
+ FPI 0-6; fpOff = 4
+  // line 16
+    0: FPushFuncD 0 "foo"
+    6: FCall 0
+    8: PopR
+  // line 17
+    9: Jmp 16 (25)
+   14: Catch
+   15: SetL 0
+   17: PopC
+   18: String "done\n"
+   23: Print
+   24: PopC
+   25: Int 1
+   34: RetC
+
+Function thrower at 35 (ID 1)
+ FPI 35-48; fpOff = 4
+  // line 4
+   35: FPushCtorD 1 "Exception"
+   41: String "Not MyJunk"
+   46: FPassCE 0
+   48: FCall 1
+   50: PopR # i0:t=Null*
+   51: Throw
+
+Function foo at 52 (ID 2)
+ EH 0 Fault for 64:96 iterId 0 itRef false to 98
+ EH 1 Catch for 64:78 outer EH 0
+  Handle myjunk at 78 parentIndex 0
+ FPI 64-70; fpOff = 7
+  // line 8
+   52: Array array(0=>1,1=>2,2=>3)
+  // line 12
+   57: IterInit 0 39 (96) 0
+  // line 10
+   64: FPushFuncD 0 "thrower"
+   70: FCall 0
+   72: PopR
+  // line 11
+   73: Jmp 16 (89)
+   78: Catch
+   79: SetL 1
+   81: PopC
+   82: String "Not Here\n"
+   87: Print
+   88: PopC
+  // line 12
+   89: IterNext 0 -25 0
+  // line 13
+   96: Null
+   97: RetC
+   98: IterFree 0
+  100: Unwind
+Pseudo-main at 0 (ID 0)
+ EH 0 Catch for 0:14
+  Handle exception at 14
+ FPI 0-6; fpOff = 4
+Function thrower at 35 (ID 1)
+ FPI 35-48; fpOff = 4
+Function foo at 52 (ID 2)
+ EH 0 Fault for 64:96 iterId 0 itRef false to 98
+ EH 1 Catch for 64:78 outer EH 0
+  Handle myjunk at 78 parentIndex 0
+ FPI 64-70; fpOff = 7

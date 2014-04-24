@@ -1,0 +1,171 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 8-14; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 7
+    2: DefCls 1
+  // line 11
+    4: DefCls 2
+  // line 15
+    6: DefCls 3
+  // line 35
+    8: FPushFuncD 0 "main"
+   14: FCall 0
+   16: PopR
+   17: Int 1
+   26: RetC
+
+Function main at 27 (ID 1)
+ FPI 27-33; fpOff = 7
+ FPI 39-45; fpOff = 7
+ FPI 51-57; fpOff = 7
+ FPI 65-74; fpOff = 6
+ FPI 79-88; fpOff = 6
+ FPI 93-102; fpOff = 6
+ FPI 107-116; fpOff = 6
+ FPI 121-130; fpOff = 6
+ FPI 135-144; fpOff = 6
+  // line 24
+   27: FPushCtorD 0 "a"
+   33: FCall 0
+   35: PopR # i0:t=Null*
+   36: SetL 0
+   38: PopC
+  // line 25
+   39: FPushCtorD 0 "b"
+   45: FCall 0
+   47: PopR # i0:t=Null*
+   48: SetL 1
+   50: PopC
+  // line 26
+   51: FPushCtorD 0 "c"
+   57: FCall 0
+   59: PopR # i0:t=Null*
+   60: SetL 2
+   62: PopC
+  // line 27
+   63: CGetL 2
+   65: FPushObjMethodD 1 "go"
+   71: FPassL 0 0
+   74: FCall 1
+   76: PopR
+  // line 28
+   77: CGetL 2
+   79: FPushObjMethodD 1 "go"
+   85: FPassL 0 0
+   88: FCall 1
+   90: PopR
+  // line 29
+   91: CGetL 2
+   93: FPushObjMethodD 1 "go"
+   99: FPassL 0 1
+  102: FCall 1
+  104: PopR
+  // line 30
+  105: CGetL 2
+  107: FPushObjMethodD 1 "go"
+  113: FPassL 0 2
+  116: FCall 1
+  118: PopR
+  // line 31
+  119: CGetL 2
+  121: FPushObjMethodD 1 "go"
+  127: FPassL 0 2
+  130: FCall 1
+  132: PopR
+  // line 32
+  133: CGetL 2
+  135: FPushObjMethodD 1 "go"
+  141: FPassL 0 0
+  144: FCall 1
+  146: PopR
+  // line 33
+  147: Null
+  148: RetC
+
+Method protected abstract (leaf) one::foo at 149
+  // line 4
+  149: String "Cannot call abstract method one::foo()"
+  154: Fatal RuntimeOmitFrame
+
+Method protected (leaf) a::foo at 156
+  // line 8
+  156: String "a\n"
+  161: Print
+  162: PopC
+  163: Null
+  164: RetC
+
+Method protected (leaf) b::FoO at 165
+  // line 12
+  165: String "b\n"
+  170: Print
+  171: PopC
+  172: Null
+  173: RetC
+
+Method protected (leaf) c::foo at 174
+  // line 16
+  174: String "c\n"
+  179: Print
+  180: PopC
+  181: Null
+  182: RetC
+
+Method public c::go at 183
+ FPI 185-191; fpOff = 4
+  // line 19
+  183: CGetL 0
+  185: FPushObjMethodD 0 "foo"
+  191: FCall 0
+  193: PopR
+  // line 20
+  194: Null
+  195: RetC
+
+Method public (leaf) one::86ctor at 196
+  // line 5
+  196: Null
+  197: RetC
+
+Method public (leaf) a::86ctor at 198
+  // line 9
+  198: Null
+  199: RetC
+
+Method public (leaf) b::86ctor at 200
+  // line 13
+  200: Null
+  201: RetC
+
+Method public (leaf) c::86ctor at 202
+  // line 21
+  202: Null
+  203: RetC
+Class abstract one at 0 (maybe-hoistable) (ID 0)
+ Method protected abstract (leaf) one::foo at 149
+ Method public (leaf) one::86ctor at 196
+Class a at 2 (maybe-hoistable) (ID 1)
+ Method protected (leaf) a::foo at 156
+ Method public (leaf) a::86ctor at 198
+Class b at 4 (maybe-hoistable) (ID 2)
+ Method protected (leaf) b::FoO at 165
+ Method public (leaf) b::86ctor at 200
+Class c at 6 (maybe-hoistable) (ID 3)
+ Method protected (leaf) c::foo at 174
+ Method public c::go at 183
+ FPI 185-191; fpOff = 4
+ Method public (leaf) c::86ctor at 202
+Pseudo-main at 0 (ID 0)
+ FPI 8-14; fpOff = 3
+Function main at 27 (ID 1)
+ FPI 27-33; fpOff = 7
+ FPI 39-45; fpOff = 7
+ FPI 51-57; fpOff = 7
+ FPI 65-74; fpOff = 6
+ FPI 79-88; fpOff = 6
+ FPI 93-102; fpOff = 6
+ FPI 107-116; fpOff = 6
+ FPI 121-130; fpOff = 6
+ FPI 135-144; fpOff = 6

@@ -1,0 +1,64 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 8-30; fpOff = 4
+ FPI 14-26; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 33-55; fpOff = 4
+ FPI 39-51; fpOff = 7 parentIndex = 2 (depth 2)
+  // line 13
+    0: Array array()
+    5: SetL 0
+    7: PopC
+  // line 14
+    8: FPushFuncD 1 "var_dump"
+   14: FPushFuncD 2 "go"
+   20: FPassL 0 0
+   23: False
+   24: FPassCE 1
+   26: FCall 2
+   28: FPassR 0
+   30: FCall 1
+   32: PopR
+  // line 15
+   33: FPushFuncD 1 "var_dump"
+   39: FPushFuncD 2 "go"
+   45: FPassL 0 0
+   48: True
+   49: FPassCE 1
+   51: FCall 2
+   53: FPassR 0
+   55: FCall 1
+   57: PopR
+   58: Int 1
+   67: RetC
+
+Function (leaf) go at 68 (ID 1)
+  // line 5
+   68: CGetL 1
+   70: JmpZ 10 (80)
+   75: VGetL 0
+   77: BindL 0
+   79: PopV
+  // line 6
+   80: CGetL 0
+   82: JmpZ 17 (99)
+   87: Int 5
+   96: SetL 2
+   98: PopC
+  // line 8
+   99: Int 5
+  108: SetM <L:0 EI:1 ET:"hello">
+  133: PopC
+  // line 9
+  134: IssetM <L:0 EI:2 ET:"hi">
+  159: JmpZ 7 (166)
+  164: True
+  165: RetC
+  // line 10
+  166: False
+  167: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 8-30; fpOff = 4
+ FPI 14-26; fpOff = 7 parentIndex = 0 (depth 2)
+ FPI 33-55; fpOff = 4
+ FPI 39-51; fpOff = 7 parentIndex = 2 (depth 2)
+Function (leaf) go at 68 (ID 1)

@@ -1,0 +1,210 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 8-14; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 9
+    2: DefCls 1
+  // line 18
+    4: DefCls 2
+  // line 22
+    6: DefCls 3
+  // line 42
+    8: FPushFuncD 0 "main"
+   14: FCall 0
+   16: PopR
+   17: Int 1
+   26: RetC
+
+Function main at 27 (ID 1)
+ FPI 27-33; fpOff = 7
+ FPI 39-45; fpOff = 7
+ FPI 51-57; fpOff = 7
+ FPI 65-74; fpOff = 6
+ FPI 79-88; fpOff = 6
+ FPI 93-102; fpOff = 6
+ FPI 107-116; fpOff = 6
+ FPI 121-138; fpOff = 6
+ FPI 127-133; fpOff = 10 parentIndex = 7 (depth 2)
+ FPI 143-152; fpOff = 6
+ FPI 157-174; fpOff = 6
+ FPI 163-169; fpOff = 10 parentIndex = 10 (depth 2)
+ FPI 179-188; fpOff = 6
+  // line 29
+   27: FPushCtorD 0 "one"
+   33: FCall 0
+   35: PopR # i0:t=Null*
+   36: SetL 0
+   38: PopC
+  // line 30
+   39: FPushCtorD 0 "two"
+   45: FCall 0
+   47: PopR # i0:t=Null*
+   48: SetL 1
+   50: PopC
+  // line 31
+   51: FPushCtorD 0 "doer"
+   57: FCall 0
+   59: PopR # i0:t=Null*
+   60: SetL 2
+   62: PopC
+  // line 32
+   63: CGetL 2
+   65: FPushObjMethodD 1 "junk"
+   71: FPassL 0 0
+   74: FCall 1
+   76: PopR
+  // line 33
+   77: CGetL 2
+   79: FPushObjMethodD 1 "junk"
+   85: FPassL 0 1
+   88: FCall 1
+   90: PopR
+  // line 34
+   91: CGetL 2
+   93: FPushObjMethodD 1 "junk"
+   99: FPassL 0 0
+  102: FCall 1
+  104: PopR
+  // line 35
+  105: CGetL 2
+  107: FPushObjMethodD 1 "junk"
+  113: FPassL 0 1
+  116: FCall 1
+  118: PopR
+  // line 36
+  119: CGetL 2
+  121: FPushObjMethodD 1 "junk"
+  127: FPushCtorD 0 "three"
+  133: FCall 0
+  135: PopR # i0:t=Null*
+  136: FPassC 0
+  138: FCall 1
+  140: PopR
+  // line 37
+  141: CGetL 2
+  143: FPushObjMethodD 1 "junk"
+  149: FPassL 0 0
+  152: FCall 1
+  154: PopR
+  // line 38
+  155: CGetL 2
+  157: FPushObjMethodD 1 "junk"
+  163: FPushCtorD 0 "three"
+  169: FCall 0
+  171: PopR # i0:t=Null*
+  172: FPassC 0
+  174: FCall 1
+  176: PopR
+  // line 39
+  177: CGetL 2
+  179: FPushObjMethodD 1 "junk"
+  185: FPassL 0 1
+  188: FCall 1
+  190: PopR
+  // line 40
+  191: Null
+  192: RetC
+
+Method public (leaf) one::foo at 193
+  // line 5
+  193: String "one\n"
+  198: Print
+  199: PopC
+  // line 6
+  200: Null
+  201: RetC
+
+Method static public two::foo at 202
+ FPI 209-215; fpOff = 3
+ FPI 235-237; fpOff = 3
+  // line 11
+  202: String "two\n"
+  207: Print
+  208: PopC
+  // line 12
+  209: FPushFuncD 0 "get_called_class"
+  215: FCall 0
+  217: UnboxR
+  218: String "three"
+  223: Same
+  224: JmpZ 16 (240)
+  // line 13
+  229: String "heh"
+  234: LateBoundCls
+  235: FPushClsMethod 0
+  237: FCall 0
+  239: PopR
+  // line 15
+  240: Null
+  241: RetC
+
+Method static public (leaf) three::heh at 242
+  // line 19
+  242: String "three\n"
+  247: Print
+  248: PopC
+  249: Null
+  250: RetC
+
+Method public doer::junk at 251
+ FPI 253-259; fpOff = 4
+  // line 24
+  251: CGetL 0
+  253: FPushObjMethodD 0 "foo"
+  259: FCall 0
+  261: PopR
+  // line 25
+  262: Null
+  263: RetC
+
+Method public (leaf) one::86ctor at 264
+  // line 7
+  264: Null
+  265: RetC
+
+Method public (leaf) two::86ctor at 266
+  // line 16
+  266: Null
+  267: RetC
+
+Method public (leaf) three::86ctor at 268
+  // line 20
+  268: Null
+  269: RetC
+
+Method public (leaf) doer::86ctor at 270
+  // line 26
+  270: Null
+  271: RetC
+Class one at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) one::foo at 193
+ Method public (leaf) one::86ctor at 264
+Class two at 2 (maybe-hoistable) (ID 1)
+ Method static public two::foo at 202
+ FPI 209-215; fpOff = 3
+ FPI 235-237; fpOff = 3
+ Method public (leaf) two::86ctor at 266
+Class three at 4 (maybe-hoistable) (ID 2)
+ Method static public (leaf) three::heh at 242
+ Method public (leaf) three::86ctor at 268
+Class doer at 6 (maybe-hoistable) (ID 3)
+ Method public doer::junk at 251
+ FPI 253-259; fpOff = 4
+ Method public (leaf) doer::86ctor at 270
+Pseudo-main at 0 (ID 0)
+ FPI 8-14; fpOff = 3
+Function main at 27 (ID 1)
+ FPI 27-33; fpOff = 7
+ FPI 39-45; fpOff = 7
+ FPI 51-57; fpOff = 7
+ FPI 65-74; fpOff = 6
+ FPI 79-88; fpOff = 6
+ FPI 93-102; fpOff = 6
+ FPI 107-116; fpOff = 6
+ FPI 121-138; fpOff = 6
+ FPI 127-133; fpOff = 10 parentIndex = 7 (depth 2)
+ FPI 143-152; fpOff = 6
+ FPI 157-174; fpOff = 6
+ FPI 163-169; fpOff = 10 parentIndex = 10 (depth 2)
+ FPI 179-188; fpOff = 6

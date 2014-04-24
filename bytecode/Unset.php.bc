@@ -1,0 +1,199 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 4
+ FPI 11-17; fpOff = 5
+ FPI 25-31; fpOff = 4
+  // line 33
+    0: FPushFuncD 0 "f"
+    6: FCall 0
+    8: PopR
+  // line 35
+    9: DefCls 0
+  // line 40
+   11: FPushCtorD 0 "A"
+   17: FCall 0
+   19: PopR # i0:t=Null*
+   20: SetL 0
+   22: PopC
+  // line 41
+   23: CGetL 0
+   25: FPushObjMethodD 0 "foo"
+   31: FCall 0
+   33: PopR
+   34: Int 1
+   43: RetC
+
+Function (leaf) f at 44 (ID 1)
+  // line 4
+   44: String "y"
+   49: SetL 0
+   51: PopC
+  // line 5
+   52: String "z"
+   57: SetL 1
+   59: PopC
+  // line 6
+   60: CGetL 1
+   62: Dup
+   63: VGetG
+   64: BindN
+   65: PopV
+  // line 8
+   66: String ":"
+   71: IssetL 2
+   73: String ":\n"
+   78: Concat
+   79: Concat
+   80: Print
+   81: PopC
+  // line 9
+   82: String ":"
+   87: CGetL 0
+   89: IssetN
+   90: String ":\n"
+   95: Concat
+   96: Concat
+   97: Print
+   98: PopC
+  // line 10
+   99: String ":"
+  104: CGetL 1
+  106: IssetN
+  107: String ":\n"
+  112: Concat
+  113: Concat
+  114: Print
+  115: PopC
+  // line 12
+  116: UnsetL 2
+  // line 13
+  118: CGetL 0
+  120: UnsetN
+  // line 14
+  121: CGetL 1
+  123: UnsetN
+  // line 15
+  124: String ":"
+  129: IssetL 2
+  131: String ":\n"
+  136: Concat
+  137: Concat
+  138: Print
+  139: PopC
+  // line 16
+  140: String ":"
+  145: CGetL 0
+  147: IssetN
+  148: String ":\n"
+  153: Concat
+  154: Concat
+  155: Print
+  156: PopC
+  // line 17
+  157: String ":"
+  162: CGetL 1
+  164: IssetN
+  165: String ":\n"
+  170: Concat
+  171: Concat
+  172: Print
+  173: PopC
+  // line 19
+  174: Int 0
+  183: SetL 2
+  185: PopC
+  // line 20
+  186: Int 0
+  195: CGetL2 0
+  197: SetN
+  198: PopC
+  // line 21
+  199: Int 0
+  208: CGetL2 1
+  210: SetN
+  211: PopC
+  // line 22
+  212: String ":"
+  217: IssetL 2
+  219: String ":\n"
+  224: Concat
+  225: Concat
+  226: Print
+  227: PopC
+  // line 23
+  228: String ":"
+  233: CGetL 0
+  235: IssetN
+  236: String ":\n"
+  241: Concat
+  242: Concat
+  243: Print
+  244: PopC
+  // line 24
+  245: String ":"
+  250: CGetL 1
+  252: IssetN
+  253: String ":\n"
+  258: Concat
+  259: Concat
+  260: Print
+  261: PopC
+  // line 26
+  262: UnsetL 2
+  // line 27
+  264: CGetL 0
+  266: UnsetN
+  // line 28
+  267: CGetL 1
+  269: UnsetN
+  // line 29
+  270: String ":"
+  275: IssetL 2
+  277: String ":\n"
+  282: Concat
+  283: Concat
+  284: Print
+  285: PopC
+  // line 30
+  286: String ":"
+  291: CGetL 0
+  293: IssetN
+  294: String ":\n"
+  299: Concat
+  300: Concat
+  301: Print
+  302: PopC
+  // line 31
+  303: String ":"
+  308: CGetL 1
+  310: IssetN
+  311: String ":\n"
+  316: Concat
+  317: Concat
+  318: Print
+  319: PopC
+  // line 32
+  320: Null
+  321: RetC
+
+Method public (leaf) A::foo at 322
+  // line 38
+  322: InitThisLoc 0
+  // line 37
+  324: UnsetL 0
+  // line 38
+  326: Null
+  327: RetC
+
+Method public (leaf) A::86ctor at 328
+  // line 39
+  328: Null
+  329: RetC
+Class A at 9 (maybe-hoistable) (ID 0)
+ Method public (leaf) A::foo at 322
+ Method public (leaf) A::86ctor at 328
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 4
+ FPI 11-17; fpOff = 5
+ FPI 25-31; fpOff = 4
+Function (leaf) f at 44 (ID 1)

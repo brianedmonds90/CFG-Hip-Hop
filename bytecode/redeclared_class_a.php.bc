@@ -1,0 +1,21 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 14-31; fpOff = 3
+  // line 3
+    0: String "redeclared_class.1.inc"
+    5: ReqOnce
+    6: PopC
+  // line 4
+    7: String "redeclared_class.2.inc"
+   12: ReqOnce
+   13: PopC
+  // line 6
+   14: FPushFuncD 1 "var_dump"
+   20: ClsCnsD "V" "X"
+   29: FPassCE 0
+   31: FCall 1
+   33: PopR
+   34: Int 1
+   43: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 14-31; fpOff = 3

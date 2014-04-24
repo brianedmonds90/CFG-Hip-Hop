@@ -1,0 +1,64 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 5
+ FPI 14-20; fpOff = 4
+  // line 3
+    0: DefCls 0
+  // line 10
+    2: FPushCtorD 0 "Blah"
+    8: FCall 0
+   10: PopR # i0:t=Null*
+   11: SetL 0
+   13: PopC
+  // line 16
+   14: FPushFuncD 0 "main"
+   20: FCall 0
+   22: PopR
+   23: Int 1
+   32: RetC
+
+Function main at 33 (ID 1)
+ FPI 44-50; fpOff = 4
+  // line 12
+   33: String "z"
+   38: VGetG
+   39: BindL 0
+   41: PopV
+  // line 13
+   42: CGetL 0
+   44: FPushObjMethodD 0 "whatever"
+   50: FCall 0
+   52: PopR
+  // line 14
+   53: Null
+   54: RetC
+
+Method public Blah::__call at 55
+ FPI 66-72; fpOff = 6
+  // line 5
+   55: String "z"
+   60: VGetG
+   61: BindL 2
+   63: PopV
+  // line 6
+   64: CGetL 2
+   66: FPushObjMethodD 0 "hoho"
+   72: FCall 0
+   74: PopR
+  // line 7
+   75: Null
+   76: RetC
+
+Method public (leaf) Blah::86ctor at 77
+  // line 8
+   77: Null
+   78: RetC
+Class Blah at 0 (maybe-hoistable) (ID 0)
+ Method public Blah::__call at 55
+ FPI 66-72; fpOff = 6
+ Method public (leaf) Blah::86ctor at 77
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 5
+ FPI 14-20; fpOff = 4
+Function main at 33 (ID 1)
+ FPI 44-50; fpOff = 4

@@ -1,0 +1,181 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 6
+ FPI 16-22; fpOff = 6
+ FPI 28-34; fpOff = 5
+ FPI 37-43; fpOff = 5
+ FPI 48-54; fpOff = 5
+ FPI 59-65; fpOff = 5
+ FPI 68-74; fpOff = 5
+ FPI 77-83; fpOff = 5
+ FPI 88-94; fpOff = 5
+ FPI 99-105; fpOff = 5
+  // line 15
+    0: DefCls 0
+  // line 30
+    2: DefCls 1
+  // line 33
+    4: FPushCtorD 0 "A"
+   10: FCall 0
+   12: PopR # i0:t=Null*
+   13: SetL 0
+   15: PopC
+  // line 34
+   16: FPushCtorD 0 "B"
+   22: FCall 0
+   24: PopR # i0:t=Null*
+   25: SetL 1
+   27: PopC
+  // line 36
+   28: FPushFuncD 0 "foo"
+   34: FCall 0
+   36: PopR
+  // line 37
+   37: FPushFuncD 0 "bar"
+   43: FCall 0
+   45: PopR
+  // line 38
+   46: CGetL 0
+   48: FPushObjMethodD 0 "baz"
+   54: FCall 0
+   56: PopR
+  // line 39
+   57: CGetL 1
+   59: FPushObjMethodD 0 "baz"
+   65: FCall 0
+   67: PopR
+  // line 40
+   68: FPushFuncD 0 "foo"
+   74: FCall 0
+   76: PopR
+  // line 41
+   77: FPushFuncD 0 "bar"
+   83: FCall 0
+   85: PopR
+  // line 42
+   86: CGetL 0
+   88: FPushObjMethodD 0 "baz"
+   94: FCall 0
+   96: PopR
+  // line 43
+   97: CGetL 1
+   99: FPushObjMethodD 0 "baz"
+  105: FCall 0
+  107: PopR
+  108: Int 1
+  117: RetC
+
+Function (leaf) foo at 118 (ID 1)
+  // line 4
+  118: Null
+  119: StaticLocInit 0 "a"
+  // line 5
+  125: IncDecL 0 PreInc
+  128: PopC
+  // line 6
+  129: String "foo "
+  134: CGetL 0
+  136: Concat
+  137: String "\n"
+  142: Concat
+  143: Print
+  144: PopC
+  // line 7
+  145: Null
+  146: RetC
+
+Function (leaf) bar at 147 (ID 2)
+  // line 10
+  147: Null
+  148: StaticLocInit 0 "a"
+  // line 11
+  154: Int 2
+  163: SetOpL 0 PlusEqual
+  166: PopC
+  // line 12
+  167: String "bar "
+  172: CGetL 0
+  174: Concat
+  175: String "\n"
+  180: Concat
+  181: Print
+  182: PopC
+  // line 13
+  183: Null
+  184: RetC
+
+Method private (leaf) A::priv at 185
+  // line 17
+  185: Int 0
+  194: StaticLocInit 0 "x"
+  // line 18
+  200: Int 4
+  209: SetOpL 0 PlusEqual
+  212: PopC
+  // line 19
+  213: String "A::priv "
+  218: CGetL 0
+  220: Concat
+  221: String "\n"
+  226: Concat
+  227: Print
+  228: PopC
+  // line 20
+  229: Null
+  230: RetC
+
+Method public A::baz at 231
+ FPI 268-274; fpOff = 4
+  // line 23
+  231: Null
+  232: StaticLocInit 0 "a"
+  // line 24
+  238: Int 4
+  247: SetOpL 0 PlusEqual
+  250: PopC
+  // line 25
+  251: String "A::baz "
+  256: CGetL 0
+  258: Concat
+  259: String "\n"
+  264: Concat
+  265: Print
+  266: PopC
+  // line 26
+  267: This
+  268: FPushObjMethodD 0 "priv" # i0:c=A
+  274: FCall 0
+  276: PopR
+  // line 27
+  277: Null
+  278: RetC
+
+Method public (leaf) A::86ctor at 279
+  // line 28
+  279: Null
+  280: RetC
+
+Method public (leaf) B::86ctor at 281
+  // line 31
+  281: Null
+  282: RetC
+Class A at 0 (maybe-hoistable) (ID 0)
+ Method private (leaf) A::priv at 185
+ Method public A::baz at 231
+ FPI 268-274; fpOff = 4
+ Method public (leaf) A::86ctor at 279
+Class B at 2 (maybe-hoistable) (ID 1)
+ Method public (leaf) B::86ctor at 281
+Pseudo-main at 0 (ID 0)
+ FPI 4-10; fpOff = 6
+ FPI 16-22; fpOff = 6
+ FPI 28-34; fpOff = 5
+ FPI 37-43; fpOff = 5
+ FPI 48-54; fpOff = 5
+ FPI 59-65; fpOff = 5
+ FPI 68-74; fpOff = 5
+ FPI 77-83; fpOff = 5
+ FPI 88-94; fpOff = 5
+ FPI 99-105; fpOff = 5
+Function (leaf) foo at 118 (ID 1)
+Function (leaf) bar at 147 (ID 2)

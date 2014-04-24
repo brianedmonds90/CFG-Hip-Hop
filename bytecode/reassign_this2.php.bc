@@ -1,0 +1,7 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 6
+    0: String "Cannot re-assign $this"
+    5: Fatal Parse
+Pseudo-main at 0 (ID 0)
+HipHop Fatal error: Cannot re-assign $this in quick/reassign_this2.php on line 6

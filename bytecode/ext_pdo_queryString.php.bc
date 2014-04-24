@@ -1,0 +1,58 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-20; fpOff = 7
+ FPI 37-46; fpOff = 8
+ FPI 54-67; fpOff = 7
+ FPI 95-104; fpOff = 7
+  // line 2
+    0: FPushFuncD 2 "tempnam"
+    6: String "/tmp"
+   11: FPassCE 0
+   13: String "vmpdotest"
+   18: FPassCE 1
+   20: FCall 2
+   22: UnboxR
+   23: SetL 0
+   25: PopC
+  // line 3
+   26: String "sqlite:"
+   31: CGetL 0
+   33: Concat
+   34: SetL 1
+   36: PopC
+  // line 4
+   37: FPushCtorD 1 "PDO"
+   43: FPassL 0 1
+   46: FCall 1
+   48: PopR # i0:t=Null*
+   49: SetL 2
+   51: PopC
+  // line 5
+   52: CGetL 2
+   54: FPushObjMethodD 1 "query"
+   60: String "SELECT 1+1"
+   65: FPassCE 0
+   67: FCall 1
+   69: UnboxR
+   70: SetL 3
+   72: PopC
+  // line 6
+   73: CGetM <L:3 PT:"queryString">
+   89: Print
+   90: PopC
+  // line 8
+   91: UnsetL 3
+  // line 9
+   93: UnsetL 2
+  // line 10
+   95: FPushFuncD 1 "unlink"
+  101: FPassL 0 0
+  104: FCall 1
+  106: PopR
+  107: Int 1
+  116: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-20; fpOff = 7
+ FPI 37-46; fpOff = 8
+ FPI 54-67; fpOff = 7
+ FPI 95-104; fpOff = 7

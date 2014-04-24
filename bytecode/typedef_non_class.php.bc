@@ -1,0 +1,157 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 10-16; fpOff = 3
+  // line 37
+    0: DefTypeAlias 0
+    2: DefTypeAlias 1
+    4: DefTypeAlias 2
+    6: DefTypeAlias 3
+    8: DefTypeAlias 4
+   10: FPushFuncD 0 "main"
+   16: FCall 0
+   18: PopR
+   19: Int 1
+   28: RetC
+
+Function fooInt at 29 (ID 1)
+ FPI 38-47; fpOff = 4
+  // line 12
+   29: VerifyParamType 0
+  // line 10
+   31: String "int:\n"
+   36: Print
+   37: PopC
+  // line 11
+   38: FPushFuncD 1 "var_dump"
+   44: FPassL 0 0
+   47: FCall 1
+   49: PopR
+  // line 12
+   50: Null
+   51: RetC
+
+Function fooBool at 52 (ID 2)
+ FPI 61-70; fpOff = 4
+  // line 16
+   52: VerifyParamType 0
+  // line 14
+   54: String "bool\n"
+   59: Print
+   60: PopC
+  // line 15
+   61: FPushFuncD 1 "var_dump"
+   67: FPassL 0 0
+   70: FCall 1
+   72: PopR
+  // line 16
+   73: Null
+   74: RetC
+
+Function fooDouble at 75 (ID 3)
+ FPI 84-93; fpOff = 4
+  // line 20
+   75: VerifyParamType 0
+  // line 18
+   77: String "double\n"
+   82: Print
+   83: PopC
+  // line 19
+   84: FPushFuncD 1 "var_dump"
+   90: FPassL 0 0
+   93: FCall 1
+   95: PopR
+  // line 20
+   96: Null
+   97: RetC
+
+Function fooArray at 98 (ID 4)
+ FPI 107-116; fpOff = 4
+  // line 24
+   98: VerifyParamType 0
+  // line 22
+  100: String "array:\n"
+  105: Print
+  106: PopC
+  // line 23
+  107: FPushFuncD 1 "var_dump"
+  113: FPassL 0 0
+  116: FCall 1
+  118: PopR
+  // line 24
+  119: Null
+  120: RetC
+
+Function fooString at 121 (ID 5)
+ FPI 130-139; fpOff = 4
+  // line 28
+  121: VerifyParamType 0
+  // line 26
+  123: String "string:\n"
+  128: Print
+  129: PopC
+  // line 27
+  130: FPushFuncD 1 "var_dump"
+  136: FPassL 0 0
+  139: FCall 1
+  141: PopR
+  // line 28
+  142: Null
+  143: RetC
+
+Function main at 144 (ID 6)
+ FPI 144-161; fpOff = 3
+ FPI 164-173; fpOff = 3
+ FPI 176-193; fpOff = 3
+ FPI 196-209; fpOff = 3
+ FPI 212-225; fpOff = 3
+  // line 31
+  144: FPushFuncD 1 "fooInt"
+  150: Int 12
+  159: FPassCE 0
+  161: FCall 1
+  163: PopR
+  // line 32
+  164: FPushFuncD 1 "fooBool"
+  170: False
+  171: FPassCE 0
+  173: FCall 1
+  175: PopR
+  // line 33
+  176: FPushFuncD 1 "fooDouble"
+  182: Double 1.2
+  191: FPassCE 0
+  193: FCall 1
+  195: PopR
+  // line 34
+  196: FPushFuncD 1 "fooArray"
+  202: Array array(0=>1,1=>2,2=>3)
+  207: FPassCE 0
+  209: FCall 1
+  211: PopR
+  // line 35
+  212: FPushFuncD 1 "fooString"
+  218: String "asdasd"
+  223: FPassCE 0
+  225: FCall 1
+  227: PopR
+  // line 36
+  228: Null
+  229: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 10-16; fpOff = 3
+Function fooInt at 29 (ID 1)
+ FPI 38-47; fpOff = 4
+Function fooBool at 52 (ID 2)
+ FPI 61-70; fpOff = 4
+Function fooDouble at 75 (ID 3)
+ FPI 84-93; fpOff = 4
+Function fooArray at 98 (ID 4)
+ FPI 107-116; fpOff = 4
+Function fooString at 121 (ID 5)
+ FPI 130-139; fpOff = 4
+Function main at 144 (ID 6)
+ FPI 144-161; fpOff = 3
+ FPI 164-173; fpOff = 3
+ FPI 176-193; fpOff = 3
+ FPI 196-209; fpOff = 3
+ FPI 212-225; fpOff = 3

@@ -1,0 +1,401 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Catch for 10:24
+  Handle exception at 24
+ EH 1 Catch for 35:49
+  Handle exception at 49
+ EH 2 Catch for 60:74
+  Handle exception at 74
+ EH 3 Catch for 85:99
+  Handle exception at 99
+ FPI 10-16; fpOff = 5
+ FPI 35-41; fpOff = 5
+ FPI 60-66; fpOff = 5
+ FPI 85-91; fpOff = 5
+  // line 3
+    0: DefCls 0
+  // line 9
+    2: Array array(0=>1,1=>3,2=>2)
+    7: SetL 0
+    9: PopC
+  // line 63
+   10: FPushFuncD 0 "case1"
+   16: FCall 0
+   18: PopR
+   19: Jmp 16 (35)
+   24: Catch
+   25: SetL 1
+   27: PopC
+   28: String "Good1\n"
+   33: Print
+   34: PopC
+  // line 64
+   35: FPushFuncD 0 "case2"
+   41: FCall 0
+   43: PopR
+   44: Jmp 16 (60)
+   49: Catch
+   50: SetL 1
+   52: PopC
+   53: String "Good2\n"
+   58: Print
+   59: PopC
+  // line 65
+   60: FPushFuncD 0 "case3"
+   66: FCall 0
+   68: PopR
+   69: Jmp 16 (85)
+   74: Catch
+   75: SetL 1
+   77: PopC
+   78: String "Good3\n"
+   83: Print
+   84: PopC
+  // line 66
+   85: FPushFuncD 0 "case4"
+   91: FCall 0
+   93: PopR
+   94: Jmp 16 (110)
+   99: Catch
+  100: SetL 1
+  102: PopC
+  103: String "Good4\n"
+  108: Print
+  109: PopC
+  // line 67
+  110: String "Done\n"
+  115: Print
+  116: PopC
+  117: Int 1
+  126: RetC
+
+Function (leaf) func at 127 (ID 1)
+  // line 16
+  127: Null
+  128: RetC
+
+Function blar at 129 (ID 2)
+ FPI 129-142; fpOff = 4
+  // line 18
+  129: FPushCtorD 1 "Exception"
+  135: String "Hi"
+  140: FPassCE 0
+  142: FCall 1
+  144: PopR # i0:t=Null*
+  145: Throw
+
+Function foo at 146 (ID 3)
+ EH 0 Fault for 164:200 iterId 0 itRef false to 218
+ EH 1 Catch for 200:205
+  Handle exception at 205
+ FPI 164-183; fpOff = 8
+ FPI 170-179; fpOff = 11 parentIndex = 0 (depth 2)
+  // line 22
+  146: String "ar"
+  151: VGetG
+  152: BindL 0
+  154: PopV
+  // line 26
+  155: CGetL 0
+  157: IterInit 0 59 (216) 1
+  // line 24
+  164: FPushFuncD 1 "func"
+  170: FPushFuncD 1 "blar"
+  176: FPassL 0 1
+  179: FCall 1
+  181: FPassR 0
+  183: FCall 1
+  185: PopR
+  // line 25
+  186: String "wat\n"
+  191: Print
+  192: PopC
+  // line 26
+  193: IterNext 0 -29 1
+  // line 27
+  200: Jmp 16 (216)
+  205: Catch
+  206: SetL 2
+  208: PopC
+  209: String "Bad\n"
+  214: Print
+  215: PopC
+  // line 28
+  216: Null
+  217: RetC
+  218: IterFree 0
+  220: Unwind
+
+Function case1 at 221 (ID 4)
+ FPI 221-227; fpOff = 3
+  // line 30
+  221: FPushFuncD 0 "foo"
+  227: FCall 0
+  229: PopR
+  230: Null
+  231: RetC
+
+Function foo2 at 232 (ID 5)
+ EH 0 Fault for 250:340 iterId 0 itRef false to 358
+ EH 1 Catch for 340:345
+  Handle exception at 345
+ FPI 250-330; fpOff = 8
+ FPI 267-273; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 278-284; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 288-297; fpOff = 14 parentIndex = 0 (depth 2)
+  // line 33
+  232: String "ar"
+  237: VGetG
+  238: BindL 0
+  240: PopV
+  // line 36
+  241: CGetL 0
+  243: IterInit 0 113 (356) 1
+  // line 35
+  250: FPushFuncD 4 "func"
+  256: Int 12
+  265: FPassCE 0
+  267: FPushCtorD 0 "Dtor"
+  273: FCall 0
+  275: PopR # i0:t=Null*
+  276: FPassC 1
+  278: FPushFuncD 0 "mt_rand"
+  284: FCall 0
+  286: FPassR 2
+  288: FPushFuncD 1 "blar"
+  294: FPassL 0 1
+  297: FCall 1
+  299: UnboxR
+  300: JmpZ 19 (319)
+  305: Int 1024
+  314: Jmp 14 (328)
+  319: Int -1
+  328: FPassCE 3
+  330: FCall 4
+  332: PopR
+  // line 36
+  333: IterNext 0 -83 1
+  // line 37
+  340: Jmp 16 (356)
+  345: Catch
+  346: SetL 2
+  348: PopC
+  349: String "Bad\n"
+  354: Print
+  355: PopC
+  // line 38
+  356: Null
+  357: RetC
+  358: IterFree 0
+  360: Unwind
+
+Function case2 at 361 (ID 6)
+ FPI 361-367; fpOff = 3
+  // line 40
+  361: FPushFuncD 0 "foo2"
+  367: FCall 0
+  369: PopR
+  370: Null
+  371: RetC
+
+Function foo3 at 372 (ID 7)
+ EH 0 Fault for 390:461 iterId 0 itRef false to 479
+ EH 1 Catch for 461:466
+  Handle exception at 466
+ FPI 390-451; fpOff = 8
+ FPI 407-413; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 418-424; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 428-447; fpOff = 14 parentIndex = 0 (depth 2)
+ FPI 434-443; fpOff = 17 parentIndex = 3 (depth 3)
+  // line 43
+  372: String "ar"
+  377: VGetG
+  378: BindL 0
+  380: PopV
+  // line 46
+  381: CGetL 0
+  383: IterInit 0 94 (477) 1
+  // line 45
+  390: FPushFuncD 4 "func"
+  396: Int 12
+  405: FPassCE 0
+  407: FPushCtorD 0 "Dtor"
+  413: FCall 0
+  415: PopR # i0:t=Null*
+  416: FPassC 1
+  418: FPushFuncD 0 "mt_rand"
+  424: FCall 0
+  426: FPassR 2
+  428: FPushFuncD 1 "func"
+  434: FPushFuncD 1 "blar"
+  440: FPassL 0 1
+  443: FCall 1
+  445: FPassR 0
+  447: FCall 1
+  449: FPassR 3
+  451: FCall 4
+  453: PopR
+  // line 46
+  454: IterNext 0 -64 1
+  // line 47
+  461: Jmp 16 (477)
+  466: Catch
+  467: SetL 2
+  469: PopC
+  470: String "Bad\n"
+  475: Print
+  476: PopC
+  // line 48
+  477: Null
+  478: RetC
+  479: IterFree 0
+  481: Unwind
+
+Function case3 at 482 (ID 8)
+ FPI 482-488; fpOff = 3
+  // line 50
+  482: FPushFuncD 0 "foo3"
+  488: FCall 0
+  490: PopR
+  491: Null
+  492: RetC
+
+Function foo4 at 493 (ID 9)
+ EH 0 Fault for 511:592 iterId 0 itRef false to 610
+ EH 1 Catch for 592:597
+  Handle exception at 597
+ FPI 511-582; fpOff = 8
+ FPI 528-534; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 539-545; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 549-578; fpOff = 14 parentIndex = 0 (depth 2)
+ FPI 555-561; fpOff = 17 parentIndex = 3 (depth 3)
+ FPI 565-574; fpOff = 18 parentIndex = 3 (depth 3)
+  // line 54
+  493: String "ar"
+  498: VGetG
+  499: BindL 0
+  501: PopV
+  // line 57
+  502: CGetL 0
+  504: IterInit 0 104 (608) 1
+  // line 56
+  511: FPushFuncD 4 "func"
+  517: Int 12
+  526: FPassCE 0
+  528: FPushCtorD 0 "Dtor"
+  534: FCall 0
+  536: PopR # i0:t=Null*
+  537: FPassC 1
+  539: FPushFuncD 0 "mt_rand"
+  545: FCall 0
+  547: FPassR 2
+  549: FPushFuncD 2 "func"
+  555: FPushFuncD 0 "mt_rand"
+  561: FCall 0
+  563: FPassR 0
+  565: FPushFuncD 1 "blar"
+  571: FPassL 0 1
+  574: FCall 1
+  576: FPassR 1
+  578: FCall 2
+  580: FPassR 3
+  582: FCall 4
+  584: PopR
+  // line 57
+  585: IterNext 0 -74 1
+  // line 58
+  592: Jmp 16 (608)
+  597: Catch
+  598: SetL 2
+  600: PopC
+  601: String "Bad\n"
+  606: Print
+  607: PopC
+  // line 59
+  608: Null
+  609: RetC
+  610: IterFree 0
+  612: Unwind
+
+Function case4 at 613 (ID 10)
+ FPI 613-619; fpOff = 3
+  // line 61
+  613: FPushFuncD 0 "foo3"
+  619: FCall 0
+  621: PopR
+  622: Null
+  623: RetC
+
+Method public (leaf) Dtor::__destruct at 624
+  // line 5
+  624: String "dtor\n"
+  629: Print
+  630: PopC
+  // line 6
+  631: Null
+  632: RetC
+
+Method public (leaf) Dtor::86ctor at 633
+  // line 7
+  633: Null
+  634: RetC
+Class Dtor at 0 (maybe-hoistable) (ID 0)
+ Method public (leaf) Dtor::__destruct at 624
+ Method public (leaf) Dtor::86ctor at 633
+Pseudo-main at 0 (ID 0)
+ EH 0 Catch for 10:24
+  Handle exception at 24
+ EH 1 Catch for 35:49
+  Handle exception at 49
+ EH 2 Catch for 60:74
+  Handle exception at 74
+ EH 3 Catch for 85:99
+  Handle exception at 99
+ FPI 10-16; fpOff = 5
+ FPI 35-41; fpOff = 5
+ FPI 60-66; fpOff = 5
+ FPI 85-91; fpOff = 5
+Function (leaf) func at 127 (ID 1)
+Function blar at 129 (ID 2)
+ FPI 129-142; fpOff = 4
+Function foo at 146 (ID 3)
+ EH 0 Fault for 164:200 iterId 0 itRef false to 218
+ EH 1 Catch for 200:205
+  Handle exception at 205
+ FPI 164-183; fpOff = 8
+ FPI 170-179; fpOff = 11 parentIndex = 0 (depth 2)
+Function case1 at 221 (ID 4)
+ FPI 221-227; fpOff = 3
+Function foo2 at 232 (ID 5)
+ EH 0 Fault for 250:340 iterId 0 itRef false to 358
+ EH 1 Catch for 340:345
+  Handle exception at 345
+ FPI 250-330; fpOff = 8
+ FPI 267-273; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 278-284; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 288-297; fpOff = 14 parentIndex = 0 (depth 2)
+Function case2 at 361 (ID 6)
+ FPI 361-367; fpOff = 3
+Function foo3 at 372 (ID 7)
+ EH 0 Fault for 390:461 iterId 0 itRef false to 479
+ EH 1 Catch for 461:466
+  Handle exception at 466
+ FPI 390-451; fpOff = 8
+ FPI 407-413; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 418-424; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 428-447; fpOff = 14 parentIndex = 0 (depth 2)
+ FPI 434-443; fpOff = 17 parentIndex = 3 (depth 3)
+Function case3 at 482 (ID 8)
+ FPI 482-488; fpOff = 3
+Function foo4 at 493 (ID 9)
+ EH 0 Fault for 511:592 iterId 0 itRef false to 610
+ EH 1 Catch for 592:597
+  Handle exception at 597
+ FPI 511-582; fpOff = 8
+ FPI 528-534; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 539-545; fpOff = 13 parentIndex = 0 (depth 2)
+ FPI 549-578; fpOff = 14 parentIndex = 0 (depth 2)
+ FPI 555-561; fpOff = 17 parentIndex = 3 (depth 3)
+ FPI 565-574; fpOff = 18 parentIndex = 3 (depth 3)
+Function case4 at 613 (ID 10)
+ FPI 613-619; fpOff = 3

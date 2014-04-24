@@ -1,0 +1,52 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 11
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+ FPI 33-52; fpOff = 4
+ FPI 39-48; fpOff = 7 parentIndex = 1 (depth 2)
+  // line 8
+   21: FPushCtorD 0 "klass"
+   27: FCall 0
+   29: PopR # i0:t=Null*
+   30: SetL 0
+   32: PopC
+  // line 9
+   33: FPushFuncD 1 "var_dump"
+   39: FPushFuncD 1 "count"
+   45: FPassL 0 0
+   48: FCall 1
+   50: FPassR 0
+   52: FCall 1
+   54: PopR
+  // line 10
+   55: Null
+   56: RetC
+
+Method public (leaf) klass::count at 57
+  // line 4
+   57: Int 123
+   66: RetC
+
+Method public (leaf) klass::86ctor at 67
+  // line 5
+   67: Null
+   68: RetC
+Class klass at 0 (ID 0)
+ Method public (leaf) klass::count at 57
+ Method public (leaf) klass::86ctor at 67
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function main at 21 (ID 1)
+ FPI 21-27; fpOff = 5
+ FPI 33-52; fpOff = 4
+ FPI 39-48; fpOff = 7 parentIndex = 1 (depth 2)

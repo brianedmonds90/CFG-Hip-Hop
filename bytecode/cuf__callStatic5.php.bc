@@ -1,0 +1,935 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+ FPI 13-19; fpOff = 3
+ FPI 24-30; fpOff = 3
+ FPI 37-43; fpOff = 3
+ FPI 52-58; fpOff = 3
+ FPI 67-73; fpOff = 3
+ FPI 82-88; fpOff = 3
+ FPI 97-103; fpOff = 3
+ FPI 114-120; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 19
+    2: FPushFuncD 0 "main1"
+    8: FCall 0
+   10: PopR
+  // line 21
+   11: DefCls 1
+  // line 39
+   13: FPushFuncD 0 "main2"
+   19: FCall 0
+   21: PopR
+  // line 41
+   22: DefCls 2
+  // line 59
+   24: FPushFuncD 0 "main3"
+   30: FCall 0
+   32: PopR
+  // line 61
+   33: DefCls 3
+  // line 67
+   35: DefCls 4
+  // line 75
+   37: FPushFuncD 0 "main4"
+   43: FCall 0
+   45: PopR
+  // line 77
+   46: DefCls 5
+  // line 82
+   48: DefCls 6
+  // line 88
+   50: DefCls 7
+  // line 95
+   52: FPushFuncD 0 "main5"
+   58: FCall 0
+   60: PopR
+  // line 97
+   61: DefCls 8
+  // line 99
+   63: DefCls 9
+  // line 105
+   65: DefCls 10
+  // line 118
+   67: FPushFuncD 0 "main6"
+   73: FCall 0
+   75: PopR
+  // line 120
+   76: DefCls 11
+  // line 125
+   78: DefCls 12
+  // line 131
+   80: DefCls 13
+  // line 141
+   82: FPushFuncD 0 "main7"
+   88: FCall 0
+   90: PopR
+  // line 143
+   91: DefCls 14
+  // line 148
+   93: DefCls 15
+  // line 154
+   95: DefCls 16
+  // line 161
+   97: FPushFuncD 0 "main8"
+  103: FCall 0
+  105: PopR
+  // line 163
+  106: DefCls 17
+  // line 165
+  108: DefCls 18
+  // line 170
+  110: DefCls 19
+  // line 180
+  112: DefCls 20
+  // line 193
+  114: FPushFuncD 0 "main9"
+  120: FCall 0
+  122: PopR
+  123: Int 1
+  132: RetC
+
+Function main1 at 133 (ID 1)
+ FPI 138-168; fpOff = 3
+ FPI 176-206; fpOff = 3
+ FPI 214-223; fpOff = 3
+ FPI 230-239; fpOff = 3
+  // line 12
+  133: Array array(0=>"C1",1=>"__callStatic")
+  138: FPushCuf 4
+  140: String "a"
+  145: FPassC 0
+  147: String "b"
+  152: FPassC 1
+  154: String "c"
+  159: FPassC 2
+  161: String "d"
+  166: FPassC 3
+  168: FCall 4
+  170: PopR
+  // line 13
+  171: Array array(0=>"C1",1=>"foo")
+  176: FPushCuf 4
+  178: String "a"
+  183: FPassC 0
+  185: String "b"
+  190: FPassC 1
+  192: String "c"
+  197: FPassC 2
+  199: String "d"
+  204: FPassC 3
+  206: FCall 4
+  208: PopR
+  // line 16
+  209: Array array(0=>"C1",1=>"__callStatic")
+  214: FPushCuf 1
+  216: Array array(0=>"a",1=>"b",2=>"c",3=>"d")
+  221: FPassC 0
+  223: FCallArray
+  224: PopR
+  // line 17
+  225: Array array(0=>"C1",1=>"foo")
+  230: FPushCuf 1
+  232: Array array(0=>"a",1=>"b",2=>"c",3=>"d")
+  237: FPassC 0
+  239: FCallArray
+  240: PopR
+  // line 18
+  241: Null
+  242: RetC
+
+Function main2 at 243 (ID 2)
+ FPI 243-249; fpOff = 5
+ FPI 257-263; fpOff = 4
+  // line 36
+  243: FPushCtorD 0 "C2"
+  249: FCall 0
+  251: PopR # i0:t=Null*
+  252: SetL 0
+  254: PopC
+  // line 37
+  255: CGetL 0
+  257: FPushObjMethodD 0 "test"
+  263: FCall 0
+  265: PopR
+  // line 38
+  266: Null
+  267: RetC
+
+Function main3 at 268 (ID 3)
+ FPI 268-274; fpOff = 5
+ FPI 282-288; fpOff = 4
+  // line 56
+  268: FPushCtorD 0 "C3"
+  274: FCall 0
+  276: PopR # i0:t=Null*
+  277: SetL 0
+  279: PopC
+  // line 57
+  280: CGetL 0
+  282: FPushObjMethodD 0 "test"
+  288: FCall 0
+  290: PopR
+  // line 58
+  291: Null
+  292: RetC
+
+Function main4 at 293 (ID 4)
+ FPI 293-299; fpOff = 5
+ FPI 310-340; fpOff = 4
+  // line 71
+  293: FPushCtorD 0 "C4"
+  299: FCall 0
+  301: PopR # i0:t=Null*
+  302: SetL 0
+  304: PopC
+  // line 73
+  305: Array array(0=>"C4",1=>"foo")
+  310: FPushCuf 4
+  312: String "a"
+  317: FPassC 0
+  319: String "b"
+  324: FPassC 1
+  326: String "c"
+  331: FPassC 2
+  333: String "d"
+  338: FPassC 3
+  340: FCall 4
+  342: PopR
+  // line 74
+  343: Null
+  344: RetC
+
+Function main5 at 345 (ID 5)
+ FPI 345-351; fpOff = 5
+ FPI 362-392; fpOff = 4
+  // line 92
+  345: FPushCtorD 0 "C5"
+  351: FCall 0
+  353: PopR # i0:t=Null*
+  354: SetL 0
+  356: PopC
+  // line 93
+  357: Array array(0=>"C5",1=>"foo")
+  362: FPushCuf 4
+  364: String "a"
+  369: FPassC 0
+  371: String "b"
+  376: FPassC 1
+  378: String "c"
+  383: FPassC 2
+  385: String "d"
+  390: FPassC 3
+  392: FCall 4
+  394: PopR
+  // line 94
+  395: Null
+  396: RetC
+
+Function main6 at 397 (ID 6)
+ FPI 397-403; fpOff = 5
+ FPI 411-417; fpOff = 4
+ FPI 420-426; fpOff = 5
+ FPI 434-440; fpOff = 4
+  // line 112
+  397: FPushCtorD 0 "C6"
+  403: FCall 0
+  405: PopR # i0:t=Null*
+  406: SetL 0
+  408: PopC
+  // line 113
+  409: CGetL 0
+  411: FPushObjMethodD 0 "test"
+  417: FCall 0
+  419: PopR
+  // line 115
+  420: FPushCtorD 0 "B6"
+  426: FCall 0
+  428: PopR # i0:t=Null*
+  429: SetL 0
+  431: PopC
+  // line 116
+  432: CGetL 0
+  434: FPushObjMethodD 0 "test"
+  440: FCall 0
+  442: PopR
+  // line 117
+  443: Null
+  444: RetC
+
+Function main7 at 445 (ID 7)
+ FPI 445-451; fpOff = 5
+ FPI 459-465; fpOff = 4
+ FPI 468-474; fpOff = 5
+ FPI 482-488; fpOff = 4
+  // line 135
+  445: FPushCtorD 0 "C7"
+  451: FCall 0
+  453: PopR # i0:t=Null*
+  454: SetL 0
+  456: PopC
+  // line 136
+  457: CGetL 0
+  459: FPushObjMethodD 0 "test"
+  465: FCall 0
+  467: PopR
+  // line 138
+  468: FPushCtorD 0 "B7"
+  474: FCall 0
+  476: PopR # i0:t=Null*
+  477: SetL 0
+  479: PopC
+  // line 139
+  480: CGetL 0
+  482: FPushObjMethodD 0 "test"
+  488: FCall 0
+  490: PopR
+  // line 140
+  491: Null
+  492: RetC
+
+Function main8 at 493 (ID 8)
+ FPI 493-499; fpOff = 5
+ FPI 507-513; fpOff = 4
+  // line 158
+  493: FPushCtorD 0 "C8"
+  499: FCall 0
+  501: PopR # i0:t=Null*
+  502: SetL 0
+  504: PopC
+  // line 159
+  505: CGetL 0
+  507: FPushObjMethodD 0 "test"
+  513: FCall 0
+  515: PopR
+  // line 160
+  516: Null
+  517: RetC
+
+Function main9 at 518 (ID 9)
+ FPI 518-524; fpOff = 5
+ FPI 532-538; fpOff = 4
+ FPI 546-548; fpOff = 4
+ FPI 556-558; fpOff = 4
+  // line 187
+  518: FPushCtorD 0 "E9"
+  524: FCall 0
+  526: PopR # i0:t=Null*
+  527: SetL 0
+  529: PopC
+  // line 188
+  530: CGetL 0
+  532: FPushObjMethodD 0 "test"
+  538: FCall 0
+  540: PopR
+  // line 190
+  541: Array array(0=>"E9",1=>"foo")
+  546: FPushCuf 0
+  548: FCall 0
+  550: PopR
+  // line 191
+  551: Array array(0=>"D9",1=>"foo")
+  556: FPushCuf 0
+  558: FCall 0
+  560: PopR
+  // line 192
+  561: Null
+  562: RetC
+
+Method static public C1::__callStatic at 563
+ FPI 563-575; fpOff = 5
+  // line 5
+  563: FPushFuncD 2 "var_dump"
+  569: FPassL 0 0
+  572: FPassL 1 1
+  575: FCall 2
+  577: PopR
+  // line 6
+  578: String "\n"
+  583: Print
+  584: PopC
+  // line 7
+  585: Null
+  586: RetC
+
+Method static public C2::__callStatic at 587
+ FPI 594-606; fpOff = 5
+  // line 23
+  587: String "C2::__callStatic\n"
+  592: Print
+  593: PopC
+  // line 24
+  594: FPushFuncD 2 "var_dump"
+  600: FPassL 0 0
+  603: FPassL 1 1
+  606: FCall 2
+  608: PopR
+  // line 25
+  609: String "\n"
+  614: Print
+  615: PopC
+  // line 26
+  616: Null
+  617: RetC
+
+Method public C2::test at 618
+ FPI 623-653; fpOff = 3
+ FPI 661-691; fpOff = 3
+ FPI 699-729; fpOff = 3
+ FPI 737-767; fpOff = 3
+  // line 28
+  618: Array array(0=>"C2",1=>"__callStatic")
+  623: FPushCuf 4
+  625: String "a"
+  630: FPassC 0
+  632: String "b"
+  637: FPassC 1
+  639: String "c"
+  644: FPassC 2
+  646: String "d"
+  651: FPassC 3
+  653: FCall 4
+  655: PopR
+  // line 29
+  656: Array array(0=>"C2",1=>"foo")
+  661: FPushCuf 4
+  663: String "a"
+  668: FPassC 0
+  670: String "b"
+  675: FPassC 1
+  677: String "c"
+  682: FPassC 2
+  684: String "d"
+  689: FPassC 3
+  691: FCall 4
+  693: PopR
+  // line 30
+  694: Array array(0=>"self",1=>"__callStatic")
+  699: FPushCuf 4
+  701: String "a"
+  706: FPassC 0
+  708: String "b"
+  713: FPassC 1
+  715: String "c"
+  720: FPassC 2
+  722: String "d"
+  727: FPassC 3
+  729: FCall 4
+  731: PopR
+  // line 31
+  732: Array array(0=>"self",1=>"foo")
+  737: FPushCuf 4
+  739: String "a"
+  744: FPassC 0
+  746: String "b"
+  751: FPassC 1
+  753: String "c"
+  758: FPassC 2
+  760: String "d"
+  765: FPassC 3
+  767: FCall 4
+  769: PopR
+  // line 32
+  770: Null
+  771: RetC
+
+Method static public C3::__callStatic at 772
+ FPI 779-791; fpOff = 5
+  // line 43
+  772: String "C3::__callStatic\n"
+  777: Print
+  778: PopC
+  // line 44
+  779: FPushFuncD 2 "var_dump"
+  785: FPassL 0 0
+  788: FPassL 1 1
+  791: FCall 2
+  793: PopR
+  // line 45
+  794: String "\n"
+  799: Print
+  800: PopC
+  // line 46
+  801: Null
+  802: RetC
+
+Method static public C3::test at 803
+ FPI 808-838; fpOff = 3
+ FPI 846-876; fpOff = 3
+  // line 49
+  803: Array array(0=>"C3",1=>"foo")
+  808: FPushCuf 4
+  810: String "a"
+  815: FPassC 0
+  817: String "b"
+  822: FPassC 1
+  824: String "c"
+  829: FPassC 2
+  831: String "d"
+  836: FPassC 3
+  838: FCall 4
+  840: PopR
+  // line 51
+  841: Array array(0=>"self",1=>"foo")
+  846: FPushCuf 4
+  848: String "a"
+  853: FPassC 0
+  855: String "b"
+  860: FPassC 1
+  862: String "c"
+  867: FPassC 2
+  869: String "d"
+  874: FPassC 3
+  876: FCall 4
+  878: PopR
+  // line 52
+  879: Null
+  880: RetC
+
+Method static public B4::__callStatic at 881
+ FPI 881-893; fpOff = 5
+  // line 63
+  881: FPushFuncD 2 "var_dump"
+  887: FPassL 0 0
+  890: FPassL 1 1
+  893: FCall 2
+  895: PopR
+  // line 64
+  896: String "\n"
+  901: Print
+  902: PopC
+  // line 65
+  903: Null
+  904: RetC
+
+Method public (leaf) A5::foo at 905
+  // line 79
+  905: String "A5::foo\n"
+  910: Print
+  911: PopC
+  // line 80
+  912: Null
+  913: RetC
+
+Method static public B5::__callStatic at 914
+ FPI 914-926; fpOff = 5
+  // line 84
+  914: FPushFuncD 2 "var_dump"
+  920: FPassL 0 0
+  923: FPassL 1 1
+  926: FCall 2
+  928: PopR
+  // line 85
+  929: String "\n"
+  934: Print
+  935: PopC
+  // line 86
+  936: Null
+  937: RetC
+
+Method public B6::test at 938
+ FPI 943-978; fpOff = 3
+ FPI 986-1021; fpOff = 3
+  // line 101
+  938: String "A6::foo"
+  943: FPushCuf 3
+  945: Int 1
+  954: FPassC 0
+  956: Int 2
+  965: FPassC 1
+  967: Int 3
+  976: FPassC 2
+  978: FCall 3
+  980: PopR
+  // line 102
+  981: Array array(0=>"A6",1=>"foo")
+  986: FPushCuf 3
+  988: Int 1
+  997: FPassC 0
+  999: Int 2
+ 1008: FPassC 1
+ 1010: Int 3
+ 1019: FPassC 2
+ 1021: FCall 3
+ 1023: PopR
+  // line 103
+ 1024: Null
+ 1025: RetC
+
+Method static public C6::__callStatic at 1026
+ FPI 1026-1038; fpOff = 5
+  // line 107
+ 1026: FPushFuncD 2 "var_dump"
+ 1032: FPassL 0 0
+ 1035: FPassL 1 1
+ 1038: FCall 2
+ 1040: PopR
+  // line 108
+ 1041: Null
+ 1042: RetC
+
+Method static public A7::__callStatic at 1043
+ FPI 1043-1055; fpOff = 5
+  // line 122
+ 1043: FPushFuncD 2 "var_dump"
+ 1049: FPassL 0 0
+ 1052: FPassL 1 1
+ 1055: FCall 2
+ 1057: PopR
+  // line 123
+ 1058: Null
+ 1059: RetC
+
+Method public B7::test at 1060
+ FPI 1065-1100; fpOff = 3
+ FPI 1108-1143; fpOff = 3
+  // line 127
+ 1060: String "A7::foo"
+ 1065: FPushCuf 3
+ 1067: Int 1
+ 1076: FPassC 0
+ 1078: Int 2
+ 1087: FPassC 1
+ 1089: Int 3
+ 1098: FPassC 2
+ 1100: FCall 3
+ 1102: PopR
+  // line 128
+ 1103: Array array(0=>"A7",1=>"foo")
+ 1108: FPushCuf 3
+ 1110: Int 1
+ 1119: FPassC 0
+ 1121: Int 2
+ 1130: FPassC 1
+ 1132: Int 3
+ 1141: FPassC 2
+ 1143: FCall 3
+ 1145: PopR
+  // line 129
+ 1146: Null
+ 1147: RetC
+
+Method static public A8::__callStatic at 1148
+ FPI 1148-1160; fpOff = 5
+  // line 145
+ 1148: FPushFuncD 2 "var_dump"
+ 1154: FPassL 0 0
+ 1157: FPassL 1 1
+ 1160: FCall 2
+ 1162: PopR
+  // line 146
+ 1163: Null
+ 1164: RetC
+
+Method public B8::test at 1165
+ FPI 1170-1205; fpOff = 3
+ FPI 1213-1248; fpOff = 3
+  // line 150
+ 1165: String "A8::foo"
+ 1170: FPushCuf 3
+ 1172: Int 1
+ 1181: FPassC 0
+ 1183: Int 2
+ 1192: FPassC 1
+ 1194: Int 3
+ 1203: FPassC 2
+ 1205: FCall 3
+ 1207: PopR
+  // line 151
+ 1208: Array array(0=>"A8",1=>"foo")
+ 1213: FPushCuf 3
+ 1215: Int 1
+ 1224: FPassC 0
+ 1226: Int 2
+ 1235: FPassC 1
+ 1237: Int 3
+ 1246: FPassC 2
+ 1248: FCall 3
+ 1250: PopR
+  // line 152
+ 1251: Null
+ 1252: RetC
+
+Method static public (leaf) D9::__callStatic at 1253
+  // line 167
+ 1253: String "D9::__callStatic\n"
+ 1258: Print
+ 1259: PopC
+  // line 168
+ 1260: Null
+ 1261: RetC
+
+Method static public (leaf) E9::__callStatic at 1262
+  // line 172
+ 1262: String "E9::__callStatic\n"
+ 1267: Print
+ 1268: PopC
+  // line 173
+ 1269: Null
+ 1270: RetC
+
+Method public E9::test at 1271
+ FPI 1276-1278; fpOff = 3
+ FPI 1286-1288; fpOff = 3
+ FPI 1296-1298; fpOff = 3
+  // line 175
+ 1271: Array array(0=>"self",1=>"foo")
+ 1276: FPushCuf 0
+ 1278: FCall 0
+ 1280: PopR
+  // line 176
+ 1281: Array array(0=>"D9",1=>"foo")
+ 1286: FPushCuf 0
+ 1288: FCall 0
+ 1290: PopR
+  // line 177
+ 1291: Array array(0=>"E9",1=>"foo")
+ 1296: FPushCuf 0
+ 1298: FCall 0
+ 1300: PopR
+  // line 178
+ 1301: Null
+ 1302: RetC
+
+Method static public (leaf) F9::__callStatic at 1303
+  // line 182
+ 1303: String "F9::__callStatic\n"
+ 1308: Print
+ 1309: PopC
+  // line 183
+ 1310: Null
+ 1311: RetC
+
+Method public (leaf) C1::86ctor at 1312
+  // line 8
+ 1312: Null
+ 1313: RetC
+
+Method public (leaf) C2::86ctor at 1314
+  // line 33
+ 1314: Null
+ 1315: RetC
+
+Method public (leaf) C3::86ctor at 1316
+  // line 53
+ 1316: Null
+ 1317: RetC
+
+Method public (leaf) B4::86ctor at 1318
+  // line 66
+ 1318: Null
+ 1319: RetC
+
+Method public (leaf) C4::86ctor at 1320
+  // line 68
+ 1320: Null
+ 1321: RetC
+
+Method public (leaf) A5::86ctor at 1322
+  // line 81
+ 1322: Null
+ 1323: RetC
+
+Method public (leaf) B5::86ctor at 1324
+  // line 87
+ 1324: Null
+ 1325: RetC
+
+Method public (leaf) C5::86ctor at 1326
+  // line 89
+ 1326: Null
+ 1327: RetC
+
+Method public (leaf) A6::86ctor at 1328
+  // line 98
+ 1328: Null
+ 1329: RetC
+
+Method public (leaf) B6::86ctor at 1330
+  // line 104
+ 1330: Null
+ 1331: RetC
+
+Method public (leaf) C6::86ctor at 1332
+  // line 109
+ 1332: Null
+ 1333: RetC
+
+Method public (leaf) A7::86ctor at 1334
+  // line 124
+ 1334: Null
+ 1335: RetC
+
+Method public (leaf) B7::86ctor at 1336
+  // line 130
+ 1336: Null
+ 1337: RetC
+
+Method public (leaf) C7::86ctor at 1338
+  // line 132
+ 1338: Null
+ 1339: RetC
+
+Method public (leaf) A8::86ctor at 1340
+  // line 147
+ 1340: Null
+ 1341: RetC
+
+Method public (leaf) B8::86ctor at 1342
+  // line 153
+ 1342: Null
+ 1343: RetC
+
+Method public (leaf) C8::86ctor at 1344
+  // line 155
+ 1344: Null
+ 1345: RetC
+
+Method public (leaf) C9::86ctor at 1346
+  // line 164
+ 1346: Null
+ 1347: RetC
+
+Method public (leaf) D9::86ctor at 1348
+  // line 169
+ 1348: Null
+ 1349: RetC
+
+Method public (leaf) E9::86ctor at 1350
+  // line 179
+ 1350: Null
+ 1351: RetC
+
+Method public (leaf) F9::86ctor at 1352
+  // line 184
+ 1352: Null
+ 1353: RetC
+Class C1 at 0 (maybe-hoistable) (ID 0)
+ Method static public C1::__callStatic at 563
+ FPI 563-575; fpOff = 5
+ Method public (leaf) C1::86ctor at 1312
+Class C2 at 11 (maybe-hoistable) (ID 1)
+ Method static public C2::__callStatic at 587
+ FPI 594-606; fpOff = 5
+ Method public C2::test at 618
+ FPI 623-653; fpOff = 3
+ FPI 661-691; fpOff = 3
+ FPI 699-729; fpOff = 3
+ FPI 737-767; fpOff = 3
+ Method public (leaf) C2::86ctor at 1314
+Class C3 at 22 (maybe-hoistable) (ID 2)
+ Method static public C3::__callStatic at 772
+ FPI 779-791; fpOff = 5
+ Method static public C3::test at 803
+ FPI 808-838; fpOff = 3
+ FPI 846-876; fpOff = 3
+ Method public (leaf) C3::86ctor at 1316
+Class B4 at 33 (maybe-hoistable) (ID 3)
+ Method static public B4::__callStatic at 881
+ FPI 881-893; fpOff = 5
+ Method public (leaf) B4::86ctor at 1318
+Class C4 at 35 (maybe-hoistable) (ID 4)
+ Method public (leaf) C4::86ctor at 1320
+Class A5 at 46 (maybe-hoistable) (ID 5)
+ Method public (leaf) A5::foo at 905
+ Method public (leaf) A5::86ctor at 1322
+Class B5 at 48 (maybe-hoistable) (ID 6)
+ Method static public B5::__callStatic at 914
+ FPI 914-926; fpOff = 5
+ Method public (leaf) B5::86ctor at 1324
+Class C5 at 50 (maybe-hoistable) (ID 7)
+ Method public (leaf) C5::86ctor at 1326
+Class A6 at 61 (maybe-hoistable) (ID 8)
+ Method public (leaf) A6::86ctor at 1328
+Class B6 at 63 (maybe-hoistable) (ID 9)
+ Method public B6::test at 938
+ FPI 943-978; fpOff = 3
+ FPI 986-1021; fpOff = 3
+ Method public (leaf) B6::86ctor at 1330
+Class C6 at 65 (maybe-hoistable) (ID 10)
+ Method static public C6::__callStatic at 1026
+ FPI 1026-1038; fpOff = 5
+ Method public (leaf) C6::86ctor at 1332
+Class A7 at 76 (maybe-hoistable) (ID 11)
+ Method static public A7::__callStatic at 1043
+ FPI 1043-1055; fpOff = 5
+ Method public (leaf) A7::86ctor at 1334
+Class B7 at 78 (maybe-hoistable) (ID 12)
+ Method public B7::test at 1060
+ FPI 1065-1100; fpOff = 3
+ FPI 1108-1143; fpOff = 3
+ Method public (leaf) B7::86ctor at 1336
+Class C7 at 80 (maybe-hoistable) (ID 13)
+ Method public (leaf) C7::86ctor at 1338
+Class A8 at 91 (maybe-hoistable) (ID 14)
+ Method static public A8::__callStatic at 1148
+ FPI 1148-1160; fpOff = 5
+ Method public (leaf) A8::86ctor at 1340
+Class B8 at 93 (maybe-hoistable) (ID 15)
+ Method public B8::test at 1165
+ FPI 1170-1205; fpOff = 3
+ FPI 1213-1248; fpOff = 3
+ Method public (leaf) B8::86ctor at 1342
+Class C8 at 95 (maybe-hoistable) (ID 16)
+ Method public (leaf) C8::86ctor at 1344
+Class C9 at 106 (maybe-hoistable) (ID 17)
+ Method public (leaf) C9::86ctor at 1346
+Class D9 at 108 (maybe-hoistable) (ID 18)
+ Method static public (leaf) D9::__callStatic at 1253
+ Method public (leaf) D9::86ctor at 1348
+Class E9 at 110 (maybe-hoistable) (ID 19)
+ Method static public (leaf) E9::__callStatic at 1262
+ Method public E9::test at 1271
+ FPI 1276-1278; fpOff = 3
+ FPI 1286-1288; fpOff = 3
+ FPI 1296-1298; fpOff = 3
+ Method public (leaf) E9::86ctor at 1350
+Class F9 at 112 (maybe-hoistable) (ID 20)
+ Method static public (leaf) F9::__callStatic at 1303
+ Method public (leaf) F9::86ctor at 1352
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+ FPI 13-19; fpOff = 3
+ FPI 24-30; fpOff = 3
+ FPI 37-43; fpOff = 3
+ FPI 52-58; fpOff = 3
+ FPI 67-73; fpOff = 3
+ FPI 82-88; fpOff = 3
+ FPI 97-103; fpOff = 3
+ FPI 114-120; fpOff = 3
+Function main1 at 133 (ID 1)
+ FPI 138-168; fpOff = 3
+ FPI 176-206; fpOff = 3
+ FPI 214-223; fpOff = 3
+ FPI 230-239; fpOff = 3
+Function main2 at 243 (ID 2)
+ FPI 243-249; fpOff = 5
+ FPI 257-263; fpOff = 4
+Function main3 at 268 (ID 3)
+ FPI 268-274; fpOff = 5
+ FPI 282-288; fpOff = 4
+Function main4 at 293 (ID 4)
+ FPI 293-299; fpOff = 5
+ FPI 310-340; fpOff = 4
+Function main5 at 345 (ID 5)
+ FPI 345-351; fpOff = 5
+ FPI 362-392; fpOff = 4
+Function main6 at 397 (ID 6)
+ FPI 397-403; fpOff = 5
+ FPI 411-417; fpOff = 4
+ FPI 420-426; fpOff = 5
+ FPI 434-440; fpOff = 4
+Function main7 at 445 (ID 7)
+ FPI 445-451; fpOff = 5
+ FPI 459-465; fpOff = 4
+ FPI 468-474; fpOff = 5
+ FPI 482-488; fpOff = 4
+Function main8 at 493 (ID 8)
+ FPI 493-499; fpOff = 5
+ FPI 507-513; fpOff = 4
+Function main9 at 518 (ID 9)
+ FPI 518-524; fpOff = 5
+ FPI 532-538; fpOff = 4
+ FPI 546-548; fpOff = 4
+ FPI 556-558; fpOff = 4

@@ -1,0 +1,172 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 20
+    0: DefCls 0
+  // line 45
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function foo at 21 (ID 1)
+ FPI 21-34; fpOff = 3
+  // line 9
+   21: FPushFuncD 1 "var_dump"
+   27: String "foo"
+   32: FPassCE 0
+   34: FCall 1
+   36: PopR
+  // line 10
+   37: Null
+   38: RetC
+
+Function bar at 39 (ID 2)
+ FPI 39-52; fpOff = 3
+  // line 13
+   39: FPushFuncD 1 "var_dump"
+   45: String "bar"
+   50: FPassCE 0
+   52: FCall 1
+   54: PopR
+  // line 14
+   55: Null
+   56: RetC
+
+Function test at 57 (ID 3)
+ FPI 57-63; fpOff = 3
+  // line 17
+   57: FPushFuncD 0 "foo"
+   63: FCall 0
+   65: PopR
+  // line 18
+   66: Null
+   67: RetC
+
+Function swizzle at 68 (ID 4)
+ FPI 68-89; fpOff = 8
+  // line 28
+   68: FPushFuncD 5 "var_dump"
+   74: FPassL 0 0
+   77: FPassL 1 1
+   80: FPassL 2 2
+   83: FPassL 3 3
+   86: FPassL 4 4
+   89: FCall 5
+   91: PopR
+  // line 29
+   92: False
+   93: SetL 4
+   95: PopC
+  // line 30
+   96: Null
+   97: RetC
+
+Function main at 98 (ID 5)
+ FPI 98-104; fpOff = 6
+ FPI 139-145; fpOff = 5
+ FPI 148-154; fpOff = 5
+ FPI 159-165; fpOff = 5
+ FPI 185-208; fpOff = 5
+ FPI 211-231; fpOff = 5
+  // line 33
+   98: FPushCtorD 0 "C"
+  104: FCall 0
+  106: PopR # i0:t=Null*
+  107: SetL 0
+  109: PopC
+  // line 34
+  110: Int 0
+  119: SetL 1
+  // line 42
+  121: PopC
+  // line 34
+  122: Int 3
+  131: CGetL2 1
+  133: Lt
+  134: JmpZ 109 (243)
+  // line 35
+  139: FPushFuncD 0 "test"
+  145: FCall 0
+  147: PopR
+  // line 36
+  148: FPushFuncD 0 "foo"
+  154: FCall 0
+  156: PopR
+  // line 37
+  157: CGetL 0
+  159: FPushObjMethodD 0 "snoot"
+  165: FCall 0
+  167: PopR
+  // line 38
+  168: Int 1
+  177: CGetL2 1
+  179: Eq
+  180: JmpZ 54 (234)
+  // line 39
+  185: FPushFuncD 3 "fb_intercept"
+  191: String "foo"
+  196: FPassCE 0
+  198: String "bar"
+  203: FPassCE 1
+  205: False
+  206: FPassCE 2
+  208: FCall 3
+  210: PopR
+  // line 40
+  211: FPushFuncD 2 "fb_intercept"
+  217: String "C::__call"
+  222: FPassCE 0
+  224: String "swizzle"
+  229: FPassCE 1
+  231: FCall 2
+  233: PopR
+  // line 34
+  234: IncDecL 1 PreInc
+  // line 42
+  237: PopC
+  238: Jmp -116
+  // line 43
+  243: Null
+  244: RetC
+
+Method public C::__call at 245
+ FPI 245-264; fpOff = 5
+  // line 22
+  245: FPushFuncD 3 "var_dump"
+  251: String "C::__call"
+  256: FPassCE 0
+  258: FPassL 1 0
+  261: FPassL 2 1
+  264: FCall 3
+  266: PopR
+  // line 23
+  267: Null
+  268: RetC
+
+Method public (leaf) C::86ctor at 269
+  // line 24
+  269: Null
+  270: RetC
+Class C at 0 (maybe-hoistable) (ID 0)
+ Method public C::__call at 245
+ FPI 245-264; fpOff = 5
+ Method public (leaf) C::86ctor at 269
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function foo at 21 (ID 1)
+ FPI 21-34; fpOff = 3
+Function bar at 39 (ID 2)
+ FPI 39-52; fpOff = 3
+Function test at 57 (ID 3)
+ FPI 57-63; fpOff = 3
+Function swizzle at 68 (ID 4)
+ FPI 68-89; fpOff = 8
+Function main at 98 (ID 5)
+ FPI 98-104; fpOff = 6
+ FPI 139-145; fpOff = 5
+ FPI 148-154; fpOff = 5
+ FPI 159-165; fpOff = 5
+ FPI 185-208; fpOff = 5
+ FPI 211-231; fpOff = 5

@@ -1,0 +1,59 @@
+
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 43:66 to 118
+ FPI 0-17; fpOff = 6
+ FPI 28-70; fpOff = 6
+ FPI 73-105; fpOff = 6
+  // line 8
+    0: FPushFuncD 1 "error_reporting"
+    6: Int -1
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+  // line 9
+   20: Array array(0=>20)
+   25: SetL 0
+   27: PopC
+  // line 10
+   28: FPushFuncD 1 "g"
+   34: String "b"
+   39: CGetG
+   40: SetL 2
+   42: PopC
+   43: CGetM <L:2 EI:0>
+   63: SetL 1
+   65: PopC
+   66: PushL 2
+   68: FPassCW 0
+   70: FCall 1
+   72: PopR
+  // line 11
+   73: FPushFuncD 1 "g"
+   79: CGetM <L:0 EI:0>
+   99: SetL 1
+  101: PopC
+  102: FPassL 0 0
+  105: FCall 1
+  107: PopR
+  108: Int 1
+  117: RetC
+  118: UnsetL 2
+  120: Unwind
+
+Function g at 121 (ID 1)
+ FPI 121-130; fpOff = 4
+  // line 5
+  121: FPushFuncD 1 "var_dump"
+  127: FPassL 0 0
+  130: FCall 1
+  132: PopR
+  // line 6
+  133: Null
+  134: RetC
+Pseudo-main at 0 (ID 0)
+ EH 0 Fault for 43:66 to 118
+ FPI 0-17; fpOff = 6
+ FPI 28-70; fpOff = 6
+ FPI 73-105; fpOff = 6
+Function g at 121 (ID 1)
+ FPI 121-130; fpOff = 4

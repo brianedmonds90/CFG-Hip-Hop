@@ -1,0 +1,209 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 5
+ FPI 14-20; fpOff = 4
+ FPI 25-45; fpOff = 4
+ FPI 50-73; fpOff = 4
+ FPI 78-84; fpOff = 4
+ FPI 89-95; fpOff = 4
+ FPI 100-106; fpOff = 4
+ FPI 111-117; fpOff = 5
+ FPI 125-131; fpOff = 4
+ FPI 136-156; fpOff = 4
+ FPI 161-188; fpOff = 4
+ FPI 193-199; fpOff = 4
+ FPI 204-210; fpOff = 4
+ FPI 215-221; fpOff = 4
+ FPI 226-232; fpOff = 5
+ FPI 240-246; fpOff = 4
+ FPI 251-271; fpOff = 4
+ FPI 276-303; fpOff = 4
+ FPI 308-314; fpOff = 4
+ FPI 319-325; fpOff = 4
+ FPI 330-336; fpOff = 4
+  // line 2
+    0: FPushCtorD 0 "XMLWriter"
+    6: FCall 0
+    8: PopR # i0:t=Null*
+    9: SetL 0
+   11: PopC
+  // line 3
+   12: CGetL 0
+   14: FPushObjMethodD 0 "openMemory"
+   20: FCall 0
+   22: PopR
+  // line 4
+   23: CGetL 0
+   25: FPushObjMethodD 2 "startDocument"
+   31: String "1.0"
+   36: FPassCE 0
+   38: String "UTF-8"
+   43: FPassCE 1
+   45: FCall 2
+   47: PopR
+  // line 9
+   48: CGetL 0
+   50: FPushObjMethodD 3 "startElementNS"
+  // line 6
+   56: Null
+  // line 9
+   57: FPassCE 0
+  // line 7
+   59: String "urlset"
+  // line 9
+   64: FPassCE 1
+  // line 8
+   66: String "http://www.sitemaps.org/schemas/sitemap/0.9"
+  // line 9
+   71: FPassCE 2
+   73: FCall 3
+   75: PopR
+  // line 10
+   76: CGetL 0
+   78: FPushObjMethodD 0 "endElement"
+   84: FCall 0
+   86: PopR
+  // line 11
+   87: CGetL 0
+   89: FPushObjMethodD 0 "endDocument"
+   95: FCall 0
+   97: PopR
+  // line 12
+   98: CGetL 0
+  100: FPushObjMethodD 0 "flush"
+  106: FCall 0
+  108: UnboxR
+  109: Print
+  110: PopC
+  // line 14
+  111: FPushCtorD 0 "XMLWriter"
+  117: FCall 0
+  119: PopR # i0:t=Null*
+  120: SetL 0
+  122: PopC
+  // line 15
+  123: CGetL 0
+  125: FPushObjMethodD 0 "openMemory"
+  131: FCall 0
+  133: PopR
+  // line 16
+  134: CGetL 0
+  136: FPushObjMethodD 2 "startDocument"
+  142: String "1.0"
+  147: FPassCE 0
+  149: String "UTF-8"
+  154: FPassCE 1
+  156: FCall 2
+  158: PopR
+  // line 21
+  159: CGetL 0
+  161: FPushObjMethodD 3 "startElementNS"
+  // line 18
+  167: String ""
+  // line 21
+  172: FPassCE 0
+  // line 19
+  174: String "urlset"
+  // line 21
+  179: FPassCE 1
+  // line 20
+  181: String "http://www.sitemaps.org/schemas/sitemap/0.9"
+  // line 21
+  186: FPassCE 2
+  188: FCall 3
+  190: PopR
+  // line 22
+  191: CGetL 0
+  193: FPushObjMethodD 0 "endElement"
+  199: FCall 0
+  201: PopR
+  // line 23
+  202: CGetL 0
+  204: FPushObjMethodD 0 "endDocument"
+  210: FCall 0
+  212: PopR
+  // line 24
+  213: CGetL 0
+  215: FPushObjMethodD 0 "flush"
+  221: FCall 0
+  223: UnboxR
+  224: Print
+  225: PopC
+  // line 27
+  226: FPushCtorD 0 "XMLWriter"
+  232: FCall 0
+  234: PopR # i0:t=Null*
+  235: SetL 0
+  237: PopC
+  // line 28
+  238: CGetL 0
+  240: FPushObjMethodD 0 "openMemory"
+  246: FCall 0
+  248: PopR
+  // line 29
+  249: CGetL 0
+  251: FPushObjMethodD 2 "startDocument"
+  257: String "1.0"
+  262: FPassCE 0
+  264: String "UTF-8"
+  269: FPassCE 1
+  271: FCall 2
+  273: PopR
+  // line 34
+  274: CGetL 0
+  276: FPushObjMethodD 3 "startElementNS"
+  // line 31
+  282: String "foo"
+  // line 34
+  287: FPassCE 0
+  // line 32
+  289: String "urlset"
+  // line 34
+  294: FPassCE 1
+  // line 33
+  296: String "http://www.sitemaps.org/schemas/sitemap/0.9"
+  // line 34
+  301: FPassCE 2
+  303: FCall 3
+  305: PopR
+  // line 35
+  306: CGetL 0
+  308: FPushObjMethodD 0 "endElement"
+  314: FCall 0
+  316: PopR
+  // line 36
+  317: CGetL 0
+  319: FPushObjMethodD 0 "endDocument"
+  325: FCall 0
+  327: PopR
+  // line 37
+  328: CGetL 0
+  330: FPushObjMethodD 0 "flush"
+  336: FCall 0
+  338: UnboxR
+  339: Print
+  340: PopC
+  341: Int 1
+  350: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-6; fpOff = 5
+ FPI 14-20; fpOff = 4
+ FPI 25-45; fpOff = 4
+ FPI 50-73; fpOff = 4
+ FPI 78-84; fpOff = 4
+ FPI 89-95; fpOff = 4
+ FPI 100-106; fpOff = 4
+ FPI 111-117; fpOff = 5
+ FPI 125-131; fpOff = 4
+ FPI 136-156; fpOff = 4
+ FPI 161-188; fpOff = 4
+ FPI 193-199; fpOff = 4
+ FPI 204-210; fpOff = 4
+ FPI 215-221; fpOff = 4
+ FPI 226-232; fpOff = 5
+ FPI 240-246; fpOff = 4
+ FPI 251-271; fpOff = 4
+ FPI 276-303; fpOff = 4
+ FPI 308-314; fpOff = 4
+ FPI 319-325; fpOff = 4
+ FPI 330-336; fpOff = 4

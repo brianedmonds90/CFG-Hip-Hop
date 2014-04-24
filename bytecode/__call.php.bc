@@ -1,0 +1,82 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 6
+ FPI 16-29; fpOff = 5
+ FPI 44-53; fpOff = 5
+  // line 3
+    0: DefCls 0
+  // line 10
+    2: FPushCtorD 0 "HasCall"
+    8: FCall 0
+   10: PopR # i0:t=Null*
+   11: SetL 0
+   13: PopC
+  // line 11
+   14: CGetL 0
+   16: FPushObjMethodD 1 "CasePreserving"
+   22: Array array(1=>2,3=>15)
+   27: FPassCE 0
+   29: FCall 1
+   31: PopR
+  // line 13
+   32: String "SnooZZZ"
+   37: SetL 1
+   39: PopC
+  // line 14
+   40: CGetL 0
+   42: CGetL 1
+   44: FPushObjMethod 1
+   46: String "llberries"
+   51: FPassCE 0
+   53: FCall 1
+   55: PopR
+   56: Int 1
+   65: RetC
+
+Method public HasCall::__call at 66
+ FPI 71-83; fpOff = 6
+ FPI 92-104; fpOff = 7
+  // line 5
+   66: String "__call: name "
+   71: FPushFuncD 2 "print_r"
+   77: FPassL 0 0
+   80: True
+   81: FPassCE 1
+   83: FCall 2
+   85: UnboxR
+   86: String " args "
+   91: Concat
+  // line 6
+   92: FPushFuncD 2 "print_r"
+   98: FPassL 0 1
+  101: True
+  102: FPassCE 1
+  104: FCall 2
+  // line 5
+  106: UnboxR
+  // line 6
+  107: String "\n"
+  // line 5
+  112: Concat
+  // line 6
+  113: Concat
+  114: Concat
+  115: Print
+  116: PopC
+  // line 7
+  117: Null
+  118: RetC
+
+Method public (leaf) HasCall::86ctor at 119
+  // line 8
+  119: Null
+  120: RetC
+Class HasCall at 0 (maybe-hoistable) (ID 0)
+ Method public HasCall::__call at 66
+ FPI 71-83; fpOff = 6
+ FPI 92-104; fpOff = 7
+ Method public (leaf) HasCall::86ctor at 119
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 6
+ FPI 16-29; fpOff = 5
+ FPI 44-53; fpOff = 5

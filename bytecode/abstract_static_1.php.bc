@@ -1,0 +1,38 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+  // line 3
+    0: DefCls 0
+  // line 11
+    2: FPushFuncD 0 "main"
+    8: FCall 0
+   10: PopR
+   11: Int 1
+   20: RetC
+
+Function main at 21 (ID 1)
+ FPI 21-31; fpOff = 3
+  // line 8
+   21: FPushClsMethodD 0 "who" "Foo"
+   31: FCall 0
+   33: PopR
+  // line 9
+   34: Null
+   35: RetC
+
+Method static public abstract (leaf) Foo::who at 36
+  // line 4
+   36: String "Cannot call abstract method Foo::who()"
+   41: Fatal RuntimeOmitFrame
+
+Method public (leaf) Foo::86ctor at 43
+  // line 5
+   43: Null
+   44: RetC
+Class abstract Foo at 0 (maybe-hoistable) (ID 0)
+ Method static public abstract (leaf) Foo::who at 36
+ Method public (leaf) Foo::86ctor at 43
+Pseudo-main at 0 (ID 0)
+ FPI 2-8; fpOff = 3
+Function main at 21 (ID 1)
+ FPI 21-31; fpOff = 3

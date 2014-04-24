@@ -1,0 +1,7 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 7
+    0: String "Parameters modifiers not allowed on methods"
+    5: Fatal Parse
+Pseudo-main at 0 (ID 0)
+HipHop Fatal error: Parameters modifiers not allowed on methods in quick/method_param_promotion_error.php on line 7

@@ -1,0 +1,170 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 0-17; fpOff = 3
+  // line 13
+    0: FPushFuncD 1 "test"
+    6: Int 42
+   15: FPassCE 0
+   17: FCall 1
+   19: PopR
+   20: Int 1
+   29: RetC
+
+Function test at 30 (ID 1)
+ FPI 55-64; fpOff = 5
+ FPI 305-314; fpOff = 5
+ FPI 387-396; fpOff = 5
+ FPI 496-505; fpOff = 5
+ FPI 614-623; fpOff = 5
+ FPI 662-671; fpOff = 5
+  // line 5
+   30: CGetL 0
+   32: Int 1
+   41: Int 2
+   50: NewPackedArray 3
+   52: SetL 1
+   54: PopC
+   55: FPushFuncD 1 "var_dump"
+   61: FPassL 0 1
+   64: FCall 1
+   66: PopR
+  // line 6
+   67: NewArrayReserve 24
+   69: CGetL 0
+   71: AddNewElemC
+   72: Int 1
+   81: AddNewElemC
+   82: Int 1
+   91: AddNewElemC
+   92: Int 1
+  101: AddNewElemC
+  102: Int 1
+  111: AddNewElemC
+  112: Int 1
+  121: AddNewElemC
+  122: Int 1
+  131: AddNewElemC
+  132: Int 1
+  141: AddNewElemC
+  142: Int 1
+  151: AddNewElemC
+  152: Int 1
+  161: AddNewElemC
+  162: Int 1
+  171: AddNewElemC
+  172: Int 1
+  181: AddNewElemC
+  182: Int 1
+  191: AddNewElemC
+  192: Int 1
+  201: AddNewElemC
+  202: Int 1
+  211: AddNewElemC
+  212: Int 1
+  221: AddNewElemC
+  222: Int 1
+  231: AddNewElemC
+  232: Int 1
+  241: AddNewElemC
+  242: Int 1
+  251: AddNewElemC
+  252: Int 1
+  261: AddNewElemC
+  262: Int 1
+  271: AddNewElemC
+  272: Int 1
+  281: AddNewElemC
+  282: Int 1
+  291: AddNewElemC
+  292: Int 1
+  301: AddNewElemC
+  302: SetL 1
+  304: PopC
+  305: FPushFuncD 1 "var_dump"
+  311: FPassL 0 1
+  314: FCall 1
+  316: PopR
+  // line 7
+  317: Int 0
+  326: CGetL 0
+  328: Int 0
+  337: Int 0
+  346: Int 0
+  355: Int 0
+  364: Int 0
+  373: Int 8
+  382: NewPackedArray 8
+  384: SetL 1
+  386: PopC
+  387: FPushFuncD 1 "var_dump"
+  393: FPassL 0 1
+  396: FCall 1
+  398: PopR
+  // line 8
+  399: Int 0
+  408: CGetL 0
+  410: Int 0
+  419: Int 0
+  428: Int 0
+  437: Int 0
+  446: Int 0
+  455: Int 0
+  464: Int 0
+  473: Int 0
+  482: Int 11
+  491: NewPackedArray 11
+  493: SetL 1
+  495: PopC
+  496: FPushFuncD 1 "var_dump"
+  502: FPassL 0 1
+  505: FCall 1
+  507: PopR
+  // line 9
+  508: Int 0
+  517: CGetL 0
+  519: Int 0
+  528: Int 0
+  537: Int 0
+  546: Int 0
+  555: Int 0
+  564: Int 0
+  573: Int 0
+  582: Int 0
+  591: Int 0
+  600: Int 12
+  609: NewPackedArray 12
+  611: SetL 1
+  613: PopC
+  614: FPushFuncD 1 "var_dump"
+  620: FPassL 0 1
+  623: FCall 1
+  625: PopR
+  // line 10
+  626: NewArrayReserve 4
+  628: Int 1
+  637: AddNewElemC
+  638: Int 1
+  647: AddNewElemC
+  648: CGetL 0
+  650: AddNewElemC
+  651: String "a"
+  656: CGetL 0
+  658: AddElemC
+  659: SetL 1
+  661: PopC
+  662: FPushFuncD 1 "var_dump"
+  668: FPassL 0 1
+  671: FCall 1
+  673: PopR
+  // line 11
+  674: Null
+  675: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 0-17; fpOff = 3
+Function test at 30 (ID 1)
+ FPI 55-64; fpOff = 5
+ FPI 305-314; fpOff = 5
+ FPI 387-396; fpOff = 5
+ FPI 496-505; fpOff = 5
+ FPI 614-623; fpOff = 5
+ FPI 662-671; fpOff = 5

@@ -1,0 +1,37 @@
+
+Pseudo-main at 0 (ID 0)
+ FPI 8-17; fpOff = 4
+ FPI 20-29; fpOff = 4
+  // line 8
+    0: String "abc"
+    5: SetL 0
+    7: PopC
+  // line 9
+    8: FPushFuncD 1 "foo"
+   14: FPassL 0 0
+   17: FCall 1
+   19: PopR
+  // line 10
+   20: FPushFuncD 1 "var_dump"
+   26: FPassL 0 0
+   29: FCall 1
+   31: PopR
+   32: Int 1
+   41: RetC
+
+Function (leaf) foo at 42 (ID 1)
+  // line 4
+   42: String "."
+   47: SetM <L:0 EI:3>
+   67: PopC
+  // line 5
+   68: String "\n"
+   73: SetOpL 0 ConcatEqual
+   76: PopC
+  // line 6
+   77: Null
+   78: RetC
+Pseudo-main at 0 (ID 0)
+ FPI 8-17; fpOff = 4
+ FPI 20-29; fpOff = 4
+Function (leaf) foo at 42 (ID 1)

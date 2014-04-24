@@ -1,0 +1,235 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 3
+    0: String "Test begin\n"
+    5: Print
+    6: PopC
+  // line 5
+    7: DefCls 0
+  // line 6
+    9: DefCls 1
+  // line 12
+   11: DefCls 2
+  // line 18
+   13: DefCls 3
+  // line 25
+   15: String "Test end\n"
+   20: Print
+   21: PopC
+   22: Int 1
+   31: RetC
+
+Method public abstract (leaf) I::a at 32
+ DV for parameter 1 at 36 = array (
+)
+  // line 7
+   32: VerifyParamType 1
+   34: Null
+   35: RetC
+   36: Array array()
+   41: SetL 1 # i1:t=Uninit
+   43: PopC
+   44: JmpNS -12
+
+Method public abstract (leaf) I::b at 49
+ DV for parameter 0 at 53 = NULL
+  // line 8
+   49: VerifyParamType 0
+   51: Null
+   52: RetC
+   53: Null
+   54: SetL 0 # i1:t=Uninit
+   56: PopC
+   57: JmpNS -8
+
+Method public abstract (leaf) I::c at 62
+ DV for parameter 2 at 70 = NULL
+  // line 9
+   62: VerifyParamType 1
+   64: VerifyParamType 2
+   66: VerifyParamType 3
+   68: Null
+   69: RetC
+   70: Null
+   71: SetL 2 # i1:t=Uninit
+   73: PopC
+   74: JmpNS -12
+
+Method public abstract (leaf) I::d at 79
+ DV for parameter 0 at 83 = NULL
+ DV for parameter 1 at 87 = 0
+  // line 10
+   79: VerifyParamType 0
+   81: Null
+   82: RetC
+   83: Null
+   84: SetL 0 # i1:t=Uninit
+   86: PopC
+   87: Int 0
+   96: SetL 1 # i1:t=Uninit
+   98: PopC
+   99: JmpNS -20
+
+Method public (leaf) B::a at 104
+ DV for parameter 1 at 108 = array (
+)
+  // line 13
+  104: VerifyParamType 1
+  106: Null
+  107: RetC
+  108: Array array()
+  113: SetL 1 # i1:t=Uninit
+  115: PopC
+  116: JmpNS -12
+
+Method public (leaf) B::b at 121
+ DV for parameter 0 at 125 = NULL
+  // line 14
+  121: VerifyParamType 0
+  123: Null
+  124: RetC
+  125: Null
+  126: SetL 0 # i1:t=Uninit
+  128: PopC
+  129: JmpNS -8
+
+Method public (leaf) B::c at 134
+ DV for parameter 2 at 142 = NULL
+  // line 15
+  134: VerifyParamType 1
+  136: VerifyParamType 2
+  138: VerifyParamType 3
+  140: Null
+  141: RetC
+  142: Null
+  143: SetL 2 # i1:t=Uninit
+  145: PopC
+  146: JmpNS -12
+
+Method public (leaf) B::d at 151
+ DV for parameter 0 at 155 = NULL
+ DV for parameter 2 at 159 = 0
+  // line 16
+  151: VerifyParamType 0
+  153: Null
+  154: RetC
+  155: Null
+  156: SetL 0 # i1:t=Uninit
+  158: PopC
+  159: Int 0
+  168: SetL 2 # i1:t=Uninit
+  170: PopC
+  171: JmpNS -20
+
+Method public (leaf) C::a at 176
+ DV for parameter 0 at 180 = 0
+ DV for parameter 1 at 192 = NULL
+  // line 19
+  176: VerifyParamType 1
+  178: Null
+  179: RetC
+  180: Int 0
+  189: SetL 0 # i1:t=Uninit
+  191: PopC
+  192: Null
+  193: SetL 1 # i1:t=Uninit
+  195: PopC
+  196: JmpNS -20
+
+Method public (leaf) C::b at 201
+ DV for parameter 0 at 205 = array (
+)
+ DV for parameter 1 at 213 = 0
+  // line 20
+  201: VerifyParamType 0
+  203: Null
+  204: RetC
+  205: Array array()
+  210: SetL 0 # i1:t=Uninit
+  212: PopC
+  213: Int 0
+  222: SetL 1 # i1:t=Uninit
+  224: PopC
+  225: JmpNS -24
+
+Method public (leaf) C::c at 230
+ DV for parameter 1 at 238 = NULL
+ DV for parameter 3 at 242 = NULL
+ DV for parameter 5 at 246 = 0
+  // line 21
+  230: VerifyParamType 1
+  232: VerifyParamType 2
+  234: VerifyParamType 3
+  236: Null
+  237: RetC
+  238: Null
+  239: SetL 1 # i1:t=Uninit
+  241: PopC
+  242: Null
+  243: SetL 3 # i1:t=Uninit
+  245: PopC
+  246: Int 0
+  255: SetL 5 # i1:t=Uninit
+  257: PopC
+  258: JmpNS -28
+
+Method public (leaf) C::d at 263
+ DV for parameter 0 at 267 = NULL
+  // line 22
+  263: VerifyParamType 0
+  265: Null
+  266: RetC
+  267: Null
+  268: SetL 0 # i1:t=Uninit
+  270: PopC
+  271: JmpNS -8
+
+Method public (leaf) A::86ctor at 276
+  // line 5
+  276: Null
+  277: RetC
+
+Method public abstract (leaf) I::86ctor at 278
+  // line 11
+  278: Null
+  279: RetC
+Class A at 7 (maybe-hoistable) (ID 0)
+ Method public (leaf) A::86ctor at 276
+Class interface I at 9 (maybe-hoistable) (ID 1)
+ Method public abstract (leaf) I::a at 32
+ DV for parameter 1 at 36 = array (
+)
+ Method public abstract (leaf) I::b at 49
+ DV for parameter 0 at 53 = NULL
+ Method public abstract (leaf) I::c at 62
+ DV for parameter 2 at 70 = NULL
+ Method public abstract (leaf) I::d at 79
+ DV for parameter 0 at 83 = NULL
+ DV for parameter 1 at 87 = 0
+ Method public abstract (leaf) I::86ctor at 278
+Class B at 11 (ID 2)
+ Method public (leaf) B::a at 104
+ DV for parameter 1 at 108 = array (
+)
+ Method public (leaf) B::b at 121
+ DV for parameter 0 at 125 = NULL
+ Method public (leaf) B::c at 134
+ DV for parameter 2 at 142 = NULL
+ Method public (leaf) B::d at 151
+ DV for parameter 0 at 155 = NULL
+ DV for parameter 2 at 159 = 0
+Class C at 13 (ID 3)
+ Method public (leaf) C::a at 176
+ DV for parameter 0 at 180 = 0
+ DV for parameter 1 at 192 = NULL
+ Method public (leaf) C::b at 201
+ DV for parameter 0 at 205 = array (
+)
+ DV for parameter 1 at 213 = 0
+ Method public (leaf) C::c at 230
+ DV for parameter 1 at 238 = NULL
+ DV for parameter 3 at 242 = NULL
+ DV for parameter 5 at 246 = 0
+ Method public (leaf) C::d at 263
+ DV for parameter 0 at 267 = NULL
+Pseudo-main at 0 (ID 0)

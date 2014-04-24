@@ -907,6 +907,7 @@ Function getAnnouncementsByClass at 2676 (ID 11)
  FPI 2712-2734; fpOff = 9
  FPI 2744-2753; fpOff = 7
  FPI 2759-2772; fpOff = 7
+ FPI 2793-2802; fpOff = 7
   // line 236
  2676: String "_PLATFORM"
  2681: VGetG
@@ -953,20 +954,38 @@ Function getAnnouncementsByClass at 2676 (ID 11)
  2791: Print
  2792: PopC
   // line 241
- 2793: Null
- 2794: RetC
+ 2793: FPushFuncD 1 "foo"
+ 2799: FPassL 0 3
+ 2802: FCall 1
+ 2804: PopR
+  // line 242
+ 2805: Null
+ 2806: RetC
 
-Method public (leaf) Assignment::86ctor at 2795
+Function (leaf) foo at 2807 (ID 12)
+  // line 245
+ 2807: String "BRIAN IS A BOSS"
+ 2812: Print
+ 2813: PopC
+  // line 246
+ 2814: CGetL 0
+ 2816: Print
+ 2817: PopC
+  // line 247
+ 2818: Null
+ 2819: RetC
+
+Method public (leaf) Assignment::86ctor at 2820
   // line 12
- 2795: Null
- 2796: RetC
+ 2820: Null
+ 2821: RetC
 
-Method public (leaf) Site::86ctor at 2797
+Method public (leaf) Site::86ctor at 2822
   // line 17
- 2797: Null
- 2798: RetC
+ 2822: Null
+ 2823: RetC
 Class Assignment at 14 (maybe-hoistable) (ID 0)
- Method public (leaf) Assignment::86ctor at 2795
+ Method public (leaf) Assignment::86ctor at 2820
  Property public Assignment::assignmentId = null
  Property public Assignment::title = null
  Property public Assignment::openDate = null
@@ -974,7 +993,7 @@ Class Assignment at 14 (maybe-hoistable) (ID 0)
  Property public Assignment::instructions = null
  Property public Assignment::classId = null
 Class Site at 16 (maybe-hoistable) (ID 1)
- Method public (leaf) Site::86ctor at 2797
+ Method public (leaf) Site::86ctor at 2822
  Property public Site::siteId = null
  Property public Site::siteTitle = null
 Pseudo-main at 0 (ID 0)
@@ -1067,3 +1086,5 @@ Function getAnnouncementsByClass at 2676 (ID 11)
  FPI 2712-2734; fpOff = 9
  FPI 2744-2753; fpOff = 7
  FPI 2759-2772; fpOff = 7
+ FPI 2793-2802; fpOff = 7
+Function (leaf) foo at 2807 (ID 12)

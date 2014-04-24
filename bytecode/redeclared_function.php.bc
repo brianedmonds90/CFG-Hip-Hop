@@ -1,0 +1,7 @@
+
+Pseudo-main at 0 (ID 0)
+  // line 6
+    0: String "Function already defined: f"
+    5: Fatal Runtime
+Pseudo-main at 0 (ID 0)
+HipHop Fatal error: Function already defined: f in quick/redeclared_function.php on line 6
