@@ -119,6 +119,9 @@ public class File_operator {
 			// Get the basic blocks for the current function
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions,
 					leaders);
+			for(BasicBlock b: basicBlocks){
+				System.out.println("BasicBlock: "+b);
+			}
 			// Get the cfg
 			cfg_ret = getCFG(basicBlocks);
 
@@ -142,13 +145,11 @@ public class File_operator {
 					BasicBlock c = new BasicBlock();
 					c.addInstruction(inst);
 					c.setBlockNo(1000);
-
 					listOfBlocks.add(c);
 				}
 			}
 		}
 		cfg_ret.getNodes().addAll(listOfBlocks);
-
 	}
 
 	/**
