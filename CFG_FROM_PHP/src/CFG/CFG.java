@@ -162,14 +162,16 @@ public class CFG {
 				if (inst.use) {
 					// some instructions pass variables into functions
 					if (inst.callSite) {
-						//This instruction uses the second parameter as use variable location
-						if (inst.getInstruction_text().equals("FPassL")) {  
-							uses.add(new Defs_Uses(bb, inst.line, Integer
-									.parseInt((inst.getArgs()[1]))));
-						}
-						else{
-							uses.add(new Defs_Uses(bb, inst.line, Integer
-									.parseInt((inst.getArgs()[0]))));
+						// This instruction uses the second parameter as use
+						// variable location
+						if (!inst.passAsCell) {
+							if (inst.getInstruction_text().equals("FPassL")) {
+								uses.add(new Defs_Uses(bb, inst.line, Integer
+										.parseInt((inst.getArgs()[1]))));
+							} else {
+								uses.add(new Defs_Uses(bb, inst.line, Integer
+										.parseInt((inst.getArgs()[0]))));
+							}
 						}
 					} else {
 						// TODO need to support the global parameter usage

@@ -5,7 +5,6 @@ function foo($c,$d){
 	$z = 1;
 	while($c<=5)
   {
-
   		$x = $y+1;
   		$y = 2*$z;
   		echo "The number is: $c <br>";

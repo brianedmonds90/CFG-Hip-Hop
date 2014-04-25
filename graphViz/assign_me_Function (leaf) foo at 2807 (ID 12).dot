@@ -1,0 +1,16 @@
+digraph testName {
+0 [label="245"];
+1 [label="246"];
+2 [label="247"];
+3 [label="12"];
+4 [label="17"];
+0 -> 1;
+1 -> 2;
+2 -> 3;
+3 -> 4;
+-2 -> 0[xlabel="ENTRY"];
+4 -> -1[xlabel="EXIT"];
+-2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_use_1 { style=filled; color=lightgrey; node [style=filled,color=white]; use_1_0[label= "PHP Line #246 : 0"];label = "Uses";}
+1 -> use_1_0 [style="dashed"];
+-2 [label="999999999 params"];
+}

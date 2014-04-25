@@ -1,0 +1,45 @@
+digraph testName {
+0 [label="177" , fillcolor = red, style = filled];
+1 [label="178"];
+2 [label="183"];
+3 [label="178"];
+4 [label="179" , fillcolor = red, style = filled];
+5 [label="180" , fillcolor = red, style = filled];
+6 [label="178"];
+7 [label="183"];
+8 [label="184"];
+0 -> 1;
+1 -> 2;
+2 -> 3;
+3 -> 4[xlabel="True"];
+3 -> 8[xlabel="False"];
+4 -> 5;
+5 -> 6;
+6 -> 7;
+7 -> 3;
+-2 -> 0[xlabel="ENTRY"];
+8 -> -1[xlabel="EXIT"];
+-2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #177 : 0"];label = "DEFS";}
+0 -> g_0 [style="dashed"];
+subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #178 : 1"];label = "DEFS";}
+1 -> g_1 [style="dashed"];
+subgraph cluster_g_4 { style=filled; color=lightgrey; node [style=filled,color=white]; g_4[label= "PHP Line #179 : 2"];label = "DEFS";}
+4 -> g_4 [style="dashed"];
+subgraph cluster_g_5 { style=filled; color=lightgrey; node [style=filled,color=white]; g_5[label= "PHP Line #180 : 3"];label = "DEFS";}
+5 -> g_5 [style="dashed"];
+subgraph cluster_g_6 { style=filled; color=lightgrey; node [style=filled,color=white]; g_6[label= "PHP Line #178 : 1"];label = "DEFS";}
+6 -> g_6 [style="dashed"];
+subgraph cluster_use_0 { style=filled; color=lightgrey; node [style=filled,color=white]; use_0_0[label= "PHP Line #177 : 0"];label = "Uses";}
+0 -> use_0_0 [style="dashed"];
+subgraph cluster_use_3 { style=filled; color=lightgrey; node [style=filled,color=white]; use_3_0[label= "PHP Line #178 : 0"];label = "Uses";}
+3 -> use_3_0 [style="dashed"];
+subgraph cluster_use_3 { style=filled; color=lightgrey; node [style=filled,color=white]; use_3_1[label= "PHP Line #178 : 1"];label = "Uses";}
+3 -> use_3_1 [style="dashed"];
+subgraph cluster_use_4 { style=filled; color=lightgrey; node [style=filled,color=white]; use_4_0[label= "PHP Line #179 : 0"];label = "Uses";}
+4 -> use_4_0 [style="dashed"];
+subgraph cluster_use_5 { style=filled; color=lightgrey; node [style=filled,color=white]; use_5_2[label= "PHP Line #180 : 2"];label = "Uses";}
+5 -> use_5_2 [style="dashed"];
+subgraph cluster_use_6 { style=filled; color=lightgrey; node [style=filled,color=white]; use_6_1[label= "PHP Line #178 : 1"];label = "Uses";}
+6 -> use_6_1 [style="dashed"];
+-2 [label="0 params"];
+}

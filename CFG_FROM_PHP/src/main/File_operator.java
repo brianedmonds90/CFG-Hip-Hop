@@ -171,6 +171,7 @@ public class File_operator {
 
 			// if the current instruction is a leader
 			if (currentLeader.equals(inst)) {
+				if(b.getInstructions().size()>0)
 				basicBlocks.add(b);
 				b = new BasicBlock(inst);
 				b.setBlockNo(i);
