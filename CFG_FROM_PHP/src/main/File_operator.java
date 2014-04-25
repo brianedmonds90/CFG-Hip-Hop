@@ -258,6 +258,8 @@ public class File_operator {
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
 		cfg.getDefinitions(basicBlocks);
+		//cfg.definitions = cfg.getDefs(basicBlocks);
+		//cfg.definitions = cfg.splitDefs();
 		cfg.getUses(basicBlocks);
 		// cfg.setName(name);
 		for (int i = 0; i < cfg.getNodes().size(); i++) {

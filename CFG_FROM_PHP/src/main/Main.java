@@ -32,8 +32,8 @@ public class Main {
 		ArrayList<CFG> cfgs = new ArrayList<CFG>();
 		File directory = new File (".");
 		//TODO uncomment this
-		String currentDirectory = directory.getCanonicalPath();
-		//String currentDirectory = "/Users/brianedmonds/Documents/orso_research";
+		//String currentDirectory = directory.getCanonicalPath();
+		String currentDirectory = "/Users/brianedmonds/Documents/orso_research";
 		String outputPath = currentDirectory+"/graphViz/";
 		boolean success = new File(outputPath).mkdirs();
 		if(success){
@@ -77,16 +77,17 @@ public class Main {
 	public static ArrayList<String> defInstructions;
 	public static ArrayList<String> globalInstructions;
 	public static ArrayList<String> callInstructions,mutator;
+	public static ArrayList<String> fPushInstructions;
 	
 	
 	public static void init(){
-		
 		useInstructions = new ArrayList<String>();
 		cfgInstructions = new ArrayList<String>();
 		globalInstructions = new ArrayList<String>();
 		defInstructions = new ArrayList<String>();
 		callInstructions = new ArrayList<String>();
 		mutator = new ArrayList<String>();
+		fPushInstructions = new ArrayList<String>();
 		//Add the Control flow instructions
 		cfgInstructions.add("Jmp");
 		cfgInstructions.add("JmpNS");
@@ -112,8 +113,16 @@ public class Main {
 		useInstructions.add("VGetG");
 		useInstructions.add("CGetG");
 		useInstructions.add("FPassL"); //this is a pass instruction
-	
-
+		useInstructions.add("FPassC");
+		useInstructions.add("FPassCW");
+		useInstructions.add("FPassCE");
+		useInstructions.add("FPassV");
+		useInstructions.add("FPassVNop");
+		useInstructions.add("FPassR");
+		useInstructions.add("FPassN");
+		useInstructions.add("FPassG");
+		useInstructions.add("FPassS");
+		
 		//Add the setter instructions
 		defInstructions.add("SetL");
 		defInstructions.add("SetN");
@@ -142,23 +151,25 @@ public class Main {
 		globalInstructions.add("VGetG");
 		globalInstructions.add("CGetG");
 		
-		callInstructions.add("FPushFunc");
-		callInstructions.add("FPushFuncD");
-		callInstructions.add("FPushFuncU");
-		callInstructions.add("FPushObjMethod");
-		callInstructions.add("FPushObjMethodD");
-		callInstructions.add("FPushClsMethod");
-		callInstructions.add("FPushClsMethodF");
-		callInstructions.add("FPushClsMethodD");
-		callInstructions.add("FPushCtor");
-		callInstructions.add("FPushCtorD");
-		callInstructions.add("DecodeCufIter");
-		callInstructions.add("FPushCufIter");
-		callInstructions.add("FPushCuf");
-		callInstructions.add("FPushCufF");
-		callInstructions.add("FPushCufSafe");
-		callInstructions.add("CufSafeArray");
-		callInstructions.add("CufSafeReturn");
+		fPushInstructions.add("FPushFunc");
+		fPushInstructions.add("FPushFuncD");
+		fPushInstructions.add("FPushFuncU");
+		fPushInstructions.add("FPushObjMethod");
+		fPushInstructions.add("FPushObjMethodD");
+		fPushInstructions.add("FPushClsMethod");
+		fPushInstructions.add("FPushClsMethodF");
+		fPushInstructions.add("FPushClsMethodD");
+		fPushInstructions.add("FPushCtor");
+		fPushInstructions.add("FPushCtorD");
+		fPushInstructions.add("DecodeCufIter");
+		fPushInstructions.add("FPushCufIter");
+		fPushInstructions.add("FPushCuf");
+		fPushInstructions.add("FPushCufF");
+		fPushInstructions.add("FPushCufSafe");
+		fPushInstructions.add("CufSafeArray");
+		fPushInstructions.add("CufSafeReturn");
+
+		//TODO: THESE SHOULD BE USES******************
 		callInstructions.add("FPassC");
 		callInstructions.add("FPassCW");
 		callInstructions.add("FPassCE");
@@ -169,6 +180,8 @@ public class Main {
 		callInstructions.add("FPassL");
 		callInstructions.add("FPassG");
 		callInstructions.add("FPassS");
+		//*****************************************
+		
 		callInstructions.add("FCall");
 		callInstructions.add("FCallD");
 		callInstructions.add("FCallArray");

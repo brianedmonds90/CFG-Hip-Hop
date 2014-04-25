@@ -50,11 +50,12 @@ public class Function {
 						minSetL = temp2;
 					}
 				}
-
 			}
 		}
-
-		return minSetL;
+		if(minSetL>=999999999)
+			return 0;
+		else
+			return minSetL;
 	}
 
 	public void addEHTable(String str) {

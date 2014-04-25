@@ -120,7 +120,6 @@ public class CFG {
 		for (BasicBlock e : exitNodes) {
 			edges.add(new Edge(e, exitNode, "EXIT"));
 		}
-
 		return;
 	}
 
@@ -163,8 +162,15 @@ public class CFG {
 				if (inst.use) {
 					// some instructions pass variables into functions
 					if (inst.callSite) {
-						uses.add(new Defs_Uses(bb, inst.line, Integer
-								.parseInt((inst.getArgs()[1]))));
+						//This instruction uses the second parameter as use variable location
+						if (inst.getInstruction_text().equals("FPassL")) {  
+							uses.add(new Defs_Uses(bb, inst.line, Integer
+									.parseInt((inst.getArgs()[1]))));
+						}
+						else{
+							uses.add(new Defs_Uses(bb, inst.line, Integer
+									.parseInt((inst.getArgs()[0]))));
+						}
 					} else {
 						// TODO need to support the global parameter usage
 						if (inst.getArgs()[0] != null)
@@ -190,12 +196,14 @@ public class CFG {
 		int instrucionIndex;
 		int basicBlockIndex = 0;
 		ArrayList<BasicBlock> splitBlocks = new ArrayList<BasicBlock>();
-		
-		for (BasicBlock bb : basicBlocks) {
+		for (int j = 0; j < basicBlocks.size(); j++) {
+			BasicBlock bb = basicBlocks.get(j);
 			bbHasDef = false;
 			instrucionIndex = 0;
 			basicBlockIndex++;
-			for (Instruction inst : bb.getInstructions()) {
+			ArrayList<Instruction> instructions = bb.getInstructions();
+			for (int k = 0; k < instructions.size(); k++) {
+				Instruction inst = instructions.get(k);
 				instrucionIndex++;
 				if (inst.definition) {
 					if (!bbHasDef) {
@@ -219,7 +227,28 @@ public class CFG {
 				}
 			}
 		}
+		basicBlocks.addAll(splitBlocks);
 		return;
+	}
+
+	/**
+	 * Go through each nodes and check for definition. Return a list of
+	 * definitions for the given basicBlocks
+	 * 
+	 * @param basicBlocks
+	 *            List of nodes
+	 */
+	public ArrayList<Defs_Uses> getDefs(ArrayList<BasicBlock> basicBlocks) {
+		ArrayList<Defs_Uses> ret = new ArrayList<Defs_Uses>();
+		for (BasicBlock bb : basicBlocks) {
+			for (Instruction inst : bb.getInstructions()) {
+				if (inst.definition) {
+					ret.add(new Defs_Uses(bb, inst.line, Integer.parseInt((inst
+							.getArgs()[0]))));
+				}
+			}
+		}
+		return ret;
 	}
 
 	/**
@@ -305,5 +334,10 @@ public class CFG {
 		}
 		ret += function.toDot();
 		return ret;
+	}
+
+	public ArrayList<Defs_Uses> splitDefs() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
