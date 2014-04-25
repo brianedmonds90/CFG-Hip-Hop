@@ -22,7 +22,7 @@ We support Linux platforms that can run HIPHOPVM.
 
 
 #Sample Output
-This program works correctly for the function.php code found in the sample_output/ directory. You should see two .dot files generated for this php code. We generate a .dot file for 
+This program works correctly for the function.php code found in the sample_output/ directory. You should see two .dot files generated for this php code. We generate a .dot file for each function implemented in the PHP.
 
 ### What To Expect
 * A folder named `Graphviz` created in the source code directory
