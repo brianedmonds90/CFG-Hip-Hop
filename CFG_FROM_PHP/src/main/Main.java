@@ -31,9 +31,7 @@ public class Main {
 		PrintWriter writer;
 		ArrayList<CFG> cfgs = new ArrayList<CFG>();
 		File directory = new File (".");
-		//TODO uncomment this
-		//String currentDirectory = directory.getCanonicalPath();
-		String currentDirectory = "/Users/brianedmonds/Documents/orso_research";
+		String currentDirectory = directory.getCanonicalPath();
 		String outputPath = currentDirectory+"/graphViz/";
 		boolean success = new File(outputPath).mkdirs();
 		if(success){
