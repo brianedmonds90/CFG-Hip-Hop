@@ -67,7 +67,6 @@ public class Main {
 				}
 			}
 		}
-		
 	}
 	
 	public static ArrayList<String> cfgInstructions;
@@ -95,6 +94,7 @@ public class Main {
 		cfgInstructions.add("SSwitch");
 		cfgInstructions.add("Unwind");
 		cfgInstructions.add("Throw");
+		cfgInstructions.add("RetC");
 		
 		//Add the getInstructions
 		useInstructions.add("CGetL");

@@ -41,7 +41,7 @@ public class Function {
 	public int calcNumParams() {
 		int numVars = 0;
 		int minSetL = 999999999;
-		int temp1, temp2;
+		int temp2;
 		for (Line l : lines) {
 			for (Instruction i : l.getInstructions()) {
 				if (i.type == i.set) {
@@ -50,12 +50,19 @@ public class Function {
 						minSetL = temp2;
 					}
 				}
+				else if(i.type == i.get){
+					temp2 = Integer.parseInt(i.getArgs()[0]);
+					if(temp2 < minSetL){
+						System.out.println(i.getInstruction_text());
+						numVars= temp2+1;
+					}
+				}
 			}
 		}
 		if(minSetL>=999999999)
-			return 0;
+			return numVars;
 		else
-			return minSetL;
+			return Math.max(minSetL,numVars);//The max of the sets and the gets that are local 
 	}
 
 	public void addEHTable(String str) {

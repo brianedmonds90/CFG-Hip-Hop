@@ -1,0 +1,22 @@
+digraph testName {
+0 [label="82" , fillcolor = red, style = filled];
+1 [label="83" , fillcolor = red, style = filled];
+2 [label="84" , fillcolor = red, style = filled];
+3 [label="85" , fillcolor = red, style = filled];
+4 [label="86"];
+0 -> 1;
+1 -> 2;
+2 -> 3;
+3 -> 4;
+-2 -> 0[xlabel="ENTRY"];
+4 -> -1[xlabel="EXIT"];
+-2 [fillcolor = green, style = filled]-1 [fillcolor= yellow, style = filled] subgraph cluster_g_0 { style=filled; color=lightgrey; node [style=filled,color=white]; g_0[label= "PHP Line #82 : 0"];label = "DEFS";}
+0 -> g_0 [style="dashed"];
+subgraph cluster_g_1 { style=filled; color=lightgrey; node [style=filled,color=white]; g_1[label= "PHP Line #83 : 1"];label = "DEFS";}
+1 -> g_1 [style="dashed"];
+subgraph cluster_use_1 { style=filled; color=lightgrey; node [style=filled,color=white]; use_1_0[label= "PHP Line #83 : 0"];label = "Uses";}
+1 -> use_1_0 [style="dashed"];
+subgraph cluster_use_3 { style=filled; color=lightgrey; node [style=filled,color=white]; use_3_1[label= "PHP Line #85 : 1"];label = "Uses";}
+3 -> use_3_1 [style="dashed"];
+-2 [label="0 params"];
+}

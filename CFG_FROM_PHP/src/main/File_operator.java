@@ -119,8 +119,8 @@ public class File_operator {
 			// Get the basic blocks for the current function
 			ArrayList<BasicBlock> basicBlocks = getBasicBlocks(allInstructions,
 					leaders);
-			for(BasicBlock b: basicBlocks){
-				System.out.println("BasicBlock: "+b);
+			for (BasicBlock b : basicBlocks) {
+				System.out.println("BasicBlock: " + b);
 			}
 			// Get the cfg
 			cfg_ret = getCFG(basicBlocks);
@@ -172,8 +172,8 @@ public class File_operator {
 
 			// if the current instruction is a leader
 			if (currentLeader.equals(inst)) {
-				if(b.getInstructions().size()>0)
-				basicBlocks.add(b);
+				if (b.getInstructions().size() > 0)
+					basicBlocks.add(b);
 				b = new BasicBlock(inst);
 				b.setBlockNo(i);
 				i++;
@@ -215,7 +215,10 @@ public class File_operator {
 				if (inst.type == inst.control_flow) {
 					// Find the destination of the current branching instruction
 					// NOTE. we do not support the UNWIND Instruction
-					if (!inst.getInstruction_text().equals("Unwind")
+					if (inst.getInstruction_text().equals("RetC")) {
+						// Do Something
+
+					} else if (!inst.getInstruction_text().equals("Unwind")
 							&& !inst.getInstruction_text().equals("Throw")) {
 						int offset = Integer.parseInt(inst.getArgs()[0]);
 						int destination = Integer.parseInt(inst.getBCLineNO())
@@ -260,8 +263,8 @@ public class File_operator {
 	public CFG getCFG(ArrayList<BasicBlock> basicBlocks) {
 		CFG cfg = new CFG(basicBlocks);
 		cfg.getDefinitions(basicBlocks);
-		//cfg.definitions = cfg.getDefs(basicBlocks);
-		//cfg.definitions = cfg.splitDefs();
+		// cfg.definitions = cfg.getDefs(basicBlocks);
+		// cfg.definitions = cfg.splitDefs();
 		cfg.getUses(basicBlocks);
 		// cfg.setName(name);
 		for (int i = 0; i < cfg.getNodes().size(); i++) {
@@ -280,7 +283,6 @@ public class File_operator {
 				if (j >= cfg.getNodes().size())
 					continue;
 				BasicBlock bj = cfg.getNodes().get(j);
-
 				// Check if Bi goto statement goes to Bj
 				if (last_instr.getDestination() != null) {
 					Instruction bj_first_instr;
@@ -288,7 +290,6 @@ public class File_operator {
 						continue;
 					else
 						bj_first_instr = bj.getInstructions().get(0);
-					// System.out.println("Destination: "+last_instr.getDestination()+j+": "+bj_first_instr);
 					if (last_instr.getDestination().equals(bj_first_instr)) {
 						if (!last_instr.getUnconditional())
 							cfg.addEdge(bi, bj, "False");
@@ -298,11 +299,13 @@ public class File_operator {
 				}
 				// Check if Bj follows Bi and Bi does not have an unconditional
 				// goto statement
-				if (i + 1 == j && !last_instr.getUnconditional())
-					if (last_instr.type == last_instr.control_flow)
-						cfg.addEdge(bi, bj, "True");
-					else
-						cfg.addEdge(bi, bj, null);
+				if (!last_instr.getInstruction_text().equals("RetC")) {
+					if (i + 1 == j && !last_instr.getUnconditional())
+						if (last_instr.type == last_instr.control_flow)
+							cfg.addEdge(bi, bj, "True");
+						else
+							cfg.addEdge(bi, bj, null);
+				}
 			}
 		}
 		return cfg;
@@ -398,7 +401,6 @@ public class File_operator {
 			if (fileEntry.isDirectory()) {
 				listFilesForFolder(fileEntry, l);
 			} else {
-				// System.out.println("Adding "+fileEntry.getName()+" to return list");
 				l.add(fileEntry);
 			}
 		}
