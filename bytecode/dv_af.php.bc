@@ -1,7 +1,0 @@
-
-Pseudo-main at 0 (ID 0)
-  // line 3
-    0: String "Default value for parameter a1 with array type hint can only be an array or NULL"
-    5: Fatal Parse
-Pseudo-main at 0 (ID 0)
-HipHop Fatal error: Default value for parameter a1 with array type hint can only be an array or NULL in quick/dv_af.php on line 3

@@ -9,20 +9,20 @@ PHP Analysis Project
 Our software parses PHP source code using HIPHOPVM, php compiler built by Facebook, and generates a CFG for each function of the source code.
 
 ### Supported Platform
-We support Linux platforms that can run HIPHOPVM. 
+We support Linux platforms that can run HIPHOPVM. **Note: All tests have been with Ubuntu 13.10. 
 
 ### Installation and run
 1. Install a prebuilt package of HIPHOP. Follow the directions at the following link: https://github.com/facebook/hhvm/wiki#installing-pre-built-packages-for-hhvm
 2. Install Java 
-2. Download the cfg_php.zip
-3. Unzip the compressed package and navigate to orso_research/ 
+2. Download the repository as a compressed zip file. 
+3. Unzip the compressed package and navigate to php2014-master/ 
 4. run ./cfg_php.sh $1 
 	where $1 is the local path to your php files
 5. Your output .dot files will be in the graphviz directory, showing a CFG for every function in your PHP code
 
 
 #Sample Output
-This program works correctly for the function.php code found in the sample_output/ directory. You should see two .dot files generated for this php code. We generate a .dot file for 
+This program works correctly for the function.php code found in the sample_output/ directory. You should see two .dot files generated for this php code. We generate a .dot file for each function implemented in the PHP.
 
 ### What To Expect
 * A folder named `Graphviz` created in the source code directory

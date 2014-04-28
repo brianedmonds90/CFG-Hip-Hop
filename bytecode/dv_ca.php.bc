@@ -1,7 +1,0 @@
-
-Pseudo-main at 0 (ID 0)
-  // line 4
-    0: String "Default value for parameter a0 with a class type hint can only be NULL"
-    5: Fatal Parse
-Pseudo-main at 0 (ID 0)
-HipHop Fatal error: Default value for parameter a0 with a class type hint can only be NULL in quick/dv_ca.php on line 4

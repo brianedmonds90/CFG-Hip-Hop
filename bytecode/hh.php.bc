@@ -1,9 +1,0 @@
-
-Pseudo-main at 0 (ID 0)
-  // line 2
-    0: String "In strict.\n"
-    5: Print
-    6: PopC
-    7: Int 1
-   16: RetC
-Pseudo-main at 0 (ID 0)
