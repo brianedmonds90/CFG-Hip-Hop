@@ -1,7 +1,0 @@
-
-Pseudo-main at 0 (ID 0)
-  // line 2
-    0: String "syntax error, unexpected ':'"
-    5: Fatal Parse
-Pseudo-main at 0 (ID 0)
-HipHop Fatal error: syntax error, unexpected ':' in quick/xhp-malformed.php on line 2

@@ -1,7 +1,0 @@
-
-Pseudo-main at 0 (ID 0)
-  // line 7
-    0: String "Cannot mix 'return' and 'yield' in the same function"
-    5: Fatal Parse
-Pseudo-main at 0 (ID 0)
-HipHop Fatal error: Cannot mix 'return' and 'yield' in the same function in quick/yield_return.php on line 7

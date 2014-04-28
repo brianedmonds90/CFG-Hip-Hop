@@ -9,7 +9,7 @@ PHP Analysis Project
 Our software parses PHP source code using HIPHOPVM, php compiler built by Facebook, and generates a CFG for each function of the source code.
 
 ### Supported Platform
-We support Linux platforms that can run HIPHOPVM. 
+We support Linux platforms that can run HIPHOPVM. **Note: All tests have been with Ubuntu 13.10. 
 
 ### Installation and run
 1. Install a prebuilt package of HIPHOP. Follow the directions at the following link: https://github.com/facebook/hhvm/wiki#installing-pre-built-packages-for-hhvm
