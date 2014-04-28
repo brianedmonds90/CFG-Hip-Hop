@@ -16,15 +16,31 @@ public class Main {
 	public Main(){}
 	
 	public static void main(String [] args) throws IOException{
+		boolean development = false; // if false, take argument from console
+		boolean predefinedFilepath = false;
 		
-		ArrayList<File> byteCodeFiles = new ArrayList<File>();
-		String pathOfCompiledFiles = args[0];
-		//System.out.println("Path: "+pathOfCompiledFiles);
-		init();
-		//System.out.println("Please enter the path of the directory that you want to parse:");
+		/* Variable Declaration */
+		String pathOfCompiledFiles;
 		Scanner scan = new Scanner(System.in);
-		//String path = scan.nextLine();
+		ArrayList<File> byteCodeFiles = new ArrayList<File>();
 		File_operator f_operator = new File_operator();
+		
+		/* For development, set boolean development = true */
+		if (development) {
+			if (predefinedFilepath) {
+				/* Example: pathOfCompiledFiles = "/Users/usr/phpfiles"; */
+				pathOfCompiledFiles = "";
+			}
+			else {
+				System.out.println("Enter the path of the directory that you want to parse:");
+				pathOfCompiledFiles = scan.nextLine();
+			}
+		}
+		else {
+			pathOfCompiledFiles = args[0];
+		}
+
+		init();
 		//Get all the files from a directory specified by the user
 		f_operator.listFilesForFolder(new File(pathOfCompiledFiles),byteCodeFiles);
 		//parse the given bytecode files from the directory
@@ -40,9 +56,11 @@ public class Main {
 		else{
 			System.out.println("error in creating output directory");
 		}
+		System.out.println("Enter");
 		String graphName = "testName";
 		CFG interconnectedCFG = new CFG();
 		for(File f: byteCodeFiles){
+			System.out.println("for loop");
 			String fileName = f.getName();
 			String extension = fileName.substring(fileName.length()-3);
 			//if the file is a bytecode file
